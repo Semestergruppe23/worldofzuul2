@@ -15,6 +15,12 @@ public interface IBusiness {
     void createItem(String id, int volume);
     String pickUpItem(String id);
     String test();
+    void createPlayer(String name);
+    IPlayer getPlayer();
+    IItem getItem(String name, String currentRoom); 
+    void createRooms();
+    IRoom getRoom(String roomName);
     
-    
+    void createItems();
+
 }

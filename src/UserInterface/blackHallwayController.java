@@ -5,9 +5,15 @@
  */
 package UserInterface;
 
+import Acquaintance.IItem;
+import static UserInterface.UserInterfaceFacade.business;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,6 +22,8 @@ import static javafx.geometry.NodeOrientation.RIGHT_TO_LEFT;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TitledPane;
 import javafx.scene.image.ImageView;
@@ -40,6 +48,10 @@ public class blackHallwayController implements Initializable {
     @FXML
     private ImageView player;
 
+    private String roomName = business.getRoom("Black hallway").getRoomName();
+    
+    ObservableList<IItem> GUIInventory; 
+    
     private int playerX;
     private int playerY;
     private int speed = gameConstants.speed;
@@ -56,16 +68,19 @@ public class blackHallwayController implements Initializable {
     @FXML
     private ImageView rightDoor;
     @FXML
-    private ImageView bottomDoor;
-    @FXML
     private ImageView leftDoor;
+    @FXML
+    private Label lblRoomName;
+    @FXML
+    private ListView<IItem> playerInventoryGUI;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        lblRoomName.setText(business.getRoom(roomName).getRoomName());
+        GUIInventory = FXCollections.observableArrayList((ArrayList)business.getPlayer().getPlayerInventory());
     }
 
     @FXML
@@ -137,6 +152,13 @@ public class blackHallwayController implements Initializable {
         player.setX(playerX);
         player.setY(playerY);
 
+    }
+
+    @FXML
+    private void btnKeyToExit(ActionEvent event) {
+        business.getPlayer().addItemToInventory(business.getItem("Key To Exit", this.roomName));
+        GUIInventory = FXCollections.observableArrayList((ArrayList)business.getPlayer().getPlayerInventory());
+        playerInventoryGUI.setItems(GUIInventory);
     }
 
 }

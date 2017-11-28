@@ -16,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -26,6 +27,8 @@ import javafx.stage.Stage;
 public class StartMenuController implements Initializable {
 
     private IBusiness business;
+    @FXML
+    private TextField txtNameInput;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -35,7 +38,9 @@ public class StartMenuController implements Initializable {
     @FXML
     private void btnStartGame(ActionEvent event) throws IOException {
         
-      
+        business.createPlayer(txtNameInput.getText());
+        business.createRooms();
+        business.createItems();
         
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("startRoom.fxml"));

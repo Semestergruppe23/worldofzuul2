@@ -12,5 +12,8 @@ package Acquaintance;
 public interface IItem {
     
     String getName();
-    boolean canPickUp();
+    boolean getCarryable();
+    int getVolume();
+    
+    
 }
