@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Acquaintance;
+package Data;
 
 /**
  *
  * @author Oskar
  */
-public interface IItem {
+public class data {
     
-    String getName();
-    boolean canPickUp();
 }
