@@ -14,5 +14,9 @@ public interface IPlayer {
     void rewardPoints(int points);
     void addTime(long time);
     void removeTime(long time);
+    String getName();
+    int getScore();
+    String getCurrentRoom();
+    
     
 }
