@@ -38,7 +38,7 @@ public class StartMenuController implements Initializable {
       
         
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/SchoolEscape/Ui/startRoom.fxml"));
+        loader.setLocation(getClass().getResource("startRoom.fxml"));
         Parent startParent = loader.load(); 
         Scene startScene = new Scene(startParent);
         Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
