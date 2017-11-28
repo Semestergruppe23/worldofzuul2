@@ -11,6 +11,8 @@ package Acquaintance;
  */
 public interface IBusiness {
     
+    void createItem(String id, int volume);
+    String pickUpItem(String id);
     
     
 }
