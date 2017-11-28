@@ -11,4 +11,9 @@ package Acquaintance;
  */
 public interface IUserInterface {
     
+    
+    void injectBusiness(IBusiness business);
+    void startGame();
+    
+    
 }

@@ -5,10 +5,35 @@
  */
 package Business;
 
+import Acquaintance.IBusiness;
+import Acquaintance.IData;
+
 /**
  *
  * @author Oskar
  */
-public class BusinessFacade {
+public class BusinessFacade implements IBusiness {
+
+    private IData data;
+    
+    
+    @Override
+    public void createItem(String id, int volume) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String pickUpItem(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void injectData(IData data) {
+      this.data = data;
+    }
+    
+    public String test(){
+        return "Hello, world!";
+    }
     
 }
