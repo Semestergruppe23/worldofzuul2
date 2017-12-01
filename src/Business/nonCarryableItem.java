@@ -5,10 +5,39 @@
  */
 package Business;
 
+import Acquaintance.IItem;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author Oskar
  */
-public class nonCarryableItem {
+public class nonCarryableItem implements IItem {
+    private String name;
+    private boolean canPickUp = false;
+    private Map < IItem, Integer > objectContent = new HashMap<>();
     
+    public nonCarryableItem(String name){
+        this.name = name;
+    }
+    
+    @Override
+    public String getName() {
+    return this.name;
+    }
+    @Override
+    public boolean canPickUp() {
+        return this.canPickUp;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
+    public void insertObject(IItem item, Integer volume){
+        this.objectContent.put(item, volume);
+    }
+    
+    public String toString() {
+        return this.name;
+    }
 }
