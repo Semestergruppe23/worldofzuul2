@@ -20,7 +20,6 @@ public class Data implements IData
     private String ip = "jdbc:mysql://207.154.205.244/matador";
     private String userName = "tim_user";
     private String password = "Tim!Er&Dejlig932!";
-    List <String> HighScoreList = new ArrayList<>();
     
     //Constructor - Automatically make connection to server
     public Data()
@@ -41,6 +40,7 @@ public class Data implements IData
     {
         Statement statement = null;
         ResultSet result = null;
+        List <String> HighScoreList = new ArrayList<>();
         
         try
         {
