@@ -7,6 +7,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 
 // @author Tim
@@ -18,6 +20,7 @@ public class Data implements IData
     private String ip = "jdbc:mysql://207.154.205.244/matador";
     private String userName = "tim_user";
     private String password = "Tim!Er&Dejlig932!";
+    ArrayList <String> HighScoreList = new ArrayList<>();
     
     //Constructor - Automatically make connection to server
     public Data()
@@ -34,7 +37,7 @@ public class Data implements IData
     
     //Method for retrieving top 10 scores and names from server
     @Override
-    public void getHighscore()
+    public List<String> getHighscore()
     {
         Statement statement = null;
         ResultSet result = null;
@@ -42,20 +45,18 @@ public class Data implements IData
         try
         {
             statement = conn.createStatement();
-            result = statement.executeQuery("SELECT * FROM matador.highscore ORDER BY score DESC LIMIT 10");
+            result = statement.executeQuery("SELECT * FROM matador.highscore ORDER BY score DESC LIMIT 15");
             
             while (result.next())
                 {
-                    System.out.println(result.getString("bruger"));
-                    System.out.println(result.getString("score"));
+                    HighScoreList.add(result.getString("bruger") + ":  " + result.getString("score"));
                 }
         } catch (SQLException ex) 
         {
             System.out.println(ex.toString());
             
         }
-        
-        
+        return HighScoreList;
     }
     //Method for adding highscore to server list
     @Override

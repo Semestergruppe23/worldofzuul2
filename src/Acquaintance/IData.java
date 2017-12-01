@@ -5,13 +5,16 @@
  */
 package Acquaintance;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Oskar
  */
 public interface IData {
     
-    public void getHighscore();
+    public List<String> getHighscore();
     public void addHighscore(String name, int score);
     
 }

@@ -64,8 +64,14 @@ public class StartMenuController implements Initializable {
     }
 
     @FXML
-    private void btnHighScore(ActionEvent event) {
-        System.out.println(business.test());
+    private void btnHighScore(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("HighScore.fxml"));
+        Parent startParent = loader.load(); 
+        Scene startScene = new Scene(startParent);
+        Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        startStage.setScene(startScene);
+        startStage.show();
     }
 
     @FXML

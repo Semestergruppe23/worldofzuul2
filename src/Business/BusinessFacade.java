@@ -84,6 +84,11 @@ public class BusinessFacade implements IBusiness {
         this.getRoom("Black hallway").putItemsInsideRoom(keyToExit);
         */
     }
+
+    @Override
+    public List<String> getHighscores() {
+        return data.getHighscore();
+    }
     
     
 }
