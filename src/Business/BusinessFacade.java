@@ -58,9 +58,9 @@ public class BusinessFacade implements IBusiness {
     }
 
   
-    @Override
-    public void createRoom(String roomName, Boolean locked ) {
-        IRoom room = new Room(roomName, locked);
+    @Override 
+    public void createRoom(int indexId, String roomName, Boolean locked ) {
+        IRoom room = new Room(indexId, roomName, locked);
         rooms.add(room);
     }
 

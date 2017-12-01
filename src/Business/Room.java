@@ -18,11 +18,13 @@ public class Room implements IRoom {
     
     private String roomName;
     private boolean locked = false;
+    private int indexId;
     private List<IItem> roomItemList;
     
-    public Room(String roomName, boolean locked){
+    public Room(int indexId, String roomName, boolean locked){
         this.roomName = roomName;
         this.locked = locked;
+        this.indexId = indexId;
         this.roomItemList = new ArrayList<>();
     }
 

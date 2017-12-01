@@ -37,21 +37,23 @@ public class StartMenuController implements Initializable {
 
     @FXML
     private void btnStartGame(ActionEvent event) throws IOException {
-        
+        // createRoom(Index id in arrayList, Room Name, Locked or not)
         business.createPlayer(txtNameInput.getText());
         business.createItems();
-        business.createRoom("Start", false);
-        business.createRoom("Math Room", false);
-        business.createRoom("History Room", false);
-        business.createRoom("Red hallway", false);
-        business.createRoom("Blue hallway", false);
-        business.createRoom("Janior Room", true);
-        business.createRoom("Green hallway", false);
-        business.createRoom("Black hallway", false);
-        business.createRoom("Restroom", false);
-        business.createRoom("Exit", true);
+        business.createRoom(0, "Start", false);
+        business.createRoom(1, "Math Room", false);
+        business.createRoom(2, "History Room", false);
+        business.createRoom(3, "Red hallway", false);
+        business.createRoom(4, "Blue hallway", false);
+        business.createRoom(5, "Janior Room", true);
+        business.createRoom(6, "Green hallway", false);
+        business.createRoom(7, "Black hallway", false);
+        business.createRoom(8, "Restroom", false);
+        business.createRoom(9, "Exit", true);
         
         
+        
+
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("startRoom.fxml"));
         Parent startParent = loader.load(); 

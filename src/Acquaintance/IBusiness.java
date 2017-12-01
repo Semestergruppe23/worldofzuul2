@@ -18,7 +18,7 @@ public interface IBusiness {
     void createPlayer(String name);
     IPlayer getPlayer();
     IItem getItem(String name, String currentRoom); 
-    void createRoom(String roomName, Boolean locked);
+    void createRoom(int indexId, String roomName, Boolean locked);
     IRoom getRoom(int roomId);
     
     void createItems();
