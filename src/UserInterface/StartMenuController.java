@@ -39,8 +39,18 @@ public class StartMenuController implements Initializable {
     private void btnStartGame(ActionEvent event) throws IOException {
         
         business.createPlayer(txtNameInput.getText());
-        business.createRooms();
         business.createItems();
+        business.createRoom("Start", false);
+        business.createRoom("Math Room", false);
+        business.createRoom("History Room", false);
+        business.createRoom("Red hallway", false);
+        business.createRoom("Blue hallway", false);
+        business.createRoom("Janior Room", true);
+        business.createRoom("Green hallway", false);
+        business.createRoom("Black hallway", false);
+        business.createRoom("Restroom", false);
+        business.createRoom("Exit", true);
+        
         
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("startRoom.fxml"));
