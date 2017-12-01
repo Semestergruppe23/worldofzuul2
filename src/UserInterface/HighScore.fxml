@@ -7,8 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="UserInterface.HighScoreController">
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.HighScoreController">
    <children>
       <ImageView fitHeight="768.0" fitWidth="1024.0">
          <image>
@@ -16,6 +15,6 @@
          </image>
       </ImageView>
       <ListView fx:id="lstvHighScore" blendMode="MULTIPLY" layoutX="365.0" layoutY="199.0" mouseTransparent="true" prefHeight="446.0" prefWidth="295.0" />
-      <Button layoutX="487.0" layoutY="659.0" mnemonicParsing="false" onAction="#clickReturn" text="Return" />
+      <Button layoutX="486.0" layoutY="658.0" mnemonicParsing="false" onAction="#clickReturn" text="Return" />
    </children>
 </AnchorPane>

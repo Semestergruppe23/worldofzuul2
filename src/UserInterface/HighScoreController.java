@@ -18,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
@@ -32,13 +33,17 @@ public class HighScoreController implements Initializable {
     @FXML
     private ListView<String> lstvHighScore;
     private ObservableList<String> highscores = FXCollections.observableArrayList(business.getHighscores());
+
+    private ObservableList<String> clear = FXCollections.observableArrayList();
     
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
         lstvHighScore.setItems(highscores);
+
     }    
 
     @FXML
@@ -54,5 +59,4 @@ public class HighScoreController implements Initializable {
         startStage.setScene(scene);
         startStage.show();
     }
-    
 }

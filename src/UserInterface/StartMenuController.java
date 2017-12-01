@@ -80,6 +80,8 @@ public class StartMenuController implements Initializable {
 
     @FXML
     private void btnExitGame(ActionEvent event) {
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.close();
     }
     
     
