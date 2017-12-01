@@ -45,7 +45,7 @@ public class StartMenuController implements Initializable {
         business.createRoom(2, "History Room", false);
         business.createRoom(3, "Red hallway", false);
         business.createRoom(4, "Blue hallway", false);
-        business.createRoom(5, "Janior Room", true);
+        business.createRoom(5, "Janitor Room", true);
         business.createRoom(6, "Green hallway", false);
         business.createRoom(7, "Black hallway", false);
         business.createRoom(8, "Restroom", false);

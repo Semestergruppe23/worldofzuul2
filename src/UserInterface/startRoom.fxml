@@ -37,7 +37,7 @@
             </TitledPane>
             <TextArea disable="true" editable="false" layoutX="401.0" layoutY="16.0" prefHeight="227.0" prefWidth="399.0" />
             <ProgressBar fx:id="timer" layoutY="16.0" prefWidth="200.0" progress="1.0" />
-            <Label fx:id="roomDescription" layoutY="36.0" text="Room:">
+            <Label fx:id="lblRoomName" layoutY="36.0" text="Room:">
                <font>
                   <Font name="Helvetica Bold" size="13.0" />
                </font></Label>

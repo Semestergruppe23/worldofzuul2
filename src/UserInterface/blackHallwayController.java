@@ -48,10 +48,8 @@ public class blackHallwayController implements Initializable {
     @FXML
     private ImageView player;
 
-    private String roomName = business.getRoom("Black hallway").getRoomName();
-    
     ObservableList<IItem> GUIInventory; 
-    
+    private int roomID = 7;
     private int playerX;
     private int playerY;
     private int speed = gameConstants.speed;
@@ -79,7 +77,7 @@ public class blackHallwayController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        lblRoomName.setText(business.getRoom(roomName).getRoomName());
+        lblRoomName.setText(business.getRoom(roomID).getRoomName());
         GUIInventory = FXCollections.observableArrayList((ArrayList)business.getPlayer().getPlayerInventory());
     }
 
@@ -143,7 +141,7 @@ public class blackHallwayController implements Initializable {
                     }
 
                 }
-
+                
             }
         }
     }

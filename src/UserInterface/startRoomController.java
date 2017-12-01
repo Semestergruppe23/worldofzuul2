@@ -6,6 +6,7 @@
 package UserInterface;
 
 
+import static UserInterface.UserInterfaceFacade.business;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -41,7 +42,8 @@ public class startRoomController implements Initializable {
     private ImageView playerIcon;
     @FXML
     private ImageView player;
-
+    
+    private int roomID = 0;
     private int playerX;
     private int playerY;
     private int speed = gameConstants.speed;
@@ -56,7 +58,7 @@ public class startRoomController implements Initializable {
     @FXML
     private ImageView rightDoor;
     @FXML
-    private Label roomDescription;
+    private Label lblRoomName;
     
 
     /**
@@ -64,7 +66,7 @@ public class startRoomController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb)  {
-        // TODO
+        lblRoomName.setText(business.getRoom(roomID).getRoomName());
      
        
     }

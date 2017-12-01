@@ -5,6 +5,7 @@
  */
 package UserInterface;
 
+import static UserInterface.UserInterfaceFacade.business;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,6 +17,7 @@ import static javafx.geometry.NodeOrientation.RIGHT_TO_LEFT;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TitledPane;
 import javafx.scene.image.ImageView;
@@ -39,7 +41,7 @@ public class janitorRoomDarkController implements Initializable {
     private ImageView playerIcon;
     @FXML
     private ImageView player;
-
+    private int roomID = 5;
     private int playerX;
     private int playerY;
     private int speed = gameConstants.speed;
@@ -52,20 +54,16 @@ public class janitorRoomDarkController implements Initializable {
     @FXML
     private ImageView rightWall;
     @FXML
-    private ImageView topDoor;
-    @FXML
-    private ImageView rightDoor;
-    @FXML
-    private ImageView bottomDoor;
-    @FXML
     private ImageView leftDoor;
+    @FXML
+    private Label lblRoomName;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+     lblRoomName.setText(business.getRoom(roomID).getRoomName());
     }
 
     @FXML
