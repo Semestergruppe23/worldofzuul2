@@ -19,7 +19,7 @@ public interface IBusiness {
     IPlayer getPlayer();
     IItem getItem(String name, String currentRoom); 
     void createRooms();
-    IRoom getRoom(String roomName);
+    IRoom getRoom(int roomId);
     
     void createItems();
 

@@ -28,6 +28,7 @@ public interface IPlayer {
     void removeItemFromInventory(String name);
     
     String getCurrentRoom();
+    void setCurrentRoom(IRoom room);
     
     List<IItem> getPlayerInventory();
     

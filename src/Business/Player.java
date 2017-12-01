@@ -7,6 +7,7 @@ package Business;
 
 import Acquaintance.IItem;
 import Acquaintance.IPlayer;
+import Acquaintance.IRoom;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +19,7 @@ public class Player implements IPlayer {
     
     String name;
     List<IItem> inventory;
+    private IRoom currentRoom;
     
     public Player(String name){
         this.name = name;
@@ -80,6 +82,10 @@ public class Player implements IPlayer {
     @Override
     public List<IItem> getPlayerInventory() {
         return this.inventory;
+    }
+    @Override
+    public void setCurrentRoom(IRoom room){
+        this.currentRoom = room;
     }
     
 }
