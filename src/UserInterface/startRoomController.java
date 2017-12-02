@@ -5,11 +5,13 @@
  */
 package UserInterface;
 
-
 import static UserInterface.UserInterfaceFacade.business;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -26,6 +28,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 /**
  * FXML Controller class
@@ -33,6 +36,12 @@ import javafx.stage.Stage;
  * @author Jonas
  */
 public class startRoomController implements Initializable {
+
+    // Timelines for movement. One for each key W,A,S,D.
+    Timeline timelineW = new Timeline();
+    Timeline timelineA = new Timeline();
+    Timeline timelineS = new Timeline();
+    Timeline timelineD = new Timeline();
 
     @FXML
     private TitledPane playerInventory;
@@ -42,7 +51,7 @@ public class startRoomController implements Initializable {
     private ImageView playerIcon;
     @FXML
     private ImageView player;
-    
+
     private int roomID = 0;
     private int playerX;
     private int playerY;
@@ -59,25 +68,54 @@ public class startRoomController implements Initializable {
     private ImageView rightDoor;
     @FXML
     private Label lblRoomName;
-    
 
     /**
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb)  {
+    public void initialize(URL url, ResourceBundle rb) {
         lblRoomName.setText(business.getRoom(roomID).getRoomName());
-     
-       
+
     }
 
+    // Adds value to the timelines created.
+    public void createTimeLineW() {
+        timelineW.setCycleCount(Timeline.INDEFINITE);
+        final KeyValue kv = new KeyValue(player.yProperty(), -Integer.MAX_VALUE);
+        final KeyFrame kf = new KeyFrame(Duration.hours(1500), kv);
+        timelineW.getKeyFrames().add(kf);
+    }
+
+    public void createTimeLineA() {
+        timelineA.setCycleCount(Timeline.INDEFINITE);
+        final KeyValue kv = new KeyValue(player.xProperty(), -Integer.MAX_VALUE);
+        final KeyFrame kf = new KeyFrame(Duration.hours(1500), kv);
+        timelineA.getKeyFrames().add(kf);
+    }
+
+    public void createTimeLineS() {
+        timelineS.setCycleCount(Timeline.INDEFINITE);
+        final KeyValue kv = new KeyValue(player.yProperty(), Integer.MAX_VALUE);
+        final KeyFrame kf = new KeyFrame(Duration.hours(1500), kv);
+        timelineS.getKeyFrames().add(kf);
+    }
+
+    public void createTimeLineD() {
+        timelineD.setCycleCount(Timeline.INDEFINITE);
+        final KeyValue kv = new KeyValue(player.xProperty(), Integer.MAX_VALUE);
+        final KeyFrame kf = new KeyFrame(Duration.hours(1500), kv);
+        timelineD.getKeyFrames().add(kf);
+    }
+
+    
+    // Called on keyPressed.
     @FXML
     private void playerMovement(KeyEvent event) throws IOException {
         if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))) {
-           
+
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("redHallway.fxml"));
-            Parent startParent = loader.load(); 
+            Parent startParent = loader.load();
             Scene startScene = new Scene(startParent);
             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             startStage.setScene(startScene);
@@ -88,8 +126,8 @@ public class startRoomController implements Initializable {
             if (player.intersects(player.sceneToLocal(topWall.localToScene(topWall.getBoundsInLocal())))) {
                 // DO NOTHING.
             } else {
-                playerY -= speed;
-                movePlayer();
+                createTimeLineW();
+                timelineW.play();
             }
         } else {
             if (event.getCode() == KeyCode.A) {
@@ -97,16 +135,16 @@ public class startRoomController implements Initializable {
                     // DO NOTHING
                 } else {
                     player.setNodeOrientation(RIGHT_TO_LEFT);
-                    playerX -= speed;
-                    movePlayer();
+                    createTimeLineA();
+                    timelineA.play();
                 }
             } else {
                 if (event.getCode() == KeyCode.S) {
                     if (player.intersects(player.sceneToLocal(bottomWall.localToScene(bottomWall.getBoundsInLocal())))) {
                         // DO NOTHING.
                     } else {
-                        playerY += speed;
-                        movePlayer();
+                        createTimeLineS();
+                        timelineS.play();
                     }
 
                 } else {
@@ -115,8 +153,8 @@ public class startRoomController implements Initializable {
                             // DO NOTHING.   
                         } else {
                             player.setNodeOrientation(LEFT_TO_RIGHT);
-                            playerX += speed;
-                            movePlayer();
+                            createTimeLineD();
+                            timelineD.play();
                         }
 
                     }
@@ -127,12 +165,27 @@ public class startRoomController implements Initializable {
         }
     }
 
-    public void movePlayer() {
-        player.setX(playerX);
-        player.setY(playerY);
-
+    
+    // Called on keyReleased. 
+    @FXML
+    public void stopMove(KeyEvent event) {
+        if (event.getCode() == KeyCode.W) {
+            timelineW.stop();
+        } else {
+            if (event.getCode() == KeyCode.A) {
+                timelineA.stop();
+            } else {
+                if (event.getCode() == KeyCode.S) {
+                    timelineS.stop();
+                } else {
+                    if (event.getCode() == KeyCode.D) {
+                        timelineD.stop();
+                    }
+                }
+            }
+        }
     }
 
-
-
+        
+    
 }

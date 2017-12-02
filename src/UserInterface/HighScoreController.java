@@ -43,6 +43,7 @@ public class HighScoreController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
         lstvHighScore.setItems(highscores);
+       
 
     }    
 
