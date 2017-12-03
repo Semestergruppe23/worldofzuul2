@@ -11,4 +11,8 @@ package Acquaintance;
  */
 public interface INPC {
     
+    void fillArraysWithQuestionsAndAnswers();
+    String generateQuestion();
+    boolean checkAnswer(String playerAnswer);
+    
 }
