@@ -40,6 +40,11 @@ public class Player implements IPlayer {
     public void removeTime(long time) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    @Override
+    public void startTime(long startTime) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     /**
      * 
@@ -60,6 +65,8 @@ public class Player implements IPlayer {
     public String getCurrentRoom() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    
 
     
     /**
@@ -87,5 +94,7 @@ public class Player implements IPlayer {
     public void setCurrentRoom(IRoom room){
         this.currentRoom = room;
     }
+
+    
     
 }

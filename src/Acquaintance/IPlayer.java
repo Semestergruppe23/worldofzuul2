@@ -13,6 +13,7 @@ import java.util.List;
  */
 public interface IPlayer {
     
+    void startTime(long startTime);
     void rewardPoints(int points);
     void addTime(long time);
     void removeTime(long time);

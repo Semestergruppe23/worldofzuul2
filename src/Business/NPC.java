@@ -18,9 +18,9 @@ import java.util.Scanner;
  */
 public class NPC implements INPC {
 
-    List<String> questions = new ArrayList<>();
-    List<String> answers = new ArrayList<>();
-    int questionsAskedAnswersChecked = 0;
+    private List<String> questions = new ArrayList<>();
+    private List<String> answers = new ArrayList<>();
+    private int questionsAskedAnswersChecked = 0;
     
     @Override
     public void fillArraysWithQuestionsAndAnswers() throws FileNotFoundException {
