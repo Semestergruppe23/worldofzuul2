@@ -20,30 +20,38 @@ public class Player implements IPlayer {
     String name;
     List<IItem> inventory;
     private IRoom currentRoom;
+    private long startTimeInSeconds;
+    private long totalGameTime = 600;
+    private int playerPoints = 0;
     
     public Player(String name){
         this.name = name;
         inventory = new ArrayList();
+        this.startTimeInSeconds = System.currentTimeMillis() / 1000;
     }
 
     @Override
     public void rewardPoints(int points) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.playerPoints += points;
     }
 
     @Override
     public void addTime(long time) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.totalGameTime += time;
     }
 
     @Override
     public void removeTime(long time) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.totalGameTime -= time;
     }
     
     @Override
-    public void startTime(long startTime) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean checkTime(){
+        if((System.currentTimeMillis()/ 1000) - this.startTimeInSeconds > this.totalGameTime){
+            return false;
+        }else{
+            return true;
+        }
     }
 
     /**
@@ -58,7 +66,7 @@ public class Player implements IPlayer {
 
     @Override
     public int getScore() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.playerPoints;
     }
 
     @Override
