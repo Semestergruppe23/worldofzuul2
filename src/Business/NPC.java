@@ -6,8 +6,11 @@
 package Business;
 
 import Acquaintance.INPC;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  *
@@ -20,18 +23,41 @@ public class NPC implements INPC {
     int questionsAskedAnswersChecked = 0;
     
     @Override
-    public void fillArraysWithQuestionsAndAnswers() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void fillArraysWithQuestionsAndAnswers() throws FileNotFoundException {
+        File questionsAndAnswersFile = new File("questionsAndAnswersByHallucination.txt");
+        Scanner inputFromFile = new Scanner(questionsAndAnswersFile);
+        
+        while(inputFromFile.hasNextLine()){
+            String dialogue = inputFromFile.nextLine(); 
+            String question = inputFromFile.nextLine(); 
+            String optionA = inputFromFile.nextLine(); 
+            String optionB = inputFromFile.nextLine(); 
+            String optionC = inputFromFile.nextLine(); 
+            String answer = inputFromFile.nextLine(); 
+            this.questions.add(dialogue + "\n" + question + 
+                    "\n" + optionA + "\n" + optionB + "\n" +
+                    optionC);
+            this.answers.add(answer);
+        }
     }
 
     @Override
     public String generateQuestion() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for(int i = this.questionsAskedAnswersChecked; i < this.questions.size();){
+            return this.questions.get(i);
+        }
+        return "Ran out of questions";
     }
 
     @Override
     public boolean checkAnswer(String playerAnswer) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(playerAnswer.equalsIgnoreCase(this.answers.get(questionsAskedAnswersChecked))){
+            this.questionsAskedAnswersChecked++;
+            return true;
+        } else{
+            this.questionsAskedAnswersChecked++;
+            return false; 
+        }
     }
     
 }

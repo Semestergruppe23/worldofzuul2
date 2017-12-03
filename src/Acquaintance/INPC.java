@@ -5,13 +5,15 @@
  */
 package Acquaintance;
 
+import java.io.FileNotFoundException;
+
 /**
  *
  * @author Oskar
  */
 public interface INPC {
     
-    void fillArraysWithQuestionsAndAnswers();
+    void fillArraysWithQuestionsAndAnswers() throws FileNotFoundException;
     String generateQuestion();
     boolean checkAnswer(String playerAnswer);
     
