@@ -17,8 +17,13 @@ import java.util.ArrayList;
  */
 public class FriendlyNPC implements IFriendlyNPC {
 
-    String questString = "REPLACE WITH QUESTTEXT";
-    String completedQuestString = "REPLACE WITH COMPLETED QUESTTEXT";
+    IItem itemToBeFound;
+    
+    String questString = "Hey you! \n You look lost.. Can't get out eh? \n"
+            + "Tell you what, i will lend you my key to the exit, if you fetch something for me "
+            + "\nI need " + this.itemToBeFound.getName() + ", for my studies. \nIt's somewhere around here"
+            + ", but you may have to get into creative with finding it!";
+    String completedQuestString = "Thank you so much!\nI needed that!\nHere is the key, you earned it!";
     
     @Override
     public String getQuestString() {
@@ -31,13 +36,18 @@ public class FriendlyNPC implements IFriendlyNPC {
     }
 
     @Override
-    public boolean checkIfPlayerHasItem(IItem itemToBeFound, IPlayer player) {
+    public boolean checkIfPlayerHasItem(IPlayer player) {
         for(IItem item : player.getPlayerInventory()){
-            if(item.getName().equals(itemToBeFound.getName())){
+            if(item.getName().equals(this.itemToBeFound.getName())){
                 return true;
             }
         }
         return false;
+    }
+
+    @Override
+    public void setItemToBeFound(IItem itemToBeFound) {
+        this.itemToBeFound = itemToBeFound;
     }
     
     

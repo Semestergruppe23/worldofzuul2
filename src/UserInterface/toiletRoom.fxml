@@ -28,6 +28,11 @@
     <RowConstraints maxHeight="370.0" minHeight="10.0" prefHeight="257.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
+      <ImageView fitHeight="511.0" fitWidth="1142.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/Toilet_room.png" />
+         </image>
+      </ImageView>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
          <children>
             <TitledPane fx:id="playerInventory" alignment="CENTER_RIGHT" animated="false" collapsible="false" layoutX="810.0" layoutY="16.0" text="Inventory">
@@ -59,13 +64,13 @@
                   <Image url="@images/Featured-Image20.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="topWall" fitHeight="95.0" fitWidth="1031.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="leftWall" fitHeight="511.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="bottomWall" fitHeight="70.0" fitWidth="1024.0" layoutY="441.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="rightWall" fitHeight="511.0" fitWidth="84.0" layoutX="940.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="leftDoor" fitHeight="88.0" fitWidth="94.0" layoutX="20.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="topWall" fitHeight="105.0" fitWidth="1028.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="leftWall" fitHeight="511.0" fitWidth="247.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="bottomWall" fitHeight="150.0" fitWidth="1024.0" layoutY="361.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="rightWall" fitHeight="511.0" fitWidth="276.0" layoutX="748.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="leftDoor" fitHeight="60.0" fitWidth="80.0" layoutX="231.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/WoodCastleDoor2.png" />
+                  <Image url="@Images/door.png" />
                </image>
             </ImageView>
          </children></AnchorPane>

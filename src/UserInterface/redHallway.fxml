@@ -52,6 +52,11 @@
             <Button layoutX="118.0" layoutY="217.0" mnemonicParsing="false" text="Help" />
          </children>
       </AnchorPane>
+      <ImageView fitHeight="515.0" fitWidth="1041.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/Red_hallway.png" />
+         </image>
+      </ImageView>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
             <ImageView fx:id="player" fitHeight="72.0" fitWidth="84.0" layoutX="470.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
@@ -59,26 +64,26 @@
                   <Image url="@images/Featured-Image20.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="topDoor" fitHeight="88.0" fitWidth="94.0" layoutX="470.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="topDoor" fitHeight="60.0" fitWidth="80.0" layoutX="470.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/WoodCastleDoor2.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="topWall" fitHeight="95.0" fitWidth="1031.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="leftWall" fitHeight="511.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="bottomWall" fitHeight="70.0" fitWidth="1024.0" layoutY="441.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="topWall" fitHeight="38.0" fitWidth="1031.0" layoutX="-3.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="leftWall" fitHeight="511.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="bottomWall" fitHeight="143.0" fitWidth="1024.0" layoutY="368.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="rightWall" fitHeight="511.0" fitWidth="84.0" layoutX="940.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="rightDoor" fitHeight="88.0" fitWidth="94.0" layoutX="917.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="rightDoor" fitHeight="60.0" fitWidth="80.0" layoutX="889.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/WoodCastleDoor2.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="bottomDoor" fitHeight="88.0" fitWidth="94.0" layoutX="468.0" layoutY="419.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="bottomDoor" fitHeight="60.0" fitWidth="80.0" layoutX="470.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/WoodCastleDoor2.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="leftDoor" fitHeight="88.0" fitWidth="94.0" layoutX="20.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="leftDoor" fitHeight="60.0" fitWidth="80.0" layoutX="116.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/WoodCastleDoor2.png" />
                </image>

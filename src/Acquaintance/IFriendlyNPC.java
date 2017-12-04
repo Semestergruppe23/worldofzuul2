@@ -11,6 +11,13 @@ package Acquaintance;
  */
 public interface IFriendlyNPC {
     /**
+     * Is used so that the item to be found can be determined in the GUI
+     * MUST be called before calling any other methods in this class!
+     * @param itemToBeFound is the item that the player must find to get the key
+     */
+    void setItemToBeFound(IItem itemToBeFound);
+    
+    /**
      * Explains the quest, reward, and gives a tip
      * @return the "Welcome" string from the friendly NPC
      */
@@ -28,6 +35,6 @@ public interface IFriendlyNPC {
      * @param player, is used so that the players inventory can be checked
      * @return true if the player has the item in question, false if not
      */
-    boolean checkIfPlayerHasItem(IItem itemToBeFound, IPlayer player);
+    boolean checkIfPlayerHasItem(IPlayer player);
     
 }
