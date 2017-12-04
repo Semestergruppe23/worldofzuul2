@@ -28,6 +28,11 @@
     <RowConstraints maxHeight="370.0" minHeight="10.0" prefHeight="257.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
+      <ImageView fitHeight="513.0" fitWidth="1048.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/Math_room.png" />
+         </image>
+      </ImageView>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
          <children>
             <TitledPane fx:id="playerInventory" alignment="CENTER_RIGHT" animated="false" collapsible="false" layoutX="810.0" layoutY="16.0" text="Inventory">
@@ -59,11 +64,11 @@
                   <Image url="@images/Featured-Image20.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="topWall" fitHeight="95.0" fitWidth="1031.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="leftWall" fitHeight="511.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="bottomWall" fitHeight="70.0" fitWidth="1024.0" layoutY="441.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="rightWall" fitHeight="511.0" fitWidth="84.0" layoutX="940.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="bottomDoor" fitHeight="88.0" fitWidth="94.0" layoutX="468.0" layoutY="419.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="topWall" fitHeight="144.0" fitWidth="1031.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="leftWall" fitHeight="511.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="bottomWall" fitHeight="81.0" fitWidth="1024.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="rightWall" fitHeight="511.0" fitWidth="127.0" layoutX="897.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="bottomDoor" fitHeight="60.0" fitWidth="80.0" layoutX="470.0" layoutY="411.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/WoodCastleDoor2.png" />
                </image>
