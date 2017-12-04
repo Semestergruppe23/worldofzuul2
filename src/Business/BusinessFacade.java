@@ -7,6 +7,7 @@ package Business;
 
 import Acquaintance.IBusiness;
 import Acquaintance.IData;
+import Acquaintance.IFriendlyNPC;
 import Acquaintance.IItem;
 import Acquaintance.INPC;
 import Acquaintance.IPlayer;
@@ -19,7 +20,7 @@ import java.util.List;
  * @author Oskar
  */
 public class BusinessFacade implements IBusiness {
-
+    private IFriendlyNPC friendlyNPC;
     private IData data;
     private IPlayer player;
     List<IRoom> rooms = new ArrayList<>();
@@ -101,6 +102,16 @@ public class BusinessFacade implements IBusiness {
     public IData getData() 
     {
         return this.data;
+    }
+
+    @Override
+    public IFriendlyNPC getFriendlyNPC() {
+        return this.friendlyNPC;
+    }
+    
+    @Override
+    public void createFriendlyNPC(){
+        this.friendlyNPC = new FriendlyNPC();
     }
     
     
