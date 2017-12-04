@@ -5,6 +5,7 @@
  */
 package UserInterface;
 
+import static UserInterface.UserInterfaceFacade.business;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -65,8 +66,9 @@ public class exitRoomController implements Initializable {
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    public void initialize(URL url, ResourceBundle rb) 
+    {
+        business.getData().addHighscore(business.getPlayer().getName(), business.getPlayer().getScore());
     }
 
     @FXML
