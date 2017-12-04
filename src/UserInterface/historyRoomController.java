@@ -31,11 +31,7 @@ import javafx.stage.Stage;
  *
  * @author Jonas
  */
-<<<<<<< HEAD
 public class historyRoomController extends Controller {
-=======
-public class historyRoomController extends Controller implements Initializable {
->>>>>>> 8b954c5c1ed9880ac86aaeab0bf09579ab23a7ef
 
     @FXML
     private TitledPane playerInventory;
@@ -70,25 +66,30 @@ public class historyRoomController extends Controller implements Initializable {
         lblRoomName.setText(business.getRoom(roomID).getRoomName());
     }
 
-<<<<<<< HEAD
-   
-    
     public void changeRoomBottomDoor(KeyEvent event) throws IOException {
-        
-     if (player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))) {
+
+        if (player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))) {
             Parent startParent = FXMLLoader.load(getClass().getResource("blueHallway.fxml"));
             Scene startScene = new Scene(startParent);
             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             startStage.setScene(startScene);
             startStage.show();
         }
-=======
-    @Override
-    public void collideWithImageView(KeyEvent event){
-        //if (player.intersects(player.sceneToLocal(this..localToScene(rightDoor.getBoundsInLocal()))))
->>>>>>> 8b954c5c1ed9880ac86aaeab0bf09579ab23a7ef
-    }
-    
-   
 
+        
+        
+        
+    
+
+
+
+    
+    }
+
+    @Override
+        public void collideWithImageView (KeyEvent event) {
+  //if (player.intersects(player.sceneToLocal(this..localToScene(rightDoor.getBoundsInLocal()))))
+              
+        }
 }
+
