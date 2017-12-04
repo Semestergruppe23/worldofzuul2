@@ -154,7 +154,7 @@ public class blackHallwayController implements Initializable {
 
     @FXML
     private void btnKeyToExit(ActionEvent event) {
-        business.getPlayer().addItemToInventory(business.getItem("Key To Exit", this.roomName));
+      //  business.getPlayer().addItemToInventory(business.getItem("Key To Exit", this.roomName));
         GUIInventory = FXCollections.observableArrayList((ArrayList)business.getPlayer().getPlayerInventory());
         playerInventoryGUI.setItems(GUIInventory);
     }

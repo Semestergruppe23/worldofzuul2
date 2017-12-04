@@ -82,28 +82,28 @@ public class startRoomController implements Initializable {
     public void createTimeLineW() {
         timelineW.setCycleCount(Timeline.INDEFINITE);
         final KeyValue kv = new KeyValue(player.yProperty(), -Integer.MAX_VALUE);
-        final KeyFrame kf = new KeyFrame(Duration.hours(1500), kv);
+        final KeyFrame kf = new KeyFrame(Duration.hours(3000), kv);
         timelineW.getKeyFrames().add(kf);
     }
 
     public void createTimeLineA() {
         timelineA.setCycleCount(Timeline.INDEFINITE);
         final KeyValue kv = new KeyValue(player.xProperty(), -Integer.MAX_VALUE);
-        final KeyFrame kf = new KeyFrame(Duration.hours(1500), kv);
+        final KeyFrame kf = new KeyFrame(Duration.hours(3000), kv);
         timelineA.getKeyFrames().add(kf);
     }
 
     public void createTimeLineS() {
         timelineS.setCycleCount(Timeline.INDEFINITE);
         final KeyValue kv = new KeyValue(player.yProperty(), Integer.MAX_VALUE);
-        final KeyFrame kf = new KeyFrame(Duration.hours(1500), kv);
+        final KeyFrame kf = new KeyFrame(Duration.hours(3000), kv);
         timelineS.getKeyFrames().add(kf);
     }
 
     public void createTimeLineD() {
         timelineD.setCycleCount(Timeline.INDEFINITE);
         final KeyValue kv = new KeyValue(player.xProperty(), Integer.MAX_VALUE);
-        final KeyFrame kf = new KeyFrame(Duration.hours(1500), kv);
+        final KeyFrame kf = new KeyFrame(Duration.hours(3000), kv);
         timelineD.getKeyFrames().add(kf);
     }
 
@@ -122,39 +122,66 @@ public class startRoomController implements Initializable {
             startStage.show();
         }
 
-        if (event.getCode() == KeyCode.W) {
-            if (player.intersects(player.sceneToLocal(topWall.localToScene(topWall.getBoundsInLocal())))) {
+        if (event.getCode() == KeyCode.W ) {
+            if (player.intersects(player.sceneToLocal(topWall.localToScene(topWall.getBoundsInLocal())))|| player.intersects(player.sceneToLocal(leftWall.localToScene(leftWall.getBoundsInLocal()))) ) {
                 // DO NOTHING.
+                System.out.println("collied");
+                timelineW.stop();
+           
+                System.out.println("W");
             } else {
                 createTimeLineW();
                 timelineW.play();
+                timelineA.stop();
+                timelineS.stop();
+                timelineD.stop();
+                        
+                System.out.println(player.getX() + player.getY());
+                System.out.println("W");
             }
         } else {
-            if (event.getCode() == KeyCode.A) {
-                if (player.intersects(player.sceneToLocal(leftWall.localToScene(leftWall.getBoundsInLocal())))) {
-                    // DO NOTHING
+            if (event.getCode() == KeyCode.A ) {
+                if (player.intersects(player.sceneToLocal(leftWall.localToScene(leftWall.getBoundsInLocal()))) ||player.intersects(player.sceneToLocal(topWall.localToScene(topWall.getBoundsInLocal()))) ) {
+                    // DO NOTHI;
+                    timelineA.stop();
+                 
+                    System.out.println("A");
                 } else {
                     player.setNodeOrientation(RIGHT_TO_LEFT);
                     createTimeLineA();
                     timelineA.play();
+                    timelineW.stop();
+                    timelineD.stop();
+                    timelineS.stop();
+                    System.out.println("A");
+                    
                 }
             } else {
                 if (event.getCode() == KeyCode.S) {
                     if (player.intersects(player.sceneToLocal(bottomWall.localToScene(bottomWall.getBoundsInLocal())))) {
                         // DO NOTHING.
+                        timelineS.stop();
                     } else {
                         createTimeLineS();
                         timelineS.play();
+                        timelineW.stop();
+                        timelineA.stop();
+                        timelineD.stop();
                     }
 
                 } else {
-                    if (event.getCode() == KeyCode.D) {
+                    if (event.getCode() == KeyCode.D ) {
                         if (player.intersects(player.sceneToLocal(rightWall.localToScene(rightWall.getBoundsInLocal())))) {
-                            // DO NOTHING.   
+                            // DO NOTHING.
+
+                            timelineD.stop();
                         } else {
                             player.setNodeOrientation(LEFT_TO_RIGHT);
                             createTimeLineD();
                             timelineD.play();
+                            timelineS.stop();
+                            timelineW.stop();
+                            timelineA.stop();
                         }
 
                     }
