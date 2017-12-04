@@ -98,8 +98,9 @@ public class BusinessFacade implements IBusiness {
     }
 
     @Override
-    public List<String> getHighscores() {
-        return data.getHighscore();
+    public IData getData() 
+    {
+        return this.data;
     }
     
     

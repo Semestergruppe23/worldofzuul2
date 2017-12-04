@@ -32,7 +32,7 @@ public class HighScoreController implements Initializable {
 
     @FXML
     private ListView<String> lstvHighScore = new ListView<>();
-    private ObservableList<String> highscores = FXCollections.observableArrayList(business.getHighscores());
+    private ObservableList<String> highscores = FXCollections.observableArrayList(business.getData().getHighscore());
 
     private ObservableList<String> clear = FXCollections.observableArrayList();
     

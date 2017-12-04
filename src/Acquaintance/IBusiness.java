@@ -22,7 +22,7 @@ public interface IBusiness {
     IItem getItem(String name, String currentRoom); 
     void createRoom(int indexId, String roomName, Boolean locked);
     IRoom getRoom(int roomId);
-    List <String> getHighscores();
+    IData getData();
     INPC getNPC();
     void createNPC();
     

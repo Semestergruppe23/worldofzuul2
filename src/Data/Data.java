@@ -45,7 +45,7 @@ public class Data implements IData
         try
         {
             statement = conn.createStatement();
-            result = statement.executeQuery("SELECT * FROM matador.highscore ORDER BY score DESC LIMIT 15");
+            result = statement.executeQuery("SELECT * FROM matador.highscore ORDER BY score DESC LIMIT 17");
             
             while (result.next())
                 {
