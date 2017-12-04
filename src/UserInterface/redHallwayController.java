@@ -31,20 +31,20 @@ import javafx.stage.Stage;
  *
  * @author Jonas
  */
-public class redHallwayController implements Initializable {
+public class redHallwayController extends Controller implements Initializable {
 
     @FXML
     private TitledPane playerInventory;
     @FXML
     private ProgressBar timer;
     @FXML
+    private Label lblRoomName;
+    @FXML
     private ImageView playerIcon;
     @FXML
     private ImageView player;
-    private int roomID = 3;
-    private int playerX;
-    private int playerY;
-    private int speed = gameConstants.speed;
+    @FXML
+    private ImageView topDoor;
     @FXML
     private ImageView topWall;
     @FXML
@@ -54,103 +54,56 @@ public class redHallwayController implements Initializable {
     @FXML
     private ImageView rightWall;
     @FXML
-    private ImageView topDoor;
-    @FXML
     private ImageView rightDoor;
     @FXML
     private ImageView bottomDoor;
     @FXML
     private ImageView leftDoor;
-    @FXML
-    private Label lblRoomName;
+
+   
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        lblRoomName.setText(business.getRoom(roomID).getRoomName());
+       
+        
     }
 
-    @FXML
-    private void playerMovement(KeyEvent event) throws IOException {
-        if (player.intersects(player.sceneToLocal(topDoor.localToScene(topDoor.getBoundsInLocal())))) {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("mathRoom.fxml"));
-            Parent startParent = loader.load(); 
-            Scene startScene = new Scene(startParent);
-            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(startScene);
-            startStage.show();
-        } else if (player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))) {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("greenHallway.fxml"));
-            Parent startParent = loader.load(); 
-            Scene startScene = new Scene(startParent);
-            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(startScene);
-            startStage.show();
-        } else if (player.intersects(player.sceneToLocal(leftDoor.localToScene(leftDoor.getBoundsInLocal())))) {
-            Parent startParent = FXMLLoader.load(getClass().getResource("startRoom.fxml"));
-            Scene startScene = new Scene(startParent);
-            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(startScene);
-            startStage.show();
-        } else if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))) {
-            Parent startParent = FXMLLoader.load(getClass().getResource("blueHallway.fxml"));
+    public void changeRoomRightDoor(KeyEvent event) throws IOException {
+        
+      if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))) {
+        FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("startRoom.fxml"));
+            Parent startParent = loader.load();
             Scene startScene = new Scene(startParent);
             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             startStage.setScene(startScene);
             startStage.show();
         }
-
-        if (event.getCode() == KeyCode.W) {
-            if (player.intersects(player.sceneToLocal(topWall.localToScene(topWall.getBoundsInLocal())))) {
-                // DO NOTHING.
-            } else {
-                playerY -= speed;
-                movePlayer();
-            }
-        } else {
-            if (event.getCode() == KeyCode.A) {
-                if (player.intersects(player.sceneToLocal(leftWall.localToScene(leftWall.getBoundsInLocal())))) {
-                    // DO NOTHING
-                } else {
-                    player.setNodeOrientation(RIGHT_TO_LEFT);
-                    playerX -= speed;
-                    movePlayer();
-                }
-            } else {
-                if (event.getCode() == KeyCode.S) {
-                    if (player.intersects(player.sceneToLocal(bottomWall.localToScene(bottomWall.getBoundsInLocal())))) {
-                        // DO NOTHING.
-                    } else {
-                        playerY += speed;
-                        movePlayer();
-                    }
-
-                } else {
-                    if (event.getCode() == KeyCode.D) {
-                        if (player.intersects(player.sceneToLocal(rightWall.localToScene(rightWall.getBoundsInLocal())))) {
-                            // DO NOTHING.   
-                        } else {
-                            player.setNodeOrientation(LEFT_TO_RIGHT);
-                            playerX += speed;
-                            movePlayer();
-                        }
-
-                    }
-
-                }
-
-            }
+    }
+    
+    
+    public void changeRoomBottomDoor(KeyEvent event) throws IOException {
+        
+        if (player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))) {
+        FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("StartMenu.fxml"));
+            Parent startParent = loader.load();
+            Scene startScene = new Scene(startParent);
+            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            startStage.setScene(startScene);
+            startStage.show();
         }
     }
-
-    public void movePlayer() {
-        player.setX(playerX);
-        player.setY(playerY);
-
+    
     }
 
-}
+
+    
+    
+
+     
+
+
