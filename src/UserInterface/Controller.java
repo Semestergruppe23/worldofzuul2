@@ -123,10 +123,10 @@ public class Controller implements Initializable {
         if (event.getCode() == KeyCode.W ) {
             if (player.intersects(player.sceneToLocal(topWall.localToScene(topWall.getBoundsInLocal())))|| player.intersects(player.sceneToLocal(leftWall.localToScene(leftWall.getBoundsInLocal()))) ) {
                 // DO NOTHING.
-                System.out.println("collied");
+                
                 timelineW.stop();
            
-                System.out.println("W");
+               
             } else {
                 createTimeLineW();
                 timelineW.play();
@@ -134,8 +134,7 @@ public class Controller implements Initializable {
                 timelineS.stop();
                 timelineD.stop();
                         
-                System.out.println(player.getX() + player.getY());
-                System.out.println("W");
+                
             }
         } else {
             if (event.getCode() == KeyCode.A ) {
@@ -143,7 +142,7 @@ public class Controller implements Initializable {
                     // DO NOTHI;
                     timelineA.stop();
                  
-                    System.out.println("A");
+                
                 } else {
                     player.setNodeOrientation(RIGHT_TO_LEFT);
                     createTimeLineA();
