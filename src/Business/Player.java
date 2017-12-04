@@ -57,7 +57,6 @@ public class Player implements IPlayer {
     /**
      * 
      * @return the name of the player
-     * et eller andet
      */
     @Override
     public String getName() {
