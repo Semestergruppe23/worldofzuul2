@@ -85,6 +85,7 @@ public class redHallwayController extends Controller implements Initializable {
     }
     
     
+    
     public void changeRoomBottomDoor(KeyEvent event) throws IOException {
         
         if (player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))) {
