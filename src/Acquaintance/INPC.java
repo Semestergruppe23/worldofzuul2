@@ -18,7 +18,8 @@ public interface INPC {
      * This file can be changed as needed as long as it continuesly follows this
      * structure: line: 1: Dialogue, 2: question, 3,4,5: answer options, 6: the actual answer
      * @throws FileNotFoundException because it fills two arrays containing 
-     * the NPC's questions and answers from a .txt file
+     * the NPC's questions and answers from a .txt file, therefor, it must be
+     * implemented in a try-catch block, that catches a FileNotFoundException
      */
     void fillArraysWithQuestionsAndAnswers() throws FileNotFoundException;
     
