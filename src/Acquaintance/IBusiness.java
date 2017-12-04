@@ -25,7 +25,8 @@ public interface IBusiness {
     IData getData();
     INPC getNPC();
     void createNPC();
-    
+    IFriendlyNPC getFriendlyNPC();
+    void createFriendlyNPC();
     void createItems();
 
 }
