@@ -45,14 +45,7 @@ public class historyRoomController extends Controller {
     private int playerX;
     private int playerY;
     private int speed = gameConstants.speed;
-    @FXML
-    private ImageView topWall;
-    @FXML
-    private ImageView leftWall;
-    @FXML
-    private ImageView bottomWall;
-    @FXML
-    private ImageView rightWall;
+
     @FXML
     private ImageView bottomDoor;
     @FXML
