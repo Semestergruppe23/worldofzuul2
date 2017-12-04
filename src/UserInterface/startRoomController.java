@@ -37,6 +37,37 @@ import javafx.util.Duration;
  */
 public class startRoomController extends Controller {
 
+    @FXML
+    private TitledPane playerInventory;
+    @FXML
+    private ProgressBar timer;
+    @FXML
+    private Label lblRoomName;
+    @FXML
+    private ImageView playerIcon;
+    @FXML
+    private ImageView player;
+    @FXML
+    private ImageView topWall;
+    @FXML
+    private ImageView leftWall;
+    @FXML
+    private ImageView bottomWall;
+    @FXML
+    private ImageView rightWall;
+    @FXML
+    private ImageView rightDoor;
+
+ public void changeRoomRightDoor(KeyEvent event) throws IOException {
+     
+        if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))) {
+            Parent startParent = FXMLLoader.load(getClass().getResource("redHallway.fxml"));
+            Scene startScene = new Scene(startParent);
+            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            startStage.setScene(startScene);
+            startStage.show();
+        }
+    }
 
 
 }

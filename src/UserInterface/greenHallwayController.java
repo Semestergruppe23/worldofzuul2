@@ -31,7 +31,7 @@ import javafx.stage.Stage;
  *
  * @author Jonas
  */
-public class greenHallwayController implements Initializable {
+public class greenHallwayController extends Controller {
 
     @FXML
     private TitledPane playerInventory;
@@ -70,75 +70,43 @@ public class greenHallwayController implements Initializable {
         lblRoomName.setText(business.getRoom(roomID).getRoomName());
     }
 
-    @FXML
-    private void playerMovement(KeyEvent event) throws IOException {
-        if (player.intersects(player.sceneToLocal(topDoor.localToScene(topDoor.getBoundsInLocal())))) {
-            Parent startParent = FXMLLoader.load(getClass().getResource("redHallway.fxml"));
+   
+    
+    public void changeRoomRightDoor(KeyEvent event) throws IOException {
+        
+        if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))) {
+        FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("redHallway.fxml"));
+            Parent startParent = loader.load();
             Scene startScene = new Scene(startParent);
             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             startStage.setScene(startScene);
             startStage.show();
-        } else if (player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))) {
+        }
+    }
+   
+    public void changeRoomBottomDoor(KeyEvent event) throws IOException {
+        if (player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))) {
             Parent startParent = FXMLLoader.load(getClass().getResource("exitRoom.fxml"));
             Scene startScene = new Scene(startParent);
             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             startStage.setScene(startScene);
             startStage.show();
-        } else if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))) {
-            Parent startParent = FXMLLoader.load(getClass().getResource("blackHallway.fxml"));
+        }
+    }
+    
+    public void changeRoomTopDoor(KeyEvent event) throws IOException {
+        
+    
+         if (player.intersects(player.sceneToLocal(topDoor.localToScene(topDoor.getBoundsInLocal())))) {
+            Parent startParent = FXMLLoader.load(getClass().getResource("redHallway.fxml"));
             Scene startScene = new Scene(startParent);
             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             startStage.setScene(startScene);
             startStage.show();
+   
+        
         }
-
-        if (event.getCode() == KeyCode.W) {
-            if (player.intersects(player.sceneToLocal(topWall.localToScene(topWall.getBoundsInLocal())))) {
-                // DO NOTHING.
-            } else {
-                playerY -= speed;
-                movePlayer();
-            }
-        } else {
-            if (event.getCode() == KeyCode.A) {
-                if (player.intersects(player.sceneToLocal(leftWall.localToScene(leftWall.getBoundsInLocal())))) {
-                    // DO NOTHING
-                } else {
-                    player.setNodeOrientation(RIGHT_TO_LEFT);
-                    playerX -= speed;
-                    movePlayer();
-                }
-            } else {
-                if (event.getCode() == KeyCode.S) {
-                    if (player.intersects(player.sceneToLocal(bottomWall.localToScene(bottomWall.getBoundsInLocal())))) {
-                        // DO NOTHING.
-                    } else {
-                        playerY += speed;
-                        movePlayer();
-                    }
-
-                } else {
-                    if (event.getCode() == KeyCode.D) {
-                        if (player.intersects(player.sceneToLocal(rightWall.localToScene(rightWall.getBoundsInLocal())))) {
-                            // DO NOTHING.   
-                        } else {
-                            player.setNodeOrientation(LEFT_TO_RIGHT);
-                            playerX += speed;
-                            movePlayer();
-                        }
-
-                    }
-
-                }
-
-            }
-        }
-    }
-
-    public void movePlayer() {
-        player.setX(playerX);
-        player.setY(playerY);
-
     }
 
 }

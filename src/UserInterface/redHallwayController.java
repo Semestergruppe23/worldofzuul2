@@ -75,7 +75,7 @@ public class redHallwayController extends Controller implements Initializable {
         
       if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))) {
         FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("startRoom.fxml"));
+            loader.setLocation(getClass().getResource("blueHallway.fxml"));
             Parent startParent = loader.load();
             Scene startScene = new Scene(startParent);
             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -89,12 +89,39 @@ public class redHallwayController extends Controller implements Initializable {
         
         if (player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))) {
         FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("StartMenu.fxml"));
+            loader.setLocation(getClass().getResource("greenHallway.fxml"));
             Parent startParent = loader.load();
             Scene startScene = new Scene(startParent);
             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             startStage.setScene(startScene);
             startStage.show();
+        }
+    }
+    
+    public void changeRoomLeftDoor(KeyEvent event) throws IOException {
+        if (player.intersects(player.sceneToLocal(leftDoor.localToScene(leftDoor.getBoundsInLocal())))) {
+        FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("startRoom.fxml"));
+            Parent startParent = loader.load();
+            Scene startScene = new Scene(startParent);
+            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            startStage.setScene(startScene);
+            startStage.show();
+    
+    }
+    }
+    
+    public void changeRoomTopDoor(KeyEvent event) throws IOException {
+        if (player.intersects(player.sceneToLocal(topDoor.localToScene(topDoor.getBoundsInLocal())))) {
+        FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("mathRoom.fxml"));
+            Parent startParent = loader.load();
+            Scene startScene = new Scene(startParent);
+            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            startStage.setScene(startScene);
+            startStage.show();
+   
+        
         }
     }
     

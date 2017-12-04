@@ -37,7 +37,7 @@ import javafx.stage.Stage;
  *
  * @author Jonas
  */
-public class blackHallwayController implements Initializable {
+public class blackHallwayController extends Controller {
 
     @FXML
     private TitledPane playerInventory;
@@ -81,75 +81,40 @@ public class blackHallwayController implements Initializable {
         GUIInventory = FXCollections.observableArrayList((ArrayList)business.getPlayer().getPlayerInventory());
     }
 
-    @FXML
-    private void playerMovement(KeyEvent event) throws IOException {
-        if (player.intersects(player.sceneToLocal(topDoor.localToScene(topDoor.getBoundsInLocal())))) {
-            Parent startParent = FXMLLoader.load(getClass().getResource("blueHallway.fxml"));
-            Scene startScene = new Scene(startParent);
-            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(startScene);
-            startStage.show();
-        } else if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))) {
-            Parent startParent = FXMLLoader.load(getClass().getResource("toiletRoom.fxml"));
-            Scene startScene = new Scene(startParent);
-            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(startScene);
-            startStage.show();
-        } else if (player.intersects(player.sceneToLocal(leftDoor.localToScene(leftDoor.getBoundsInLocal())))) {
+    
+    
+       public void changeRoomRightDoor(KeyEvent event) throws IOException {
+        if (player.intersects(player.sceneToLocal(leftDoor.localToScene(leftDoor.getBoundsInLocal())))) {
             Parent startParent = FXMLLoader.load(getClass().getResource("greenHallway.fxml"));
             Scene startScene = new Scene(startParent);
             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             startStage.setScene(startScene);
             startStage.show();
         }
-
-        if (event.getCode() == KeyCode.W) {
-            if (player.intersects(player.sceneToLocal(topWall.localToScene(topWall.getBoundsInLocal())))) {
-                // DO NOTHING.
-            } else {
-                playerY -= speed;
-                movePlayer();
-            }
-        } else {
-            if (event.getCode() == KeyCode.A) {
-                if (player.intersects(player.sceneToLocal(leftWall.localToScene(leftWall.getBoundsInLocal())))) {
-                    // DO NOTHING
-                } else {
-                    player.setNodeOrientation(RIGHT_TO_LEFT);
-                    playerX -= speed;
-                    movePlayer();
-                }
-            } else {
-                if (event.getCode() == KeyCode.S) {
-                    if (player.intersects(player.sceneToLocal(bottomWall.localToScene(bottomWall.getBoundsInLocal())))) {
-                        // DO NOTHING.
-                    } else {
-                        playerY += speed;
-                        movePlayer();
-                    }
-
-                } else {
-                    if (event.getCode() == KeyCode.D) {
-                        if (player.intersects(player.sceneToLocal(rightWall.localToScene(rightWall.getBoundsInLocal())))) {
-                            // DO NOTHING.   
-                        } else {
-                            player.setNodeOrientation(LEFT_TO_RIGHT);
-                            playerX += speed;
-                            movePlayer();
-                        }
-
-                    }
-
-                }
-                
-            }
-        }
     }
-
-    public void movePlayer() {
-        player.setX(playerX);
-        player.setY(playerY);
-
+    
+    @Override
+    public void changeRoomLeftDoor(KeyEvent event) throws IOException {
+        if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))) {
+            Parent startParent = FXMLLoader.load(getClass().getResource("toiletRoom.fxml"));
+            Scene startScene = new Scene(startParent);
+            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            startStage.setScene(startScene);
+            startStage.show();
+    
+    }
+    }
+      
+    
+    @Override
+    public void changeRoomTopDoor(KeyEvent event) throws IOException {
+          if (player.intersects(player.sceneToLocal(topDoor.localToScene(topDoor.getBoundsInLocal())))) {
+            Parent startParent = FXMLLoader.load(getClass().getResource("blueHallway.fxml"));
+            Scene startScene = new Scene(startParent);
+            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            startStage.setScene(startScene);
+            startStage.show();
+    }
     }
 
     @FXML

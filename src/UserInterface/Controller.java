@@ -217,17 +217,7 @@ public class Controller implements Initializable {
     
     public void changeRoomRightDoor(KeyEvent event) throws IOException {
         
-        if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))) {
-        FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("redHallway.fxml"));
-            Parent startParent = loader.load();
-            Scene startScene = new Scene(startParent);
-            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(startScene);
-            startStage.show();
-        }
     }
-    
     public void changeRoomLeftDoor(KeyEvent event) throws IOException {
         
     

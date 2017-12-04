@@ -30,7 +30,7 @@ import javafx.stage.Stage;
  *
  * @author Jonas
  */
-public class exitRoomController implements Initializable {
+public class exitRoomController extends Controller {
 
     @FXML
     private TitledPane playerInventory;
@@ -71,81 +71,6 @@ public class exitRoomController implements Initializable {
         business.getData().addHighscore(business.getPlayer().getName(), business.getPlayer().getScore());
     }
 
-    @FXML
-    private void playerMovement(KeyEvent event) throws IOException {
-        if (player.intersects(player.sceneToLocal(topDoor.localToScene(topDoor.getBoundsInLocal())))) {
-            Parent startParent = FXMLLoader.load(getClass().getResource("janitorRoomLight.fxml"));
-            Scene startScene = new Scene(startParent);
-            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(startScene);
-            startStage.show();
-        } else if (player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))) {
-            Parent startParent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-            Scene startScene = new Scene(startParent);
-            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(startScene);
-            startStage.show();
-        } else if (player.intersects(player.sceneToLocal(leftDoor.localToScene(leftDoor.getBoundsInLocal())))) {
-            Parent startParent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-            Scene startScene = new Scene(startParent);
-            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(startScene);
-            startStage.show();
-        } else if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))) {
-            Parent startParent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-            Scene startScene = new Scene(startParent);
-            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(startScene);
-            startStage.show();
-        }
-
-        if (event.getCode() == KeyCode.W) {
-            if (player.intersects(player.sceneToLocal(topWall.localToScene(topWall.getBoundsInLocal())))) {
-                // DO NOTHING.
-            } else {
-                playerY -= speed;
-                movePlayer();
-            }
-        } else {
-            if (event.getCode() == KeyCode.A) {
-                if (player.intersects(player.sceneToLocal(leftWall.localToScene(leftWall.getBoundsInLocal())))) {
-                    // DO NOTHING
-                } else {
-                    player.setNodeOrientation(RIGHT_TO_LEFT);
-                    playerX -= speed;
-                    movePlayer();
-                }
-            } else {
-                if (event.getCode() == KeyCode.S) {
-                    if (player.intersects(player.sceneToLocal(bottomWall.localToScene(bottomWall.getBoundsInLocal())))) {
-                        // DO NOTHING.
-                    } else {
-                        playerY += speed;
-                        movePlayer();
-                    }
-
-                } else {
-                    if (event.getCode() == KeyCode.D) {
-                        if (player.intersects(player.sceneToLocal(rightWall.localToScene(rightWall.getBoundsInLocal())))) {
-                            // DO NOTHING.   
-                        } else {
-                            player.setNodeOrientation(LEFT_TO_RIGHT);
-                            playerX += speed;
-                            movePlayer();
-                        }
-
-                    }
-
-                }
+   
 
             }
-        }
-    }
-
-    public void movePlayer() {
-        player.setX(playerX);
-        player.setY(playerY);
-
-    }
-
-}
