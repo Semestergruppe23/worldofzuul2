@@ -9,7 +9,6 @@ import static UserInterface.UserInterfaceFacade.business;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -18,10 +17,8 @@ import static javafx.geometry.NodeOrientation.RIGHT_TO_LEFT;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TitledPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -60,10 +57,6 @@ public class historyRoomController implements Initializable {
     private ImageView bottomDoor;
     @FXML
     private Label lblRoomName;
-    @FXML
-    private ImageView questGiverNPC;
-    @FXML
-    private TextArea dialogueFieldTextArea;
 
     /**
      * Initializes the controller class.
@@ -71,7 +64,6 @@ public class historyRoomController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         lblRoomName.setText(business.getRoom(roomID).getRoomName());
-        
     }
 
     @FXML
@@ -82,10 +74,6 @@ public class historyRoomController implements Initializable {
             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             startStage.setScene(startScene);
             startStage.show();
-        }
-        if (player.intersects(player.sceneToLocal(this.questGiverNPC.localToScene(this.questGiverNPC.getBoundsInLocal())))) {
-            business.createFriendlyNPC();
-            this.dialogueFieldTextArea.setText(business.getFriendlyNPC().getQuestString());
         }
         if (event.getCode() == KeyCode.W) {
             if (player.intersects(player.sceneToLocal(topWall.localToScene(topWall.getBoundsInLocal())))) {
@@ -134,18 +122,6 @@ public class historyRoomController implements Initializable {
         player.setX(playerX);
         player.setY(playerY);
 
-    }
-
-    @FXML
-    private void optionAbtn(ActionEvent event) {
-    }
-
-    @FXML
-    private void optionBbtn(ActionEvent event) {
-    }
-
-    @FXML
-    private void optionCbtn(ActionEvent event) {
     }
 
 }
