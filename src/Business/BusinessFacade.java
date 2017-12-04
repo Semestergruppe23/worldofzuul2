@@ -107,12 +107,12 @@ public class BusinessFacade implements IBusiness {
 
     @Override
     public void createFriendlyNPC() {
-        this.friendlyNPC = new FriendlyNPC();
+        friendlyNPC = new FriendlyNPC();
     }
 
     @Override
     public IFriendlyNPC getFriendlyNPC() {
-        return this.friendlyNPC;
+        return friendlyNPC;
     }
     
     

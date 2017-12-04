@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ProgressBar?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -19,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#playerMovement" onKeyReleased="#stopMove" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.historyRoomController">
+<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#playerMovement" onKeyReleased="#stopMove" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.historyRoomController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
@@ -40,7 +34,6 @@
                   <ListView prefHeight="200.0" prefWidth="200.0" />
                </content>
             </TitledPane>
-            <TextArea disable="true" editable="false" layoutX="401.0" layoutY="16.0" prefHeight="227.0" prefWidth="399.0" />
             <ProgressBar fx:id="timer" layoutY="16.0" prefWidth="200.0" progress="1.0" />
             <Label fx:id="lblRoomName" layoutY="36.0" text="Room:">
                <font>
@@ -55,6 +48,7 @@
                   <Image url="@images/Featured-Image20.png" />
                </image></ImageView>
             <Button layoutX="118.0" layoutY="217.0" mnemonicParsing="false" text="Help" />
+            <Label fx:id="dialogueLabel" layoutX="388.0" layoutY="17.0" prefHeight="226.0" prefWidth="418.0" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
@@ -89,7 +83,7 @@
                   <Image url="@Images/ClassroomDesk.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="70.0" fitWidth="53.0" layoutX="586.0" layoutY="151.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="friendlyNPC" fitHeight="70.0" fitWidth="53.0" layoutX="586.0" layoutY="151.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/schoolteacher.png" />
                </image>

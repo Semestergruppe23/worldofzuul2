@@ -19,6 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TitledPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -45,11 +46,18 @@ public class historyRoomController extends Controller {
     private int playerX;
     private int playerY;
     private int speed = gameConstants.speed;
+    
+    @FXML
+    private ImageView friendlyNPC; 
 
     @FXML
     private ImageView bottomDoor;
     @FXML
     private Label lblRoomName;
+    @FXML
+    private Label dialogueLabel; 
+    
+    private boolean questStarted = false;
 
     /**
      * Initializes the controller class.
@@ -79,7 +87,20 @@ public class historyRoomController extends Controller {
 
     @Override
         public void collideWithImageView (KeyEvent event) {
-  //if (player.intersects(player.sceneToLocal(this..localToScene(rightDoor.getBoundsInLocal()))))
+            if(player.intersects(player.sceneToLocal(this.friendlyNPC.localToScene(this.friendlyNPC.getBoundsInLocal())))){
+                if(event.getCode() == KeyCode.E ){
+                    if(this.questStarted == false){
+                        this.dialogueLabel.setText(business.getFriendlyNPC().getQuestString());
+                        this.questStarted = true;
+                    } else if(this.questStarted == true){
+                        if(business.getFriendlyNPC().checkIfPlayerHasItem(business.getPlayer()) == false){
+                        this.dialogueLabel.setText(business.getFriendlyNPC().getStillWaitingString());
+                        } else if(business.getFriendlyNPC().checkIfPlayerHasItem(business.getPlayer()) == true){
+                            this.dialogueLabel.setText(business.getFriendlyNPC().getCompletedQuestString());
+                        }
+                    }
+                }
+            }
               
         }
 }

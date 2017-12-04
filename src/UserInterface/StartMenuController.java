@@ -52,7 +52,10 @@ public class StartMenuController extends Controller implements Initializable {
         business.createRoom(7, "Black hallway", false);
         business.createRoom(8, "Restroom", false);
         business.createRoom(9, "Exit", true);
-        
+        business.createNPC();
+        business.getNPC().fillArraysWithQuestionsAndAnswers();
+        business.createFriendlyNPC();
+        //business.getFriendlyNPC().setItemToBeFound("NAVNET PÅ DET ITEM PLAYER SKAL FINDE!");
         
 
         super.createRooms();
