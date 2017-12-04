@@ -20,37 +20,37 @@ public class Player implements IPlayer {
     String name;
     List<IItem> inventory;
     private IRoom currentRoom;
-    private long startTimeInSeconds;
-    private long totalGameTime = 600;
-    private int playerPoints = 0;
+    private long startTimeInSeconds; //The time when the game starts, is initialized in the Player constructor
+    private long totalGameTime = 600; //The game time, in seconds
+    private int playerPoints = 0; //The player points
     
     public Player(String name){
         this.name = name;
         inventory = new ArrayList();
-        this.startTimeInSeconds = System.currentTimeMillis() / 1000;
+        this.startTimeInSeconds = System.currentTimeMillis() / 1000; //Initializes the time at the start of the game
     }
 
     @Override
-    public void rewardPoints(int points) {
+    public void rewardPoints(int points) { //Rewards the player points, by adding to the playerPoints variable
         this.playerPoints += points;
     }
 
     @Override
-    public void addTime(long time) {
+    public void addTime(long time) { //Adds time to the total game time, in seconds
         this.totalGameTime += time;
     }
 
     @Override
-    public void removeTime(long time) {
+    public void removeTime(long time) { //Subtracts time from the total game time, in seconds
         this.totalGameTime -= time;
     }
     
     @Override
-    public boolean checkTime(){
-        if((System.currentTimeMillis()/ 1000) - this.startTimeInSeconds > this.totalGameTime){
-            return false;
+    public boolean checkTime(){ //Checks whether the time of the current game is larger than the specified total game time
+        if((System.currentTimeMillis()/ 1000) - this.startTimeInSeconds > this.totalGameTime){  // Checks if (current time - startime) is larger than the game time
+            return false; //If the game is over
         }else{
-            return true;
+            return true; // If there is still more time
         }
     }
 
@@ -64,8 +64,9 @@ public class Player implements IPlayer {
         return this.name;
     }
 
+    
     @Override
-    public int getScore() {
+    public int getScore() { //Returns the players score
         return this.playerPoints;
     }
 
