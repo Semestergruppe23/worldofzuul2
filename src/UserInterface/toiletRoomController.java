@@ -69,12 +69,10 @@ public class toiletRoomController extends Controller {
 
      public void changeRoomLeftDoor(KeyEvent event) throws IOException {
         
-     if (player.intersects(player.sceneToLocal(leftDoor.localToScene(leftDoor.getBoundsInLocal())))) {
-            Parent startParent = FXMLLoader.load(getClass().getResource("blackHallway.fxml"));
-            Scene startScene = new Scene(startParent);
-            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(startScene);
-            startStage.show();
+     if (player.intersects(player.sceneToLocal(leftDoor.localToScene(leftDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
+             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        startStage.setScene(super.roomController.getRoom("black").getScene());
+        startStage.show();
         }
     }
     

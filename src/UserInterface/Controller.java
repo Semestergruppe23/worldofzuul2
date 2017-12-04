@@ -6,12 +6,18 @@
 package UserInterface;
 
 
+
+import Acquaintance.IItem;
+import static UserInterface.UserInterfaceFacade.business;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -21,6 +27,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TitledPane;
 import javafx.scene.image.ImageView;
@@ -68,13 +75,24 @@ public class Controller implements Initializable {
     
     private ImageView leftDoor;
     private Label lblRoomName;
+    
+    public static Room room;
+    public static RoomController roomController;
+    
+    
+    
+    @FXML
+    private ListView<IItem> playerInventoryGUI;
 
+    @FXML
+    ObservableList<IItem> GUIInventory; 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-      
+    
+      GUIInventory = FXCollections.observableArrayList((ArrayList)business.getPlayer().getPlayerInventory());
 
     }
 
@@ -117,6 +135,7 @@ public class Controller implements Initializable {
             changeRoomLeftDoor(event);
             changeRoomTopDoor(event);
             this.collideWithImageView(event);
+            pickItemUp(event);
  
             
 
@@ -150,7 +169,7 @@ public class Controller implements Initializable {
                     timelineW.stop();
                     timelineD.stop();
                     timelineS.stop();
-                    System.out.println("A");
+                  
                     
                 }
             } else {
@@ -237,7 +256,68 @@ public class Controller implements Initializable {
     public void collideWithImageView(KeyEvent event){
         
     }
+    
+    
+    public void createRooms() throws IOException {
+        roomController = new RoomController();
+        
+        room = new Room("startRoom");
+        room.buildroom("startRoom.fxml");
+        roomController.addRoom(room);
+        
+        room = new Room("red");
+        room.buildroom("redHallway.fxml");
+        roomController.addRoom(room);
+        
+        room = new Room("black");
+        room.buildroom("blackHallway.fxml");
+        roomController.addRoom(room);
+        
+        room = new Room("blue");
+        room.buildroom("blueHallway.fxml");
+        roomController.addRoom(room);
+        
+        room = new Room("green");
+        room.buildroom("greenHallway.fxml");
+        roomController.addRoom(room);
+        
+        room = new Room("history");
+        room.buildroom("historyRoom.fxml");
+        roomController.addRoom(room);
+        
+        room = new Room("janitorRoomDark");
+        room.buildroom("janitorRoomDark.fxml");
+        roomController.addRoom(room);
+        
+        room = new Room("janitorRoomLight");
+        room.buildroom("janitorRoomLight.fxml");
+        roomController.addRoom(room);
+        
+        room = new Room("math");
+        room.buildroom("mathRoom.fxml");
+        roomController.addRoom(room);
+        
+        room = new Room("toilet");
+        room.buildroom("toiletRoom.fxml");
+        roomController.addRoom(room);
+
     }
+    
+
+public void pickItemUp(KeyEvent event) {
+    
+}
+
+ 
+}   
+
+
+
+
+
+
+
+
     
     
     

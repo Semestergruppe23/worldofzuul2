@@ -24,11 +24,13 @@ import javafx.stage.Stage;
  *
  * @author Oskar
  */
-public class StartMenuController implements Initializable {
+public class StartMenuController extends Controller implements Initializable {
 
     private IBusiness business;
     @FXML
     private TextField txtNameInput;
+    
+ 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -52,14 +54,11 @@ public class StartMenuController implements Initializable {
         business.createRoom(9, "Exit", true);
         
         
-        
 
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("startRoom.fxml"));
-        Parent startParent = loader.load(); 
-        Scene startScene = new Scene(startParent);
+        super.createRooms();
+        
         Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        startStage.setScene(startScene);
+        startStage.setScene(super.roomController.getRoom("startRoom").getScene());
         startStage.show();
     }
 

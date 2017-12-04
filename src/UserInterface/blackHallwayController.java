@@ -22,6 +22,7 @@ import static javafx.geometry.NodeOrientation.RIGHT_TO_LEFT;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ProgressBar;
@@ -71,6 +72,11 @@ public class blackHallwayController extends Controller {
     private Label lblRoomName;
     @FXML
     private ListView<IItem> playerInventoryGUI;
+    private Button btnKeyToExit;
+    
+    @FXML
+    private ImageView imgKeyToExit;
+
 
     /**
      * Initializes the controller class.
@@ -84,23 +90,23 @@ public class blackHallwayController extends Controller {
     
     
        public void changeRoomRightDoor(KeyEvent event) throws IOException {
-        if (player.intersects(player.sceneToLocal(leftDoor.localToScene(leftDoor.getBoundsInLocal())))) {
-            Parent startParent = FXMLLoader.load(getClass().getResource("greenHallway.fxml"));
-            Scene startScene = new Scene(startParent);
+        if (player.intersects(player.sceneToLocal(leftDoor.localToScene(leftDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
+          
+            
             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(startScene);
-            startStage.show();
+        startStage.setScene(super.roomController.getRoom("green").getScene());
+        startStage.show();
         }
     }
     
     @Override
     public void changeRoomLeftDoor(KeyEvent event) throws IOException {
-        if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))) {
-            Parent startParent = FXMLLoader.load(getClass().getResource("toiletRoom.fxml"));
-            Scene startScene = new Scene(startParent);
+        if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
+            
+            
             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(startScene);
-            startStage.show();
+        startStage.setScene(super.roomController.getRoom("toilet").getScene());
+        startStage.show();
     
     }
     }
@@ -108,20 +114,27 @@ public class blackHallwayController extends Controller {
     
     @Override
     public void changeRoomTopDoor(KeyEvent event) throws IOException {
-          if (player.intersects(player.sceneToLocal(topDoor.localToScene(topDoor.getBoundsInLocal())))) {
-            Parent startParent = FXMLLoader.load(getClass().getResource("blueHallway.fxml"));
-            Scene startScene = new Scene(startParent);
+          if (player.intersects(player.sceneToLocal(topDoor.localToScene(topDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
+            
             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(startScene);
-            startStage.show();
+        startStage.setScene(super.roomController.getRoom("blue").getScene());
+        startStage.show();
     }
     }
 
-    @FXML
-    private void btnKeyToExit(ActionEvent event) {
-      //  business.getPlayer().addItemToInventory(business.getItem("Key To Exit", this.roomName));
+
+        
+      public void pickItemUp(KeyEvent event) {
+          if (player.intersects(player.sceneToLocal(imgKeyToExit.localToScene(imgKeyToExit.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
+              business.getPlayer().addItemToInventory(business.getItem("Key To Exit", business.getRoom(roomID).getRoomName()));
         GUIInventory = FXCollections.observableArrayList((ArrayList)business.getPlayer().getPlayerInventory());
         playerInventoryGUI.setItems(GUIInventory);
-    }
+        imgKeyToExit.setDisable(true);
+          }
+              
+
+}
+
+    
 
 }

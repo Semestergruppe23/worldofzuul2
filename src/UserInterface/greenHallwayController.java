@@ -75,18 +75,14 @@ public class greenHallwayController extends Controller {
     public void changeRoomRightDoor(KeyEvent event) throws IOException {
         
         if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))) {
-        FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("redHallway.fxml"));
-            Parent startParent = loader.load();
-            Scene startScene = new Scene(startParent);
-            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(startScene);
-            startStage.show();
+         Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        startStage.setScene(super.roomController.getRoom("black").getScene());
+        startStage.show();
         }
     }
    
     public void changeRoomBottomDoor(KeyEvent event) throws IOException {
-        if (player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))) {
+        if (player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
             Parent startParent = FXMLLoader.load(getClass().getResource("exitRoom.fxml"));
             Scene startScene = new Scene(startParent);
             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -98,12 +94,10 @@ public class greenHallwayController extends Controller {
     public void changeRoomTopDoor(KeyEvent event) throws IOException {
         
     
-         if (player.intersects(player.sceneToLocal(topDoor.localToScene(topDoor.getBoundsInLocal())))) {
-            Parent startParent = FXMLLoader.load(getClass().getResource("redHallway.fxml"));
-            Scene startScene = new Scene(startParent);
+         if (player.intersects(player.sceneToLocal(topDoor.localToScene(topDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(startScene);
-            startStage.show();
+        startStage.setScene(super.roomController.getRoom("black").getScene());
+        startStage.show();
    
         
         }

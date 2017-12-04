@@ -69,12 +69,10 @@ public class mathRoomController extends Controller {
     
 
      public void changeRoomBottomDoor(KeyEvent event) throws IOException {
-        if (player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))) {
-            Parent startParent = FXMLLoader.load(getClass().getResource("redHallway.fxml"));
-            Scene startScene = new Scene(startParent);
-            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(startScene);
-            startStage.show();
+        if (player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
+             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        startStage.setScene(super.roomController.getRoom("red").getScene());
+        startStage.show();
         }
     
     }

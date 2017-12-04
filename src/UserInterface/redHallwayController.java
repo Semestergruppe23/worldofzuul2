@@ -12,8 +12,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import static javafx.geometry.NodeOrientation.LEFT_TO_RIGHT;
-import static javafx.geometry.NodeOrientation.RIGHT_TO_LEFT;
+
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -73,14 +72,11 @@ public class redHallwayController extends Controller implements Initializable {
 
     public void changeRoomRightDoor(KeyEvent event) throws IOException {
         
-      if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))) {
+      if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
         FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("blueHallway.fxml"));
-            Parent startParent = loader.load();
-            Scene startScene = new Scene(startParent);
             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(startScene);
-            startStage.show();
+        startStage.setScene(super.roomController.getRoom("blue").getScene());
+        startStage.show();
         }
     }
     
@@ -88,39 +84,27 @@ public class redHallwayController extends Controller implements Initializable {
     
     public void changeRoomBottomDoor(KeyEvent event) throws IOException {
         
-        if (player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))) {
-        FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("greenHallway.fxml"));
-            Parent startParent = loader.load();
-            Scene startScene = new Scene(startParent);
-            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(startScene);
-            startStage.show();
+        if (player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
+         Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        startStage.setScene(super.roomController.getRoom("green").getScene());
+        startStage.show();
         }
     }
     
     public void changeRoomLeftDoor(KeyEvent event) throws IOException {
-        if (player.intersects(player.sceneToLocal(leftDoor.localToScene(leftDoor.getBoundsInLocal())))) {
-        FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("startRoom.fxml"));
-            Parent startParent = loader.load();
-            Scene startScene = new Scene(startParent);
-            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(startScene);
-            startStage.show();
+        if (player.intersects(player.sceneToLocal(leftDoor.localToScene(leftDoor.getBoundsInLocal()))) && event.getCode() == KeyCode.E ) {
+         Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        startStage.setScene(super.roomController.getRoom("startRoom").getScene());
+        startStage.show();
     
     }
     }
     
     public void changeRoomTopDoor(KeyEvent event) throws IOException {
-        if (player.intersects(player.sceneToLocal(topDoor.localToScene(topDoor.getBoundsInLocal())))) {
-        FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("mathRoom.fxml"));
-            Parent startParent = loader.load();
-            Scene startScene = new Scene(startParent);
-            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(startScene);
-            startStage.show();
+        if (player.intersects(player.sceneToLocal(topDoor.localToScene(topDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
+         Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        startStage.setScene(super.roomController.getRoom("math").getScene());
+        startStage.show();
    
         
         }

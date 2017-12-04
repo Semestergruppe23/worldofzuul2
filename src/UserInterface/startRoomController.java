@@ -60,12 +60,14 @@ public class startRoomController extends Controller {
 
  public void changeRoomRightDoor(KeyEvent event) throws IOException {
      
-        if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))) {
-            Parent startParent = FXMLLoader.load(getClass().getResource("redHallway.fxml"));
-            Scene startScene = new Scene(startParent);
+        if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal()))) && event.getCode() == KeyCode.E ) {
+            
+            
+            
             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(startScene);
+            startStage.setScene(roomController.getRoom("red").getScene());
             startStage.show();
+            
         }
     }
 
