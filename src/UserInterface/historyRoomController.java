@@ -31,7 +31,7 @@ import javafx.stage.Stage;
  *
  * @author Jonas
  */
-public class historyRoomController implements Initializable {
+public class historyRoomController extends Controller implements Initializable {
 
     @FXML
     private TitledPane playerInventory;
@@ -66,62 +66,9 @@ public class historyRoomController implements Initializable {
         lblRoomName.setText(business.getRoom(roomID).getRoomName());
     }
 
-    @FXML
-    private void playerMovement(KeyEvent event) throws IOException {
-        if (player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))) {
-            Parent startParent = FXMLLoader.load(getClass().getResource("blueHallway.fxml"));
-            Scene startScene = new Scene(startParent);
-            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(startScene);
-            startStage.show();
-        }
-        if (event.getCode() == KeyCode.W) {
-            if (player.intersects(player.sceneToLocal(topWall.localToScene(topWall.getBoundsInLocal())))) {
-                // DO NOTHING.
-            } else {
-                playerY -= speed;
-                movePlayer();
-            }
-        } else {
-            if (event.getCode() == KeyCode.A) {
-                if (player.intersects(player.sceneToLocal(leftWall.localToScene(leftWall.getBoundsInLocal())))) {
-                    // DO NOTHING
-                } else {
-                    player.setNodeOrientation(RIGHT_TO_LEFT);
-                    playerX -= speed;
-                    movePlayer();
-                }
-            } else {
-                if (event.getCode() == KeyCode.S) {
-                    if (player.intersects(player.sceneToLocal(bottomWall.localToScene(bottomWall.getBoundsInLocal())))) {
-                        // DO NOTHING.
-                    } else {
-                        playerY += speed;
-                        movePlayer();
-                    }
-
-                } else {
-                    if (event.getCode() == KeyCode.D) {
-                        if (player.intersects(player.sceneToLocal(rightWall.localToScene(rightWall.getBoundsInLocal())))) {
-                            // DO NOTHING.   
-                        } else {
-                            player.setNodeOrientation(LEFT_TO_RIGHT);
-                            playerX += speed;
-                            movePlayer();
-                        }
-
-                    }
-
-                }
-
-            }
-        }
-    }
-
-    public void movePlayer() {
-        player.setX(playerX);
-        player.setY(playerY);
-
+    @Override
+    public void collideWithImageView(KeyEvent event){
+        //if (player.intersects(player.sceneToLocal(this..localToScene(rightDoor.getBoundsInLocal()))))
     }
 
 }

@@ -116,6 +116,7 @@ public class Controller implements Initializable {
             changeRoomBottomDoor(event);
             changeRoomLeftDoor(event);
             changeRoomTopDoor(event);
+            this.collideWithImageView(event);
  
             
 
@@ -243,6 +244,10 @@ public class Controller implements Initializable {
    
         
         }
+    
+    public void collideWithImageView(KeyEvent event){
+        
+    }
     }
     
     
