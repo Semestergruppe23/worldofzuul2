@@ -8,6 +8,7 @@ package Business;
 import Acquaintance.IBusiness;
 import Acquaintance.IData;
 import Acquaintance.IItem;
+import Acquaintance.INPC;
 import Acquaintance.IPlayer;
 import Acquaintance.IRoom;
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ public class BusinessFacade implements IBusiness {
     private IData data;
     private IPlayer player;
     List<IRoom> rooms = new ArrayList<>();
+    private INPC npc; 
     
     public void createPlayer(String name){
         player = new Player(name);
@@ -30,6 +32,16 @@ public class BusinessFacade implements IBusiness {
     public IPlayer getPlayer(){
         
         return this.player;
+    }
+    
+    @Override
+    public void createNPC(){
+        npc = new NPC();
+    }
+    
+    @Override
+    public INPC getNPC(){
+        return npc; 
     }
     
     @Override

@@ -23,6 +23,8 @@ public interface IBusiness {
     void createRoom(int indexId, String roomName, Boolean locked);
     IRoom getRoom(int roomId);
     List <String> getHighscores();
+    INPC getNPC();
+    void createNPC();
     
     void createItems();
 
