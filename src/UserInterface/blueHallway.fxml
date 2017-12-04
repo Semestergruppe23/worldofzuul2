@@ -67,26 +67,26 @@
             </ImageView>
             <ImageView fx:id="topDoor" fitHeight="60.0" fitWidth="80.0" layoutX="484.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/WoodCastleDoor2.png" />
+                  <Image url="@Images/door.png" />
                </image>
             </ImageView>
             <ImageView fx:id="topWall" fitHeight="90.0" fitWidth="1031.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="leftWall" fitHeight="511.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="bottomWall" fitHeight="108.0" fitWidth="1024.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="rightWall" fitHeight="511.0" fitWidth="84.0" layoutX="940.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="rightDoor" fitHeight="60.0" fitWidth="80.0" layoutX="873.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="rightDoor" fitHeight="60.0" fitWidth="80.0" layoutX="886.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/WoodCastleDoor2.png" />
+                  <Image url="@Images/door.png" />
                </image>
             </ImageView>
             <ImageView fx:id="bottomDoor" fitHeight="60.0" fitWidth="80.0" layoutX="484.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/WoodCastleDoor2.png" />
+                  <Image url="@Images/door.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="leftDoor" fitHeight="60.0" fitWidth="80.0" layoutX="120.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="leftDoor" fitHeight="60.0" fitWidth="80.0" layoutX="109.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/WoodCastleDoor2.png" />
+                  <Image url="@Images/door.png" />
                </image>
             </ImageView>
          </children></AnchorPane>

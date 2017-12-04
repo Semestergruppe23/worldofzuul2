@@ -64,34 +64,31 @@
                   <Image url="@images/Featured-Image20.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="topDoor" fitHeight="60.0" fitWidth="80.0" layoutX="482.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="topDoor" fitHeight="60.0" fitWidth="80.0" layoutX="482.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/WoodCastleDoor2.png" />
+                  <Image url="@Images/door.png" />
                </image>
             </ImageView>
             <ImageView fx:id="topWall" fitHeight="185.0" fitWidth="1028.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="leftWall" fitHeight="511.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="bottomWall" fitHeight="150.0" fitWidth="1024.0" layoutY="361.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="rightWall" fitHeight="511.0" fitWidth="88.0" layoutX="936.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="rightDoor" fitHeight="60.0" fitWidth="80.0" layoutX="882.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="rightDoor" fitHeight="60.0" fitWidth="80.0" layoutX="893.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/WoodCastleDoor2.png" />
+                  <Image url="@Images/door.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="leftDoor" fitHeight="60.0" fitWidth="80.0" layoutX="119.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="leftDoor" fitHeight="60.0" fitWidth="80.0" layoutX="109.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/WoodCastleDoor2.png" />
+                  <Image url="@Images/door.png" />
                </image>
             </ImageView>
-            <Button layoutX="202.0" layoutY="146.0" mnemonicParsing="false" onAction="#btnKeyToExit" prefHeight="49.0" prefWidth="66.0" style="-fx-background-color: transparent;">
-               <graphic>
-                  <ImageView fitHeight="49.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@Images/WoodCastleDoor2.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
+            <Button layoutX="202.0" layoutY="146.0" mnemonicParsing="false" onAction="#btnKeyToExit" prefHeight="49.0" prefWidth="66.0" style="-fx-background-color: transparent;" />
+            <ImageView fitHeight="49.0" fitWidth="77.0" layoutX="244.0" layoutY="216.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/WoodCastleDoor2.png" />
+               </image>
+            </ImageView>
          </children></AnchorPane>
    </children>
 </GridPane>

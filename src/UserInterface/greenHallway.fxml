@@ -66,21 +66,21 @@
             </ImageView>
             <ImageView fx:id="topDoor" fitHeight="60.0" fitWidth="80.0" layoutX="484.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/WoodCastleDoor2.png" />
+                  <Image url="@Images/door.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="topWall" fitHeight="189.0" fitWidth="1031.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="topWall" fitHeight="191.0" fitWidth="1031.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="leftWall" fitHeight="511.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="bottomWall" fitHeight="144.0" fitWidth="1024.0" layoutY="367.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="rightWall" fitHeight="503.0" fitWidth="88.0" layoutX="936.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="rightDoor" fitHeight="60.0" fitWidth="80.0" layoutX="886.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="rightDoor" fitHeight="60.0" fitWidth="80.0" layoutX="893.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/WoodCastleDoor2.png" />
+                  <Image url="@Images/door.png" />
                </image>
             </ImageView>
             <ImageView fx:id="bottomDoor" fitHeight="60.0" fitWidth="80.0" layoutX="484.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/WoodCastleDoor2.png" />
+                  <Image url="@Images/door.png" />
                </image>
             </ImageView>
          </children></AnchorPane>

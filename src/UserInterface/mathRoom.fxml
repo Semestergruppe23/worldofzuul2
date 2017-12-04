@@ -66,11 +66,11 @@
             </ImageView>
             <ImageView fx:id="topWall" fitHeight="144.0" fitWidth="1031.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="leftWall" fitHeight="511.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="bottomWall" fitHeight="81.0" fitWidth="1024.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="bottomWall" fitHeight="82.0" fitWidth="1024.0" layoutY="429.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="rightWall" fitHeight="511.0" fitWidth="127.0" layoutX="897.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="bottomDoor" fitHeight="60.0" fitWidth="80.0" layoutX="470.0" layoutY="411.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="bottomDoor" fitHeight="60.0" fitWidth="80.0" layoutX="470.0" layoutY="377.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/WoodCastleDoor2.png" />
+                  <Image url="@Images/door.png" />
                </image>
             </ImageView>
          </children></AnchorPane>
