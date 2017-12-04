@@ -23,6 +23,7 @@ public class Player implements IPlayer {
     private long startTimeInSeconds; //The time when the game starts, is initialized in the Player constructor
     private long totalGameTime = 600; //The game time, in seconds
     private int playerPoints = 0; //The player points
+    private int totalPoints = 0;
     
     public Player(String name){
         this.name = name;
@@ -66,7 +67,9 @@ public class Player implements IPlayer {
     
     @Override
     public int getScore() { //Returns the players score
-        return this.playerPoints;
+        long pointsFromTime = this.totalGameTime - ((System.currentTimeMillis()/1000 - this.startTimeInSeconds));
+        int totalPoints = (int)pointsFromTime + this.playerPoints;
+        return this.totalPoints;
     }
 
     @Override
