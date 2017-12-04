@@ -89,6 +89,11 @@
                   <Image url="@Images/ClassroomDesk.png" />
                </image>
             </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="53.0" layoutX="586.0" layoutY="151.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/schoolteacher.png" />
+               </image>
+            </ImageView>
          </children></AnchorPane>
    </children>
 </GridPane>
