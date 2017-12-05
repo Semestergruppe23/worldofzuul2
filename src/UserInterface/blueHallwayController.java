@@ -131,49 +131,53 @@ public class blueHallwayController extends Controller {
 
     @FXML
     private void btnOptionA(ActionEvent event) {
-        String answer = "A";
-        if(business.getNPC().checkAnswer(answer) == true){
-            this.dialogueLabel.setText("Thats right!");
-            business.getPlayer().rewardPoints(200);
-            this.hallucinationAlreadyPoppedUp = true;
-            this.hallucinationImageView.setVisible(false);
-        } else{
-            this.dialogueLabel.setText("No.. That's not right..");
-             this.hallucinationAlreadyPoppedUp = true;
-             this.hallucinationImageView.setVisible(false);
+        if(this.hallucinationAlreadyPoppedUp == false){
+            String answer = "A";
+            if(business.getNPC().checkAnswer(answer) == true){
+                this.dialogueLabel.setText("Thats right!");
+                business.getPlayer().rewardPoints(200);
+                this.hallucinationAlreadyPoppedUp = true;
+                this.hallucinationImageView.setVisible(false);
+            } else{
+                this.dialogueLabel.setText("No.. That's not right..");
+                this.hallucinationAlreadyPoppedUp = true;
+                this.hallucinationImageView.setVisible(false);
+              }
         }
         
     }
 
     @FXML
     private void btnOptionB(ActionEvent event) {
-        String answer = "B";
-        if(business.getNPC().checkAnswer(answer) == true){
-            this.dialogueLabel.setText("Thats right!");
-            business.getPlayer().rewardPoints(200);
-            this.hallucinationAlreadyPoppedUp = true;
-            this.hallucinationImageView.setVisible(false);
-        } else{
-            this.dialogueLabel.setText("No.. That's not right..");
-             this.hallucinationAlreadyPoppedUp = true;
-             this.hallucinationImageView.setVisible(false);
+                if(this.hallucinationAlreadyPoppedUp == false){
+            String answer = "A";
+            if(business.getNPC().checkAnswer(answer) == true){
+                this.dialogueLabel.setText("Thats right!");
+                business.getPlayer().rewardPoints(200);
+                this.hallucinationAlreadyPoppedUp = true;
+                this.hallucinationImageView.setVisible(false);
+            } else{
+                this.dialogueLabel.setText("No.. That's not right..");
+                this.hallucinationAlreadyPoppedUp = true;
+                this.hallucinationImageView.setVisible(false);
+              }
         }
     }
 
     @FXML
     private void btnOptionC(ActionEvent event) {
-        String answer = "C";
-        if(business.getNPC().checkAnswer(answer) == true){
-            this.dialogueLabel.setText("Thats right!");
-            business.getPlayer().rewardPoints(200);
-            this.hallucinationAlreadyPoppedUp = true;
-            this.hallucinationImageView.setVisible(false);
-        } else{
-            this.dialogueLabel.setText("No.. That's not right..");
-             this.hallucinationAlreadyPoppedUp = true;
-             this.hallucinationImageView.setVisible(false);
+        if(this.hallucinationAlreadyPoppedUp == false){
+            String answer = "A";
+            if(business.getNPC().checkAnswer(answer) == true){
+                this.dialogueLabel.setText("Thats right!");
+                business.getPlayer().rewardPoints(200);
+                this.hallucinationAlreadyPoppedUp = true;
+                this.hallucinationImageView.setVisible(false);
+            } else{
+                this.dialogueLabel.setText("No.. That's not right..");
+                this.hallucinationAlreadyPoppedUp = true;
+                this.hallucinationImageView.setVisible(false);
+              }
         }
     }
-
-   
 }
