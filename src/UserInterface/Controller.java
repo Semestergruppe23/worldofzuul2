@@ -284,10 +284,6 @@ public class Controller implements Initializable {
         room = new Room("toilet");
         room.buildroom("toiletRoom.fxml");
         roomController.addRoom(room);
-        
-        room = new Room("exit");
-        room.buildroom("exitRoom.fxml");
-        roomController.addRoom(room);
 
     }
 
