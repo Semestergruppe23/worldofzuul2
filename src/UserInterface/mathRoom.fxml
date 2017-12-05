@@ -59,7 +59,7 @@
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <ImageView fx:id="player" fitHeight="72.0" fitWidth="84.0" layoutX="470.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="player" fitHeight="72.0" fitWidth="84.0" layoutX="541.0" layoutY="323.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/Featured-Image20.png" />
                </image>
@@ -68,9 +68,54 @@
             <ImageView fx:id="leftWall" fitHeight="511.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="bottomWall" fitHeight="82.0" fitWidth="1024.0" layoutY="429.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="rightWall" fitHeight="511.0" fitWidth="127.0" layoutX="897.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="bottomDoor" fitHeight="60.0" fitWidth="80.0" layoutX="470.0" layoutY="377.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="bottomDoor" fitHeight="82.0" fitWidth="77.0" layoutX="464.0" layoutY="364.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/door.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="102.0" layoutX="446.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Teacher's_Desk_sprite_002.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="93.0" fitWidth="77.0" layoutX="128.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Cabinet.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="99.0" fitWidth="77.0" layoutX="777.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Cabinet.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="48.0" layoutX="469.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/ClassroomDesk.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="469.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/ClassroomDesk.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="535.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/ClassroomDesk.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="535.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/ClassroomDesk.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="48.0" layoutX="408.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/ClassroomDesk.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="48.0" layoutX="408.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/ClassroomDesk.png" />
                </image>
             </ImageView>
          </children></AnchorPane>
