@@ -74,7 +74,7 @@ public class greenHallwayController extends Controller {
     
     public void changeRoomRightDoor(KeyEvent event) throws IOException {
         
-        if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))) {
+        if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
          Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         startStage.setScene(super.roomController.getRoom("black").getScene());
         startStage.show();
