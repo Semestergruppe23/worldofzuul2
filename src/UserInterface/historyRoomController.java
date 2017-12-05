@@ -84,7 +84,7 @@ public class historyRoomController extends Controller {
 
     
     }
-
+//MANGLER STADIG AT HANDE NØGLEN OVER TIL PLAYEREN
     @Override
         public void collideWithImageView (KeyEvent event) {
             if(player.intersects(player.sceneToLocal(this.friendlyNPC.localToScene(this.friendlyNPC.getBoundsInLocal())))){
@@ -97,6 +97,7 @@ public class historyRoomController extends Controller {
                         this.dialogueLabel.setText(business.getFriendlyNPC().getStillWaitingString());
                         } else if(business.getFriendlyNPC().checkIfPlayerHasItem(business.getPlayer()) == true){
                             this.dialogueLabel.setText(business.getFriendlyNPC().getCompletedQuestString());
+                            //Her skal nøglen gives til playeren 
                         }
                     }
                 }

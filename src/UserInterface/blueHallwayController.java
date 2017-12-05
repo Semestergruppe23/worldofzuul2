@@ -9,6 +9,7 @@ import static UserInterface.UserInterfaceFacade.business;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 import javafx.scene.Node;
@@ -59,6 +60,10 @@ public class blueHallwayController extends Controller {
     private ImageView leftDoor;
     @FXML
     private Label lblRoomName;
+    @FXML
+    private ImageView hallucinationImageView;
+    @FXML
+    private Label dialogueLabel;
 
     /**
      * Initializes the controller class.
@@ -66,6 +71,7 @@ public class blueHallwayController extends Controller {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         lblRoomName.setText(business.getRoom(roomID).getRoomName());
+        this.hallucinationImageView.setVisible(false);
     }
 
  
@@ -112,5 +118,47 @@ public class blueHallwayController extends Controller {
     
     
     }
+    
+    @Override
+        public void collideWithImageView (KeyEvent event) {
+            if(player.intersects(player.sceneToLocal(this.hallucinationImageView.localToScene(this.hallucinationImageView.getBoundsInLocal())))){
+                this.hallucinationImageView.setVisible(true);
+                this.dialogueLabel.setText(business.getNPC().generateQuestion());
+            }
 
+        }
+
+    @FXML
+    private void btnOptionA(ActionEvent event) {
+        String answer = "A";
+        if(business.getNPC().checkAnswer(answer) == true){
+            this.dialogueLabel.setText("Thats right!");
+            business.getPlayer().rewardPoints(200);
+        } else{
+            this.dialogueLabel.setText("No.. That's not right..");
+        }
+        
+    }
+
+    @FXML
+    private void btnOptionB(ActionEvent event) {
+        String answer = "B";
+        if(business.getNPC().checkAnswer(answer) == true){
+            this.dialogueLabel.setText("Thats right!");
+        } else{
+            this.dialogueLabel.setText("No.. That's not right..");
+        }
+    }
+
+    @FXML
+    private void btnOptionC(ActionEvent event) {
+        String answer = "C";
+        if(business.getNPC().checkAnswer(answer) == true){
+            this.dialogueLabel.setText("Thats right!");
+        } else{
+            this.dialogueLabel.setText("No.. That's not right..");
+        }
+    }
+
+   
 }
