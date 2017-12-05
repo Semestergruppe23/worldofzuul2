@@ -68,6 +68,8 @@ public class blueHallwayController extends Controller {
     private ImageView hallucinationImageView;
     @FXML
     private Label dialogueLabel;
+    
+    boolean hallucinationAlreadyPoppedUp = false;
 
     /**
      * Initializes the controller class.
@@ -125,7 +127,7 @@ public class blueHallwayController extends Controller {
     
     @Override
         public void collideWithImageView (KeyEvent event) {
-            if(player.intersects(player.sceneToLocal(this.hallucinationImageView.localToScene(this.hallucinationImageView.getBoundsInLocal())))){
+            if(player.intersects(player.sceneToLocal(this.hallucinationImageView.localToScene(this.hallucinationImageView.getBoundsInLocal()))) && this.hallucinationAlreadyPoppedUp == false){
                 this.hallucinationImageView.setVisible(true);
                 this.dialogueLabel.setText(business.getNPC().generateQuestion());
             }
@@ -138,8 +140,12 @@ public class blueHallwayController extends Controller {
         if(business.getNPC().checkAnswer(answer) == true){
             this.dialogueLabel.setText("Thats right!");
             business.getPlayer().rewardPoints(200);
+            this.hallucinationAlreadyPoppedUp = true;
+            this.hallucinationImageView.setVisible(false);
         } else{
             this.dialogueLabel.setText("No.. That's not right..");
+             this.hallucinationAlreadyPoppedUp = true;
+             this.hallucinationImageView.setVisible(false);
         }
         
     }
@@ -149,8 +155,13 @@ public class blueHallwayController extends Controller {
         String answer = "B";
         if(business.getNPC().checkAnswer(answer) == true){
             this.dialogueLabel.setText("Thats right!");
+            business.getPlayer().rewardPoints(200);
+            this.hallucinationAlreadyPoppedUp = true;
+            this.hallucinationImageView.setVisible(false);
         } else{
             this.dialogueLabel.setText("No.. That's not right..");
+             this.hallucinationAlreadyPoppedUp = true;
+             this.hallucinationImageView.setVisible(false);
         }
     }
 
@@ -159,8 +170,13 @@ public class blueHallwayController extends Controller {
         String answer = "C";
         if(business.getNPC().checkAnswer(answer) == true){
             this.dialogueLabel.setText("Thats right!");
+            business.getPlayer().rewardPoints(200);
+            this.hallucinationAlreadyPoppedUp = true;
+            this.hallucinationImageView.setVisible(false);
         } else{
             this.dialogueLabel.setText("No.. That's not right..");
+             this.hallucinationAlreadyPoppedUp = true;
+             this.hallucinationImageView.setVisible(false);
         }
     }
 
