@@ -134,7 +134,7 @@ public class Controller implements Initializable {
             
 
         if (event.getCode() == KeyCode.W ) {
-            if (player.intersects(player.sceneToLocal(topWall.localToScene(topWall.getBoundsInLocal())))|| player.intersects(player.sceneToLocal(leftWall.localToScene(leftWall.getBoundsInLocal()))) ) {
+            if (player.intersects(player.sceneToLocal(topWall.localToScene(topWall.getBoundsInLocal())))) {
                 // DO NOTHING.
                 
                 timelineW.stop();
@@ -151,7 +151,7 @@ public class Controller implements Initializable {
             }
         } else {
             if (event.getCode() == KeyCode.A ) {
-                if (player.intersects(player.sceneToLocal(leftWall.localToScene(leftWall.getBoundsInLocal()))) ||player.intersects(player.sceneToLocal(topWall.localToScene(topWall.getBoundsInLocal()))) ) {
+                if (player.intersects(player.sceneToLocal(leftWall.localToScene(leftWall.getBoundsInLocal())))) {
                     // DO NOTHI;
                     timelineA.stop();
                  
