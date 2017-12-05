@@ -5,8 +5,6 @@
  */
 package UserInterface;
 
-
-
 import Acquaintance.IItem;
 import static UserInterface.UserInterfaceFacade.business;
 import java.io.IOException;
@@ -54,7 +52,7 @@ public class Controller implements Initializable {
     private ImageView player;
 
     private int roomID = 0;
-   
+
     @FXML
     private ImageView topWall;
     @FXML
@@ -66,27 +64,26 @@ public class Controller implements Initializable {
     @FXML
     private ImageView rightDoor;
     @FXML
-    
+
     private ImageView leftDoor;
     private Label lblRoomName;
-    
+
     public static Room room;
     public static RoomController roomController;
-    
-    
-    
+
     @FXML
     private ListView<IItem> playerInventoryGUI;
 
     @FXML
-    ObservableList<IItem> GUIInventory; 
+    ObservableList<IItem> GUIInventory;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    
-      GUIInventory = FXCollections.observableArrayList((ArrayList)business.getPlayer().getPlayerInventory());
+
+        GUIInventory = FXCollections.observableArrayList((ArrayList) business.getPlayer().getPlayerInventory());
 
     }
 
@@ -119,43 +116,46 @@ public class Controller implements Initializable {
         timelineD.getKeyFrames().add(kf);
     }
 
-    
     // Called on keyPressed.
     @FXML
     private void playerMovement(KeyEvent event) throws IOException {
-    
+        
+         if (event.getCode() == KeyCode.E) {
+                            timelineW.stop();
+                            timelineA.stop();
+                            timelineS.stop();
+                            timelineD.stop();
+                            System.out.println("test");  
+                             }
+
+
         changeRoomRightDoor(event);
         changeRoomBottomDoor(event);
         changeRoomLeftDoor(event);
         changeRoomTopDoor(event);
         this.collideWithImageView(event);
         pickItemUp(event);
- 
-            
 
-        if (event.getCode() == KeyCode.W ) {
+        if (event.getCode() == KeyCode.W) {
             if (player.intersects(player.sceneToLocal(topWall.localToScene(topWall.getBoundsInLocal())))) {
                 // DO NOTHING.
-                
+
                 timelineW.stop();
-           
-               
+
             } else {
                 createTimeLineW();
                 timelineW.play();
                 timelineA.stop();
                 timelineS.stop();
                 timelineD.stop();
-                        
-                
+
             }
         } else {
-            if (event.getCode() == KeyCode.A ) {
+            if (event.getCode() == KeyCode.A) {
                 if (player.intersects(player.sceneToLocal(leftWall.localToScene(leftWall.getBoundsInLocal())))) {
                     // DO NOTHI;
                     timelineA.stop();
-                 
-                
+
                 } else {
                     player.setNodeOrientation(RIGHT_TO_LEFT);
                     createTimeLineA();
@@ -163,8 +163,7 @@ public class Controller implements Initializable {
                     timelineW.stop();
                     timelineD.stop();
                     timelineS.stop();
-                  
-                    
+
                 }
             } else {
                 if (event.getCode() == KeyCode.S) {
@@ -180,7 +179,7 @@ public class Controller implements Initializable {
                     }
 
                 } else {
-                    if (event.getCode() == KeyCode.D ) {
+                    if (event.getCode() == KeyCode.D) {
                         if (player.intersects(player.sceneToLocal(rightWall.localToScene(rightWall.getBoundsInLocal())))) {
                             // DO NOTHING.
 
@@ -193,7 +192,7 @@ public class Controller implements Initializable {
                             timelineW.stop();
                             timelineA.stop();
                         }
-
+                        
                     }
 
                 }
@@ -202,7 +201,6 @@ public class Controller implements Initializable {
         }
     }
 
-    
     // Called on keyReleased. 
     @FXML
     public void stopMove(KeyEvent event) {
@@ -221,101 +219,76 @@ public class Controller implements Initializable {
                 }
             }
         }
-        
-        
-        
-        
-    
+
     }
-    
+
     public void changeRoomRightDoor(KeyEvent event) throws IOException {
-        
+
     }
+
     public void changeRoomLeftDoor(KeyEvent event) throws IOException {
-        
-    
+
     }
-    
+
     public void changeRoomBottomDoor(KeyEvent event) throws IOException {
-        
-    
+
     }
-    
+
     public void changeRoomTopDoor(KeyEvent event) throws IOException {
-        
-   
-        
-        }
-    
-    public void collideWithImageView(KeyEvent event){
-        
+
     }
-    
-    
+
+    public void collideWithImageView(KeyEvent event) {
+
+    }
+
     public void createRooms() throws IOException {
         roomController = new RoomController();
-        
+
         room = new Room("startRoom");
         room.buildroom("startRoom.fxml");
         roomController.addRoom(room);
-        
+
         room = new Room("red");
         room.buildroom("redHallway.fxml");
         roomController.addRoom(room);
-        
+
         room = new Room("black");
         room.buildroom("blackHallway.fxml");
         roomController.addRoom(room);
-        
+
         room = new Room("blue");
         room.buildroom("blueHallway.fxml");
         roomController.addRoom(room);
-        
+
         room = new Room("green");
         room.buildroom("greenHallway.fxml");
         roomController.addRoom(room);
-        
+
         room = new Room("history");
         room.buildroom("historyRoom.fxml");
         roomController.addRoom(room);
-        
+
         room = new Room("janitorRoomDark");
         room.buildroom("janitorRoomDark.fxml");
         roomController.addRoom(room);
-        
+
         room = new Room("janitorRoomLight");
         room.buildroom("janitorRoomLight.fxml");
         roomController.addRoom(room);
-        
+
         room = new Room("math");
         room.buildroom("mathRoom.fxml");
         roomController.addRoom(room);
-        
+
         room = new Room("toilet");
         room.buildroom("toiletRoom.fxml");
         roomController.addRoom(room);
 
     }
-    
 
-public void pickItemUp(KeyEvent event) {
-    
+    public void pickItemUp(KeyEvent event) {
+
+    }
+
 }
-
- 
-}   
-
-
-
-
-
-
-
-
-    
-    
-    
-
-        
-    
-
