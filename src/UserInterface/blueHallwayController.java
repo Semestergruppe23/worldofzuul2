@@ -10,13 +10,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import static javafx.geometry.NodeOrientation.LEFT_TO_RIGHT;
-import static javafx.geometry.NodeOrientation.RIGHT_TO_LEFT;
+
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TitledPane;
@@ -76,17 +72,17 @@ public class blueHallwayController extends Controller {
     
     public void changeRoomRightDoor(KeyEvent event) throws IOException {
         
-       if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))) {
+       if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E) {
             
             
-            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         startStage.setScene(super.roomController.getRoom("janitorRoomDark").getScene());
         startStage.show();
         }
     }
     
     public void changeRoomLeftDoor(KeyEvent event) throws IOException {
-        if (player.intersects(player.sceneToLocal(leftDoor.localToScene(leftDoor.getBoundsInLocal())))) {
+        if (player.intersects(player.sceneToLocal(leftDoor.localToScene(leftDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E) {
            
             
              Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
