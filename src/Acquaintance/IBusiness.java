@@ -30,5 +30,7 @@ public interface IBusiness {
     
     void createFriendlyNPC();
     IFriendlyNPC getFriendlyNPC();
+    
+    boolean enterDoor(IItem item);
 
 }

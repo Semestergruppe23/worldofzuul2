@@ -19,13 +19,9 @@ import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import static javafx.geometry.NodeOrientation.LEFT_TO_RIGHT;
 import static javafx.geometry.NodeOrientation.RIGHT_TO_LEFT;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ProgressBar;
@@ -33,8 +29,6 @@ import javafx.scene.control.TitledPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
 /**
@@ -130,12 +124,12 @@ public class Controller implements Initializable {
     @FXML
     private void playerMovement(KeyEvent event) throws IOException {
     
-            changeRoomRightDoor(event);
-            changeRoomBottomDoor(event);
-            changeRoomLeftDoor(event);
-            changeRoomTopDoor(event);
-            this.collideWithImageView(event);
-            pickItemUp(event);
+        changeRoomRightDoor(event);
+        changeRoomBottomDoor(event);
+        changeRoomLeftDoor(event);
+        changeRoomTopDoor(event);
+        this.collideWithImageView(event);
+        pickItemUp(event);
  
             
 

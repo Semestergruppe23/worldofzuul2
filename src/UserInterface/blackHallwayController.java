@@ -116,9 +116,10 @@ public class blackHallwayController extends Controller {
     public void changeRoomTopDoor(KeyEvent event) throws IOException {
           if (player.intersects(player.sceneToLocal(topDoor.localToScene(topDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
             
-            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         startStage.setScene(super.roomController.getRoom("blue").getScene());
         startStage.show();
+        
     }
     }
 

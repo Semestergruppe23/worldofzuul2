@@ -114,6 +114,11 @@ public class BusinessFacade implements IBusiness {
     public IFriendlyNPC getFriendlyNPC() {
         return friendlyNPC;
     }
+
+    @Override
+    public boolean enterDoor(IItem item) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }
