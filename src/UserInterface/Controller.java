@@ -133,7 +133,6 @@ public class Controller implements Initializable {
                             timelineA.stop();
                             timelineS.stop();
                             timelineD.stop();
-                            System.out.println("test");  
                              }
 
 
