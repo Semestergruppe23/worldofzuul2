@@ -85,7 +85,6 @@ public class BusinessFacade implements IBusiness {
 
     @Override
     public IRoom getRoom(int roomId) {
-        player.setCurrentRoom(rooms.get(roomId));
         return rooms.get(roomId);
     }
 

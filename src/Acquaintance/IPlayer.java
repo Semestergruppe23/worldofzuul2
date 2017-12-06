@@ -48,7 +48,7 @@ public interface IPlayer {
     void addItemToInventory(IItem item);
     void removeItemFromInventory(String name);
     
-    String getCurrentRoom();
+    IRoom getCurrentRoom();
     void setCurrentRoom(IRoom room);
     
     List<IItem> getPlayerInventory();
