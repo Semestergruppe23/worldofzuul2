@@ -54,7 +54,7 @@ public class FriendlyNPC implements IFriendlyNPC {
 
     @Override
     public void setItemToBeFound(String itemName) {
-        
+        this.itemToBeFound = itemName;
     }
     
     
