@@ -20,6 +20,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import static javafx.geometry.NodeOrientation.LEFT_TO_RIGHT;
 import static javafx.geometry.NodeOrientation.RIGHT_TO_LEFT;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ProgressBar;
@@ -27,6 +28,7 @@ import javafx.scene.control.TitledPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 /**
@@ -145,8 +147,10 @@ public class Controller implements Initializable {
         updateListView();
         
         
-       if(business.getPlayer().checkTime() == true){
-            //SKIFT TIL SLUTSKÆRM
+       if(business.getPlayer().checkTime() == false){
+            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            startStage.setScene(roomController.getRoom("endGame").getScene());
+            startStage.show();
         }
         
 
@@ -258,6 +262,10 @@ public class Controller implements Initializable {
 
     public void createRooms() throws IOException {
         roomController = new RoomController();
+        
+        room = new Room("endGame");
+        room.buildroom("GameLostScreen.fxml");
+        roomController.addRoom(room);
 
         room = new Room("startRoom");
         room.buildroom("startRoom.fxml");
