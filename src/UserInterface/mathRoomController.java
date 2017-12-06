@@ -43,9 +43,7 @@ public class mathRoomController extends Controller {
     @FXML
     private ImageView player;
     private int roomID = 1;
-    private int playerX;
-    private int playerY;
-    private int speed = gameConstants.speed;
+ 
     @FXML
     private ImageView topWall;
     @FXML
@@ -60,6 +58,8 @@ public class mathRoomController extends Controller {
     private Label lblRoomName;
     @FXML
     private ImageView waterBottleImageView;
+    @FXML
+    private ImageView lunchBoxImageView;
     
     @FXML
     private ListView playerInventoryGUI;
@@ -87,8 +87,10 @@ public class mathRoomController extends Controller {
     @Override
     public void pickItemUp(KeyEvent event) {
           if (player.intersects(player.sceneToLocal(waterBottleImageView.localToScene(waterBottleImageView.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
-              super.handleItem(business.getItem("Key to exit").getName(), waterBottleImageView);
+              super.handleItem(business.getItem("Water Bottle").getName(), waterBottleImageView);
           }
-
+          else if (player.intersects(player.sceneToLocal(lunchBoxImageView.localToScene(lunchBoxImageView.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
+              super.handleItem(business.getItem("Lunch box").getName(), lunchBoxImageView);
 }
+    }
 }

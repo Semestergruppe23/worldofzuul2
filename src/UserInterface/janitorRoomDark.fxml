@@ -37,7 +37,7 @@
          <children>
             <TitledPane fx:id="playerInventory" alignment="CENTER_RIGHT" animated="false" collapsible="false" layoutX="810.0" layoutY="16.0" text="Inventory">
                <content>
-                  <ListView prefHeight="200.0" prefWidth="200.0" />
+                  <ListView fx:id="playerInventoryGUI" prefHeight="200.0" prefWidth="200.0" />
                </content>
             </TitledPane>
             <TextArea disable="true" editable="false" layoutX="401.0" layoutY="16.0" prefHeight="227.0" prefWidth="399.0" />
