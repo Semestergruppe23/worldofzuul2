@@ -9,6 +9,7 @@ import static UserInterface.UserInterfaceFacade.business;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,6 +18,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TitledPane;
 import javafx.scene.image.ImageView;
@@ -58,6 +60,8 @@ public class redHallwayController extends Controller implements Initializable {
     private ImageView bottomDoor;
     @FXML
     private ImageView leftDoor;
+    @FXML
+    private ListView<?> playerInventoryGUI;
 
    
 
@@ -109,8 +113,13 @@ public class redHallwayController extends Controller implements Initializable {
         
         }
     }
-    
+
+    @FXML
+    private void clickMainMenu(ActionEvent event)
+    {
+        
     }
+}
 
 
     

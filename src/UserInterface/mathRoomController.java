@@ -9,6 +9,7 @@ import static UserInterface.UserInterfaceFacade.business;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -34,8 +35,6 @@ import javafx.stage.Stage;
  */
 public class mathRoomController extends Controller {
 
-    @FXML
-    private TitledPane playerInventory;
     @FXML
     private ProgressBar timer;
     @FXML
@@ -92,5 +91,11 @@ public class mathRoomController extends Controller {
           else if (player.intersects(player.sceneToLocal(lunchBoxImageView.localToScene(lunchBoxImageView.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
               super.handleItem(business.getItem("Lunch box").getName(), lunchBoxImageView);
 }
+    }
+
+    @FXML
+    private void clickMainMenu(ActionEvent event) 
+    {
+        
     }
 }

@@ -48,7 +48,7 @@
             <Button layoutX="314.0" layoutY="63.0" mnemonicParsing="false" onAction="#btnOptionA" text="Answer A" />
             <Button layoutX="313.0" layoutY="114.0" mnemonicParsing="false" onAction="#btnOptionB" text="Answer B" />
             <Button layoutX="313.0" layoutY="168.0" mnemonicParsing="false" onAction="#btnOptionC" text="Answer C" />
-            <Button layoutX="20.0" layoutY="217.0" mnemonicParsing="false" text="Main Menu" />
+            <Button layoutX="20.0" layoutY="217.0" mnemonicParsing="false" onAction="#clickMainMenu" text="Main Menu" />
             <ImageView fx:id="playerIcon" fitHeight="150.0" fitWidth="200.0" layoutX="62.0" layoutY="52.0" pickOnBounds="true">
                <image>
                   <Image url="@images/Featured-Image20.png" />

@@ -9,6 +9,7 @@ import static UserInterface.UserInterfaceFacade.business;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -56,6 +57,8 @@ public class toiletRoomController extends Controller {
     private ImageView leftDoor;
     @FXML
     private Label lblRoomName;
+    @FXML
+    private ListView<?> playerInventoryGUI;
     
     
 
@@ -76,5 +79,10 @@ public class toiletRoomController extends Controller {
         startStage.show();
         }
     }
-    
+
+    @FXML
+    private void clickMainMenu(ActionEvent event) 
+    {
+        
+    }
 }

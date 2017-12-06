@@ -134,6 +134,10 @@ public class blackHallwayController extends Controller {
 
 }
 */
-    
 
+    @FXML
+    private void clickMainMenu(ActionEvent event) 
+    {
+        
+    }
 }

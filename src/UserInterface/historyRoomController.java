@@ -9,6 +9,7 @@ import static UserInterface.UserInterfaceFacade.business;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -18,6 +19,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TitledPane;
@@ -57,6 +59,16 @@ public class historyRoomController extends Controller {
     private Label dialogueLabel; 
     
     private boolean questStarted = false;
+    @FXML
+    private ListView<?> playerInventoryGUI;
+    @FXML
+    private ImageView topWall;
+    @FXML
+    private ImageView leftWall;
+    @FXML
+    private ImageView bottomWall;
+    @FXML
+    private ImageView rightWall;
 
     /**
      * Initializes the controller class.
@@ -103,5 +115,12 @@ public class historyRoomController extends Controller {
             }
               
         }
+
+    @FXML
+    private void clickMainMenu(ActionEvent event) 
+    {
+        
+    }
+
 }
 
