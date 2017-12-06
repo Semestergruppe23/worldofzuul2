@@ -303,7 +303,9 @@ public class Controller implements Initializable {
     public void handleItem(String id, ImageView imageView  ) {
         business.getPlayer().addItemToInventory(business.getItem(id));
            updateListView();
+           if ( business.getItem(id).getCarryable()) {
            imageView.setVisible(false);
+           }
     }
     
     

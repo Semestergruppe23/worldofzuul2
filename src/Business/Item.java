@@ -27,7 +27,7 @@ public class Item implements IItem{
     
     @Override
     public String toString(){
-        return this.name;
+        return this.name + "; Weight: " + this.volume;
     }
 
     @Override
