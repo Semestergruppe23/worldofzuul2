@@ -47,7 +47,7 @@ public class BusinessFacade implements IBusiness {
     }
     
     @Override
-    public void createItem(String id, int volume) {
+    public void createItem(String id, int volume, boolean carryable) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

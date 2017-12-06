@@ -14,7 +14,7 @@ import java.util.List;
 public interface IBusiness {
     
     void injectData(IData data);
-    void createItem(String id, int volume);
+    void createItem(String id, int volume, boolean carryable);
     String pickUpItem(String id);
     String test();
     void createPlayer(String name);
