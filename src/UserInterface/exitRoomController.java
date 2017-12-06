@@ -17,6 +17,7 @@ import static javafx.geometry.NodeOrientation.RIGHT_TO_LEFT;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TitledPane;
 import javafx.scene.image.ImageView;
@@ -41,7 +42,8 @@ public class exitRoomController extends Controller {
     @FXML
     private ImageView player;
 
-
+    @FXML
+    private Label clockLabel;
 
     @FXML
     private ImageView topWall;

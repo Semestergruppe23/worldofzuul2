@@ -51,6 +51,9 @@ public class blackHallwayController extends Controller {
 
     ObservableList<IItem> GUIInventory; 
     private int roomID = 7;
+    
+    @FXML
+    private Label clockLabel;
 
     @FXML
     private ImageView topWall;

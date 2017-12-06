@@ -62,7 +62,8 @@ public class redHallwayController extends Controller implements Initializable {
     private ImageView leftDoor;
     @FXML
     private ListView<?> playerInventoryGUI;
-
+    @FXML
+    private Label clockLabel;
    
 
     /**

@@ -47,6 +47,8 @@ public class janitorRoomDarkController extends Controller {
     @FXML
     private ImageView topWall;
     @FXML
+    private Label clockLabel;
+    @FXML
     private ImageView leftWall;
     @FXML
     private ImageView bottomWall;

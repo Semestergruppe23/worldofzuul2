@@ -72,6 +72,9 @@ public class Controller implements Initializable {
     @FXML
     private ImageView item1;
     
+    @FXML
+    private Label clockLabel;
+    
     
     public static Room room;
     public static RoomController roomController;
@@ -145,6 +148,8 @@ public class Controller implements Initializable {
         this.collideWithImageView(event);
         pickItemUp(event);
         updateListView();
+        updateClockLabel();
+        
         
         
        if(business.getPlayer().checkTime() == false){
@@ -327,5 +332,9 @@ public class Controller implements Initializable {
         GUIInventory = FXCollections.observableArrayList();
         GUIInventory.addAll(business.getPlayer().getPlayerInventory());
         playerInventoryGUI.setItems(GUIInventory);
+    }
+    
+    public void updateClockLabel(){
+        clockLabel.setText("Remaining time: " + (int)business.getPlayer().getRemainingTime());
     }
 }

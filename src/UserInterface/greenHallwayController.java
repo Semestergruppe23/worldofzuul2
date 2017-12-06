@@ -44,7 +44,8 @@ public class greenHallwayController extends Controller {
     @FXML
     private ImageView player;
     private int roomID = 6;
-
+    @FXML
+    private Label clockLabel;
     @FXML
     private ImageView topWall;
     @FXML

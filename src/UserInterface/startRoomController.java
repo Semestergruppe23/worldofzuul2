@@ -59,6 +59,8 @@ public class startRoomController extends Controller {
     private ImageView rightWall;
     @FXML
     private ImageView rightDoor;
+    @FXML
+    private Label clockLabel;
     
     
     @FXML

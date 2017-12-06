@@ -47,7 +47,8 @@ public class historyRoomController extends Controller {
     private int roomID = 2;
     private int playerX;
     private int playerY;
-    
+    @FXML
+    private Label clockLabel;
     @FXML
     private ImageView friendlyNPC; 
 

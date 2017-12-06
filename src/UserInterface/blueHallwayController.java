@@ -61,6 +61,8 @@ public class blueHallwayController extends Controller {
     private ImageView hallucinationImageView;
     @FXML
     private Label dialogueLabel;
+    @FXML
+    private Label clockLabel;
     
     boolean hallucinationAlreadyPoppedUp = false;
     @FXML
