@@ -43,9 +43,7 @@ public class mathRoomController extends Controller {
     @FXML
     private ImageView player;
     private int roomID = 1;
-    private int playerX;
-    private int playerY;
-    private int speed = gameConstants.speed;
+ 
     @FXML
     private ImageView topWall;
     @FXML

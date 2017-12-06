@@ -51,9 +51,7 @@ public class blackHallwayController extends Controller {
 
     ObservableList<IItem> GUIInventory; 
     private int roomID = 7;
-    private int playerX;
-    private int playerY;
-    private int speed = gameConstants.speed;
+
     @FXML
     private ImageView topWall;
     @FXML

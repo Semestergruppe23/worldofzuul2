@@ -45,7 +45,6 @@ public class historyRoomController extends Controller {
     private int roomID = 2;
     private int playerX;
     private int playerY;
-    private int speed = gameConstants.speed;
     
     @FXML
     private ImageView friendlyNPC; 

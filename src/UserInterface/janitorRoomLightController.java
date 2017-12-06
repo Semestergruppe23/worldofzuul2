@@ -42,9 +42,7 @@ public class janitorRoomLightController extends Controller {
     @FXML
     private ImageView player;
     private int roomID = 5;
-    private int playerX;
-    private int playerY;
-    private int speed = gameConstants.speed;
+
     @FXML
     private ImageView topWall;
     @FXML
