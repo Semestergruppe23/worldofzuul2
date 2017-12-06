@@ -73,8 +73,8 @@ public class Player implements IPlayer {
     }
 
     @Override
-    public String getCurrentRoom() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public IRoom getCurrentRoom() {
+       return this.currentRoom;
     }
     
     
