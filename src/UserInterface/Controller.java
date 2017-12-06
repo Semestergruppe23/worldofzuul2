@@ -144,6 +144,11 @@ public class Controller implements Initializable {
         pickItemUp(event);
         updateListView();
         
+        
+       if(business.getPlayer().checkTime() == true){
+            //SKIFT TIL SLUTSKÆRM
+        }
+        
 
         if (event.getCode() == KeyCode.W) {
             if (player.intersects(player.sceneToLocal(topWall.localToScene(topWall.getBoundsInLocal())))) {
