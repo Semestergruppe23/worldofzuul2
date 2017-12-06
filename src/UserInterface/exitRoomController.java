@@ -41,9 +41,7 @@ public class exitRoomController extends Controller {
     @FXML
     private ImageView player;
 
-    private int playerX;
-    private int playerY;
-    private int speed = gameConstants.speed;
+
 
     @FXML
     private ImageView topWall;

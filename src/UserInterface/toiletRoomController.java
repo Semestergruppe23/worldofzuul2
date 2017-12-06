@@ -18,6 +18,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TitledPane;
 import javafx.scene.image.ImageView;
@@ -42,9 +43,7 @@ public class toiletRoomController extends Controller {
     @FXML
     private ImageView player;
     private int roomID = 8;
-    private int playerX;
-    private int playerY;
-    private int speed = gameConstants.speed;
+
     @FXML
     private ImageView topWall;
     @FXML
@@ -57,6 +56,8 @@ public class toiletRoomController extends Controller {
     private ImageView leftDoor;
     @FXML
     private Label lblRoomName;
+    
+    
 
     /**
      * Initializes the controller class.

@@ -42,9 +42,7 @@ public class greenHallwayController extends Controller {
     @FXML
     private ImageView player;
     private int roomID = 6;
-    private int playerX;
-    private int playerY;
-    private int speed = gameConstants.speed;
+
     @FXML
     private ImageView topWall;
     @FXML
