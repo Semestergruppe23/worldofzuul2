@@ -150,7 +150,7 @@ public class blueHallwayController extends Controller {
     @FXML
     private void btnOptionB(ActionEvent event) {
                 if(this.hallucinationAlreadyPoppedUp == false){
-            String answer = "A";
+            String answer = "B";
             if(business.getNPC().checkAnswer(answer) == true){
                 this.dialogueLabel.setText("Thats right!");
                 business.getPlayer().rewardPoints(200);
@@ -167,7 +167,7 @@ public class blueHallwayController extends Controller {
     @FXML
     private void btnOptionC(ActionEvent event) {
         if(this.hallucinationAlreadyPoppedUp == false){
-            String answer = "A";
+            String answer = "C";
             if(business.getNPC().checkAnswer(answer) == true){
                 this.dialogueLabel.setText("Thats right!");
                 business.getPlayer().rewardPoints(200);
