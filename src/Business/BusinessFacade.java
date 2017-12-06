@@ -24,6 +24,7 @@ public class BusinessFacade implements IBusiness {
     private IData data;
     private IPlayer player;
     List<IRoom> rooms = new ArrayList<>();
+    List<IItem> items = new ArrayList<>();
     private INPC npc; 
     private IFriendlyNPC friendlyNPC;
     
@@ -47,8 +48,8 @@ public class BusinessFacade implements IBusiness {
     }
     
     @Override
-    public void createItem(String id, int volume, boolean carryable) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void createItem(String name,String id, int volume, boolean carryable) {
+        this.items.add(new Item(name, id, volume, carryable));
     }
 
     @Override
@@ -61,13 +62,17 @@ public class BusinessFacade implements IBusiness {
       this.data = data;
     }
     
-    public String test(){
-        return "Hello, world!";
-    }
+   
+    
 
     @Override
-    public IItem getItem(String name, String currentRoom) {
-       return getRoom(1).getSpecificItem(name);
+    public IItem getItem(String name) {
+        for(IItem item : this.items){
+            if(item.getName().equals(name)){
+                return item;
+            }
+        }
+        return null;
       
     }
 
@@ -84,20 +89,8 @@ public class BusinessFacade implements IBusiness {
         return rooms.get(roomId);
     }
 
-    @Override
-    public void createItems() {
-        IItem flashlight, keyToExit, keyToJanitorRoom, plant;
-        
-        flashlight = new Item("Flashlight", 10, true);
-        keyToExit = new Item("Key To Exit", 3, true);
-        plant = new Item("Plant", 0, false);
-        
-        /*
-        this.getRoom("Black hallway").putItemsInsideRoom(plant);
-        this.getRoom("Black hallway").putItemsInsideRoom(flashlight);
-        this.getRoom("Black hallway").putItemsInsideRoom(keyToExit);
-        */
-    }
+   
+    
 
     @Override
     public IData getData() 
@@ -119,6 +112,9 @@ public class BusinessFacade implements IBusiness {
     public boolean enterDoor(IItem item) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    public List<IItem> getItemList() {
+        return this.items;
+    }
     
 }

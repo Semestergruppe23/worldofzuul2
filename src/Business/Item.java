@@ -15,11 +15,14 @@ public class Item implements IItem{
     private boolean carryable;
     private String name;
     private int volume;
+    private String description;
+    private String id;
     
-    public Item(String name, int volume, boolean carryable){
+    public Item(String name, String id, int volume, boolean carryable){
         this.carryable = carryable;
-        this.name = name;
+        this.id = id;
         this.volume = volume;
+        this.name = name;
     }
 
     @Override
@@ -35,6 +38,22 @@ public class Item implements IItem{
     @Override
     public int getVolume() {
         return this.volume;
+    }
+
+    @Override
+    public void setText(String description) {
+        this.description = description;
+        
+    }
+
+    @Override
+    public String getText() {
+        return this.description;
+    }
+    
+    @Override
+    public String getID(){
+        return this.id;
     }
 
 

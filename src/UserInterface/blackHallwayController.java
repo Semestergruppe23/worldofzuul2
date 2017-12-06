@@ -124,7 +124,7 @@ public class blackHallwayController extends Controller {
     }
 
 
-        
+        /*
       public void pickItemUp(KeyEvent event) {
           if (player.intersects(player.sceneToLocal(imgKeyToExit.localToScene(imgKeyToExit.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
               business.getPlayer().addItemToInventory(business.getItem("Key To Exit", business.getRoom(roomID).getRoomName()));
@@ -132,10 +132,10 @@ public class blackHallwayController extends Controller {
         playerInventoryGUI.setItems(GUIInventory);
         imgKeyToExit.setDisable(true);
           }
-              
+            
 
 }
-
+*/
     
 
 }

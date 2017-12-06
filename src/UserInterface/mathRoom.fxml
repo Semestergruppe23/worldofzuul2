@@ -35,12 +35,12 @@
       </ImageView>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
          <children>
-            <TitledPane fx:id="playerInventory" alignment="CENTER_RIGHT" animated="false" collapsible="false" layoutX="810.0" layoutY="16.0" text="Inventory">
+            <TitledPane alignment="CENTER_RIGHT" animated="false" collapsible="false" layoutX="810.0" layoutY="16.0" text="Inventory">
                <content>
-                  <ListView prefHeight="200.0" prefWidth="200.0" />
+                  <ListView fx:id="playerInventoryGUI" prefHeight="200.0" prefWidth="200.0" />
                </content>
             </TitledPane>
-            <TextArea disable="true" editable="false" layoutX="401.0" layoutY="16.0" prefHeight="227.0" prefWidth="399.0" />
+            <TextArea disable="true" editable="false" layoutX="400.0" layoutY="16.0" prefHeight="227.0" prefWidth="399.0" />
             <ProgressBar fx:id="timer" layoutY="16.0" prefWidth="200.0" progress="1.0" />
             <Label fx:id="lblRoomName" layoutY="36.0" text="Room:">
                <font>
@@ -123,7 +123,7 @@
                   <Image url="@Images/Clock_sprite_002.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="29.0" fitWidth="11.0" layoutX="426.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="waterBottleImageView" fitHeight="29.0" fitWidth="11.0" layoutX="426.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/aakebq01wsqnkysr1g32.png.resize.710x399.png" />
                </image>

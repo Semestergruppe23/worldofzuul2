@@ -14,6 +14,8 @@ public interface IItem {
     String getName();
     boolean getCarryable();
     int getVolume();
-    
+    void setText(String description);
+    String getText();
+    String getID();
     
 }

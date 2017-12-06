@@ -57,15 +57,7 @@ public class Room implements IRoom {
         }
     }
 
-    @Override
-    public IItem getSpecificItem(String name) {
-        for(IItem items : this.roomItemList){
-            if(items.getName().equals(name)){
-                return items;
-            }
-        }
-        return null;
-    }
+
     
     
     

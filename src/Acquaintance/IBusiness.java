@@ -14,19 +14,24 @@ import java.util.List;
 public interface IBusiness {
     
     void injectData(IData data);
-    void createItem(String id, int volume, boolean carryable);
+    /**
+     * Creates a single item
+     * @param name to identify the item
+     * @param volume the weight of the item
+     * @param carryable whether he can carry the item
+     */
+    void createItem(String name,String id, int volume, boolean carryable);
     String pickUpItem(String id);
-    String test();
     void createPlayer(String name);
     IPlayer getPlayer();
-    IItem getItem(String name, String currentRoom); 
+    IItem getItem(String name); 
     void createRoom(int indexId, String roomName, Boolean locked);
     IRoom getRoom(int roomId);
     IData getData();
     INPC getNPC();
     void createNPC();
+    List<IItem> getItemList();
     
-    void createItems();
     
     void createFriendlyNPC();
     IFriendlyNPC getFriendlyNPC();

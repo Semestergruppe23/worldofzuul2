@@ -41,7 +41,9 @@ public class StartMenuController extends Controller implements Initializable {
     private void btnStartGame(ActionEvent event) throws IOException {
         // createRoom(Index id in arrayList, Room Name, Locked or not)
         business.createPlayer(txtNameInput.getText());
-        business.createItems();
+        business.createItem("Key to exit","exitKey", 2, true);
+        business.createItem("Coffee pot", "coffeepot", 10, true);
+        
         business.createRoom(0, "Start", false);
         business.createRoom(1, "Math Room", false);
         business.createRoom(2, "History Room", false);
@@ -55,7 +57,7 @@ public class StartMenuController extends Controller implements Initializable {
         business.createNPC();
         business.getNPC().fillArraysWithQuestionsAndAnswers();
         business.createFriendlyNPC();
-        //business.getFriendlyNPC().setItemToBeFound("NAVNET PÅ DET ITEM PLAYER SKAL FINDE!");
+      //  business.getFriendlyNPC().setItemToBeFound(business.getItem("coffeepot").getName());
         
 
         super.createRooms();

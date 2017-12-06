@@ -64,15 +64,23 @@ public class Controller implements Initializable {
     @FXML
     private ImageView rightDoor;
     @FXML
-
     private ImageView leftDoor;
     private Label lblRoomName;
 
+    @FXML
+    private ImageView item1;
+    
+    
     public static Room room;
     public static RoomController roomController;
+    
+    @FXML
+    private ImageView item;
+    
+    private String ItemID;
 
     @FXML
-    private ListView<IItem> playerInventoryGUI;
+    private ListView<IItem> playerInventoryGUI = new ListView<>();
 
     @FXML
     ObservableList<IItem> GUIInventory;
@@ -83,7 +91,7 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        GUIInventory = FXCollections.observableArrayList((ArrayList) business.getPlayer().getPlayerInventory());
+       
 
     }
 
@@ -135,6 +143,8 @@ public class Controller implements Initializable {
         changeRoomTopDoor(event);
         this.collideWithImageView(event);
         pickItemUp(event);
+        updateListView();
+        
 
         if (event.getCode() == KeyCode.W) {
             if (player.intersects(player.sceneToLocal(topWall.localToScene(topWall.getBoundsInLocal())))) {
@@ -288,7 +298,20 @@ public class Controller implements Initializable {
     }
 
     public void pickItemUp(KeyEvent event) {
-
+         
     }
+    
+    public void handleItem(String id, ImageView imageView  ) {
+        business.getPlayer().addItemToInventory(business.getItem(id));
+           updateListView();
+           imageView.setVisible(false);
+    }
+    
+    
 
+    public void updateListView() {
+        GUIInventory = FXCollections.observableArrayList();
+        GUIInventory.addAll(business.getPlayer().getPlayerInventory());
+        playerInventoryGUI.setItems(GUIInventory);
+    }
 }

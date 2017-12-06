@@ -18,6 +18,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TitledPane;
 import javafx.scene.image.ImageView;
@@ -57,6 +58,11 @@ public class mathRoomController extends Controller {
     private ImageView bottomDoor;
     @FXML
     private Label lblRoomName;
+    @FXML
+    private ImageView waterBottleImageView;
+    
+    @FXML
+    private ListView playerInventoryGUI;
 
     /**
      * Initializes the controller class.
@@ -76,5 +82,13 @@ public class mathRoomController extends Controller {
         }
     
     }
-    
+     
+     
+    @Override
+    public void pickItemUp(KeyEvent event) {
+          if (player.intersects(player.sceneToLocal(waterBottleImageView.localToScene(waterBottleImageView.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
+              super.handleItem(business.getItem("Key to exit").getName(), waterBottleImageView);
+          }
+
+}
 }

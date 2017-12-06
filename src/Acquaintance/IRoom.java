@@ -18,6 +18,6 @@ public interface IRoom {
     List<IItem> getItemsInRoom();
     void putItemsInsideRoom(IItem item);
     void removeItemFromRoom(IItem item);
-    IItem getSpecificItem(String name);
+    
     
 }

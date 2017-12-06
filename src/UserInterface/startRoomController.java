@@ -21,6 +21,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TitledPane;
 import javafx.scene.image.ImageView;
@@ -57,6 +58,12 @@ public class startRoomController extends Controller {
     private ImageView rightWall;
     @FXML
     private ImageView rightDoor;
+    
+    @FXML
+    private ImageView item1;
+    
+    @FXML
+    private ListView playerInventoryGUI;
 
  public void changeRoomRightDoor(KeyEvent event) throws IOException {
      
