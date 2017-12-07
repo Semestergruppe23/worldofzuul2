@@ -17,11 +17,11 @@ import java.util.ArrayList;
  */
 public class FriendlyNPC implements IFriendlyNPC {
 
-    private String itemToBeFound;
+    private String itemToBeFound = "";
     
     private String questString = "Hey you! \n You look lost.. Can't get out eh? \n"
             + "Tell you what, i will lend you my key to the exit, if you fetch something for me "
-            + "\nI need " + this.itemToBeFound + ", for my studies. \nIt's somewhere around here\n"
+            + "\nI need my " + this.itemToBeFound + ", for my studies. \nIt's somewhere around here\n"
             + "You may have to get creative with finding it!";
     private String completedQuestString = "Thank you so much!\nI needed that!\nHere is the key, you earned it!";
     private String stillWaitingString = "Im still waiting for that " + this.itemToBeFound +
@@ -31,7 +31,7 @@ public class FriendlyNPC implements IFriendlyNPC {
     public String getQuestString() {
         return this.questString;
     }
-
+    
     @Override
     public  String getStillWaitingString(){
         return this.stillWaitingString; 
