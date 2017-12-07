@@ -41,16 +41,18 @@ public class StartMenuController extends Controller implements Initializable {
     private void btnStartGame(ActionEvent event) throws IOException {
         // createRoom(Index id in arrayList, Room Name, Locked or not)
         business.createPlayer(txtNameInput.getText());
-        business.createItem("Key to exit","exitKey", 2, true);
+        business.createItem("Key to exit","exitKey", 2, true); // Don't put it anywhere, given out by the friendly NPC!
         business.createItem("Coffee pot", "coffeepot", 10, true);
         business.createItem("Water Bottle", "waterBottle", 10, true);
         business.createItem("Lunch box", "lunchBox", 0, false);
-        business.createItem("Mobile phone", "mobilePhone", 0, false);
+        business.createItem("Mobile Phone", "mobilePhone", 0, false);
         business.getItem("Mobile Phone").setText("Insert text");
         business.createItem("Calender", "calender", 0, false);
         business.getItem("Calender").setText("");
         business.getItem("Lunch box").setText("");
         business.createItem("Broom", "broom", 5, true);
+        business.createItem("History Book", "historyBook", 10, true);
+        business.getItem("History Book").setText("The book needed by the professor. You must get it to him, quick!");
         business.createRoom(0, "Start", false);
         business.createRoom(1, "Math Room", false);
         business.createRoom(2, "History Room", false);
@@ -64,7 +66,8 @@ public class StartMenuController extends Controller implements Initializable {
         business.createNPC();
         business.getNPC().fillArraysWithQuestionsAndAnswers();
         business.createFriendlyNPC();
-        //business.getFriendlyNPC().setItemToBeFound(business.getItem("coffeepot").getName());
+        business.getFriendlyNPC().setItemToBeFound("History Book");
+        
         
 
         super.createRooms();

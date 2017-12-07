@@ -45,6 +45,7 @@
                   <Image url="@images/Featured-Image20.png" />
                </image></ImageView>
             <Button layoutX="118.0" layoutY="217.0" mnemonicParsing="false" text="Help" />
+            <Label fx:id="clockLabel" layoutX="176.0" layoutY="217.0" prefHeight="25.0" prefWidth="202.0" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
