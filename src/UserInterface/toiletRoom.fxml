@@ -69,6 +69,11 @@
                   <Image url="@Images/door.png" />
                </image>
             </ImageView>
+            <ImageView fx:id="historyBookImageView" fitHeight="25.0" fitWidth="38.0" layoutX="679.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/redbook.png" />
+               </image>
+            </ImageView>
          </children></AnchorPane>
    </children>
 </GridPane>

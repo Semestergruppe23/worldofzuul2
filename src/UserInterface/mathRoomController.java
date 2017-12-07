@@ -91,7 +91,7 @@ public class mathRoomController extends Controller {
           }
           else if (player.intersects(player.sceneToLocal(lunchBoxImageView.localToScene(lunchBoxImageView.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
               super.handleItem(business.getItem("Lunch box").getName(), lunchBoxImageView);
-}
+          }
     }
 
     @FXML

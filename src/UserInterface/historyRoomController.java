@@ -109,7 +109,7 @@ public class historyRoomController extends Controller {
                         this.dialogueLabel.setText(business.getFriendlyNPC().getStillWaitingString());
                         } else if(business.getFriendlyNPC().checkIfPlayerHasItem(business.getPlayer()) == true){
                             this.dialogueLabel.setText(business.getFriendlyNPC().getCompletedQuestString());
-                            //Her skal nøglen gives til playeren 
+                            business.getPlayer().addItemToInventory(business.getItem("Key to exit"));
                         }
                     }
                 }

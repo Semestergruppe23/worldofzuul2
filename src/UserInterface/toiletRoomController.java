@@ -60,6 +60,8 @@ public class toiletRoomController extends Controller {
     private Label lblRoomName;
     @FXML
     private ListView<?> playerInventoryGUI;
+    @FXML
+    private ImageView historyBookImageView;
     
     
 
@@ -80,6 +82,14 @@ public class toiletRoomController extends Controller {
         startStage.show();
         }
     }
+     
+     
+    @Override
+    public void pickItemUp(KeyEvent event) {
+          if (player.intersects(player.sceneToLocal(historyBookImageView.localToScene(historyBookImageView.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
+              super.handleItem(business.getItem("History Book").getName(), historyBookImageView);
+          }
+    } 
 
     @FXML
     private void clickMainMenu(ActionEvent event) 
