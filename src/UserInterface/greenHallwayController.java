@@ -105,7 +105,7 @@ public class greenHallwayController extends Controller {
     
          if (player.intersects(player.sceneToLocal(topDoor.localToScene(topDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        startStage.setScene(super.roomController.getRoom("black").getScene());
+        startStage.setScene(super.roomController.getRoom("red").getScene());
         startStage.show();
    
         
