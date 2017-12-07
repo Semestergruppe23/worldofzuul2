@@ -41,7 +41,7 @@ public class StartMenuController extends Controller implements Initializable {
     private void btnStartGame(ActionEvent event) throws IOException {
         // createRoom(Index id in arrayList, Room Name, Locked or not)
         business.createPlayer(txtNameInput.getText());
-        business.createItem("Key to exit","exitKey", 2, true);
+        business.createItem("Key to exit","exitKey", 2, true); // Don't put it anywhere, given out by the friendly NPC!
         business.createItem("Coffee pot", "coffeepot", 10, true);
         business.createItem("Water Bottle", "waterBottle", 10, true);
         business.createItem("Lunch box", "lunchBox", 0, false);

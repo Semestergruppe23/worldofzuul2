@@ -146,6 +146,7 @@ public class blueHallwayController extends Controller {
                 this.hallucinationImageView.setVisible(false);
             } else{
                 this.dialogueLabel.setText("No.. That's not right..");
+                business.getPlayer().removeTime(30);
                 this.hallucinationAlreadyPoppedUp = true;
                 this.hallucinationImageView.setVisible(false);
               }
@@ -164,6 +165,7 @@ public class blueHallwayController extends Controller {
                 this.hallucinationImageView.setVisible(false);
             } else{
                 this.dialogueLabel.setText("No.. That's not right..");
+                business.getPlayer().removeTime(30);
                 this.hallucinationAlreadyPoppedUp = true;
                 this.hallucinationImageView.setVisible(false);
               }
@@ -181,6 +183,7 @@ public class blueHallwayController extends Controller {
                 this.hallucinationImageView.setVisible(false);
             } else{
                 this.dialogueLabel.setText("No.. That's not right..");
+                business.getPlayer().removeTime(30);
                 this.hallucinationAlreadyPoppedUp = true;
                 this.hallucinationImageView.setVisible(false);
               }

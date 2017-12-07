@@ -84,7 +84,7 @@
                   <Image url="@Images/door.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="hallucinationImageView" fitHeight="57.0" fitWidth="44.0" layoutX="655.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="hallucinationImageView" fitHeight="86.0" fitWidth="65.0" layoutX="654.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/ghosti.png" />
                </image>
