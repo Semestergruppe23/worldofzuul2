@@ -54,7 +54,8 @@ public class janitorRoomDarkController extends Controller {
     private ImageView leftDoor;
     @FXML
     private Label lblRoomName;
-
+    @FXML
+    private ImageView broomImageView;
     /**
      * Initializes the controller class.
      */

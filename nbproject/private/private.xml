@@ -2,6 +2,37 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/Acquaintance/IUserInterface.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/UserInterface/startRoomController.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/UserInterface/redHallwayController.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/UserInterface/greenHallwayController.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/Acquaintance/IData.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/Acquaintance/IItem.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/UserInterface/StartMenuController.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/Business/BusinessFacade.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/Business/FriendlyNPC.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/Acquaintance/IRoom.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/UserInterface/Room.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/UserInterface/historyRoomController.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/Acquaintance/INPC.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/UserInterface/janitorRoomDarkController.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/UserInterface/blackHallwayController.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/Acquaintance/IBusiness.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/UserInterface/mathRoomController.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/Acquaintance/IFriendlyNPC.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/Acquaintance/IPlayer.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/UserInterface/Controller.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/UserInterface/RoomController.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/UserInterface/blackHallway.fxml</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/UserInterface/toiletRoomController.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/UserInterface/blueHallwayController.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/UserInterface/UserInterfaceFacade.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/Business/Player.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/Business/Item.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/UserInterface/exitRoomController.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/Business/NPC.java</file>
+            <file>file:/C:/Users/micha/Documents/worldofzuul2/src/Business/Room.java</file>
+        </group>
     </open-files>
 </project-private>
