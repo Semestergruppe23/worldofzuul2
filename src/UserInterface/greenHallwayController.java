@@ -90,7 +90,7 @@ public class greenHallwayController extends Controller {
             System.out.println("Room is locked!");
         }
         // If the Locked boolean is false, then the room is unlocked and you can enter.
-        else if(business.getRoom(9).getLocked() == false) 
+        else if(player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E && business.getRoom(9).getLocked() == false) 
         {
             Parent startParent = FXMLLoader.load(getClass().getResource("exitRoom.fxml"));
             Scene startScene = new Scene(startParent);
