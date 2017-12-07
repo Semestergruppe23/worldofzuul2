@@ -9,6 +9,7 @@ import static UserInterface.UserInterfaceFacade.business;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -43,7 +44,8 @@ public class toiletRoomController extends Controller {
     @FXML
     private ImageView player;
     private int roomID = 8;
-
+    @FXML
+    private Label clockLabel;
     @FXML
     private ImageView topWall;
     @FXML
@@ -57,7 +59,14 @@ public class toiletRoomController extends Controller {
     @FXML
     private Label lblRoomName;
     @FXML
+<<<<<<< HEAD
     private ImageView idCardImageView;
+=======
+    private ListView<?> playerInventoryGUI;
+    @FXML
+    private ImageView historyBookImageView;
+    
+>>>>>>> ecaa7dfc1dd5651f65947fda7eca163f40dfbc8a
     
 
     /**
@@ -77,6 +86,7 @@ public class toiletRoomController extends Controller {
         startStage.show();
         }
     }
+<<<<<<< HEAD
          
     @Override
     public void pickItemUp(KeyEvent event) {
@@ -86,3 +96,20 @@ public class toiletRoomController extends Controller {
        
     }
 }
+=======
+     
+     
+    @Override
+    public void pickItemUp(KeyEvent event) {
+          if (player.intersects(player.sceneToLocal(historyBookImageView.localToScene(historyBookImageView.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
+              super.handleItem(business.getItem("History Book").getName(), historyBookImageView);
+          }
+    } 
+
+    @FXML
+    private void clickMainMenu(ActionEvent event) 
+    {
+        
+    }
+}
+>>>>>>> ecaa7dfc1dd5651f65947fda7eca163f40dfbc8a

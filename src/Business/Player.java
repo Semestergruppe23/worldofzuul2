@@ -47,6 +47,13 @@ public class Player implements IPlayer {
     }
     
     @Override
+    public long getRemainingTime(){
+        long timeWhenChecked = System.currentTimeMillis() / 1000;
+        long remainingTime = this.totalGameTime - (timeWhenChecked - this.startTimeInSeconds);
+        return remainingTime; 
+    }
+    
+    @Override
     public boolean checkTime(){ //Checks whether the time of the current game is larger than the specified total game time
         if((System.currentTimeMillis()/ 1000) - this.startTimeInSeconds > this.totalGameTime){  // Checks if (current time - startime) is larger than the game time
             return false; //If the game is over

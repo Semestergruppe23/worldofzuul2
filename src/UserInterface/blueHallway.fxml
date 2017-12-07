@@ -41,13 +41,24 @@
             <Button layoutX="314.0" layoutY="63.0" mnemonicParsing="false" onAction="#btnOptionA" text="Answer A" />
             <Button layoutX="313.0" layoutY="114.0" mnemonicParsing="false" onAction="#btnOptionB" text="Answer B" />
             <Button layoutX="313.0" layoutY="168.0" mnemonicParsing="false" onAction="#btnOptionC" text="Answer C" />
+<<<<<<< HEAD
             <Button layoutX="14.0" layoutY="217.0" mnemonicParsing="false" text="Main Menu" />
             <ImageView fx:id="playerIcon" fitHeight="163.0" fitWidth="211.0" layoutX="14.0" layoutY="39.0" pickOnBounds="true">
+=======
+            <Button layoutX="20.0" layoutY="217.0" mnemonicParsing="false" onAction="#clickMainMenu" text="Main Menu" />
+            <ImageView fx:id="playerIcon" fitHeight="150.0" fitWidth="200.0" layoutX="62.0" layoutY="52.0" pickOnBounds="true">
+>>>>>>> ecaa7dfc1dd5651f65947fda7eca163f40dfbc8a
                <image>
                   <Image url="@Images/bluehallwaymap.png" />
                </image></ImageView>
+<<<<<<< HEAD
             <Button layoutX="108.0" layoutY="217.0" mnemonicParsing="false" text="Help" />
             <Label fx:id="dialogueLabel" layoutX="397.0" layoutY="14.0" prefHeight="226.0" prefWidth="405.0" />
+=======
+            <Button layoutX="118.0" layoutY="217.0" mnemonicParsing="false" text="Help" />
+            <Label fx:id="dialogueLabel" layoutX="400.0" layoutY="14.0" prefHeight="226.0" prefWidth="405.0" />
+            <Label fx:id="clockLabel" layoutX="178.0" layoutY="217.0" prefHeight="25.0" prefWidth="202.0" />
+>>>>>>> ecaa7dfc1dd5651f65947fda7eca163f40dfbc8a
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
@@ -81,7 +92,7 @@
                   <Image url="@Images/door.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="hallucinationImageView" fitHeight="57.0" fitWidth="44.0" layoutX="655.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="hallucinationImageView" fitHeight="86.0" fitWidth="65.0" layoutX="654.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/ghosti.png" />
                </image>
