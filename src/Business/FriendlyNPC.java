@@ -17,25 +17,29 @@ import java.util.ArrayList;
  */
 public class FriendlyNPC implements IFriendlyNPC {
 
-    private String itemToBeFound = "";
+    String itemToBeFound;
+    
+    String questString = "Hey you! \n You look lost.. Can't get out eh? \n"
+            + "Tell you what, i will lend you my key to the exit, if you fetch something for me "
+            + "\nI need " + this.itemToBeFound + ", for my studies. \nIt's somewhere around here\n"
+            + "You may have to get creative with finding it!";
+    String completedQuestString = "Thank you so much!\nI needed that!\nHere is the key, you earned it!";
+    String stillWaitingString = "Im still waiting for that " + this.itemToBeFound +
+            "\nHurry up a bit will you?";
     
     @Override
     public String getQuestString() {
-        return "Hey you! \n You look lost.. Can't get out eh? \n"
-            + "Tell you what, i will lend you my key to the exit, if you fetch something for me "
-            + "\nI need my " + this.itemToBeFound + ", for my studies. \nIt's somewhere around here\n"
-            + "You may have to get creative with finding it!";
+        return this.questString;
     }
-    
+
     @Override
     public  String getStillWaitingString(){
-        return "Im still waiting for that " + this.itemToBeFound +
-            "\nHurry up a bit will you?"; 
+        return this.stillWaitingString; 
     }
     
     @Override
     public String getCompletedQuestString() {
-        return "Thank you so much!\nI needed that!\nHere is the key, you earned it!";
+        return this.completedQuestString;
     }
 
     @Override

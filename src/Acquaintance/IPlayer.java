@@ -43,12 +43,6 @@ public interface IPlayer {
      * @return the name of the player
      */
     String getName();
-    
-    /**
-     * 
-     * @return the remaining seconds of the game in seconds
-     */
-    long getRemainingTime();
     int getScore();
     
     void addItemToInventory(IItem item);

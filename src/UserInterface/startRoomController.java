@@ -12,7 +12,6 @@ import java.util.ResourceBundle;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -59,9 +58,9 @@ public class startRoomController extends Controller {
     private ImageView rightWall;
     @FXML
     private ImageView rightDoor;
-    @FXML
-    private Label clockLabel;
     
+    @FXML
+    private ImageView item1;
     
     @FXML
     private ListView playerInventoryGUI;
@@ -79,9 +78,5 @@ public class startRoomController extends Controller {
         }
     }
 
-    @FXML
-    private void clickMainMenu(ActionEvent event) 
-    {
-        
-    }
+
 }

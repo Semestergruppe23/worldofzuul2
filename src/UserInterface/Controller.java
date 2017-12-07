@@ -20,7 +20,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import static javafx.geometry.NodeOrientation.LEFT_TO_RIGHT;
 import static javafx.geometry.NodeOrientation.RIGHT_TO_LEFT;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ProgressBar;
@@ -28,7 +27,6 @@ import javafx.scene.control.TitledPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
 /**
@@ -71,9 +69,6 @@ public class Controller implements Initializable {
 
     @FXML
     private ImageView item1;
-    
-    @FXML
-    private Label clockLabel;
     
     
     public static Room room;
@@ -148,14 +143,10 @@ public class Controller implements Initializable {
         this.collideWithImageView(event);
         pickItemUp(event);
         updateListView();
-        updateClockLabel();
         
         
-        
-       if(business.getPlayer().checkTime() == false){
-            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(roomController.getRoom("endGame").getScene());
-            startStage.show();
+       if(business.getPlayer().checkTime() == true){
+            //SKIFT TIL SLUTSKÆRM
         }
         
 
@@ -267,10 +258,6 @@ public class Controller implements Initializable {
 
     public void createRooms() throws IOException {
         roomController = new RoomController();
-        
-        room = new Room("endGame");
-        room.buildroom("GameLostScreen.fxml");
-        roomController.addRoom(room);
 
         room = new Room("startRoom");
         room.buildroom("startRoom.fxml");
@@ -332,9 +319,5 @@ public class Controller implements Initializable {
         GUIInventory = FXCollections.observableArrayList();
         GUIInventory.addAll(business.getPlayer().getPlayerInventory());
         playerInventoryGUI.setItems(GUIInventory);
-    }
-    
-    public void updateClockLabel(){
-        clockLabel.setText("Remaining time: " + (int)business.getPlayer().getRemainingTime());
     }
 }

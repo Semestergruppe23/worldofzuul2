@@ -43,26 +43,17 @@
             <Button layoutX="314.0" layoutY="63.0" mnemonicParsing="false" text="Answer A" />
             <Button layoutX="313.0" layoutY="114.0" mnemonicParsing="false" text="Answer B" />
             <Button layoutX="313.0" layoutY="168.0" mnemonicParsing="false" text="Answer C" />
-<<<<<<< HEAD
             <Button layoutX="14.0" layoutY="217.0" mnemonicParsing="false" text="Main Menu" />
             <ImageView fx:id="playerIcon" fitHeight="163.0" fitWidth="211.0" layoutX="14.0" layoutY="39.0" pickOnBounds="true">
-=======
-            <Button layoutX="20.0" layoutY="217.0" mnemonicParsing="false" onAction="#clickMainMenu" text="Main Menu" />
-            <ImageView fx:id="playerIcon" fitHeight="150.0" fitWidth="200.0" layoutX="62.0" layoutY="52.0" pickOnBounds="true">
->>>>>>> ecaa7dfc1dd5651f65947fda7eca163f40dfbc8a
                <image>
                   <Image url="@Images/toiletmap.png" />
                </image></ImageView>
             <Button layoutX="118.0" layoutY="217.0" mnemonicParsing="false" text="Help" />
-<<<<<<< HEAD
             <Label fx:id="dialogueLabel" alignment="TOP_LEFT" layoutX="388.0" layoutY="17.0" prefHeight="226.0" prefWidth="418.0">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-=======
-            <Label fx:id="clockLabel" layoutX="177.0" layoutY="217.0" prefHeight="25.0" prefWidth="202.0" />
->>>>>>> ecaa7dfc1dd5651f65947fda7eca163f40dfbc8a
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
@@ -81,15 +72,9 @@
                   <Image url="@Images/door.png" />
                </image>
             </ImageView>
-<<<<<<< HEAD
             <ImageView fx:id="idCardImageView" fitHeight="35.0" fitWidth="65.0" layoutX="692.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/Security_Card.png" />
-=======
-            <ImageView fx:id="historyBookImageView" fitHeight="25.0" fitWidth="38.0" layoutX="679.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/redbook.png" />
->>>>>>> ecaa7dfc1dd5651f65947fda7eca163f40dfbc8a
                </image>
             </ImageView>
          </children></AnchorPane>
