@@ -56,8 +56,7 @@ public class toiletRoomController extends Controller {
     private ImageView leftDoor;
     @FXML
     private Label lblRoomName;
-    @FXML
-    private ImageView idCardImageView;
+    
     
 
     /**
@@ -77,12 +76,5 @@ public class toiletRoomController extends Controller {
         startStage.show();
         }
     }
-         
-    @Override
-    public void pickItemUp(KeyEvent event) {
-          if (player.intersects(player.sceneToLocal(idCardImageView.localToScene(idCardImageView.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
-              super.handleItem(business.getItem("ID-card").getName(), idCardImageView);
-          }
-       
-    }
+    
 }
