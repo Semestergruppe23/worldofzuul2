@@ -31,7 +31,7 @@ import javafx.stage.Stage;
  *
  * @author Jonas
  */
-public class exitRoomController extends Controller {
+public class exitRoomController {
 
     @FXML
     private TitledPane playerInventory;
@@ -65,7 +65,7 @@ public class exitRoomController extends Controller {
     /**
      * Initializes the controller class.
      */
-    @Override
+    
     public void initialize(URL url, ResourceBundle rb) 
     {
         business.getData().addHighscore(business.getPlayer().getName(), business.getPlayer().getScore());
