@@ -85,7 +85,13 @@ public class greenHallwayController extends Controller {
     }
    
     public void changeRoomBottomDoor(KeyEvent event) throws IOException {
-        if (player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
+        if (player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E && business.getRoom(9).getLocked() == true ) {
+            // Temporary placeholder for room locked message. 
+            System.out.println("Room is locked!");
+        }
+        // If the Locked boolean is false, then the room is unlocked and you can enter.
+        else if(business.getRoom(9).getLocked() == false) 
+        {
             Parent startParent = FXMLLoader.load(getClass().getResource("exitRoom.fxml"));
             Scene startScene = new Scene(startParent);
             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
