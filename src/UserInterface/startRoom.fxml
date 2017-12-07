@@ -68,7 +68,7 @@
             </ImageView>
             <ImageView fitHeight="72.0" fitWidth="107.0" layoutX="576.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Desktop/dj_booth_by_bronyrd-d68iub6.png" />
+                  <Image url="@Images/dj_booth_by_bronyrd-d68iub6%20(1).png" />
                </image>
             </ImageView>
          </children></AnchorPane>

@@ -50,9 +50,14 @@
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <ImageView fx:id="player" fitHeight="72.0" fitWidth="84.0" layoutX="470.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="511.0" fitWidth="1031.0" layoutX="-5.0" pickOnBounds="true">
                <image>
-                  <Image url="@images/Featured-Image20.png" />
+                  <Image url="@../../../../Desktop/exitscreen.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player" fitHeight="72.0" fitWidth="84.0" layoutX="461.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/schoolstudent.png" />
                </image>
             </ImageView>
             <ImageView fx:id="topWall" fitHeight="95.0" fitWidth="1031.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true" />
