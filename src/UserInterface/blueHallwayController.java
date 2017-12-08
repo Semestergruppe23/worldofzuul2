@@ -139,6 +139,7 @@ public class blueHallwayController extends Controller {
 
         }
 
+    @FXML
     private void btnOptionA(ActionEvent event) {
         if(this.hallucinationAlreadyPoppedUp == false){
             String answer = "A";
@@ -157,6 +158,7 @@ public class blueHallwayController extends Controller {
         
     }
 
+    @FXML
     private void btnOptionB(ActionEvent event) {
                 if(this.hallucinationAlreadyPoppedUp == false){
             String answer = "B";
@@ -174,6 +176,7 @@ public class blueHallwayController extends Controller {
         }
     }
 
+    @FXML
     private void btnOptionC(ActionEvent event) {
         if(this.hallucinationAlreadyPoppedUp == false){
             String answer = "C";

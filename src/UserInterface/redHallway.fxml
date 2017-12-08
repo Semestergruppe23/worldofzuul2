@@ -35,7 +35,7 @@
                <font>
                   <Font size="16.0" />
                </font></Label>
-  <Button layoutX="241.0" layoutY="64.0" mnemonicParsing="false" text="Answer A" />
+            <Button layoutX="241.0" layoutY="64.0" mnemonicParsing="false" text="Answer A" />
             <Button layoutX="241.0" layoutY="115.0" mnemonicParsing="false" text="Answer B" />
             <Button layoutX="241.0" layoutY="166.0" mnemonicParsing="false" text="Answer C" />
             <Button layoutX="20.0" layoutY="217.0" mnemonicParsing="false"  text="Main Menu" />

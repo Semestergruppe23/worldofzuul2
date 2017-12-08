@@ -39,9 +39,9 @@
                <font>
                   <Font size="16.0" />
                </font></Label>
-            <Button layoutX="241.0" layoutY="64.0" mnemonicParsing="false" text="Answer A" />
-            <Button layoutX="241.0" layoutY="115.0" mnemonicParsing="false" text="Answer B" />
-            <Button layoutX="241.0" layoutY="166.0" mnemonicParsing="false" text="Answer C" />
+            <Button layoutX="241.0" layoutY="64.0" mnemonicParsing="false"  onAction="#btnOptionA" text="Answer A" />
+            <Button layoutX="241.0" layoutY="115.0" mnemonicParsing="false" onAction="#btnOptionB" text="Answer B" />
+            <Button layoutX="241.0" layoutY="166.0" mnemonicParsing="false" onAction="#btnOptionC" text="Answer C" />
             <Button layoutX="20.0" layoutY="217.0" mnemonicParsing="false" onAction="#clickMainMenu" text="Main Menu" />
             <ImageView fx:id="playerIcon" fitHeight="160.0" fitWidth="215.0" layoutX="20.0" layoutY="49.0" pickOnBounds="true">
                <image>
