@@ -165,6 +165,18 @@ public class toiletRoomController extends Controller {
                 this.hallucinationImageView.setVisible(false);
               }
         }
+        
+        
+        
+    }
+    
+    public void popup(KeyEvent event) {
+     if (player.intersects(player.sceneToLocal(leftDoor.localToScene(leftDoor.getBoundsInLocal())))) {
+         super.popupBox(popUp, popUpText);
+     } else {
+         popUp.setOpacity(0);
+         popUpText.setOpacity(0);
+     }
     }
 
 

@@ -123,6 +123,30 @@ public class greenHallwayController extends Controller {
     {
         
     }
+    
+    
+    public void popup(KeyEvent event) {
+     if (player.intersects(player.sceneToLocal(topDoor.localToScene(topDoor.getBoundsInLocal())))) {
+         super.popupBox(popUp, popUpText);
+     } else {
+         popUp.setOpacity(0);
+         popUpText.setOpacity(0);
+     }
+     
+      if (player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))) {
+         super.popupBox(popUp, popUpText);
+     } else {
+         popUp.setOpacity(0);
+         popUpText.setOpacity(0);
+     }
+      
+       if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))) {
+         super.popupBox(popUp, popUpText);
+     } else {
+         popUp.setOpacity(0);
+         popUpText.setOpacity(0);
+     }
+    }
 
 
 }
