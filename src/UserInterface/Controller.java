@@ -17,6 +17,7 @@ import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import static javafx.geometry.NodeOrientation.LEFT_TO_RIGHT;
@@ -380,4 +381,14 @@ public class Controller implements Initializable {
         
     }
     
+    
+    public void dropItem() {
+        business.getPlayer().removeItemFromInventory(this.playerInventoryGUI.getSelectionModel().getSelectedItem());
+        updateListView();
+    }
+    
+        @FXML
+    private void dropItem(ActionEvent event) {
+       dropItem();
+    }
 }

@@ -116,9 +116,6 @@ public class mathRoomController extends Controller {
 
 }
 
-    @FXML
-    private void dropItem(ActionEvent event) {
-    }
 
     @FXML
     private void useItem(ActionEvent event) {
