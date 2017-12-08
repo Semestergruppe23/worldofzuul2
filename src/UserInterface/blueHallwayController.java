@@ -231,4 +231,13 @@ public void popup(KeyEvent event) {
      
 }
 
+
+    @FXML
+    private void dropItem(ActionEvent event) {
+    }
+
+    @FXML
+    private void useItem(ActionEvent event) {
+    }
+
 }

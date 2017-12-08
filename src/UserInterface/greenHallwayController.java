@@ -147,6 +147,15 @@ public class greenHallwayController extends Controller {
          popUpText.setOpacity(0);
      }
     }
+    
+    
+        @FXML
+    private void dropItem(ActionEvent event) {
+    }
+
+    @FXML
+    private void useItem(ActionEvent event) {
+    }
 
 
 }
