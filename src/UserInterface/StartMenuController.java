@@ -16,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -29,6 +30,8 @@ public class StartMenuController extends Controller implements Initializable {
     private IBusiness business;
     @FXML
     private TextField txtNameInput;
+    @FXML
+    private Label characterText;
     
  
 
@@ -39,6 +42,9 @@ public class StartMenuController extends Controller implements Initializable {
 
     @FXML
     private void btnStartGame(ActionEvent event) throws IOException {
+          if (txtNameInput.getText().isEmpty()) {
+              characterText.setText("Please enter a name!");
+        } else {
         // createRoom(Index id in arrayList, Room Name, Locked or not)
         business.createPlayer(txtNameInput.getText());
         business.createItem("Key to exit","exitKey", 2, true); // Don't put it anywhere, given out by the friendly NPC!
@@ -75,9 +81,12 @@ public class StartMenuController extends Controller implements Initializable {
 
         super.createRooms();
         
+ 
+        
         Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         startStage.setScene(super.roomController.getRoom("startRoom").getScene());
         startStage.show();
+    }
     }
 
     @FXML
