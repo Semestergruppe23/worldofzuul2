@@ -372,6 +372,7 @@ public class Controller implements Initializable {
             
             ft2.setFromValue(0);
             ft2.setToValue(1);
+            ft2.play();
      
      }
     
