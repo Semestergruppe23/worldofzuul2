@@ -100,7 +100,7 @@ public class historyRoomController extends Controller {
 
     
     }
-//MANGLER STADIG AT HANDE NØGLEN OVER TIL PLAYEREN
+
     @Override
         public void collideWithImageView (KeyEvent event) {
             if(player.intersects(player.sceneToLocal(this.friendlyNPC.localToScene(this.friendlyNPC.getBoundsInLocal())))){
@@ -114,6 +114,7 @@ public class historyRoomController extends Controller {
                         } else if(business.getFriendlyNPC().checkIfPlayerHasItem(business.getPlayer()) == true){
                             this.dialogueLabel.setText(business.getFriendlyNPC().getCompletedQuestString());
                             business.getPlayer().addItemToInventory(business.getItem("Key to exit"));
+                            business.getRoom(9).setLocked(false);
                             business.getPlayer().removeItemFromInventory("History Book");
                         }
                     }
@@ -127,8 +128,17 @@ public class historyRoomController extends Controller {
     {
         
     }
+    
+    
+    public void popup(KeyEvent event) {
+     if (player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))) {
+         super.popupBox(popUp, popUpText);
+     } else {
+         popUp.setOpacity(0);
+         popUpText.setOpacity(0);
+     }
 
 
-
+    }
 }
 

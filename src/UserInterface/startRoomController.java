@@ -82,23 +82,7 @@ public class startRoomController extends Controller {
     }
  public void changeRoomRightDoor(KeyEvent event) throws IOException {
      
-     if(player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))) {
-          FadeTransition ft = new FadeTransition(Duration.millis(200), popUp);
-            FadeTransition ft2 = new FadeTransition(Duration.millis(200), popUpText);
-            
-            ft.setFromValue(0);
-            ft.setToValue(1);
-            ft.play();
-            
-            ft2.setFromValue(0);
-            ft2.setToValue(1);
-            ft2.play();
-     }
-     else 
-     {
-         popUp.setOpacity(0);
-         popUpText.setOpacity(0);
-     }
+     
      
         if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal()))) && event.getCode() == KeyCode.E ) {
             
@@ -121,6 +105,15 @@ public class startRoomController extends Controller {
     private void clickMainMenu(ActionEvent event) 
     {
         
+    }
+    
+    public void popup(KeyEvent event) {
+     if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))) {
+         super.popupBox(popUp, popUpText);
+     } else {
+         popUp.setOpacity(0);
+         popUpText.setOpacity(0);
+     }
     }
 
 
