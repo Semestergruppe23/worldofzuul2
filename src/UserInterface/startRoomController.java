@@ -72,6 +72,9 @@ public class startRoomController extends Controller {
     private Rectangle popUp;
     @FXML
     private Text popUpText;
+    
+    
+    
 
  public void changeRoomRightDoor(KeyEvent event) throws IOException {
      
