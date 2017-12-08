@@ -56,6 +56,21 @@ public class BusinessFacade implements IBusiness {
     public void createNegativeDrinkableItem(String name, String id, int volume, boolean carryable, int amountOfTime){
         this.items.add(new NegativeDrinkableItem(name, id, volume, carryable, amountOfTime)); 
     }
+    
+    @Override
+    public void createPositiveDrinkableItem(String name, String id, int volume, boolean carryable, int amountOfTime){
+        this.items.add(new PositiveDrinkableItem(name, id, volume, carryable, amountOfTime));
+    }
+    
+    @Override
+    public void createWearableItem(String name, String id, int volume, boolean carryable, int volumeIncrease){
+        this.items.add(new WearableItem(name, id, volume, carryable, volumeIncrease));
+    }
+    
+    @Override
+    public void createFlashlightItem(String name, String id, int volume, boolean carryable){
+        this.items.add(new FlashlightItem(name, id, volume, carryable));
+    }
 
     @Override
     public String pickUpItem(String id) {

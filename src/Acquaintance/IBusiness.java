@@ -22,6 +22,10 @@ public interface IBusiness {
      */
     void createItem(String name,String id, int volume, boolean carryable);
     void createNegativeDrinkableItem(String name, String id, int volume, boolean carryable, int amountOfTime);
+    void createPositiveDrinkableItem(String name, String id, int volume, boolean carryable, int amountOfTime);
+    void createWearableItem(String name, String id, int volume, boolean carryable, int volumeIncrease);
+    void createFlashlightItem(String name, String id, int volume, boolean carryable);
+    
     String pickUpItem(String id);
     void createPlayer(String name);
     IPlayer getPlayer();

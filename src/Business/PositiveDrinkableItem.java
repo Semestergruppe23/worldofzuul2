@@ -5,15 +5,27 @@
  */
 package Business;
 
+import Acquaintance.IPlayer;
+
 /**
  *
  * @author Oskar
  */
 public class PositiveDrinkableItem extends Item {
     
-    public PositiveDrinkableItem(String name, String id, int volume, boolean carryable){
-        super(name, id, volume, carryable); 
+    int timeToBeAdded = 0;
+    
+    
+    //Has a extra parameter, so that the time that is removed from the player is decided when the object is initialized
+    public PositiveDrinkableItem(String name, String id, int volume, boolean carryable, int timeToBeAdded){
+        super(name, id, volume, carryable);
+        this.timeToBeAdded = timeToBeAdded;
     }
     
     
+    @Override
+    public void use(IPlayer player){
+        player.removeItemFromInventory(this);
+        player.addTime(this.timeToBeAdded);
+    }
 }

@@ -64,7 +64,7 @@ public interface IPlayer {
     
     List<IItem> getPlayerInventory();
     
-    boolean checkIfPlayerHasRoom();
+    boolean checkIfPlayerHasRoom(IItem item);
     
     /**
      * 
@@ -75,4 +75,14 @@ public interface IPlayer {
     void removeItemFromInventory(IItem item);
     
     boolean checkIfPlayerHasItem(String name);
+    
+    
+    void increaseInventory(int increaseAmount);
+    
+    boolean getFlashlightUsed();
+    
+    void setFlashlightUsed(boolean used);
+    
+    int getMaxCapacity();
+    int getCurrentVolumeUsed();
 }

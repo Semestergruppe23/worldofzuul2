@@ -60,6 +60,8 @@ public class janitorRoomDarkController extends Controller {
     private Text popUpText;
     @FXML
     private ImageView keyImageView;
+    @FXML
+    private ImageView shadowsImageView;
           
     
           
@@ -88,6 +90,8 @@ public class janitorRoomDarkController extends Controller {
     }
     
     public void popup(KeyEvent event) {
+        
+    
      if (player.intersects(player.sceneToLocal(leftDoor.localToScene(leftDoor.getBoundsInLocal())))) {
          super.popupBox(popUp, popUpText);
      } else {
@@ -103,9 +107,16 @@ public class janitorRoomDarkController extends Controller {
           }
 
           
-}
+    }
     
-    
+    @Override
+    public void collideWithShadows(KeyEvent event){
+        if (player.intersects(player.sceneToLocal(this.shadowsImageView.localToScene(this.shadowsImageView.getBoundsInLocal())))){
+            if (business.getPlayer().getFlashlightUsed()){
+                this.shadowsImageView.setVisible(false);
+            }
+        }
+    }
 
 
 }

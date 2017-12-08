@@ -79,6 +79,9 @@ public class Controller implements Initializable {
     @FXML
     private Label clockLabel;
     
+    @FXML
+    private Label volumeLabel;
+    
     
     public static Room room;
     public static RoomController roomController;
@@ -154,6 +157,8 @@ public class Controller implements Initializable {
         updateListView();
         updateClockLabel();
         popup(event);
+        collideWithShadows(event);
+        updateInventoryVolumeLabel();
         
         
        if(business.getPlayer().checkTime() == false){
@@ -331,6 +336,7 @@ public class Controller implements Initializable {
      * and disables the imageView
      */
     public void handleItem(String id, ImageView imageView  ) {
+
         // check player inventory for item (id)
         if (!business.getPlayer().getPlayerInventory().contains(business.getItem(id))) {
             // add item to player inventory
@@ -360,6 +366,10 @@ public class Controller implements Initializable {
     
     public void updateClockLabel(){
         clockLabel.setText("Remaining time: " + (int)business.getPlayer().getRemainingTime());
+    }
+    
+    public void updateInventoryVolumeLabel(){
+        volumeLabel.setText("Inventory weight: " + business.getPlayer().getCurrentVolumeUsed() + "/" +  business.getPlayer().getMaxCapacity());
     }
     
     public void popupBox(Rectangle popupRectangle, Text popupText) {
@@ -401,10 +411,14 @@ public class Controller implements Initializable {
     }
     
     
-    private void useItem() {
+    public void useItem() {
     business.getItem(this.playerInventoryGUI.getSelectionModel().getSelectedItem().getName()).use(business.getPlayer());
         updateListView(); 
         updateClockLabel();
+    }
+    
+    public void collideWithShadows(KeyEvent event){
+        
     }
     
     

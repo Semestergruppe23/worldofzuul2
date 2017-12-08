@@ -25,8 +25,9 @@ public class Player implements IPlayer {
     private long totalGameTime = 600; //The game time, in seconds
     private int playerPoints = 0; //The player points
     private int totalPoints = 0; 
-    private int maxCapacity = 80;
+    private int maxCapacity = 30;
     private int volumeUsedInInventory = 0;
+    private boolean flashlightUsed = false;
     
     public Player(String name){
         this.name = name;
@@ -88,8 +89,10 @@ public class Player implements IPlayer {
     }
     
     @Override
-    public boolean checkIfPlayerHasRoom(){
-        
+    public boolean checkIfPlayerHasRoom(IItem item){
+        if(this.maxCapacity < this.volumeUsedInInventory + item.getVolume()){
+            return false;
+        }
         return true;
     }
     
@@ -103,7 +106,10 @@ public class Player implements IPlayer {
     @Override
     public void addItemToInventory(IItem item) {
         if(item.getCarryable() == true){
+            if(checkIfPlayerHasRoom(item)){
             this.inventory.add(item);
+            this.volumeUsedInInventory += item.getVolume();
+            }
         }
     }
 
@@ -112,6 +118,7 @@ public class Player implements IPlayer {
         for(IItem itemToBeRemoved : this.inventory){
             if(itemToBeRemoved.getName().equals(name)){
                 this.inventory.remove(itemToBeRemoved);
+                this.volumeUsedInInventory -= itemToBeRemoved.getVolume();
             }
         }
     }
@@ -129,6 +136,7 @@ public class Player implements IPlayer {
             if (buf.equals(item)) {
                 //removing item
                 iterator.remove();
+                this.volumeUsedInInventory -= item.getVolume();
             }
         }
 
@@ -153,4 +161,29 @@ public class Player implements IPlayer {
          }
         return false;
     }   
+    
+    @Override
+    public void increaseInventory(int increaseAmount) {
+        this.maxCapacity += increaseAmount;
+    }
+    
+    @Override
+    public boolean getFlashlightUsed(){
+        return this.flashlightUsed;
+    }
+    
+    @Override
+    public void setFlashlightUsed(boolean used){
+        this.flashlightUsed = used;
+    }
+    
+    @Override
+    public int getMaxCapacity(){
+        return this.maxCapacity;
+    }
+    
+    @Override
+    public int getCurrentVolumeUsed(){
+        return this.volumeUsedInInventory;
+    }
 }

@@ -49,9 +49,9 @@ public class StartMenuController extends Controller implements Initializable {
         business.createPlayer(txtNameInput.getText());
         business.createItem("Key to exit","exitKey", 2, true); // Don't put it anywhere, given out by the friendly NPC!
         business.createItem("Coffee pot", "coffeepot", 10, true);
-        business.createItem("Water Bottle", "waterBottle", 10, true);
+        business.createPositiveDrinkableItem("Water Bottle", "waterBottle", 10, true, 400);
         business.createItem("Lunch box", "lunchBox", 0, false);
-        business.createItem("Flashlight", "flashLight", 10, true);
+        business.createFlashlightItem("Flashlight", "flashLight", 10, true);
         business.createItem("Battery", "battery", 5, true);
         business.createItem("Mobile Phone", "mobilePhone", 0, false);
         business.createItem("Beer Bottle", "beerBottle", 2, true);
