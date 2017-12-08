@@ -57,7 +57,7 @@ public interface IPlayer {
     int getScore();
     
     void addItemToInventory(IItem item);
-    void removeItemFromInventory(String name);
+    
     
     IRoom getCurrentRoom();
     void setCurrentRoom(IRoom room);

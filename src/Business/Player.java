@@ -25,7 +25,7 @@ public class Player implements IPlayer {
     private long totalGameTime = 600; //The game time, in seconds
     private int playerPoints = 0; //The player points
     private int totalPoints = 0; 
-    private int maxCapacity = 30;
+    private int maxCapacity = 10;
     private int volumeUsedInInventory = 0;
     private boolean flashlightUsed = false;
     
@@ -113,15 +113,7 @@ public class Player implements IPlayer {
         }
     }
 
-    @Override
-    public void removeItemFromInventory(String name) {
-        for(IItem itemToBeRemoved : this.inventory){
-            if(itemToBeRemoved.getName().equals(name)){
-                this.inventory.remove(itemToBeRemoved);
-                this.volumeUsedInInventory -= itemToBeRemoved.getVolume();
-            }
-        }
-    }
+
     
     @Override
     public void removeItemFromInventory(IItem item) {

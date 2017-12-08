@@ -96,6 +96,9 @@ public class Controller implements Initializable {
 
     @FXML
     ObservableList<IItem> GUIInventory;
+    
+    @FXML
+    private Label dialogueLabel;
 
     /**
      * Initializes the controller class.
@@ -335,8 +338,9 @@ public class Controller implements Initializable {
      * This method takes to params and puts the item in the player inventory
      * and disables the imageView
      */
-    public void handleItem(String id, ImageView imageView  ) {
+    public void handleItem(String id, ImageView imageView) {
 
+        if (business.getPlayer().checkIfPlayerHasRoom(business.getItem(id))) {
         // check player inventory for item (id)
         if (!business.getPlayer().getPlayerInventory().contains(business.getItem(id))) {
             // add item to player inventory
@@ -344,9 +348,10 @@ public class Controller implements Initializable {
             
            updateListView();
            
-           if ( business.getItem(id).getCarryable()) {
+           if ( business.getItem(id).getCarryable() ) {
            imageView.setVisible(false);
         } 
+        }
         }
     }
     
@@ -407,12 +412,19 @@ public class Controller implements Initializable {
     
     @FXML
     private void useItem(ActionEvent event) {
-        useItem();
+        try {
+            useItem();
+        }
+        catch (NullPointerException ex) {
+            dialogueLabel.setText("Select Item");
+        }
     }
     
     
-    public void useItem() {
-    business.getItem(this.playerInventoryGUI.getSelectionModel().getSelectedItem().getName()).use(business.getPlayer());
+    public void useItem() throws NullPointerException {
+        
+        
+        business.getItem(this.playerInventoryGUI.getSelectionModel().getSelectedItem().getName()).use(business.getPlayer());
         updateListView(); 
         updateClockLabel();
     }
@@ -420,6 +432,7 @@ public class Controller implements Initializable {
     public void collideWithShadows(KeyEvent event){
         
     }
+    
     
     
 }

@@ -105,9 +105,10 @@ public class historyRoomController extends Controller {
                         this.dialogueLabel.setText(business.getFriendlyNPC().getStillWaitingString());
                         } else if(business.getFriendlyNPC().checkIfPlayerHasItem(business.getPlayer()) == true){
                             this.dialogueLabel.setText(business.getFriendlyNPC().getCompletedQuestString());
+                            business.getPlayer().removeItemFromInventory(business.getItem("History Book"));
                             business.getPlayer().addItemToInventory(business.getItem("Key to exit"));
                             business.getRoom(9).setLocked(false);
-                            business.getPlayer().removeItemFromInventory("History Book");
+                            
                             this.questCompleted = true;
                         } else if(this.questCompleted == true){
                             this.dialogueLabel.setText(business.getFriendlyNPC().getCompletedQuestString());
