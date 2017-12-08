@@ -130,6 +130,11 @@
                   <Image url="@Images/8-2-lunch-box-free-png-image.png" />
                </image>
             </ImageView>
+            <ImageView fx:id="flashLightImageView" fitHeight="31.0" fitWidth="39.0" layoutX="847.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/flash.png" />
+               </image>
+            </ImageView>
          </children></AnchorPane>
    </children>
 </GridPane>

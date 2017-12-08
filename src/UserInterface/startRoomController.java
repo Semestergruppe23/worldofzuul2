@@ -62,7 +62,8 @@ public class startRoomController extends Controller {
     private ImageView rightDoor;
     @FXML
     private Label clockLabel;
-    
+    @FXML
+    private ImageView beerBottleImageView;
     
     @FXML
     private ListView playerInventoryGUI;
@@ -110,6 +111,12 @@ public class startRoomController extends Controller {
         }
     }
 
+ @Override
+    public void pickItemUp(KeyEvent event) {
+          if (player.intersects(player.sceneToLocal(beerBottleImageView.localToScene(beerBottleImageView.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
+              super.handleItem(business.getItem("Beer Bottle").getName(), beerBottleImageView);
+          }
+    }
     @FXML
     private void clickMainMenu(ActionEvent event) 
     {
