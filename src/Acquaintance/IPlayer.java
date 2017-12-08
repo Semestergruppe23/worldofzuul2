@@ -49,6 +49,11 @@ public interface IPlayer {
      * @return the remaining seconds of the game in seconds
      */
     long getRemainingTime();
+    
+    /**
+     * The score is calculated using the time spent and points obtained in the game
+     * @return the players score
+     */
     int getScore();
     
     void addItemToInventory(IItem item);
