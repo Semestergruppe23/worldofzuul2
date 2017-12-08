@@ -85,7 +85,7 @@ public class startRoomController extends Controller {
  @Override
     public void pickItemUp(KeyEvent event) {
           if (player.intersects(player.sceneToLocal(beerBottleImageView.localToScene(beerBottleImageView.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
-              super.handleItem(business.getItem("Beer Bottle").getName(), beerBottleImageView);
+              super.handleItem(business.getItem("Beer").getName(), beerBottleImageView);
           }
     }
     @FXML
@@ -105,9 +105,8 @@ public class startRoomController extends Controller {
 
 
 
-    @FXML
-    private void useItem(ActionEvent event) {
-    }
-
-
+    
+    
 }
+
+

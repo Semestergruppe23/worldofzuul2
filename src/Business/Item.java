@@ -6,6 +6,7 @@
 package Business;
 
 import Acquaintance.IItem;
+import Acquaintance.IPlayer;
 
 /**
  *
@@ -23,6 +24,11 @@ public class Item implements IItem{
         this.id = id;
         this.volume = volume;
         this.name = name;
+    }
+    
+    @Override
+    public void use(IPlayer player){
+        
     }
     
     @Override

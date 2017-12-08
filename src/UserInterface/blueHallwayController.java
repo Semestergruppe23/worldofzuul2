@@ -230,8 +230,6 @@ public void popup(KeyEvent event) {
 
 
 
-    @FXML
-    private void useItem(ActionEvent event) {
-    }
+    
 
 }

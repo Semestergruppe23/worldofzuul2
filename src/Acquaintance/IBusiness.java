@@ -21,6 +21,7 @@ public interface IBusiness {
      * @param carryable whether he can carry the item
      */
     void createItem(String name,String id, int volume, boolean carryable);
+    void createNegativeDrinkableItem(String name, String id, int volume, boolean carryable, int amountOfTime);
     String pickUpItem(String id);
     void createPlayer(String name);
     IPlayer getPlayer();

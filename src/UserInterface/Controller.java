@@ -89,7 +89,7 @@ public class Controller implements Initializable {
     private String ItemID;
 
     @FXML
-    private ListView<IItem> playerInventoryGUI = new ListView<>();
+    public ListView<IItem> playerInventoryGUI = new ListView<>();
 
     @FXML
     ObservableList<IItem> GUIInventory;
@@ -394,4 +394,18 @@ public class Controller implements Initializable {
     private void dropItem(ActionEvent event) {
        dropItem();
     }
+    
+    @FXML
+    private void useItem(ActionEvent event) {
+        useItem();
+    }
+    
+    
+    private void useItem() {
+    business.getItem(this.playerInventoryGUI.getSelectionModel().getSelectedItem().getName()).use(business.getPlayer());
+        updateListView(); 
+        updateClockLabel();
+    }
+    
+    
 }

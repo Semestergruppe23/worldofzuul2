@@ -135,10 +135,6 @@ public class historyRoomController extends Controller {
 
     }
     
-    
-
-    @FXML
-    private void useItem(ActionEvent event) {
-    }
+   
 }
 

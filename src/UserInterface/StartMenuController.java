@@ -58,6 +58,8 @@ public class StartMenuController extends Controller implements Initializable {
         business.getItem("Mobile Phone").setText("The battery is dead");
         business.createItem("Key to bathroom", "keyToBathroom", 5, true);
         business.createItem("Calender", "calender", 0, false);
+        //To be deleted, test!
+        business.createNegativeDrinkableItem("Beer", "beer", 5, true, 300);
         business.getItem("Calender").setText("20.12.2018");
         business.getItem("Lunch box").setText("");
         business.createItem("Broom", "broom", 5, true);

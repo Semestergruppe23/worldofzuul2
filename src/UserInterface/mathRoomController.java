@@ -117,8 +117,5 @@ public class mathRoomController extends Controller {
 }
 
 
-    @FXML
-    private void useItem(ActionEvent event) {
-    }
-
+    
 }

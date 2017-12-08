@@ -108,7 +108,4 @@ public class janitorRoomDarkController extends Controller {
     
 
 
-    @FXML
-    private void useItem(ActionEvent event) {
-    }
 }

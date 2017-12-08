@@ -145,9 +145,6 @@ public class greenHallwayController extends Controller {
     
 
 
-    @FXML
-    private void useItem(ActionEvent event) {
-    }
-
+    
 
 }

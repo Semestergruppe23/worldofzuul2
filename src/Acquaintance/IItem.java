@@ -17,5 +17,9 @@ public interface IItem {
     void setText(String description);
     String getText();
     String getID();
+    /**
+     * is the use of the item, different for each subclass of Item.java
+     */
+    void use(IPlayer player);
     
 }
