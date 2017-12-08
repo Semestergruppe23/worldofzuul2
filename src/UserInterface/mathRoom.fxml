@@ -36,7 +36,7 @@
       </ImageView>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
          <children>
-            <TitledPane alignment="CENTER_RIGHT" animated="false" collapsible="false" layoutX="810.0" layoutY="16.0" text="Inventory">
+            <TitledPane fx:id="playerInventory" alignment="CENTER_RIGHT" animated="false" collapsible="false" layoutX="810.0" layoutY="32.0" prefHeight="210.0" prefWidth="202.0" text="Inventory">
                <content>
                   <ListView fx:id="playerInventoryGUI" prefHeight="200.0" prefWidth="200.0" />
                </content>
@@ -60,6 +60,7 @@
             <Text fx:id="popUpText" layoutX="600.0" layoutY="54.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Press E to open the door." />
             <Button layoutX="726.0" layoutY="166.0" mnemonicParsing="false" onAction="#dropItem" text="Drop item" />
             <Button layoutX="726.0" layoutY="204.0" mnemonicParsing="false" onAction="#useItem" prefHeight="27.0" prefWidth="79.0" text="Use item" />
+         <Label fx:id="volumeLabel" layoutX="810.0" layoutY="8.0" prefHeight="25.0" prefWidth="202.0" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
