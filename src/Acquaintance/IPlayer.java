@@ -74,4 +74,5 @@ public interface IPlayer {
      */
     void removeItemFromInventory(IItem item);
     
+    boolean checkIfPlayerHasItem(String name);
 }
