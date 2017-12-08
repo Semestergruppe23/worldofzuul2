@@ -381,8 +381,11 @@ public class Controller implements Initializable {
         
     }
     
-    
+    /**
+     * Method remove selected item in listview from players inventory 
+     */
     public void dropItem() {
+        
         business.getPlayer().removeItemFromInventory(this.playerInventoryGUI.getSelectionModel().getSelectedItem());
         updateListView();
     }
