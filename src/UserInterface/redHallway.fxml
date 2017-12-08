@@ -38,7 +38,7 @@
   <Button layoutX="241.0" layoutY="64.0" mnemonicParsing="false" text="Answer A" />
             <Button layoutX="241.0" layoutY="115.0" mnemonicParsing="false" text="Answer B" />
             <Button layoutX="241.0" layoutY="166.0" mnemonicParsing="false" text="Answer C" />
-            <Button layoutX="20.0" layoutY="217.0" mnemonicParsing="false" onAction="#clickMainMenu" text="Main Menu" />
+            <Button layoutX="20.0" layoutY="217.0" mnemonicParsing="false"  text="Main Menu" />
             <ImageView fx:id="playerIcon" fitHeight="160.0" fitWidth="215.0" layoutX="20.0" layoutY="49.0" pickOnBounds="true">
                <image>
                   <Image url="@Images/map_start.png" />
