@@ -61,6 +61,9 @@ public class mathRoomController extends Controller {
     private Rectangle popUp;
     @FXML
     private Text popUpText;
+    @FXML
+    private ImageView flashLightImageView;
+   
 
     /**
      * Initializes the controller class.
@@ -89,6 +92,10 @@ public class mathRoomController extends Controller {
           }
           else if (player.intersects(player.sceneToLocal(lunchBoxImageView.localToScene(lunchBoxImageView.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
               super.handleItem(business.getItem("Lunch box").getName(), lunchBoxImageView);
+          }
+          
+          else if (player.intersects(player.sceneToLocal(flashLightImageView.localToScene(flashLightImageView.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
+              super.handleItem(business.getItem("Flashlight").getName(), flashLightImageView);
           }
     }
 
