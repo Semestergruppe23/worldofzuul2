@@ -15,6 +15,7 @@ public interface IRoom {
     
     String getRoomName();
     boolean getLocked();
+    void setLocked(boolean locked);
     List<IItem> getItemsInRoom();
     void putItemsInsideRoom(IItem item);
     void removeItemFromRoom(IItem item);

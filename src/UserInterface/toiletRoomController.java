@@ -115,7 +115,7 @@ public class toiletRoomController extends Controller {
 
         }
 
-    private void btnOptionA(ActionEvent event) {
+    public void btnOptionA(ActionEvent event) {
         if(this.hallucinationAlreadyPoppedUp == false){
             String answer = "A";
             if(business.getNPC().checkAnswer(answer) == true){
@@ -133,7 +133,7 @@ public class toiletRoomController extends Controller {
         
     }
 
-    private void btnOptionB(ActionEvent event) {
+    public void btnOptionB(ActionEvent event) {
                 if(this.hallucinationAlreadyPoppedUp == false){
             String answer = "B";
             if(business.getNPC().checkAnswer(answer) == true){
@@ -150,7 +150,7 @@ public class toiletRoomController extends Controller {
         }
     }
 
-    private void btnOptionC(ActionEvent event) {
+    public void btnOptionC(ActionEvent event) {
         if(this.hallucinationAlreadyPoppedUp == false){
             String answer = "C";
             if(business.getNPC().checkAnswer(answer) == true){
