@@ -53,6 +53,7 @@ public class redHallwayController extends Controller implements Initializable {
     @FXML
     private ImageView bottomWall;
     @FXML
+    private int roomID = 3;
     private ImageView rightWall;
     @FXML
     private ImageView rightDoor;
@@ -71,7 +72,7 @@ public class redHallwayController extends Controller implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       
+       lblRoomName.setText(business.getRoom(roomID).getRoomName()); 
         
     }
 
