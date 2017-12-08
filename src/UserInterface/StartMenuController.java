@@ -79,6 +79,7 @@ public class StartMenuController extends Controller implements Initializable {
         business.getNPC().fillArraysWithQuestionsAndAnswers();
         business.createFriendlyNPC();
         business.getFriendlyNPC().setItemToBeFound("History Book");
+        business.getNPC().randomizeQuestions(2);
         
         
 

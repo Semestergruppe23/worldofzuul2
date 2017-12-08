@@ -103,14 +103,13 @@ public class historyRoomController extends Controller {
                     } else if(this.questStarted == true){
                         if(business.getFriendlyNPC().checkIfPlayerHasItem(business.getPlayer()) == false){
                         this.dialogueLabel.setText(business.getFriendlyNPC().getStillWaitingString());
-                        } else if(business.getFriendlyNPC().checkIfPlayerHasItem(business.getPlayer()) == true){
+                        }if((business.getFriendlyNPC().checkIfPlayerHasItem(business.getPlayer()) == true) && this.questCompleted == false){
                             this.dialogueLabel.setText(business.getFriendlyNPC().getCompletedQuestString());
                             business.getPlayer().removeItemFromInventory(business.getItem("History Book"));
                             business.getPlayer().addItemToInventory(business.getItem("Key to exit"));
                             business.getRoom(9).setLocked(false);
-                            
                             this.questCompleted = true;
-                        } else if(this.questCompleted == true){
+                        }if(this.questCompleted == true){
                             this.dialogueLabel.setText(business.getFriendlyNPC().getCompletedQuestString());
                         }
                     }
