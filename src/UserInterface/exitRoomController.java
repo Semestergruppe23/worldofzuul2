@@ -34,12 +34,6 @@ import javafx.stage.Stage;
 public class exitRoomController {
 
     @FXML
-    private TitledPane playerInventory;
-    @FXML
-    private ProgressBar timer;
-    @FXML
-    private ImageView playerIcon;
-    @FXML
     private ImageView player;
 
     @FXML
@@ -53,14 +47,6 @@ public class exitRoomController {
     private ImageView bottomWall;
     @FXML
     private ImageView rightWall;
-    @FXML
-    private ImageView topDoor;
-    @FXML
-    private ImageView rightDoor;
-    @FXML
-    private ImageView bottomDoor;
-    @FXML
-    private ImageView leftDoor;
 
     /**
      * Initializes the controller class.
@@ -69,6 +55,10 @@ public class exitRoomController {
     public void initialize(URL url, ResourceBundle rb) 
     {
         business.getData().addHighscore(business.getPlayer().getName(), business.getPlayer().getScore());
+    }
+
+    @FXML
+    private void playerMovement(KeyEvent event) {
     }
 
    

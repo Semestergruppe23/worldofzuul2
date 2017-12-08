@@ -25,6 +25,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -36,8 +38,6 @@ public class redHallwayController extends Controller implements Initializable {
 
     @FXML
     private TitledPane playerInventory;
-    @FXML
-    private ProgressBar timer;
     @FXML
     private Label lblRoomName;
     @FXML
@@ -52,8 +52,8 @@ public class redHallwayController extends Controller implements Initializable {
     private ImageView leftWall;
     @FXML
     private ImageView bottomWall;
-    @FXML
     private int roomID = 3;
+    @FXML
     private ImageView rightWall;
     @FXML
     private ImageView rightDoor;
@@ -65,6 +65,12 @@ public class redHallwayController extends Controller implements Initializable {
     private ListView<?> playerInventoryGUI;
     @FXML
     private Label clockLabel;
+    @FXML
+    private Label dialogueLabel;
+    @FXML
+    private Rectangle popUp;
+    @FXML
+    private Text popUpText;
    
 
     /**
@@ -116,12 +122,8 @@ public class redHallwayController extends Controller implements Initializable {
         }
     }
 
-    @FXML
-    private void clickMainMenu(ActionEvent event)
-    {
-        
-    }
 }
+
 
 
     

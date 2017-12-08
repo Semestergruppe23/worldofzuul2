@@ -11,21 +11,15 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import static javafx.geometry.NodeOrientation.LEFT_TO_RIGHT;
-import static javafx.geometry.NodeOrientation.RIGHT_TO_LEFT;
+
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.control.TitledPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -35,8 +29,6 @@ import javafx.stage.Stage;
  */
 public class mathRoomController extends Controller {
 
-    @FXML
-    private ProgressBar timer;
     @FXML
     private ImageView playerIcon;
     @FXML
@@ -63,6 +55,12 @@ public class mathRoomController extends Controller {
     
     @FXML
     private ListView playerInventoryGUI;
+    @FXML
+    private Label dialogueLabel;
+    @FXML
+    private Rectangle popUp;
+    @FXML
+    private Text popUpText;
 
     /**
      * Initializes the controller class.
@@ -99,4 +97,6 @@ public class mathRoomController extends Controller {
     {
         
     }
+
+
 }

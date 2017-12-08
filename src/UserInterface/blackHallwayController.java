@@ -31,6 +31,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -42,8 +44,6 @@ public class blackHallwayController extends Controller {
 
     @FXML
     private TitledPane playerInventory;
-    @FXML
-    private ProgressBar timer;
     @FXML
     private ImageView playerIcon;
     @FXML
@@ -77,6 +77,12 @@ public class blackHallwayController extends Controller {
     
     @FXML
     private ImageView imgKeyToExit;
+    @FXML
+    private Label dialogueLabel;
+    @FXML
+    private Rectangle popUp;
+    @FXML
+    private Text popUpText;
 
 
     /**
@@ -143,4 +149,5 @@ public class blackHallwayController extends Controller {
     {
         
     }
+
 }

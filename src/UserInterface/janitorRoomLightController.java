@@ -38,8 +38,6 @@ public class janitorRoomLightController extends Controller {
     @FXML
     private TitledPane playerInventory;
     @FXML
-    private ProgressBar timer;
-    @FXML
     private ImageView playerIcon;
     @FXML
     private ImageView player;
@@ -60,6 +58,8 @@ public class janitorRoomLightController extends Controller {
     private Label lblRoomName;
     @FXML
     private ListView<?> playerInventoryGUI;
+    @FXML
+    private Label dialogueLabel;
 
     /**
      * Initializes the controller class.
@@ -84,4 +84,6 @@ public class janitorRoomLightController extends Controller {
     {
         
     }
+
+
 }

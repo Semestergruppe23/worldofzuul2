@@ -27,6 +27,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -38,8 +40,6 @@ public class historyRoomController extends Controller {
 
     @FXML
     private TitledPane playerInventory;
-    @FXML
-    private ProgressBar timer;
     @FXML
     private ImageView playerIcon;
     @FXML
@@ -70,6 +70,10 @@ public class historyRoomController extends Controller {
     private ImageView bottomWall;
     @FXML
     private ImageView rightWall;
+    @FXML
+    private Rectangle popUp;
+    @FXML
+    private Text popUpText;
 
     /**
      * Initializes the controller class.
@@ -123,6 +127,8 @@ public class historyRoomController extends Controller {
     {
         
     }
+
+
 
 }
 

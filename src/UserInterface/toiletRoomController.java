@@ -26,6 +26,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -37,8 +39,6 @@ public class toiletRoomController extends Controller {
 
     @FXML
     private TitledPane playerInventory;
-    @FXML
-    private ProgressBar timer;
     @FXML
     private ImageView playerIcon;
     @FXML
@@ -67,6 +67,10 @@ public class toiletRoomController extends Controller {
     @FXML
     private Label dialogueLabel;
     private boolean hallucinationAlreadyPoppedUp = false;
+    @FXML
+    private Rectangle popUp;
+    @FXML
+    private Text popUpText;
     
 
     /**
@@ -111,7 +115,6 @@ public class toiletRoomController extends Controller {
 
         }
 
-    @FXML
     private void btnOptionA(ActionEvent event) {
         if(this.hallucinationAlreadyPoppedUp == false){
             String answer = "A";
@@ -130,7 +133,6 @@ public class toiletRoomController extends Controller {
         
     }
 
-    @FXML
     private void btnOptionB(ActionEvent event) {
                 if(this.hallucinationAlreadyPoppedUp == false){
             String answer = "B";
@@ -148,7 +150,6 @@ public class toiletRoomController extends Controller {
         }
     }
 
-    @FXML
     private void btnOptionC(ActionEvent event) {
         if(this.hallucinationAlreadyPoppedUp == false){
             String answer = "C";
@@ -165,5 +166,6 @@ public class toiletRoomController extends Controller {
               }
         }
     }
-    
+
+
 }

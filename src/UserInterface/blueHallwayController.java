@@ -21,6 +21,8 @@ import javafx.scene.control.TitledPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -32,8 +34,6 @@ public class blueHallwayController extends Controller {
 
     @FXML
     private TitledPane playerInventory;
-    @FXML
-    private ProgressBar timer;
     @FXML
     private ImageView playerIcon;
     @FXML
@@ -67,6 +67,10 @@ public class blueHallwayController extends Controller {
     boolean hallucinationAlreadyPoppedUp = false;
     @FXML
     private ListView<?> playerInventoryGUI;
+    @FXML
+    private Rectangle popUp;
+    @FXML
+    private Text popUpText;
 
     /**
      * Initializes the controller class.
@@ -135,7 +139,6 @@ public class blueHallwayController extends Controller {
 
         }
 
-    @FXML
     private void btnOptionA(ActionEvent event) {
         if(this.hallucinationAlreadyPoppedUp == false){
             String answer = "A";
@@ -154,7 +157,6 @@ public class blueHallwayController extends Controller {
         
     }
 
-    @FXML
     private void btnOptionB(ActionEvent event) {
                 if(this.hallucinationAlreadyPoppedUp == false){
             String answer = "B";
@@ -172,7 +174,6 @@ public class blueHallwayController extends Controller {
         }
     }
 
-    @FXML
     private void btnOptionC(ActionEvent event) {
         if(this.hallucinationAlreadyPoppedUp == false){
             String answer = "C";
@@ -195,4 +196,7 @@ public class blueHallwayController extends Controller {
     {
         
     }
+
+
+
 }

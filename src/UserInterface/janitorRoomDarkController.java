@@ -26,6 +26,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -37,8 +39,6 @@ public class janitorRoomDarkController extends Controller {
 
     @FXML
     private TitledPane playerInventory;
-    @FXML
-    private ProgressBar timer;
     @FXML
     private ImageView playerIcon;
     @FXML
@@ -60,6 +60,12 @@ public class janitorRoomDarkController extends Controller {
     private Label lblRoomName;
     @FXML
     private ListView<?> playerInventoryGUI;
+    @FXML
+    private Label dialogueLabel;
+    @FXML
+    private Rectangle popUp;
+    @FXML
+    private Text popUpText;
 
     /**
      * Initializes the controller class.
@@ -84,4 +90,6 @@ public class janitorRoomDarkController extends Controller {
     {
         
     }
+
+
 }
