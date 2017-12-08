@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.animation.FadeTransition;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
@@ -28,6 +29,8 @@ import javafx.scene.control.TitledPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -149,7 +152,7 @@ public class Controller implements Initializable {
         pickItemUp(event);
         updateListView();
         updateClockLabel();
-        
+        popup(event);
         
         
        if(business.getPlayer().checkTime() == false){
@@ -357,4 +360,23 @@ public class Controller implements Initializable {
     public void updateClockLabel(){
         clockLabel.setText("Remaining time: " + (int)business.getPlayer().getRemainingTime());
     }
+    
+    public void popupBox(Rectangle popupRectangle, Text popupText) {
+
+          FadeTransition ft = new FadeTransition(Duration.millis(200), popupRectangle);
+            FadeTransition ft2 = new FadeTransition(Duration.millis(200), popupText);
+            
+            ft.setFromValue(0);
+            ft.setToValue(1);
+            ft.play();
+            
+            ft2.setFromValue(0);
+            ft2.setToValue(1);
+     
+     }
+    
+    public void popup(KeyEvent event) {
+        
+    }
+    
 }
