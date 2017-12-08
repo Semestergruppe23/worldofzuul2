@@ -72,10 +72,13 @@ public class startRoomController extends Controller {
     private Rectangle popUp;
     @FXML
     private Text popUpText;
+    private int roomID = 0;
     
+       @Override
+    public void initialize(URL url, ResourceBundle rb) {
+    lblRoomName.setText(business.getRoom(roomID).getRoomName());
     
-    
-
+    }
  public void changeRoomRightDoor(KeyEvent event) throws IOException {
      
      if(player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))) {
