@@ -153,6 +153,16 @@ public class redHallwayController extends Controller implements Initializable {
      
     }
     
+    
+        @FXML
+    private void dropItem(ActionEvent event) {
+    }
+
+    @FXML
+    private void useItem(ActionEvent event) {
+    }
+
+    
 }
 
 
