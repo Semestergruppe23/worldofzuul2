@@ -66,6 +66,12 @@ public interface IPlayer {
     
     boolean checkIfPlayerHasRoom();
     
-    
+    /**
+     * 
+     * @param item - Insert IItem which you want to remove from players inventory
+     * 
+     * Remove param's item from player inventory
+     */
+    void removeItemFromInventory(IItem item);
     
 }

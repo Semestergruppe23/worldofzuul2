@@ -9,6 +9,7 @@ import Acquaintance.IItem;
 import Acquaintance.IPlayer;
 import Acquaintance.IRoom;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -114,6 +115,26 @@ public class Player implements IPlayer {
             }
         }
     }
+    
+    @Override
+    public void removeItemFromInventory(IItem item) {
+        // Creating iterator for inventory
+        Iterator<IItem> iterator = this.inventory.iterator();
+        
+        // going through all items in inventory
+        while (iterator.hasNext()) {
+            // creating buffer IItem to compare item with
+            IItem buf = iterator.next();
+            
+            if (buf.equals(item)) {
+                //removing item
+                iterator.remove();
+            }
+        }
+
+    }
+    
+    
 
     @Override
     public List<IItem> getPlayerInventory() {
