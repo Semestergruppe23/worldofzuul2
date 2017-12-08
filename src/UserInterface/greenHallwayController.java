@@ -12,20 +12,15 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import static javafx.geometry.NodeOrientation.LEFT_TO_RIGHT;
-import static javafx.geometry.NodeOrientation.RIGHT_TO_LEFT;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TitledPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -93,7 +88,7 @@ public class greenHallwayController extends Controller {
     public void changeRoomBottomDoor(KeyEvent event) throws IOException {
         if (player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E && business.getRoom(9).getLocked() == true ) {
             // Temporary placeholder for room locked message. 
-            System.out.println("Room is locked!");
+           
         }
         // If the Locked boolean is false, then the room is unlocked and you can enter.
         else if(player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E && business.getRoom(9).getLocked() == false) 
@@ -146,6 +141,12 @@ public class greenHallwayController extends Controller {
          popUp.setOpacity(0);
          popUpText.setOpacity(0);
      }
+    }
+    
+
+
+    @FXML
+    private void useItem(ActionEvent event) {
     }
 
 

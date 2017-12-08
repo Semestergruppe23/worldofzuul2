@@ -9,31 +9,18 @@ import static UserInterface.UserInterfaceFacade.business;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.animation.FadeTransition;
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import static javafx.geometry.NodeOrientation.LEFT_TO_RIGHT;
-import static javafx.geometry.NodeOrientation.RIGHT_TO_LEFT;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TitledPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 /**
  * FXML Controller class
@@ -114,6 +101,12 @@ public class startRoomController extends Controller {
          popUp.setOpacity(0);
          popUpText.setOpacity(0);
      }
+    }
+
+
+
+    @FXML
+    private void useItem(ActionEvent event) {
     }
 
 

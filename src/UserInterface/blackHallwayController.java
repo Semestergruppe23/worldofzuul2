@@ -15,22 +15,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import static javafx.geometry.NodeOrientation.LEFT_TO_RIGHT;
-import static javafx.geometry.NodeOrientation.RIGHT_TO_LEFT;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TitledPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -96,34 +88,27 @@ public class blackHallwayController extends Controller {
 
     
     
-       public void changeRoomRightDoor(KeyEvent event) throws IOException {
+       public void changeRoomLeftDoor(KeyEvent event) throws IOException {
         if (player.intersects(player.sceneToLocal(leftDoor.localToScene(leftDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
-          
-            
-            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+         Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         startStage.setScene(super.roomController.getRoom("green").getScene());
         startStage.show();
         }
     }
     
     @Override
-    public void changeRoomLeftDoor(KeyEvent event) throws IOException {
-        if (player.intersects(player.sceneToLocal(leftDoor.localToScene(leftDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E && business.getRoom(9).getLocked() == true ) {
-            // Temporary placeholder for room locked message. 
-            System.out.println("Room is locked!");
-        }
-        // If the Locked boolean is false, then the room is unlocked and you can enter.
-        else if(player.intersects(player.sceneToLocal(leftDoor.localToScene(leftDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E && business.getRoom(9).getLocked() == false) 
-        {
-        
-        
-        
-            
-            
+    public void changeRoomRightDoor(KeyEvent event) throws IOException {
+        if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
+           if(business.getPlayer().checkIfPlayerHasItem("Key to bathroom")==true){
+               business.getRoom(8).setLocked(false);
+           }
+            if (business.getRoom(8).getLocked()==true){
+                this.dialogueLabel.setText("The door is locked");
+            }else if (business.getRoom(8).getLocked()==false){
             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        startStage.setScene(super.roomController.getRoom("toilet").getScene());
-        startStage.show();
-    
+            startStage.setScene(super.roomController.getRoom("toilet").getScene());
+            startStage.show();
+            }
     }
     }
       
@@ -180,6 +165,11 @@ public class blackHallwayController extends Controller {
          popUp.setOpacity(0);
          popUpText.setOpacity(0);
      }
+    }
+
+
+    @FXML
+    private void useItem(ActionEvent event) {
     }
 
 }

@@ -56,6 +56,7 @@ public class StartMenuController extends Controller implements Initializable {
         business.createItem("Mobile Phone", "mobilePhone", 0, false);
         business.createItem("Beer Bottle", "beerBottle", 2, true);
         business.getItem("Mobile Phone").setText("The battery is dead");
+        business.createItem("Key to bathroom", "keyToBathroom", 5, true);
         business.createItem("Calender", "calender", 0, false);
         business.getItem("Calender").setText("20.12.2018");
         business.getItem("Lunch box").setText("");
@@ -70,7 +71,7 @@ public class StartMenuController extends Controller implements Initializable {
         business.createRoom(5, "Janitor Room", true);
         business.createRoom(6, "Green hallway", false);
         business.createRoom(7, "Black hallway", false);
-        business.createRoom(8, "Restroom", false);
+        business.createRoom(8, "Restroom", true);
         business.createRoom(9, "Exit", true);
         business.createNPC();
         business.getNPC().fillArraysWithQuestionsAndAnswers();
