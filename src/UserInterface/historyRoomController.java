@@ -60,6 +60,7 @@ public class historyRoomController extends Controller {
     private Label dialogueLabel; 
     
     private boolean questStarted = false;
+    private boolean questCompleted = false;
     @FXML
     private ListView<?> playerInventoryGUI;
     @FXML
@@ -116,11 +117,13 @@ public class historyRoomController extends Controller {
                             business.getPlayer().addItemToInventory(business.getItem("Key to exit"));
                             business.getRoom(9).setLocked(false);
                             business.getPlayer().removeItemFromInventory("History Book");
+                            this.questCompleted = true;
+                        } else if(this.questCompleted == true){
+                            this.dialogueLabel.setText(business.getFriendlyNPC().getCompletedQuestString());
                         }
                     }
                 }
             }
-              
         }
 
     @FXML
