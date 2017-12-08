@@ -342,9 +342,15 @@ public class Controller implements Initializable {
     
     
 
+    /**
+     * This method update Observable and add player inventory and show it in the list view
+     */
     public void updateListView() {
+        //initialize Observablelist
         GUIInventory = FXCollections.observableArrayList();
+        // add player inventory to Observablelist
         GUIInventory.addAll(business.getPlayer().getPlayerInventory());
+        //show observablelist in listView
         playerInventoryGUI.setItems(GUIInventory);
     }
     
