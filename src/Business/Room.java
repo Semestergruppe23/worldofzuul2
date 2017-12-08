@@ -56,6 +56,11 @@ public class Room implements IRoom {
             }
         }
     }
+    
+    @Override
+    public void setLocked(boolean locked){
+        this.locked = locked;
+    }
 
 
     
