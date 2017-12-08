@@ -117,7 +117,7 @@ public class blackHallwayController extends Controller {
         {
         
         
-        //if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
+        
             
             
             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
