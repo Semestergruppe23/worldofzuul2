@@ -64,7 +64,7 @@ public interface IPlayer {
     
     List<IItem> getPlayerInventory();
     
-    
+    boolean checkIfPlayerHasRoom();
     
     
     

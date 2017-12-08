@@ -23,7 +23,9 @@ public class Player implements IPlayer {
     private long startTimeInSeconds; //The time when the game starts, is initialized in the Player constructor
     private long totalGameTime = 600; //The game time, in seconds
     private int playerPoints = 0; //The player points
-    private int totalPoints = 0;
+    private int totalPoints = 0; 
+    private int maxCapacity = 80;
+    private int volumeUsedInInventory = 0;
     
     public Player(String name){
         this.name = name;
@@ -84,6 +86,11 @@ public class Player implements IPlayer {
        return this.currentRoom;
     }
     
+    @Override
+    public boolean checkIfPlayerHasRoom(){
+        
+        return true;
+    }
     
 
     
