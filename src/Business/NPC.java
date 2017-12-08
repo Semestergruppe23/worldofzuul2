@@ -60,4 +60,10 @@ public class NPC implements INPC {
         }
     }
     
+    @Override
+    public void randomizeQuestions(int numberOfQuestionsAsked){
+        int startInArray  = (int)(Math.random() * ((this.questions.size()) + 1)) - numberOfQuestionsAsked;
+        this.questionsAskedAnswersChecked = startInArray;
+    }
+    
 }

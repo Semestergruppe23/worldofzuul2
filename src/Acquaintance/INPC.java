@@ -36,4 +36,8 @@ public interface INPC {
      */
     boolean checkAnswer(String playerAnswer);
     
+    /**
+     * Randomizes the order that he questions is asked in
+     */
+    void randomizeQuestions(int numberOfQuestionsAsked);
 }
