@@ -318,19 +318,39 @@ public class Controller implements Initializable {
          
     }
     
+    /**
+     * 
+     * @param id Insert a item name 
+     * @param imageView insert a imageView fx:id
+     * 
+     * This method takes to params and puts the item in the player inventory
+     * and disables the imageView
+     */
     public void handleItem(String id, ImageView imageView  ) {
-        business.getPlayer().addItemToInventory(business.getItem(id));
+        // check player inventory for item (id)
+        if (!business.getPlayer().getPlayerInventory().contains(business.getItem(id))) {
+            // add item to player inventory
+            business.getPlayer().addItemToInventory(business.getItem(id));
+            
            updateListView();
+           
            if ( business.getItem(id).getCarryable()) {
            imageView.setVisible(false);
-           }
+        } 
+        }
     }
     
     
 
+    /**
+     * This method update Observable and add player inventory and show it in the list view
+     */
     public void updateListView() {
+        //initialize Observablelist
         GUIInventory = FXCollections.observableArrayList();
+        // add player inventory to Observablelist
         GUIInventory.addAll(business.getPlayer().getPlayerInventory());
+        //show observablelist in listView
         playerInventoryGUI.setItems(GUIInventory);
     }
     
