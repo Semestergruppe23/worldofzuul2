@@ -318,12 +318,26 @@ public class Controller implements Initializable {
          
     }
     
+    /**
+     * 
+     * @param id Insert a item name 
+     * @param imageView insert a imageView fx:id
+     * 
+     * This method takes to params and puts the item in the player inventory
+     * and disables the imageView
+     */
     public void handleItem(String id, ImageView imageView  ) {
-        business.getPlayer().addItemToInventory(business.getItem(id));
+        // check player inventory for item (id)
+        if (!business.getPlayer().getPlayerInventory().contains(business.getItem(id))) {
+            // add item to player inventory
+            business.getPlayer().addItemToInventory(business.getItem(id));
+            
            updateListView();
+           
            if ( business.getItem(id).getCarryable()) {
            imageView.setVisible(false);
-           }
+        } 
+        }
     }
     
     
