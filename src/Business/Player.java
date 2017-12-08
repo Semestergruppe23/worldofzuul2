@@ -101,7 +101,11 @@ public class Player implements IPlayer {
 
     @Override
     public void removeItemFromInventory(String name) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for(IItem itemToBeRemoved : this.inventory){
+            if(itemToBeRemoved.getName().equals(name)){
+                this.inventory.remove(itemToBeRemoved);
+            }
+        }
     }
 
     @Override
