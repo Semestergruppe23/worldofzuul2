@@ -13,6 +13,10 @@ import java.util.List;
  */
 public interface IRoom {
     
+    /**
+     * 
+     * @return Return the 
+     */
     String getRoomName();
     boolean getLocked();
     void setLocked(boolean locked);

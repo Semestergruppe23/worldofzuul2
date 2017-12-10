@@ -138,11 +138,7 @@ public class blackHallwayController extends Controller {
 }
 */
 
-    @FXML
-    private void clickMainMenu(ActionEvent event) 
-    {
-        
-    }
+
     
     public void popup(KeyEvent event) {
      if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))) {

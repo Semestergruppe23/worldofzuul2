@@ -6,6 +6,7 @@
 package UserInterface;
 
 import Acquaintance.IBusiness;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -45,45 +46,15 @@ public class StartMenuController extends Controller implements Initializable {
           if (txtNameInput.getText().isEmpty()) {
               characterText.setText("Please enter a name!");
         } else {
-        // createRoom(Index id in arrayList, Room Name, Locked or not)
+        
+        
         business.createPlayer(txtNameInput.getText());
-        business.createItem("Key to exit","exitKey", 2, true); // Don't put it anywhere, given out by the friendly NPC!
-        business.createItem("Coffee pot", "coffeepot", 10, true);
-        business.createPositiveDrinkableItem("Water Bottle", "waterBottle", 10, true, 400);
-        business.createItem("Lunch box", "lunchBox", 0, false);
-        business.createFlashlightItem("Flashlight", "flashLight", 10, true);
-        business.createItem("Battery", "battery", 5, true);
-        business.createItem("Mobile Phone", "mobilePhone", 0, false);
-        business.createItem("Beer Bottle", "beerBottle", 2, true);
-        business.getItem("Mobile Phone").setText("The battery is dead");
-        business.createItem("Key to bathroom", "keyToBathroom", 5, true);
-        business.createItem("Calender", "calender", 0, false);
-        //To be deleted, test!
-        business.createNegativeDrinkableItem("Beer", "beer", 5, true, 300);
-        business.getItem("Calender").setText("20.12.2018");
-        business.getItem("Lunch box").setText("");
-        business.createItem("Broom", "broom", 5, true);
-        business.createItem("History Book", "historyBook", 10, true);
-        business.getItem("History Book").setText("The book needed by the professor. You must get it to him, quick!");
-        business.createRoom(0, "Gym", false);
-        business.createRoom(1, "Math Room", false);
-        business.createRoom(2, "History Room", false);
-        business.createRoom(3, "Red hallway", false);
-        business.createRoom(4, "Blue hallway", false);
-        business.createRoom(5, "Janitor Room", true);
-        business.createRoom(6, "Green hallway", false);
-        business.createRoom(7, "Black hallway", false);
-        business.createRoom(8, "Restroom", true);
-        business.createRoom(9, "Exit", true);
-        business.createNPC();
-        business.getNPC().fillArraysWithQuestionsAndAnswers();
-        business.createFriendlyNPC();
-        business.getFriendlyNPC().setItemToBeFound("History Book");
-        business.getNPC().randomizeQuestions(2);
+        createRoomsInBusiness();
+        createItemsInBusiness();
+        initilizeNPC();
         
-        
-
         super.createRooms();
+        business.getItem("History Book").setText("The book needed by the professor. You must get it to him, quick!");
         
  
         
@@ -117,5 +88,70 @@ public class StartMenuController extends Controller implements Initializable {
     
     public void injectBusiness(IBusiness business) {
         this.business = business;
+    }
+    
+    /**
+     * Create the rooms from the business layer, not the gui layer
+     * private because this method is only used in this class
+     */
+    private void createRoomsInBusiness() {
+        
+        // Create a room, with an ID, title , and a boolean to check the lock status
+        business.createRoom(0, "Gym", false);
+        business.createRoom(1, "Math Room", false);
+        business.createRoom(2, "History Room", false);
+        business.createRoom(3, "Red hallway", false);
+        business.createRoom(4, "Blue hallway", false);
+        business.createRoom(5, "Janitor Room", true);
+        business.createRoom(6, "Green hallway", false);
+        business.createRoom(7, "Black hallway", false);
+        business.createRoom(8, "Restroom", true);
+        business.createRoom(9, "Exit", true);
+    }
+    
+    /**
+     * Creating items in the business layer.
+     * Priavte because this method is only use in this class
+     */
+    private void createItemsInBusiness() {
+        business.createItem("Key to exit","exitKey", 2, true); // Don't put it anywhere, given out by the friendly NPC!
+        business.createItem("Coffee pot", "coffeepot", 10, true);
+        business.createPositiveDrinkableItem("Water Bottle", "waterBottle", 10, true, 400);
+        business.createItem("Lunch box", "lunchBox", 0, false);
+        business.createFlashlightItem("Flashlight", "flashLight", 10, true);
+        business.createItem("Battery", "battery", 5, true);
+        business.createItem("Mobile Phone", "mobilePhone", 0, false);
+        business.createItem("Beer Bottle", "beerBottle", 2, true);
+        business.getItem("Mobile Phone").setText("The battery is dead");
+        business.createItem("Key to bathroom", "keyToBathroom", 5, true);
+        business.createItem("Calender", "calender", 0, false);
+        //To be deleted, test!
+        business.createNegativeDrinkableItem("Beer", "beer", 5, true, 300);
+        business.getItem("Calender").setText("20.12.2018");
+        business.getItem("Lunch box").setText("");
+        business.createItem("Broom", "broom", 5, true);
+        business.createItem("History Book", "historyBook", 10, true);
+    }
+    
+    /**
+     * Create npc objects and run methods so npc is ready
+     * 
+     */
+    private void initilizeNPC() {
+        
+        // Creating NPC
+        business.createNPC();
+        
+        // Fills the array with questions and asnwers, and catch if the 
+        // file is not found
+        try {
+        business.getNPC().fillArraysWithQuestionsAndAnswers();
+        } catch(FileNotFoundException ex) {
+            System.out.println("File is not found.");
+        }
+        
+        business.createFriendlyNPC();
+        business.getFriendlyNPC().setItemToBeFound("History Book");
+        business.getNPC().randomizeQuestions(2);
     }
 }

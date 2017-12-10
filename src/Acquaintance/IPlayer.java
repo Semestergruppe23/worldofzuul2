@@ -70,7 +70,7 @@ public interface IPlayer {
      * 
      * @param item - Insert IItem which you want to remove from players inventory
      * 
-     * Remove param's item from player inventory
+     * Remove param's item from player inventory with an iterator
      */
     void removeItemFromInventory(IItem item);
     
