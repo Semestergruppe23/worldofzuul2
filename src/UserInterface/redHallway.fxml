@@ -73,7 +73,7 @@
             <ImageView fx:id="leftWall" fitHeight="511.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="bottomWall" fitHeight="27.0" fitWidth="1024.0" layoutY="484.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="rightWall" fitHeight="511.0" fitWidth="111.0" layoutX="913.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="rightDoor" fitHeight="180.0" fitWidth="80.0" layoutX="886.0" layoutY="166.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="rightDoor" fitHeight="180.0" fitWidth="80.0" layoutX="880.0" layoutY="148.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/doorleft.png" />
                </image>
@@ -83,7 +83,7 @@
                   <Image url="@Images/door.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="leftDoor" fitHeight="180.0" fitWidth="80.0" layoutX="52.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="leftDoor" fitHeight="180.0" fitWidth="80.0" layoutX="63.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/doorleft.png" />
                </image>
