@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -20,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#playerMovement" onKeyReleased="#stopMove" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.mathRoomController">
+<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#playerMovement" onKeyReleased="#stopMove" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.mathRoomController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
@@ -29,9 +23,9 @@
     <RowConstraints maxHeight="370.0" minHeight="10.0" prefHeight="257.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <ImageView fitHeight="513.0" fitWidth="1048.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="513.0" fitWidth="1048.0" pickOnBounds="true">
          <image>
-            <Image url="@Images/Math_room.png" />
+            <Image url="@Images/matroom.png" />
          </image>
       </ImageView>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
@@ -65,83 +59,113 @@
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <ImageView fx:id="player" fitHeight="72.0" fitWidth="84.0" layoutX="541.0" layoutY="323.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="player" fitHeight="72.0" fitWidth="84.0" layoutX="540.0" layoutY="373.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/schoolstudent.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="topWall" fitHeight="144.0" fitWidth="1031.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="topWall" fitHeight="180.0" fitWidth="1031.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="leftWall" fitHeight="511.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="bottomWall" fitHeight="82.0" fitWidth="1024.0" layoutY="429.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="rightWall" fitHeight="511.0" fitWidth="127.0" layoutX="897.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="bottomDoor" fitHeight="82.0" fitWidth="77.0" layoutX="464.0" layoutY="364.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="rightWall" fitHeight="511.0" fitWidth="101.0" layoutX="923.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="bottomDoor" fitHeight="100.0" fitWidth="90.0" layoutX="456.0" layoutY="425.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/door.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="60.0" fitWidth="102.0" layoutX="446.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="60.0" fitWidth="102.0" layoutX="454.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/Teacher's_Desk_sprite_002.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="93.0" fitWidth="77.0" layoutX="128.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="93.0" fitWidth="77.0" layoutX="132.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/Cabinet.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="99.0" fitWidth="77.0" layoutX="770.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="99.0" fitWidth="77.0" layoutX="770.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/Cabinet.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="46.0" fitWidth="48.0" layoutX="469.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="46.0" fitWidth="48.0" layoutX="589.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/ClassroomDesk.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="469.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="589.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/ClassroomDesk.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="535.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="655.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/ClassroomDesk.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="535.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="655.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/ClassroomDesk.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="46.0" fitWidth="48.0" layoutX="408.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="46.0" fitWidth="48.0" layoutX="528.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/ClassroomDesk.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="46.0" fitWidth="48.0" layoutX="408.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="46.0" fitWidth="48.0" layoutX="528.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/ClassroomDesk.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="39.0" fitWidth="48.0" layoutX="789.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="39.0" fitWidth="48.0" layoutX="789.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/Clock_sprite_002.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="waterBottleImageView" fitHeight="29.0" fitWidth="11.0" layoutX="426.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="waterBottleImageView" fitHeight="29.0" fitWidth="11.0" layoutX="546.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/aakebq01wsqnkysr1g32.png.resize.710x399.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="lunchBoxImageView" fitHeight="39.0" fitWidth="30.0" layoutX="545.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="lunchBoxImageView" fitHeight="39.0" fitWidth="30.0" layoutX="665.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/8-2-lunch-box-free-png-image.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="flashLightImageView" fitHeight="31.0" fitWidth="39.0" layoutX="847.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="flashLightImageView" fitHeight="31.0" fitWidth="39.0" layoutX="847.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/flash.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="48.0" layoutX="361.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/ClassroomDesk.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="361.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/ClassroomDesk.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="427.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/ClassroomDesk.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="427.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/ClassroomDesk.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="48.0" layoutX="300.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/ClassroomDesk.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="48.0" layoutX="300.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/ClassroomDesk.png" />
                </image>
             </ImageView>
          </children></AnchorPane>
