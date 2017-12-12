@@ -30,26 +30,26 @@
                   <Image url="@Images/classroom-blackboard-clipart-1.jpg" />
                </image>
             </ImageView>
-            <Label fx:id="volumeLabel" layoutX="811.0" layoutY="23.0" prefHeight="35.0" prefWidth="157.0" textFill="#f8f3f3">
+            <Label fx:id="volumeLabel" layoutX="772.0" layoutY="14.0" prefHeight="28.0" prefWidth="153.0" textFill="#f8f3f3">
                <font>
                   <Font name="Kristen ITC" size="13.0" />
                </font></Label>
-            <TitledPane fx:id="playerInventory" alignment="CENTER_RIGHT" animated="false" collapsible="false" layoutX="804.0" layoutY="69.0" prefHeight="106.0" prefWidth="170.0" />
+            <TitledPane fx:id="play0erInventory" alignment="CENTER_RIGHT" animated="false" collapsible="false" layoutX="772.0" layoutY="62.0" prefHeight="143.0" prefWidth="191.0" />
             <Label fx:id="lblRoomName" layoutX="46.0" layoutY="23.0" text="Room:" textFill="#fcfcfc">
                <font>
                   <Font name="Kristen ITC" size="17.0" />
                </font></Label>
-            <Button layoutX="448.0" layoutY="164.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="A" textFill="#fcfcfc">
+            <Button layoutX="463.0" layoutY="164.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="A" textFill="#fcfcfc">
                <font>
                   <Font name="Kristen ITC" size="25.0" />
                </font></Button>
-            <Button layoutX="520.0" layoutY="158.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="B" textFill="WHITE">
+            <Button layoutX="520.0" layoutY="164.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="B" textFill="WHITE">
                <font>
                   <Font name="Kristen ITC" size="25.0" />
                </font></Button>
-            <Button layoutX="602.0" layoutY="175.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="C" textFill="#fffefe">
+            <Button layoutX="572.0" layoutY="164.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="C" textFill="#fffefe">
                <font>
-                  <Font size="25.0" />
+                  <Font name="Kristen ITC" size="25.0" />
                </font></Button>
             <ImageView fx:id="playerIcon" fitHeight="72.0" fitWidth="129.0" layoutX="46.0" layoutY="58.0" pickOnBounds="true">
                <image>
@@ -60,26 +60,26 @@
                <font>
                   <Font name="Kristen ITC" size="12.0" />
                </font></Label>
-            <Label fx:id="dialogueLabel" layoutX="427.0" layoutY="33.0" prefHeight="143.0" prefWidth="238.0" />
+            <Label fx:id="dialogueLabel" layoutX="440.0" layoutY="35.0" prefHeight="143.0" prefWidth="212.0" />
             <Rectangle fx:id="popUp" arcHeight="5.0" arcWidth="5.0" fill="#22eb0f" height="46.0" layoutX="209.0" layoutY="28.0" opacity="0.0" stroke="#222222" strokeType="INSIDE" width="202.0" />
             <Text fx:id="popUpText" fill="WHITE" layoutX="186.0" layoutY="52.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Press E to open the door." textAlignment="CENTER" wrappingWidth="211.7861328125">
                <font>
                   <Font name="Kristen ITC" size="17.0" />
                </font></Text>
-          <Button layoutX="667.0" layoutY="141.0" mnemonicParsing="false" onAction="#dropItem" prefHeight="46.0" prefWidth="145.0" style="-fx-background-color: transparent;" text="Drop item" textFill="#fffdfd">
+          <Button layoutX="627.0" layoutY="123.0" mnemonicParsing="false" onAction="#dropItem" prefHeight="46.0" prefWidth="145.0" style="-fx-background-color: transparent;" text="Drop item" textFill="#fffdfd">
                <font>
                   <Font name="Kristen ITC" size="18.0" />
                </font></Button>
-            <Button layoutX="680.0" layoutY="81.0" mnemonicParsing="false" onAction="#useItem" prefHeight="46.0" prefWidth="107.0" style="-fx-background-color: transparent;" text="Use item" textFill="#fffafa">
+            <Button layoutX="646.0" layoutY="69.0" mnemonicParsing="false" onAction="#useItem" prefHeight="46.0" prefWidth="107.0" style="-fx-background-color: transparent;" text="Use item" textFill="#fffafa">
                <font>
                   <Font name="Kristen ITC" size="18.0" />
                </font></Button>
-            <ImageView fitHeight="220.0" fitWidth="202.0" layoutX="789.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="261.0" fitWidth="221.0" layoutX="761.0" layoutY="2.0" pickOnBounds="true">
                <image>
-                  <Image url="@Images/screen%20(1).png" />
+                  <Image url="@Images/s0977734_sc7.png" />
                </image>
             </ImageView>
-            <ListView fx:id="playerInventoryGUI" layoutX="805.0" layoutY="105.0" prefHeight="106.0" prefWidth="170.0" />
+            <ListView fx:id="playerInventoryGUI" layoutX="778.0" layoutY="61.0" prefHeight="143.0" prefWidth="185.0" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
@@ -131,6 +131,11 @@
             <ImageView fitHeight="83.0" fitWidth="46.0" layoutX="848.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/1b610b12efbb265889ce4c6403e3272b.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="pantsImageView" fitHeight="46.0" fitWidth="23.0" layoutX="203.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true" rotate="-65.8">
+               <image>
+                  <Image url="@Images/jeans.png" />
                </image>
             </ImageView>
          </children></AnchorPane>
