@@ -57,6 +57,8 @@ public class blueHallwayController extends Controller {
     @FXML
     private ImageView hallucinationImageView;
     @FXML
+    private ImageView coffeeImageView;
+    @FXML
     private Label dialogueLabel;
     @FXML
     private Label clockLabel;
@@ -190,7 +192,12 @@ public class blueHallwayController extends Controller {
               }
         }
     }
-
+    @Override
+    public void pickItemUp(KeyEvent event) {
+          if (player.intersects(player.sceneToLocal(coffeeImageView.localToScene(coffeeImageView.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
+              super.handleItem(business.getItem("Coffee").getName(), coffeeImageView);
+          }
+          }
     @FXML
     private void clickMainMenu(ActionEvent event) 
     {

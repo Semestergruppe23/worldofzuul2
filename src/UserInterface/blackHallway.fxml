@@ -14,7 +14,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#playerMovement" onKeyReleased="#stopMove" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.blackHallwayController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -38,7 +37,7 @@
               <Button layoutX="241.0" layoutY="64.0" mnemonicParsing="false" text="Answer A" />
             <Button layoutX="241.0" layoutY="115.0" mnemonicParsing="false" text="Answer B" />
             <Button layoutX="241.0" layoutY="166.0" mnemonicParsing="false" text="Answer C" />
-            <Button layoutX="20.0" layoutY="217.0" mnemonicParsing="false"  text="Main Menu" />
+            <Button layoutX="20.0" layoutY="217.0" mnemonicParsing="false" text="Main Menu" />
             <ImageView fx:id="playerIcon" fitHeight="160.0" fitWidth="215.0" layoutX="20.0" layoutY="49.0" pickOnBounds="true">
                <image>
                   <Image url="@Images/map_black.png" />
@@ -55,9 +54,9 @@
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <ImageView fitHeight="512.0" fitWidth="1024.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="511.0" fitWidth="1024.0" layoutX="-12.0" pickOnBounds="true">
                <image>
-                  <Image url="@Images/Black_hallway.png" />
+                  <Image url="@Images/blackhall.png" />
                </image>
             </ImageView>
             <ImageView fx:id="player" fitHeight="72.0" fitWidth="84.0" layoutX="470.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
@@ -65,23 +64,23 @@
                   <Image url="@Images/schoolstudent.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="topDoor" fitHeight="82.0" fitWidth="77.0" layoutX="475.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="topDoor" fitHeight="100.0" fitWidth="90.0" layoutX="441.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/door.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="topWall" fitHeight="185.0" fitWidth="1028.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="leftWall" fitHeight="511.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="bottomWall" fitHeight="150.0" fitWidth="1024.0" layoutY="361.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="rightWall" fitHeight="511.0" fitWidth="88.0" layoutX="936.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="rightDoor" fitHeight="82.0" fitWidth="77.0" layoutX="882.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="topWall" fitHeight="180.0" fitWidth="1028.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="leftWall" fitHeight="511.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="bottomWall" fitHeight="32.0" fitWidth="1024.0" layoutY="479.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="rightWall" fitHeight="511.0" fitWidth="133.0" layoutX="891.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="rightDoor" fitHeight="180.0" fitWidth="80.0" layoutX="856.0" layoutY="150.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/door.png" />
+                  <Image url="@Images/doorleft.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="leftDoor" fitHeight="82.0" fitWidth="77.0" layoutX="104.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="leftDoor" fitHeight="180.0" fitWidth="80.0" layoutX="47.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/door.png" />
+                  <Image url="@Images/doorleft.png" />
                </image>
             </ImageView>
             <ImageView fx:id="imgKeyToExit" fitHeight="35.0" fitWidth="32.0" layoutX="201.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true">
@@ -89,70 +88,70 @@
                   <Image url="@Images/WoodCastleDoor2.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="51.0" fitWidth="28.0" layoutX="373.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="62.0" fitWidth="35.0" layoutX="343.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/blue_locker.png" />
+                  <Image url="@Images/black_locker.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="51.0" fitWidth="28.0" layoutX="353.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="62.0" fitWidth="35.0" layoutX="323.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/blue_locker.png" />
+                  <Image url="@Images/black_locker.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="51.0" fitWidth="28.0" layoutX="268.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="62.0" fitWidth="35.0" layoutX="238.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/blue_locker.png" />
+                  <Image url="@Images/black_locker.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="51.0" fitWidth="28.0" layoutX="290.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="62.0" fitWidth="35.0" layoutX="260.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/blue_locker.png" />
+                  <Image url="@Images/black_locker.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="51.0" fitWidth="28.0" layoutX="312.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="62.0" fitWidth="35.0" layoutX="282.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/blue_locker.png" />
+                  <Image url="@Images/black_locker.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="51.0" fitWidth="28.0" layoutX="333.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="62.0" fitWidth="35.0" layoutX="303.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/blue_locker.png" />
+                  <Image url="@Images/black_locker.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="51.0" fitWidth="28.0" layoutX="765.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="62.0" fitWidth="35.0" layoutX="735.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/blue_locker.png" />
+                  <Image url="@Images/black_locker.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="51.0" fitWidth="28.0" layoutX="745.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="62.0" fitWidth="35.0" layoutX="715.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/blue_locker.png" />
+                  <Image url="@Images/black_locker.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="51.0" fitWidth="28.0" layoutX="660.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="62.0" fitWidth="35.0" layoutX="630.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/blue_locker.png" />
+                  <Image url="@Images/black_locker.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="51.0" fitWidth="28.0" layoutX="682.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="62.0" fitWidth="35.0" layoutX="652.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/blue_locker.png" />
+                  <Image url="@Images/black_locker.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="51.0" fitWidth="28.0" layoutX="704.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="62.0" fitWidth="35.0" layoutX="674.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/blue_locker.png" />
+                  <Image url="@Images/black_locker.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="51.0" fitWidth="28.0" layoutX="725.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="62.0" fitWidth="35.0" layoutX="695.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/blue_locker.png" />
+                  <Image url="@Images/black_locker.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="593.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="38.0" fitWidth="32.0" layoutX="577.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="579.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="46.0" fitWidth="41.0" layoutX="673.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/Clock_sprite_002.png" />
+                  <Image url="@Images/black_clock.png" />
                </image>
             </ImageView>
          </children></AnchorPane>

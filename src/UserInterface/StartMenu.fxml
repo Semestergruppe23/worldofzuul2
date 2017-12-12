@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -14,23 +15,46 @@
     <children>
       <ImageView fitHeight="768.0" fitWidth="1024.0">
          <image>
-            <Image url="@Images/Chalkboard.jpg" />
+            <Image url="@Images/bigstock-Blank-Chalkboard-Blackboard-T-50893607-1024x682.jpg" />
          </image>
       </ImageView>
-      <VBox alignment="CENTER" layoutX="412.0" layoutY="284.0" prefHeight="200.0" prefWidth="200.0" spacing="8.0">
+      <VBox alignment="CENTER" layoutX="364.0" layoutY="230.0" prefHeight="456.0" prefWidth="297.0" spacing="8.0">
          <children>
-            <Label fx:id="characterText" text="Name your character" />
-            <TextField fx:id="txtNameInput" />
-            <Button mnemonicParsing="false" onAction="#btnStartGame" text="Start Game" />
-            <Button mnemonicParsing="false" onAction="#btnHighScore" prefHeight="25.0" prefWidth="76.0" text="Highscore" />
-            <Button mnemonicParsing="false" onAction="#btnSettings" prefHeight="25.0" prefWidth="76.0" text="Settings" />
-            <Button mnemonicParsing="false" onAction="#btnExitGame" prefHeight="25.0" prefWidth="76.0" text="Exit Game" />
+            <Label fx:id="characterText" alignment="CENTER" contentDisplay="CENTER" prefHeight="41.0" prefWidth="255.0" text="Name:" textFill="#f2ebeb">
+               <font>
+                  <Font name="Kristen ITC" size="25.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtNameInput" prefHeight="25.0" prefWidth="201.0" style="-fx-border-radius: 50; -fx-background-radius: 50;">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font name="Kristen ITC" size="16.0" />
+               </font>
+            </TextField>
+            <Button mnemonicParsing="false" onAction="#btnStartGame" prefHeight="59.0" prefWidth="137.0" style="-fx-background-radius: 100; -fx-background-color: transparent;" text="START" textFill="WHITE">
+               <font>
+                  <Font name="Kristen ITC" size="25.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin></Button>
+            <Button mnemonicParsing="false" onAction="#btnHighScore" prefHeight="59.0" prefWidth="234.0" style="-fx-background-color: transparent;" text="HIGHSCORE" textFill="#fffefe">
+               <font>
+                  <Font name="Kristen ITC" size="25.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#btnExitGame" prefHeight="59.0" prefWidth="126.0" style="-fx-background-color: transparent;" text="EXIT" textFill="WHITE">
+               <font>
+                  <Font name="Kristen ITC" size="25.0" />
+               </font></Button>
          </children>
       </VBox>
-      <Text layoutX="356.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="School Escape">
+      <Text fill="#f5f3f3" layoutX="328.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="School Escape" wrappingWidth="398.25">
          <font>
-            <Font name="Constantia Bold" size="47.0" />
+            <Font name="Kristen ITC" size="50.0" />
          </font>
       </Text>
+      <Button layoutX="917.0" layoutY="731.0" mnemonicParsing="false" onAction="#btnSettings" prefHeight="25.0" prefWidth="76.0" text="Settings" />
     </children>
 </AnchorPane>

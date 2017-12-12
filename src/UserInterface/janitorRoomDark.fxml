@@ -23,9 +23,9 @@
     <RowConstraints maxHeight="370.0" minHeight="10.0" prefHeight="257.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <ImageView fitHeight="511.0" fitWidth="1031.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="511.0" fitWidth="1031.0" pickOnBounds="true">
          <image>
-            <Image url="@Images/Janitor_room.png" />
+            <Image url="@Images/janitorroom.png" />
          </image>
       </ImageView>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
@@ -45,7 +45,7 @@
             <Button layoutX="20.0" layoutY="217.0" mnemonicParsing="false" onAction="#clickMainMenu" text="Main Menu" />
             <ImageView fx:id="playerIcon" fitHeight="160.0" fitWidth="215.0" layoutX="20.0" layoutY="49.0" pickOnBounds="true">
                <image>
-                  <Image url="@Images/map_janitor.png" />
+                  <Image url="@Images/map_janitor_transparent.png" />
                </image></ImageView>
             <Button layoutX="118.0" layoutY="217.0" mnemonicParsing="false" text="Help" />
             <Label fx:id="clockLabel" layoutX="178.0" layoutY="217.0" prefHeight="25.0" prefWidth="202.0" />
@@ -57,20 +57,25 @@
          <Label fx:id="volumeLabel" layoutX="810.0" layoutY="8.0" prefHeight="25.0" prefWidth="202.0" />
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+      <AnchorPane prefHeight="400.0" prefWidth="876.0">
          <children>
-            <ImageView fx:id="player" fitHeight="72.0" fitWidth="84.0" layoutX="353.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="player" fitHeight="72.0" fitWidth="84.0" layoutX="100.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/schoolstudent.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="topWall" fitHeight="140.0" fitWidth="1028.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="leftWall" fitHeight="511.0" fitWidth="336.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="bottomWall" fitHeight="105.0" fitWidth="1024.0" layoutY="406.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="rightWall" fitHeight="511.0" fitWidth="315.0" layoutX="709.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="leftDoor" fitHeight="82.0" fitWidth="77.0" layoutX="315.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="gasolineImageView" fitHeight="46.0" fitWidth="46.0" layoutX="444.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/door.png" />
+                  <Image url="@Images/764928_gas_512x512.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="topWall" fitHeight="180.0" fitWidth="1028.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="leftWall" fitHeight="511.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="bottomWall" fitHeight="27.0" fitWidth="1024.0" layoutY="484.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="rightWall" fitHeight="511.0" fitWidth="115.0" layoutX="909.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="leftDoor" fitHeight="180.0" fitWidth="80.0" layoutX="60.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/doorleft.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="99.0" fitWidth="24.0" layoutX="679.0" layoutY="341.0" pickOnBounds="true" preserveRatio="true">
@@ -83,7 +88,7 @@
                   <Image url="@Images/Key.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="shadowsImageView" fitHeight="395.0" fitWidth="407.0" layoutX="336.0" layoutY="45.0" pickOnBounds="true">
+            <ImageView fx:id="shadowsImageView" fitHeight="511.0" fitWidth="1028.0" layoutX="14.0" pickOnBounds="true">
                <image>
                   <Image url="@Images/someBlack.png" />
                </image>
