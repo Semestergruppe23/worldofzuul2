@@ -69,7 +69,7 @@
                   <Image url="@Images/door.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="topWall" fitHeight="38.0" fitWidth="1031.0" layoutX="-3.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="topWall" fitHeight="168.0" fitWidth="1031.0" layoutX="-3.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="leftWall" fitHeight="511.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="bottomWall" fitHeight="27.0" fitWidth="1024.0" layoutY="484.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="rightWall" fitHeight="511.0" fitWidth="111.0" layoutX="913.0" pickOnBounds="true" preserveRatio="true" />
@@ -151,6 +151,11 @@
             <ImageView fitHeight="46.0" fitWidth="41.0" layoutX="638.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/Clock_sprite_002.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="colaImageView" fitHeight="38.0" fitWidth="34.0" layoutX="201.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/download.png" />
                </image>
             </ImageView>
          </children></AnchorPane>

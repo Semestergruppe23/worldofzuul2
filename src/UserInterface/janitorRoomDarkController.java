@@ -61,6 +61,8 @@ public class janitorRoomDarkController extends Controller {
     @FXML
     private ImageView keyImageView;
     @FXML
+    private ImageView gasolineImageView;
+    @FXML
     private ImageView shadowsImageView;
           
     
@@ -105,8 +107,9 @@ public class janitorRoomDarkController extends Controller {
           if (player.intersects(player.sceneToLocal(keyImageView.localToScene(keyImageView.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
               super.handleItem(business.getItem("Key to bathroom").getName(), keyImageView);
           }
-
-          
+          else if (player.intersects(player.sceneToLocal(gasolineImageView.localToScene(gasolineImageView.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
+              super.handleItem(business.getItem("Gasoline").getName(), gasolineImageView);
+    }
     }
     
     @Override

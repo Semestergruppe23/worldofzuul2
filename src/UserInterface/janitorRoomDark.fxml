@@ -57,11 +57,16 @@
          <Label fx:id="volumeLabel" layoutX="810.0" layoutY="8.0" prefHeight="25.0" prefWidth="202.0" />
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+      <AnchorPane prefHeight="400.0" prefWidth="876.0">
          <children>
             <ImageView fx:id="player" fitHeight="72.0" fitWidth="84.0" layoutX="100.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/schoolstudent.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="gasolineImageView" fitHeight="46.0" fitWidth="46.0" layoutX="444.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/764928_gas_512x512.png" />
                </image>
             </ImageView>
             <ImageView fx:id="topWall" fitHeight="180.0" fitWidth="1028.0" pickOnBounds="true" preserveRatio="true" />
@@ -83,7 +88,7 @@
                   <Image url="@Images/Key.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="shadowsImageView" fitHeight="511.0" fitWidth="1028.0" pickOnBounds="true">
+            <ImageView fx:id="shadowsImageView" fitHeight="511.0" fitWidth="1028.0" layoutX="14.0" pickOnBounds="true">
                <image>
                   <Image url="@Images/someBlack.png" />
                </image>

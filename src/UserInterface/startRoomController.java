@@ -51,7 +51,10 @@ public class startRoomController extends Controller {
     private Label clockLabel;
     @FXML
     private ImageView beerBottleImageView;
-    
+    @FXML
+    private ImageView beerBottle2ImageView;
+    @FXML
+    private ImageView pantsImageView;
     @FXML
     private ListView playerInventoryGUI;
     @FXML
@@ -87,6 +90,13 @@ public class startRoomController extends Controller {
           if (player.intersects(player.sceneToLocal(beerBottleImageView.localToScene(beerBottleImageView.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
               super.handleItem(business.getItem("Beer").getName(), beerBottleImageView);
           }
+          else if(player.intersects(player.sceneToLocal(pantsImageView.localToScene(pantsImageView.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
+              super.handleItem(business.getItem("Pants").getName(), pantsImageView);
+               }
+          else if(player.intersects(player.sceneToLocal(beerBottle2ImageView.localToScene(beerBottle2ImageView.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
+              super.handleItem(business.getItem("Second Beer").getName(), beerBottle2ImageView);
+          
+    }
     }
     @FXML
     private void clickMainMenu(ActionEvent event) 

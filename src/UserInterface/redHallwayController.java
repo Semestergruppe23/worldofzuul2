@@ -67,7 +67,8 @@ public class redHallwayController extends Controller implements Initializable {
     private Rectangle popUp;
     @FXML
     private Text popUpText;
-   
+   @FXML
+   private ImageView colaImageView;
 
     /**
      * Initializes the controller class.
@@ -117,7 +118,12 @@ public class redHallwayController extends Controller implements Initializable {
         
         }
     }
-
+    @Override
+    public void pickItemUp(KeyEvent event) {
+          if (player.intersects(player.sceneToLocal(colaImageView.localToScene(colaImageView.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
+              super.handleItem(business.getItem("Cola").getName(), colaImageView);
+          }
+    }
     public void popup(KeyEvent event) {
      if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))) {
          super.popupBox(popUp, popUpText);

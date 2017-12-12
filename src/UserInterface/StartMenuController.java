@@ -116,7 +116,9 @@ public class StartMenuController extends Controller implements Initializable {
     private void createItemsInBusiness() {
         business.createItem("Key to exit","exitKey", 2, true); // Don't put it anywhere, given out by the friendly NPC!
         business.createItem("Coffee pot", "coffeepot", 10, true);
-        business.createPositiveDrinkableItem("Water Bottle", "waterBottle", 10, true, 400);
+        business.createPositiveDrinkableItem("Water Bottle", "waterBottle", 10, true, 300);
+        business.createPositiveDrinkableItem("Coffee","coffee", 2, true, 200);
+        business.createPositiveDrinkableItem("Cola", "cola", 2, true, 200);
         business.createItem("Lunch box", "lunchBox", 0, false);
         business.createFlashlightItem("Flashlight", "flashLight", 10, true);
         business.createItem("Battery", "battery", 5, true);
@@ -125,8 +127,11 @@ public class StartMenuController extends Controller implements Initializable {
         business.getItem("Mobile Phone").setText("The battery is dead");
         business.createItem("Key to bathroom", "keyToBathroom", 5, true);
         business.createItem("Calender", "calender", 0, false);
+        business.createWearableItem("Pants", "pants", 0, true, 10);
         //To be deleted, test!
         business.createNegativeDrinkableItem("Beer", "beer", 5, true, 300);
+        business.createNegativeDrinkableItem("Second Beer", "beerTwo", 5, true, 300);
+        business.createNegativeDrinkableItem("Gasoline", "gasoline", 5, true, 400);
         business.getItem("Calender").setText("20.12.2018");
         business.getItem("Lunch box").setText("");
         business.createItem("Broom", "broom", 5, true);
