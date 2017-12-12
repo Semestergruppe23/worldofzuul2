@@ -370,7 +370,7 @@ public class Controller implements Initializable {
     }
     
     public void updateClockLabel(){
-        clockLabel.setText("Remaining time: " + (int)business.getPlayer().getRemainingTime());
+        clockLabel.setText("Remaining time: " + (int)business.getPlayer().getRemainingTime()+" seconds");
     }
     
     public void updateInventoryVolumeLabel(){

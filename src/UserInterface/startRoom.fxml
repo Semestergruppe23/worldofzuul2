@@ -94,7 +94,7 @@
                   <Image url="@Images/schoolstudent.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="topWall" fitHeight="158.0" fitWidth="1031.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="topWall" fitHeight="180.0" fitWidth="1031.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="leftWall" fitHeight="511.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="bottomWall" fitHeight="35.0" fitWidth="1024.0" layoutY="476.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="rightWall" fitHeight="511.0" fitWidth="118.0" layoutX="906.0" pickOnBounds="true" preserveRatio="true" />

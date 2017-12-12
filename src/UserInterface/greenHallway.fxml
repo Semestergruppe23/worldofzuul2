@@ -40,7 +40,7 @@
             <Button layoutX="20.0" layoutY="217.0" mnemonicParsing="false" onAction="#clickMainMenu" text="Main Menu" />
             <ImageView fx:id="playerIcon" fitHeight="160.0" fitWidth="215.0" layoutX="20.0" layoutY="49.0" pickOnBounds="true">
                <image>
-                  <Image url="@Images/map_green.png" />
+                  <Image url="@Images/map_green_transparent.png" />
                </image></ImageView>
             <Button layoutX="118.0" layoutY="217.0" mnemonicParsing="false" text="Help" />
             <Label fx:id="clockLabel" layoutX="178.0" layoutY="217.0" prefHeight="25.0" prefWidth="202.0" />
