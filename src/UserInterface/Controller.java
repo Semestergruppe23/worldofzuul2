@@ -1,15 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package UserInterface;
 
 import Acquaintance.IItem;
 import static UserInterface.UserInterfaceFacade.business;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.animation.FadeTransition;
 import javafx.animation.KeyFrame;
@@ -277,6 +271,10 @@ public class Controller implements Initializable {
 
     }
 
+    /**
+     * Creating all the rooms, and adds them to the roomController list
+     * @throws IOException 
+     */
     public void createRooms() throws IOException {
         roomController = new RoomController();
         
