@@ -1,26 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package UserInterface;
 
 import java.io.IOException;
-import java.util.HashMap;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.input.KeyEvent;
 
-/**
- *
- * @author Hansi
- */
+
 public class Room {
     
-    private Scene scene;
     
+    private Scene scene;
     
     private Parent parent;
     
@@ -29,42 +18,77 @@ public class Room {
     String name;
     
     
+    /**
+     * Constructor
+     * @param name - the name of the room
+     */
     public Room(String name) {
         this.name = name;
     }
     
-    
-    
+    /**
+     * 
+     * @return Scene - a getter method
+     */
     public Scene getScene() {
         return this.scene;
     }
     
+    /**
+     * 
+     * @param scene - A setter method which sets the scene
+     */
     public void setScene(Scene scene) {
         this.scene = scene;
     }
     
+    
+    /**
+     * 
+     * @return A getter method which returns the parent
+     */
     public Parent getParent() {
         return this.parent;
     }
     
+    /**
+     * 
+     * @param parent - A setter method which sets the parent
+     */
     public void setParent(Parent parent) {
     this.parent = parent;
     }
     
+    /**
+     * 
+     * @return A getter method which gets the name
+     */
     public String getName() {
         return this.name;
     }
     
+    /**
+     * 
+     * @param name - A setter method for the name(String)
+     */
     public void setName(String name) {
-        
+        this.name = name;
     }
     
+    /**
+     * 
+     * @param fxmlFilename - a filepath to the fxml document
+     * @throws IOException if the file is not found
+     */
     public void buildroom(String fxmlFilename) throws IOException
 {
-    
+    // create a new FXML loader 
     FXMLLoader loader = new FXMLLoader();
+    //  This method takes all in the fxml document and instance it
     loader.setLocation(getClass().getResource(fxmlFilename));  
+    // Sets the parent
     this.parent = loader.load();
+    // Creates a new scene and takes a parent as argument
     this.scene = new Scene(this.parent);
 }
     
