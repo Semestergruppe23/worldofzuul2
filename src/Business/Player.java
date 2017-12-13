@@ -79,7 +79,7 @@ public class Player implements IPlayer {
     @Override
     public int getScore() { //Returns the players score
         long pointsFromTime = this.totalGameTime - ((System.currentTimeMillis()/1000 - this.startTimeInSeconds));
-        int totalPoints = (int)pointsFromTime + this.playerPoints;
+        this.totalPoints = (int)pointsFromTime + this.playerPoints;
         return this.totalPoints;
     }
 
