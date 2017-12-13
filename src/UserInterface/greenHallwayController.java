@@ -86,23 +86,20 @@ public class greenHallwayController extends Controller {
     }
    
     public void changeRoomBottomDoor(KeyEvent event) throws IOException {
-        if (player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E && business.getRoom(9).getLocked() == true ) {
-            // Temporary placeholder for room locked message. 
-           
-        }
-        // If the Locked boolean is false, then the room is unlocked and you can enter.
-        else if(player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E && business.getRoom(9).getLocked() == false) 
-        {
-            }
-            if (business.getRoom(8).getLocked()==true){
+        if (player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
+           if(business.getPlayer().checkIfPlayerHasItem("Key to exit")==true){
+               business.getRoom(9).setLocked(false);
+           }
+            if (business.getRoom(9).getLocked()==true){
                 this.dialogueLabel.setText("The door is locked");
-            }else if (business.getRoom(8).getLocked()==false){
-                
-            Parent startParent = FXMLLoader.load(getClass().getResource("exitRoom.fxml"));
-            Scene startScene = new Scene(startParent);
-            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(startScene);
-            startStage.show();
+            }else if (business.getRoom(9).getLocked()==false){
+                business.getData().addHighscore(business.getPlayer().getName(), business.getPlayer().getScore());
+                Parent startParent = FXMLLoader.load(getClass().getResource("exitRoom.fxml"));
+                Scene startScene = new Scene(startParent);
+                Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                startStage.setScene(startScene);
+                startStage.show();
+            }
         }
     }
     

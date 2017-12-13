@@ -41,7 +41,6 @@ public class exitRoomController {
     
     public void initialize(URL url, ResourceBundle rb) 
     {
-        business.getData().addHighscore(business.getPlayer().getName(), business.getPlayer().getScore());
     }
 
     @FXML
