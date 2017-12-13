@@ -14,12 +14,13 @@ import Acquaintance.IPlayer;
 import Acquaintance.IRoom;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.Serializable;
 
 /**
  *
  * @author Oskar
  */
-public class BusinessFacade implements IBusiness {
+public class BusinessFacade implements IBusiness, Serializable {
 
     private IData data;
     private IPlayer player;
@@ -134,6 +135,9 @@ public class BusinessFacade implements IBusiness {
 
     public List<IItem> getItemList() {
         return this.items;
+          }
+    public void createItems() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
     
 }

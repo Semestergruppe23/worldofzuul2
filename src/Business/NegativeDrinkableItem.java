@@ -6,12 +6,12 @@
 package Business;
 
 import Acquaintance.IPlayer;
-
+import java.io.Serializable;
 /**
  *
  * @author Oskar
  */
-public class NegativeDrinkableItem extends Item {
+public class NegativeDrinkableItem extends Item implements Serializable {
    
     int timeToBeRemoved = 0;
     
