@@ -157,6 +157,6 @@ public class StartMenuController extends Controller implements Initializable {
         
         business.createFriendlyNPC();
         business.getFriendlyNPC().setItemToBeFound("History Book");
-        business.getNPC().randomizeQuestions(2);
+        //business.getNPC().randomizeQuestions(2);
     }
 }
