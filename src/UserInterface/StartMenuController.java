@@ -129,7 +129,7 @@ public class StartMenuController extends Controller implements Initializable, Se
         business.getItem("Mobile Phone").setText("The battery is dead");
         business.createItem("Key to bathroom", "keyToBathroom", 5, true);
         business.createItem("Calender", "calender", 0, false);
-        //To be deleted, test!
+       
         business.createNegativeDrinkableItem("Beer", "beer", 5, true, 300);
         business.getItem("Calender").setText("20.12.2018");
         business.getItem("Lunch box").setText("");
@@ -152,8 +152,6 @@ public class StartMenuController extends Controller implements Initializable, Se
         business.createFriendlyNPC();
         business.getFriendlyNPC().setItemToBeFound("History Book");
         business.getNPC().randomizeQuestions(2);
-        
-        //business.getFriendlyNPC().setItemToBeFound("NAVNET PÅ DET ITEM PLAYER SKAL FINDE!");
         
         // checking here
         business.getPlayer().retrieveInventory();
@@ -296,6 +294,6 @@ public class StartMenuController extends Controller implements Initializable, Se
         
         business.createFriendlyNPC();
         business.getFriendlyNPC().setItemToBeFound("History Book");
-        //business.getNPC().randomizeQuestions(2);
+        business.getNPC().randomizeQuestions(2);
     }
 }
