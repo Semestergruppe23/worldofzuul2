@@ -149,7 +149,7 @@ public class Controller implements Initializable {
         changeRoomBottomDoor(event);
         changeRoomLeftDoor(event);
         changeRoomTopDoor(event);
-        this.collideWithImageView(event);
+        collideWithImageView(event);
         pickItemUp(event);
         updateListView();
         updateClockLabel();
@@ -253,22 +253,27 @@ public class Controller implements Initializable {
 
     public void changeRoomRightDoor(KeyEvent event) throws IOException {
 
+        // subclass overrides this method
     }
 
     public void changeRoomLeftDoor(KeyEvent event) throws IOException {
 
+        // subclass overrides this method
     }
 
     public void changeRoomBottomDoor(KeyEvent event) throws IOException {
 
+        // subclass overrides this method
     }
 
     public void changeRoomTopDoor(KeyEvent event) throws IOException {
 
+        // subclass overrides this method
     }
 
     public void collideWithImageView(KeyEvent event) {
 
+        // subclass overrides this method
     }
 
     /**
