@@ -15,7 +15,7 @@
     <children>
       <ImageView fitHeight="768.0" fitWidth="1024.0">
          <image>
-            <Image url="@Images/bigstock-Blank-Chalkboard-Blackboard-T-50893607-1024x682.jpg" />
+            <Image url="@Images/Chalkboard.jpg" />
          </image>
       </ImageView>
       <VBox alignment="CENTER" layoutX="364.0" layoutY="230.0" prefHeight="456.0" prefWidth="297.0" spacing="8.0">
@@ -55,6 +55,5 @@
             <Font name="Kristen ITC" size="50.0" />
          </font>
       </Text>
-      <Button layoutX="917.0" layoutY="731.0" mnemonicParsing="false" onAction="#btnSettings" prefHeight="25.0" prefWidth="76.0" text="Settings" />
     </children>
 </AnchorPane>

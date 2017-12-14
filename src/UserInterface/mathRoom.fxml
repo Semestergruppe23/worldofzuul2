@@ -30,32 +30,69 @@
       </ImageView>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
          <children>
-            <TitledPane fx:id="playerInventory" alignment="CENTER_RIGHT" animated="false" collapsible="false" layoutX="810.0" layoutY="32.0" prefHeight="210.0" prefWidth="202.0" text="Inventory">
-               <content>
-                  <ListView fx:id="playerInventoryGUI" prefHeight="200.0" prefWidth="200.0" />
-               </content>
-            </TitledPane>
-            <Label fx:id="lblRoomName" layoutX="20.0" layoutY="16.0" text="Room:">
-               <font>
-                  <Font size="16.0" />
-               </font></Label>
-            <Button layoutX="241.0" layoutY="64.0" mnemonicParsing="false" text="Answer A" />
-            <Button layoutX="241.0" layoutY="115.0" mnemonicParsing="false" text="Answer B" />
-            <Button layoutX="241.0" layoutY="166.0" mnemonicParsing="false" text="Answer C" />
-            <Button layoutX="20.0" layoutY="217.0" mnemonicParsing="false" onAction="#clickMainMenu" text="Main Menu" />
-            <ImageView fx:id="playerIcon" fitHeight="160.0" fitWidth="215.0" layoutX="20.0" layoutY="49.0" pickOnBounds="true">
+           <TitledPane fx:id="playerInventory" alignment="CENTER_RIGHT" animated="false" collapsible="false" layoutX="762.0" layoutY="39.0" prefHeight="130.0" prefWidth="214.0" text="Inventory" />
+            <ImageView fitHeight="263.0" fitWidth="1024.0" layoutY="-3.0" pickOnBounds="true">
                <image>
-                  <Image url="@Images/map_math.png" />
+                  <Image url="@Images/classroom-blackboard-clipart-1.jpg" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblRoomName" layoutX="61.0" layoutY="19.0" text="Room:" textFill="WHITE">
+               <font>
+                  <Font name="Kristen ITC" size="18.0" />
+               </font></Label>
+            <ImageView fitHeight="213.0" fitWidth="219.0" layoutX="760.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/s0977734_sc7.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="448.0" layoutY="178.0" mnemonicParsing="false"  prefHeight="52.0" prefWidth="49.0" style="-fx-background-color: transparent;" text="A" textFill="WHITE">
+               <font>
+                  <Font name="Kristen ITC" size="20.0" />
+               </font></Button>
+            <Button layoutX="549.0" layoutY="181.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="B" textFill="WHITE">
+               <font>
+                  <Font name="Kristen ITC" size="20.0" />
+               </font></Button>
+            <Button layoutX="644.0" layoutY="181.0" mnemonicParsing="false"  style="-fx-background-color: transparent;" text="C" textFill="WHITE">
+               <font>
+                  <Font name="Kristen ITC" size="20.0" />
+               </font></Button>
+            <ImageView fx:id="playerIcon" fitHeight="90.0" fitWidth="133.0" layoutX="52.0" layoutY="49.0" pickOnBounds="true">
+               <image>
+                  <Image url="@Images/map_blue_transparent.png" />
                </image></ImageView>
-            <Button layoutX="118.0" layoutY="217.0" mnemonicParsing="false" text="Help" />
-            <Label fx:id="clockLabel" layoutX="178.0" layoutY="217.0" prefHeight="25.0" prefWidth="202.0" />
-            <Label fx:id="dialogueLabel" layoutX="318.0" layoutY="16.0" prefHeight="226.0" prefWidth="248.0" />
-            <Rectangle fx:id="popUp" arcHeight="5.0" arcWidth="5.0" fill="#22eb0f" height="46.0" layoutX="577.0" layoutY="26.0" opacity="0.0" stroke="#222222" strokeType="INSIDE" width="202.0" />
-            <Text fx:id="popUpText" layoutX="600.0" layoutY="54.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Press E to open the door." />
-            <Button layoutX="726.0" layoutY="166.0" mnemonicParsing="false" onAction="#dropItem" text="Drop item" />
-            <Button layoutX="726.0" layoutY="204.0" mnemonicParsing="false" onAction="#useItem" prefHeight="27.0" prefWidth="79.0" text="Use item" />
-         <Label fx:id="volumeLabel" layoutX="810.0" layoutY="8.0" prefHeight="25.0" prefWidth="202.0" />
+            <Button layoutX="52.0" layoutY="205.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Help" textFill="WHITE">
+               <font>
+                  <Font name="Kristen ITC" size="10.0" />
+               </font></Button>
+            <Label fx:id="clockLabel" layoutX="490.0" layoutY="21.0" prefHeight="25.0" prefWidth="202.0" textFill="WHITE">
+               <font>
+                  <Font name="Kristen ITC" size="13.0" />
+               </font></Label>
+            <Label fx:id="dialogueLabel" alignment="CENTER" contentDisplay="TOP" layoutX="448.0" layoutY="25.0" prefHeight="168.0" prefWidth="298.0" textFill="WHITE">
+               <font>
+                  <Font name="Kristen ITC" size="10.0" />
+               </font></Label>
+            <Rectangle fx:id="popUp" arcHeight="5.0" arcWidth="5.0" fill="#22eb0f" height="46.0" layoutX="225.0" layoutY="26.0" opacity="0.0" stroke="#222222" strokeType="INSIDE" width="213.0" />
+            <Text fx:id="popUpText" fill="WHITE" layoutX="236.0" layoutY="54.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Press E to open the door.">
+               <font>
+                  <Font name="Kristen ITC" size="14.0" />
+               </font></Text>
+         <Button layoutX="876.0" layoutY="197.0" mnemonicParsing="false" onAction="#dropItem" style="-fx-background-color: transparent;" text="Drop" textFill="WHITE">
+               <font>
+                  <Font name="Kristen ITC" size="18.0" />
+               </font></Button>
+            <Button layoutX="753.0" layoutY="194.0" mnemonicParsing="false" onAction="#useItem" prefHeight="46.0" prefWidth="114.0" style="-fx-background-color: transparent;" text="Use" textFill="WHITE">
+               <font>
+                  <Font name="Kristen ITC" size="18.0" />
+               </font></Button>
+            <ListView fx:id="playerInventoryGUI" layoutX="769.0" layoutY="44.0" prefHeight="122.0" prefWidth="194.0" />
+         <Label fx:id="volumeLabel" layoutX="768.0" layoutY="14.0" prefHeight="25.0" prefWidth="202.0" textFill="WHITE">
+               <font>
+                  <Font name="Kristen ITC" size="12.0" />
+               </font></Label>
          </children>
+              
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
