@@ -28,7 +28,7 @@ public class Item implements IItem{
     
     @Override
     public void use(IPlayer player){
-        
+        // is overwritten in subclasses 
     }
     
     @Override
