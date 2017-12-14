@@ -77,8 +77,8 @@ public class Controller implements Initializable {
     private Label volumeLabel;
     
     
-    public static Room room;
-    public static RoomController roomController;
+    public Room room;
+    public RoomController roomController;
     
     @FXML
     private ImageView item;
