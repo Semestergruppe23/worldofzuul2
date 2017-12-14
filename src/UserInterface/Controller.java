@@ -418,12 +418,20 @@ public class Controller implements Initializable {
         }
     }
     
-    
+    /**
+     * 
+     * @throws NullPointerException because it can happen that an item isn't selected
+     * This method gets the selected item from the list view and call the use method.
+     */
     public void useItem() throws NullPointerException {
         
+        // get the selected item object in listview and calls the use method on the item
+        business.getItem(this.playerInventoryGUI.getSelectionModel()
+        .getSelectedItem().getName()).use(business.getPlayer());
         
-        business.getItem(this.playerInventoryGUI.getSelectionModel().getSelectedItem().getName()).use(business.getPlayer());
+        // updating the listview
         updateListView(); 
+        // updating the timer in the game
         updateClockLabel();
     }
     
