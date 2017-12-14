@@ -20,7 +20,7 @@ public class Player implements IPlayer {
     
     String name;
     List<IItem> inventory;
-    private IRoom currentRoom;
+    private String currentRoom;
     private long startTimeInSeconds; //The time when the game starts, is initialized in the Player constructor
     private long totalGameTime = 600; //The game time, in seconds
     private int playerPoints = 0; //The player points
@@ -84,7 +84,7 @@ public class Player implements IPlayer {
     }
 
     @Override
-    public IRoom getCurrentRoom() {
+    public String getCurrentRoom() {
        return this.currentRoom;
     }
     
@@ -141,7 +141,7 @@ public class Player implements IPlayer {
         return this.inventory;
     }
     @Override
-    public void setCurrentRoom(IRoom room){
+    public void setCurrentRoom(String room){
         this.currentRoom = room;
     }
     @Override
@@ -178,4 +178,13 @@ public class Player implements IPlayer {
     public int getCurrentVolumeUsed(){
         return this.volumeUsedInInventory;
     }
+    
+    
+    //Methods only used for loading saved game
+    
+    @Override
+    public void setTimefromLoadedGame(int time){
+        this.totalGameTime = time;
+    }
+    
 }

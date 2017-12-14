@@ -78,6 +78,8 @@ public class blueHallwayController extends Controller {
     public void initialize(URL url, ResourceBundle rb) {
         lblRoomName.setText(business.getRoom(roomID).getRoomName());
         this.hallucinationImageView.setVisible(false);
+        business.getPlayer().setCurrentRoom(business.getRoom(roomID).getRoomName());
+        business.getData().save(business.getPlayer());
         
     }
 
@@ -86,10 +88,7 @@ public class blueHallwayController extends Controller {
     public void changeRoomRightDoor(KeyEvent event) throws IOException {
         
        if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E) {
-            
-           // Setter players curren room to janitor
-        business.getPlayer().setCurrentRoom(business.getRoom(5));
-       
+
         Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         startStage.setScene(super.roomController.getRoom("janitorRoomDark").getScene());
         startStage.show();

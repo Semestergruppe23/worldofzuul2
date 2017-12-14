@@ -71,7 +71,9 @@ public class toiletRoomController extends Controller {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     lblRoomName.setText(business.getRoom(roomID).getRoomName());
+    business.getPlayer().setCurrentRoom(business.getRoom(roomID).getRoomName());
     this.hallucinationImageView.setVisible(false);
+    business.getData().save(business.getPlayer());
     }
 
 

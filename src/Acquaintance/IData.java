@@ -5,8 +5,10 @@
  */
 package Acquaintance;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import org.json.JSONException;
 
 /**
  *
@@ -16,5 +18,7 @@ public interface IData {
     
     public List<String> getHighscore();
     public void addHighscore(String name, int score);
+    public void save(IPlayer player);
+    public IPlayer load()throws IOException, JSONException;
     
 }
