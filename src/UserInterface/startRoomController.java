@@ -69,7 +69,6 @@ public class startRoomController extends Controller {
     public void initialize(URL url, ResourceBundle rb) {
     lblRoomName.setText(business.getRoom(roomID).getRoomName());
     business.getPlayer().setCurrentRoom(business.getRoom(roomID).getRoomName());
-    business.getData().save(business.getPlayer());
     }
  public void changeRoomRightDoor(KeyEvent event) throws IOException {
      

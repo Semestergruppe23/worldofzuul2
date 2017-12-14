@@ -1,6 +1,6 @@
-{"name":"Kasper"}
+{"name":"Mark"}
 {"currentRoom":"Restroom"}
-{"totalGameTime":"599"}
-{"playerPoints":"599"}
-{"maxCapacity":"10"}
+{"totalGameTime":"1047"}
+{"playerPoints":"1047"}
+{"maxCapacity":"20"}
 {"flashlightUsed":"false"}

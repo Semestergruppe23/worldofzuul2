@@ -20,6 +20,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.json.JSONException;
 
 /**
  * FXML Controller class
@@ -75,9 +76,6 @@ public class StartMenuController extends Controller implements Initializable {
         startStage.show();
     }
 
-    @FXML
-    private void btnSettings(ActionEvent event) {
-    }
 
     @FXML
     private void btnExitGame(ActionEvent event) {
@@ -158,5 +156,12 @@ public class StartMenuController extends Controller implements Initializable {
         business.createFriendlyNPC();
         business.getFriendlyNPC().setItemToBeFound("History Book");
         business.getNPC().randomizeQuestions(2);
+    }
+
+    @FXML
+    private void btnLoadGame(ActionEvent event) throws IOException, JSONException {
+            business.getData().load();
+            System.out.println("loaded!");
+
     }
 }

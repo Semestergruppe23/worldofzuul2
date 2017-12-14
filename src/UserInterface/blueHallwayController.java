@@ -79,8 +79,6 @@ public class blueHallwayController extends Controller {
         lblRoomName.setText(business.getRoom(roomID).getRoomName());
         this.hallucinationImageView.setVisible(false);
         business.getPlayer().setCurrentRoom(business.getRoom(roomID).getRoomName());
-        business.getData().save(business.getPlayer());
-        
     }
 
  

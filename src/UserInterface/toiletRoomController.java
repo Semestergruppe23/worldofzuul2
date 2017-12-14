@@ -73,7 +73,6 @@ public class toiletRoomController extends Controller {
     lblRoomName.setText(business.getRoom(roomID).getRoomName());
     business.getPlayer().setCurrentRoom(business.getRoom(roomID).getRoomName());
     this.hallucinationImageView.setVisible(false);
-    business.getData().save(business.getPlayer());
     }
 
 

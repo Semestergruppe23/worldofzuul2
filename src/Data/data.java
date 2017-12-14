@@ -110,10 +110,10 @@ public class Data implements IData
         
         IPlayer player = new Player(loadedPlayer.getString("name"));
         player.setCurrentRoom(loadedPlayer.getString("currentRoom"));
-        
+        System.out.println("næste");
         int time = Integer.parseInt(loadedPlayer.getString("totalGameTime"));
         int score = Integer.parseInt(loadedPlayer.getString("playerPoints"));
-        boolean flashlightUsed = Boolean.parseBoolean(loadedPlayer.getString("flashlightUsed"));
+        boolean flashlightUsed = Boolean.valueOf(loadedPlayer.getString("flashlightUsed"));
         
         player.setFlashlightUsed(flashlightUsed);
         player.setTimefromLoadedGame(time);
@@ -124,6 +124,7 @@ public class Data implements IData
         } else if (loadedPlayer.getString("playerPoints") == "20"){
             player.increaseInventory(10);
         }
+        System.out.println("HOLA");
         return player;
     }
     

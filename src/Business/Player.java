@@ -24,6 +24,7 @@ public class Player implements IPlayer {
     private long startTimeInSeconds; //The time when the game starts, is initialized in the Player constructor
     private long totalGameTime = 600; //The game time, in seconds
     private int playerPoints = 0; //The player points
+    private long remainingTime = 0;
     private int totalPoints = 0; 
     private int maxCapacity = 10;
     private int volumeUsedInInventory = 0;
@@ -53,8 +54,8 @@ public class Player implements IPlayer {
     @Override
     public long getRemainingTime(){
         long timeWhenChecked = System.currentTimeMillis() / 1000;
-        long remainingTime = this.totalGameTime - (timeWhenChecked - this.startTimeInSeconds);
-        return remainingTime; 
+        this.remainingTime = this.totalGameTime - (timeWhenChecked - this.startTimeInSeconds);
+        return this.remainingTime; 
     }
     
     @Override

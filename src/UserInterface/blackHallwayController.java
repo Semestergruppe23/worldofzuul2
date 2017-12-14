@@ -84,7 +84,6 @@ public class blackHallwayController extends Controller {
         lblRoomName.setText(business.getRoom(roomID).getRoomName());
         GUIInventory = FXCollections.observableArrayList((ArrayList)business.getPlayer().getPlayerInventory());
         business.getPlayer().setCurrentRoom(business.getRoom(roomID).getRoomName());
-        business.getData().save(business.getPlayer());
     }
 
     
