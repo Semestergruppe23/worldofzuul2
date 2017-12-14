@@ -7,12 +7,12 @@ package Business;
 
 import Acquaintance.IItem;
 import Acquaintance.IPlayer;
-import java.io.Serializable;
+
 /**
  *
  * @author Oskar
  */
-public class Item implements IItem, Serializable{
+public class Item implements IItem{
     private boolean carryable;
     private String name;
     private int volume;

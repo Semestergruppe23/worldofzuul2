@@ -20,16 +20,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import java.io.Serializable;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * FXML Controller class
  *
  * @author Oskar
  */
-public class StartMenuController extends Controller implements Initializable, Serializable {
+public class StartMenuController extends Controller implements Initializable {
 
     private IBusiness business;
     @FXML
@@ -37,24 +34,7 @@ public class StartMenuController extends Controller implements Initializable, Se
     @FXML
     private Label characterText;
     
-    private playerData pd;
-
-    
-    private String classes[] = {"startRoom", "red", "black", "blue", "green", "history", 
-                                "janitorRoomDark", "janitorRoomLight", "math", "toilet"};
-     public StartMenuController()
-    {
-        //for checking
-        //updateListView();
-        //
-        try {
-            pd = new playerData();
-            //p = new Player(pd.playerName);
-        }
-        catch (IOException ex) {
-            Logger.getLogger(StartMenuController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+ 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -80,126 +60,9 @@ public class StartMenuController extends Controller implements Initializable, Se
         
         Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         startStage.setScene(super.roomController.getRoom("startRoom").getScene());
-           startStage.setOnCloseRequest(e -> {
-                
-            
-                for (int i = 0; i < 10; i++)
-                {
-                    if (super.roomController.getRoom(classes[i]).getScene() == startStage.getScene())
-                         //System.out.println("Same..: " + classes[i]);
-                        pd.className = classes[i];
-                        
-                }
-                sr=new staticalRepresentation();
-                pd.playerName = txtNameInput.getText();
-                pd.xCoord = Double.toString(sr.getX());
-                pd.yCoord = Double.toString(sr.getY());
-                
-               // System.out.println("in mennu start=------exit: X: " + sr.getX() + " Y: " + sr.getY());
-            try {
-                pd.setGameTime("400");
-                pd.setPlayerPoints(String.valueOf(business.getPlayer().getScore()));  //p.getScore to this one
-                business.getPlayer().storeInventory();
-                pd.savePlayerData(pd.playerName, pd.className, pd.xCoord, pd.yCoord);
-               //p.checkInventory();
-            } catch (IOException ex) {
-                Logger.getLogger(StartMenuController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-                startStage.close();
-            });
-        
         startStage.show();
     }
     }
-    public void btnContinue(ActionEvent event)
-    {
-        try {
-            
-            business.createPlayer(pd.playerName);
-            //business.createItems();
-            business.createPlayer(txtNameInput.getText());
-        business.createItem("Key to exit","exitKey", 2, true); // Don't put it anywhere, given out by the friendly NPC!
-        business.createItem("Coffee pot", "coffeepot", 10, true);
-        business.createPositiveDrinkableItem("Water Bottle", "waterBottle", 10, true, 400);
-        business.createItem("Lunch box", "lunchBox", 0, false);
-        business.createFlashlightItem("Flashlight", "flashLight", 10, true);
-        business.createItem("Battery", "battery", 5, true);
-        business.createItem("Mobile Phone", "mobilePhone", 0, false);
-        business.createItem("Beer Bottle", "beerBottle", 2, true);
-        business.getItem("Mobile Phone").setText("The battery is dead");
-        business.createItem("Key to bathroom", "keyToBathroom", 5, true);
-        business.createItem("Calender", "calender", 0, false);
-       
-        business.createNegativeDrinkableItem("Beer", "beer", 5, true, 300);
-        business.getItem("Calender").setText("20.12.2018");
-        business.getItem("Lunch box").setText("");
-        business.createItem("Broom", "broom", 5, true);
-        business.createItem("History Book", "historyBook", 10, true);
-        business.getItem("History Book").setText("The book needed by the professor. You must get it to him, quick!");
-        
-        business.createRoom(0, "Start", false);
-        business.createRoom(1, "Math Room", false);
-        business.createRoom(2, "History Room", false);
-        business.createRoom(3, "Red hallway", false);
-        business.createRoom(4, "Blue hallway", false);
-        business.createRoom(5, "Janitor Room", true);
-        business.createRoom(6, "Green hallway", false);
-        business.createRoom(7, "Black hallway", false);
-        business.createRoom(8, "Restroom", false);
-        business.createRoom(9, "Exit", true);
-         business.createNPC();
-        business.getNPC().fillArraysWithQuestionsAndAnswers();
-        business.createFriendlyNPC();
-        business.getFriendlyNPC().setItemToBeFound("History Book");
-        business.getNPC().randomizeQuestions(2);
-        
-        // checking here
-        business.getPlayer().retrieveInventory();
-        super.updateListView();
-
-        super.createRooms();
-            
-        
-            String cname = pd.className;
-            Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            startStage.setScene(super.roomController.getRoom(cname).getScene());      //startRoom by mee
-            StaticalContinue sc=new StaticalContinue();
-            sc.setCon();
-            
- 
-            startStage.show();
-            startStage.setOnCloseRequest(e -> {
-                
-                
-                for (int i = 0; i < 10; i++)
-                {
-                    if (super.roomController.getRoom(classes[i]).getScene() == startStage.getScene())
-                        pd.className = classes[i];
-                        
-                }
-                sr=new staticalRepresentation();
-                pd.setGameTime("400");
-                pd.setPlayerPoints(String.valueOf(business.getPlayer().getScore()));
-                pd.playerName = txtNameInput.getText();
-                pd.xCoord = Double.toString(sr.getX());
-                pd.yCoord = Double.toString(sr.getY());
-                business.getPlayer().storeInventory();      /// by me this time..
-                
-                 try {
-                pd.savePlayerData(pd.playerName, pd.className, pd.xCoord, pd.yCoord);
-            } catch (IOException ex) {
-                Logger.getLogger(StartMenuController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-                startStage.close();
-            });
-                        
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    
-
 
     @FXML
     private void btnHighScore(ActionEvent event) throws IOException {
@@ -294,6 +157,6 @@ public class StartMenuController extends Controller implements Initializable, Se
         
         business.createFriendlyNPC();
         business.getFriendlyNPC().setItemToBeFound("History Book");
-        business.getNPC().randomizeQuestions(2);
+        //business.getNPC().randomizeQuestions(2);
     }
 }

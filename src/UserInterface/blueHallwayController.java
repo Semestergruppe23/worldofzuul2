@@ -78,16 +78,10 @@ public class blueHallwayController extends Controller {
     public void initialize(URL url, ResourceBundle rb) {
         lblRoomName.setText(business.getRoom(roomID).getRoomName());
         this.hallucinationImageView.setVisible(false);
-               StaticalContinue obj=new StaticalContinue();
-                
-                    try{
-                        playerData data=new playerData();
-                        player.setX(Double.parseDouble(data.xCoord));
-                        player.setY(Double.parseDouble(data.yCoord));
-                }   catch(Exception e) {
-                    
-                }
+        
     }
+
+ 
     
     public void changeRoomRightDoor(KeyEvent event) throws IOException {
         

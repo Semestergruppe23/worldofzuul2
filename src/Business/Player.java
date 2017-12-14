@@ -8,26 +8,15 @@ package Business;
 import Acquaintance.IItem;
 import Acquaintance.IPlayer;
 import Acquaintance.IRoom;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 
 /**
  *
  * @author Oskar
  */
-public class Player implements IPlayer, Serializable {
+public class Player implements IPlayer {
     
     String name;
     List<IItem> inventory;
@@ -40,80 +29,10 @@ public class Player implements IPlayer, Serializable {
     private int volumeUsedInInventory = 0;
     private boolean flashlightUsed = false;
     
-    private double xcoord = 0.0, ycoord = 0.0;
-    //Players coordinates
-        
     public Player(String name){
         this.name = name;
         inventory = new ArrayList();
         this.startTimeInSeconds = System.currentTimeMillis() / 1000; //Initializes the time at the start of the game
-    }
-    @Override
- public void retrieveInventory()
-    {
-        FileInputStream fi;
-        ObjectInputStream oi;
-        
-        try{
-            fi = new FileInputStream("src\\PlayerDataText\\playerInventory.txt");
-            oi = new ObjectInputStream(fi);
-            
-            do{
-                //this.addItemToInventory((IItem) oi.readObject());
-                
-                this.inventory.add((IItem) oi.readObject());
-                //oi.readObject().toString();
-                //updateListView();
-            }while(oi.readObject() != null);
-            
-            
-        } 
-        
-        catch (FileNotFoundException ex) {
-            Logger.getLogger(Player.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Player.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Player.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
-    @Override
-    public void storeInventory()
-    {
-        FileOutputStream f;
-        ObjectOutputStream o;
-        try {
-            f = new FileOutputStream(new File("src\\PlayerDataText\\playerInventory.txt"));
-        
-             o = new ObjectOutputStream(f);
-            // o.writeObject(this.inventory);
-             // going through all items in inventory
-             Iterator<IItem> iterator = this.inventory.iterator();
-            while (iterator.hasNext()) {
-                // creating buffer IItem to compare item with
-                //Item obj = (Item)iterator.next();
-                o.writeObject((IItem) iterator.next());
-
-            }
-             
-              o.writeObject(null);
-        
-        o.close();
-        f.close();
-        } 
-
-        catch (FileNotFoundException ex) {
-            Logger.getLogger(Player.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        catch (IOException ex) {
-            Logger.getLogger(Player.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        Iterator<IItem> iterator = this.inventory.iterator();
-        
-        
-       
     }
 
     @Override

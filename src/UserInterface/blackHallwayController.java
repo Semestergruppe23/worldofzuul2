@@ -84,17 +84,10 @@ public class blackHallwayController extends Controller {
     public void initialize(URL url, ResourceBundle rb) {
         lblRoomName.setText(business.getRoom(roomID).getRoomName());
         GUIInventory = FXCollections.observableArrayList((ArrayList)business.getPlayer().getPlayerInventory());
-               StaticalContinue obj=new StaticalContinue();
-                
-                    try{
-                        playerData data=new playerData();
-                        player.setX(Double.parseDouble(data.xCoord));
-                        player.setY(Double.parseDouble(data.yCoord));
-                }   catch(Exception e) {
-                    
-                }
     }
 
+    
+    
        public void changeRoomLeftDoor(KeyEvent event) throws IOException {
         if (player.intersects(player.sceneToLocal(leftDoor.localToScene(leftDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
          Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();

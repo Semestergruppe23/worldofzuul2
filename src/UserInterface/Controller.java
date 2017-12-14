@@ -41,7 +41,7 @@ public class Controller implements Initializable {
     Timeline timelineA = new Timeline();
     Timeline timelineS = new Timeline();
     Timeline timelineD = new Timeline();
-     public double xCoord, yCoord;
+
     @FXML
     private TitledPane playerInventory;
     @FXML
@@ -77,8 +77,8 @@ public class Controller implements Initializable {
     private Label volumeLabel;
     
     
-    public Room room;
-    public RoomController roomController;
+    public static Room room;
+    public static RoomController roomController;
     
     @FXML
     private ImageView item;
@@ -132,22 +132,10 @@ public class Controller implements Initializable {
         final KeyFrame kf = new KeyFrame(Duration.hours(3000), kv);
         timelineD.getKeyFrames().add(kf);
     }
-    private void setx(double x)
-    {
-        xCoord = x;
-    }
-    
-    public double getx()
-    {
-        return xCoord;
-    }
-    
-    
-    
-    staticalRepresentation sr=new staticalRepresentation();
+
     // Called on keyPressed.
     @FXML
-    public void playerMovement(KeyEvent event) throws IOException {
+    private void playerMovement(KeyEvent event) throws IOException {
         
          if (event.getCode() == KeyCode.E) {
                             timelineW.stop();

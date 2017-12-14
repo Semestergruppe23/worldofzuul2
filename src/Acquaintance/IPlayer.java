@@ -37,8 +37,7 @@ public interface IPlayer {
      * true, if the current game time has exceded the game time
      */
     boolean checkTime();
-     void storeInventory(); 
-    void retrieveInventory();   
+    
     
     /**
      * @return the name of the player
