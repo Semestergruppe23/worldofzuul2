@@ -23,7 +23,7 @@
     <RowConstraints maxHeight="370.0" minHeight="10.0" prefHeight="257.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <ImageView fitHeight="515.0" fitWidth="1037.0" pickOnBounds="true">
+      <ImageView fitHeight="515.0" fitWidth="1024.0" pickOnBounds="true">
          <image>
             <Image url="@Images/bluehall.png" />
          </image>
@@ -31,37 +31,57 @@
       <ImageView fitHeight="150.0" fitWidth="194.0" pickOnBounds="true" preserveRatio="true" />
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
          <children>
+            <ImageView fitHeight="263.0" fitWidth="1024.0" layoutY="-3.0" pickOnBounds="true">
+               <image>
+                  <Image url="@Images/classroom-blackboard-clipart-1.jpg" />
+               </image>
+            </ImageView>
            <TitledPane fx:id="playerInventory" alignment="CENTER_RIGHT" animated="false" collapsible="false" layoutX="810.0" layoutY="32.0" prefHeight="210.0" prefWidth="202.0" text="Inventory">
                <content>
                   <ListView fx:id="playerInventoryGUI" prefHeight="200.0" prefWidth="200.0" />
                </content>
             </TitledPane>
-            <Label fx:id="lblRoomName" layoutX="26.0" layoutY="16.0" text="Room:">
+            <Label fx:id="lblRoomName" layoutX="26.0" layoutY="16.0" text="Room:" textFill="WHITE">
                <font>
-                  <Font size="16.0" />
+                  <Font name="Kristen ITC" size="16.0" />
                </font></Label>
-            <Button layoutX="241.0" layoutY="64.0" mnemonicParsing="false" onAction="#btnOptionA" text="Answer A" />
-            <Button layoutX="241.0" layoutY="115.0" mnemonicParsing="false" onAction="#btnOptionB" text="Answer B" />
-            <Button layoutX="241.0" layoutY="166.0" mnemonicParsing="false" onAction="#btnOptionC" text="Answer C" />
+            <Button layoutX="380.0" layoutY="178.0" mnemonicParsing="false" onAction="#btnOptionA" prefHeight="52.0" prefWidth="49.0" style="-fx-background-color: transparent;" text="A" textFill="WHITE">
+               <font>
+                  <Font name="Kristen ITC" size="20.0" />
+               </font></Button>
+            <Button layoutX="421.0" layoutY="181.0" mnemonicParsing="false" onAction="#btnOptionB" style="-fx-background-color: transparent;" text="B" textFill="WHITE">
+               <font>
+                  <Font name="Kristen ITC" size="20.0" />
+               </font></Button>
+            <Button layoutX="463.0" layoutY="181.0" mnemonicParsing="false" onAction="#btnOptionC" style="-fx-background-color: transparent;" text="C" textFill="WHITE">
+               <font>
+                  <Font name="Kristen ITC" size="20.0" />
+               </font></Button>
             <Button layoutX="20.0" layoutY="217.0" mnemonicParsing="false" onAction="#clickMainMenu" text="Main Menu" />
-            <ImageView fx:id="playerIcon" fitHeight="160.0" fitWidth="215.0" layoutX="20.0" layoutY="49.0" pickOnBounds="true">
+            <ImageView fx:id="playerIcon" fitHeight="90.0" fitWidth="133.0" layoutX="20.0" layoutY="49.0" pickOnBounds="true">
                <image>
                   <Image url="@Images/map_blue_transparent.png" />
                </image></ImageView>
             <Button layoutX="118.0" layoutY="217.0" mnemonicParsing="false" text="Help" />
             <Label fx:id="clockLabel" layoutX="178.0" layoutY="217.0" prefHeight="25.0" prefWidth="202.0" />
-            <Label fx:id="dialogueLabel" layoutX="318.0" layoutY="16.0" prefHeight="226.0" prefWidth="248.0" textFill="#1e1919">
+            <Label fx:id="dialogueLabel" layoutX="370.0" layoutY="33.0" prefHeight="150.0" prefWidth="284.0" textFill="#1e1919">
                <font>
                   <Font name="Kristen ITC" size="10.0" />
                </font></Label>
             <Rectangle fx:id="popUp" arcHeight="5.0" arcWidth="5.0" fill="#22eb0f" height="46.0" layoutX="577.0" layoutY="26.0" opacity="0.0" stroke="#222222" strokeType="INSIDE" width="202.0" />
             <Text fx:id="popUpText" layoutX="600.0" layoutY="54.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Press E to open the door." />
-         <Button layoutX="726.0" layoutY="166.0" mnemonicParsing="false" onAction="#dropItem" text="Drop item" />
-            <Button layoutX="726.0" layoutY="204.0" mnemonicParsing="false" onAction="#useItem" prefHeight="27.0" prefWidth="79.0" text="Use item" />
+         <Button layoutX="676.0" layoutY="67.0" mnemonicParsing="false" onAction="#dropItem" style="-fx-background-color: transparent;" text="Drop item" textFill="WHITE">
+               <font>
+                  <Font name="Kristen ITC" size="18.0" />
+               </font></Button>
+            <Button layoutX="691.0" layoutY="199.0" mnemonicParsing="false" onAction="#useItem" prefHeight="46.0" prefWidth="114.0" style="-fx-border-color: transparent;" text="Use item">
+               <font>
+                  <Font name="Kristen ITC" size="18.0" />
+               </font></Button>
          <Label fx:id="volumeLabel" layoutX="810.0" layoutY="8.0" prefHeight="25.0" prefWidth="202.0" />
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+      <AnchorPane prefHeight="541.0" prefWidth="1025.0">
          <children>
             <ImageView fx:id="player" fitHeight="72.0" fitWidth="84.0" layoutX="470.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -74,10 +94,10 @@
                </image>
             </ImageView>
             <ImageView fx:id="topWall" fitHeight="160.0" fitWidth="1031.0" layoutX="21.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="leftWall" fitHeight="552.0" fitWidth="101.0" layoutY="-34.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="leftWall" fitHeight="552.0" fitWidth="90.0" layoutX="11.0" layoutY="-34.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="bottomWall" fitHeight="17.0" fitWidth="1024.0" layoutX="3.0" layoutY="498.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="rightWall" fitHeight="511.0" fitWidth="101.0" layoutX="908.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" rotate="-4.1" />
-            <ImageView fx:id="rightDoor" fitHeight="180.0" fitWidth="80.0" layoutX="876.0" layoutY="150.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="rightDoor" fitHeight="180.0" fitWidth="80.0" layoutX="863.0" layoutY="152.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/doorleft.png" />
                </image>
