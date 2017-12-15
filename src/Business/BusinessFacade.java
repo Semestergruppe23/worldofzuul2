@@ -19,6 +19,7 @@ import java.util.List;
  *
  * @author Oskar
  */
+
 public class BusinessFacade implements IBusiness {
 
     private IData data;
@@ -105,6 +106,9 @@ public class BusinessFacade implements IBusiness {
 
     @Override
     public IRoom getRoom(int roomId) {
+        // SAVE GAME WHEN CHANGING ROOM
+        this.getData().save(this.getPlayer());
+        
         return rooms.get(roomId);
     }
 

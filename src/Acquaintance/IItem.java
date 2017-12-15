@@ -11,7 +11,16 @@ package Acquaintance;
  */
 public interface IItem {
     
+    /**
+     * 
+     * @return the name of the item as a string
+     */
     String getName();
+    
+    /**
+     * 
+     * @return true if the item is carryable and flse if it is not
+     */
     boolean getCarryable();
     int getVolume();
     void setText(String description);

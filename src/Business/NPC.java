@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -62,8 +63,11 @@ public class NPC implements INPC {
     
     @Override
     public void randomizeQuestions(int numberOfQuestionsAsked){
-        int startInArray  = (int)(Math.random() * ((this.questions.size()) + 1)) - numberOfQuestionsAsked;
-        this.questionsAskedAnswersChecked = startInArray - 1;
+        Random r = new Random();
+        int low = numberOfQuestionsAsked;
+        int high = this.questions.size();
+        int randomValue = r.nextInt(high - low) + low;
+        this.questionsAskedAnswersChecked = randomValue - numberOfQuestionsAsked;
     }
     
 }

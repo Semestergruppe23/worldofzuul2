@@ -72,6 +72,7 @@ public class greenHallwayController extends Controller {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         lblRoomName.setText(business.getRoom(roomID).getRoomName());
+        business.getPlayer().setCurrentRoom(business.getRoom(roomID).getRoomName());
     }
 
    

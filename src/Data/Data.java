@@ -2,6 +2,14 @@
 package Data;
 
 import Acquaintance.IData;
+import Acquaintance.IPlayer;
+import Business.Player;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -9,6 +17,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 
 // @author Tim
@@ -45,7 +55,7 @@ public class Data implements IData
         try
         {
             statement = conn.createStatement();
-            result = statement.executeQuery("SELECT * FROM matador.highscore ORDER BY score DESC LIMIT 17");
+            result = statement.executeQuery("SELECT * FROM matador.highscore ORDER BY score DESC LIMIT 14");
             
             while (result.next())
                 {
@@ -71,5 +81,56 @@ public class Data implements IData
         } catch (SQLException ex){
             System.out.println(ex.toString());
         }
-    } 
+    }
+    
+
+    
+    //Methods for saving and loading the Player-object locally
+    
+    
+    
+    public void save(IPlayer player) {
+        try {
+            PrintWriter pw = new PrintWriter("save.txt", "UTF-8");
+            pw.println("{\"name\":\"" + player.getName() + "\"}");
+            pw.println("{\"currentRoom\":\"" + player.getCurrentRoom() + "\"}");
+            pw.println("{\"totalGameTime\":\"" + player.getRemainingTime() + "\"}");
+            pw.println("{\"playerPoints\":\"" + player.getScore() + "\"}");
+            pw.println("{\"maxCapacity\":\"" + player.getMaxCapacity() + "\"}");
+            pw.println("{\"flashlightUsed\":\"" + player.getFlashlightUsed() + "\"}");
+            pw.close();
+        } catch (Exception ex) {
+            //
+        }  
+    }
+    
+    public IPlayer load() throws IOException, JSONException {
+        String str = readFile("save.txt", StandardCharsets.UTF_8);
+        JSONObject loadedPlayer = new JSONObject(str);
+        
+        IPlayer player = new Player(loadedPlayer.getString("name"));
+        player.setCurrentRoom(loadedPlayer.getString("currentRoom"));
+        System.out.println("næste");
+        int time = Integer.parseInt(loadedPlayer.getString("totalGameTime"));
+        int score = Integer.parseInt(loadedPlayer.getString("playerPoints"));
+        boolean flashlightUsed = Boolean.valueOf(loadedPlayer.getString("flashlightUsed"));
+        
+        player.setFlashlightUsed(flashlightUsed);
+        player.setTimefromLoadedGame(time);
+        player.rewardPoints(score);
+        
+        if (loadedPlayer.getString("maxCapacity") == "10"){
+            //Do nothing
+        } else if (loadedPlayer.getString("playerPoints") == "20"){
+            player.increaseInventory(10);
+        }
+        System.out.println("HOLA");
+        return player;
+    }
+    
+    public String readFile(String path, Charset encoding) throws IOException {
+        byte[] encoded = Files.readAllBytes(Paths.get(path));
+        return new String(encoded, encoding);
+    }
+ 
 }

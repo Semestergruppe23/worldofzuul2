@@ -59,8 +59,8 @@ public interface IPlayer {
     void addItemToInventory(IItem item);
     
     
-    IRoom getCurrentRoom();
-    void setCurrentRoom(IRoom room);
+    String getCurrentRoom();
+    void setCurrentRoom(String room);
     
     List<IItem> getPlayerInventory();
     
@@ -85,4 +85,5 @@ public interface IPlayer {
     
     int getMaxCapacity();
     int getCurrentVolumeUsed();
+    void setTimefromLoadedGame(int time);
 }

@@ -20,10 +20,11 @@ public class Player implements IPlayer {
     
     String name;
     List<IItem> inventory;
-    private IRoom currentRoom;
+    private String currentRoom;
     private long startTimeInSeconds; //The time when the game starts, is initialized in the Player constructor
     private long totalGameTime = 600; //The game time, in seconds
     private int playerPoints = 0; //The player points
+    private long remainingTime = 0;
     private int totalPoints = 0; 
     private int maxCapacity = 10;
     private int volumeUsedInInventory = 0;
@@ -53,8 +54,8 @@ public class Player implements IPlayer {
     @Override
     public long getRemainingTime(){
         long timeWhenChecked = System.currentTimeMillis() / 1000;
-        long remainingTime = this.totalGameTime - (timeWhenChecked - this.startTimeInSeconds);
-        return remainingTime; 
+        this.remainingTime = this.totalGameTime - (timeWhenChecked - this.startTimeInSeconds);
+        return this.remainingTime; 
     }
     
     @Override
@@ -84,7 +85,7 @@ public class Player implements IPlayer {
     }
 
     @Override
-    public IRoom getCurrentRoom() {
+    public String getCurrentRoom() {
        return this.currentRoom;
     }
     
@@ -141,7 +142,7 @@ public class Player implements IPlayer {
         return this.inventory;
     }
     @Override
-    public void setCurrentRoom(IRoom room){
+    public void setCurrentRoom(String room){
         this.currentRoom = room;
     }
     @Override
@@ -178,4 +179,13 @@ public class Player implements IPlayer {
     public int getCurrentVolumeUsed(){
         return this.volumeUsedInInventory;
     }
+    
+    
+    //Methods only used for loading saved game
+    
+    @Override
+    public void setTimefromLoadedGame(int time){
+        this.totalGameTime = time;
+    }
+    
 }
