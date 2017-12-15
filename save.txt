@@ -1,6 +1,6 @@
-{"name":"f"}
-{"currentRoom":"Math Room"}
-{"totalGameTime":"598"}
-{"playerPoints":"598"}
-{"maxCapacity":"10"}
+{"name":"Mia"}
+{"currentRoom":"Restroom"}
+{"totalGameTime":"787"}
+{"playerPoints":"787"}
+{"maxCapacity":"20"}
 {"flashlightUsed":"false"}

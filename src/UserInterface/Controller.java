@@ -374,6 +374,10 @@ public class Controller implements Initializable {
         GUIInventory.addAll(business.getPlayer().getPlayerInventory());
         //show observablelist in listView
         playerInventoryGUI.setItems(GUIInventory);
+        
+        // SAVE GAME WHEN CHANGING ROOM
+        business.getData().save(business.getPlayer());
+        
     }
     
     public void updateClockLabel(){
