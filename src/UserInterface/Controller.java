@@ -165,7 +165,7 @@ public class Controller implements Initializable {
         }
         
 
-        if (event.getCode() == KeyCode.W) {
+        if (event.getCode() == KeyCode.W || event.getCode() == KeyCode.UP ) {
             if (player.intersects(player.sceneToLocal(topWall.localToScene(topWall.getBoundsInLocal())))) {
                 // DO NOTHING.
 
@@ -180,7 +180,7 @@ public class Controller implements Initializable {
 
             }
         } else {
-            if (event.getCode() == KeyCode.A) {
+            if (event.getCode() == KeyCode.A || event.getCode() == KeyCode.LEFT ) {
                 if (player.intersects(player.sceneToLocal(leftWall.localToScene(leftWall.getBoundsInLocal())))) {
                     // DO NOTHI;
                     timelineA.stop();
@@ -195,7 +195,7 @@ public class Controller implements Initializable {
 
                 }
             } else {
-                if (event.getCode() == KeyCode.S) {
+                if (event.getCode() == KeyCode.S || event.getCode() == KeyCode.DOWN ) {
                     if (player.intersects(player.sceneToLocal(bottomWall.localToScene(bottomWall.getBoundsInLocal())))) {
                         // DO NOTHING.
                         timelineS.stop();
@@ -208,7 +208,7 @@ public class Controller implements Initializable {
                     }
 
                 } else {
-                    if (event.getCode() == KeyCode.D) {
+                    if (event.getCode() == KeyCode.D || event.getCode() == KeyCode.RIGHT) {
                         if (player.intersects(player.sceneToLocal(rightWall.localToScene(rightWall.getBoundsInLocal())))) {
                             // DO NOTHING.
 
@@ -233,16 +233,16 @@ public class Controller implements Initializable {
     // Called on keyReleased. 
     @FXML
     public void stopMove(KeyEvent event) {
-        if (event.getCode() == KeyCode.W) {
+        if (event.getCode() == KeyCode.W || event.getCode() == KeyCode.UP) {
             timelineW.stop();
         } else {
-            if (event.getCode() == KeyCode.A) {
+            if (event.getCode() == KeyCode.A || event.getCode() == KeyCode.LEFT) {
                 timelineA.stop();
             } else {
-                if (event.getCode() == KeyCode.S) {
+                if (event.getCode() == KeyCode.S || event.getCode() == KeyCode.DOWN) {
                     timelineS.stop();
                 } else {
-                    if (event.getCode() == KeyCode.D) {
+                    if (event.getCode() == KeyCode.D || event.getCode() == KeyCode.RIGHT) {
                         timelineD.stop();
                     }
                 }
