@@ -1,10 +1,10 @@
-Dialogue: Do you even remember where you are?
+Dialogue: Do you even remember where you are?;
 Question: What's the name of this school?
 A) University of Southern Denmark
 B) University of Copenhagen
 C) The kindergarden Toddler Tot's
 A
-Dialogue: Shouldn't you be at school?
+Dialogue: Shouldn't you be at school?;
 Question: What day of the weekend is it currently?
 A) Thursday
 B) Monday, Ugh!
@@ -22,44 +22,44 @@ A) A nice book
 B) A key
 C) I never knew
 B
-Did you drink way too many shots of vodka or what?
-What alcoholic beverage did you drink last night?
+Dialogue: Did you drink way too many shots of vodka or what?;
+Question: What alcoholic beverage did you drink last night?
 A) Vodka?
 B) Beer
 C) Non alcoholic martini
 B
-Do you even pay attention to what I'm saying?
-What's my name?
+Dialogue: Do you even pay attention to what I'm saying?;
+Question: What's my name?
 A) Tom
 B) Weird hallucination guy?
 C) Edward
 A
-Why are you still here, why don't you just walk out?
-Why are you trapped in here?
+Dialogue: Why are you still here, why don't you just walk out?;
+Question: Why are you trapped in here?
 A) All the doors are locked
 B) I like it here ..
 C) I need to find something first
 A
-I saw you in your underwear earlier today..
-Why did you take off your clothes?
+Dialogue: I saw you in your underwear earlier today;
+Question: Why did you take off your clothes?
 A) Im a naturalist
 B) I have no heavenly idea ..
 C) It was hot inside
 C
-Haha, I still remember seeing you on the hallway wearing almost nothing..
-What did you wear when you woke up?
+Dialogue: Haha, I still remember seeing you on the hallway wearing almost nothing;
+Question: What did you wear when you woke up?
 A) A full armored suit!
 B) My normal cloths ?
 C) Underwear
 C
-Your parents must be missing you, haven't they called you?
-Who called your phone earlier?
+Dialogue: Your parents must be missing you, haven't they called you?
+Question: Who called your phone earlier?
 A) My friend
 B) Mom
 C) A insurence guy
 B
-It's almost midnight, how late did you wake up?
-At what time did you wake up?
+Dialogue: It's almost midnight, how late did you wake up?;
+Question: At what time did you wake up?
 A) 21:02
 B) 15:49
 C) 11:01
