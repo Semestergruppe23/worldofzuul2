@@ -1,6 +1,6 @@
-{"name":"Mark"}
+{"name":"Martin"}
 {"currentRoom":"Restroom"}
-{"totalGameTime":"1047"}
-{"playerPoints":"1047"}
+{"totalGameTime":"1019"}
+{"playerPoints":"1219"}
 {"maxCapacity":"20"}
-{"flashlightUsed":"false"}
+{"flashlightUsed":"true"}
