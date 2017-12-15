@@ -1,6 +1,6 @@
-{"name":"asdfsd"}
+{"name":"f"}
 {"currentRoom":"Math Room"}
-{"totalGameTime":"597"}
-{"playerPoints":"597"}
+{"totalGameTime":"598"}
+{"playerPoints":"598"}
 {"maxCapacity":"10"}
 {"flashlightUsed":"false"}
