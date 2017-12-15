@@ -34,22 +34,22 @@ public class FriendlyNPC implements IFriendlyNPC {
     }
     
     @Override
-    public String getCompletedQuestString() { //returns  the String the friendly NPC states when the player has completed the quest
+    public String getCompletedQuestString() { //returns the String the friendly NPC states when the player has completed the quest
         return "Thank you so much!\nI needed that!\nHere is the key, you earned it!";
     }
 
     @Override
     public boolean checkIfPlayerHasItem(IPlayer player) {
         for(IItem item : player.getPlayerInventory()){ //Iterates through the players inventory
-            if(item.getName().equals(this.itemToBeFound)){ //checks if the player has the item 
-                return true;
+            if(item.getName().equals(this.itemToBeFound)){ //checks if the player has the "itemToBeFound" in the inventory
+                return true; //returns true if the player has the "itemToBeFound" in the inventory
             }
         }
-        return false;
+        return false; //returns false if the player does not have the item
     }
 
     @Override
-    public void setItemToBeFound(String itemName) {
+    public void setItemToBeFound(String itemName) { //sets the item the NPC checks if the player has, by the items name
         this.itemToBeFound = itemName;
     }
     
