@@ -69,12 +69,12 @@
                <font>
                   <Font name="Kristen ITC" size="13.0" />
                </font></Label>
-            <Label fx:id="dialogueLabel" alignment="CENTER" contentDisplay="TOP" layoutX="371.0" layoutY="25.0" prefHeight="168.0" prefWidth="385.0" textFill="WHITE">
+            <Label fx:id="dialogueLabel" alignment="CENTER" contentDisplay="TOP" layoutX="448.0" layoutY="25.0" prefHeight="168.0" prefWidth="298.0" textFill="WHITE">
                <font>
                   <Font name="Kristen ITC" size="10.0" />
                </font></Label>
-            <Rectangle fx:id="popUp" arcHeight="5.0" arcWidth="5.0" fill="#22eb0f" height="46.0" layoutX="185.0" layoutY="26.0" opacity="0.0" stroke="#222222" strokeType="INSIDE" width="180.0" />
-            <Text fx:id="popUpText" fill="WHITE" layoutX="191.0" layoutY="54.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Press E to open the door.">
+            <Rectangle fx:id="popUp" arcHeight="5.0" arcWidth="5.0" fill="#22eb0f" height="46.0" layoutX="225.0" layoutY="26.0" opacity="0.0" stroke="#222222" strokeType="INSIDE" width="213.0" />
+            <Text fx:id="popUpText" fill="WHITE" layoutX="236.0" layoutY="54.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Press E to open the door.">
                <font>
                   <Font name="Kristen ITC" size="14.0" />
                </font></Text>

@@ -1,4 +1,4 @@
-{"name":"asdfsad"}
+{"name":"asdfsd"}
 {"currentRoom":"Math Room"}
 {"totalGameTime":"597"}
 {"playerPoints":"597"}

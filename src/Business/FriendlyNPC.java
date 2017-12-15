@@ -20,7 +20,7 @@ public class FriendlyNPC implements IFriendlyNPC {
     private String itemToBeFound = "";
     
     @Override
-    public String getQuestString() { //Returns the String the friendly NPC first states when giving the the quest
+    public String getQuestString() {
         return "Hey you! \nYou look lost.. Can't get out eh? \n"
             + "Tell you what, i will lend you my key to the exit, if you fetch something for me "
             + "\nI need my " + this.itemToBeFound + ", for my studies. \nIt's somewhere around here\n"
@@ -28,20 +28,20 @@ public class FriendlyNPC implements IFriendlyNPC {
     }
     
     @Override
-    public  String getStillWaitingString(){ //returns the String that the friendly NPC states when waiting for his item
+    public  String getStillWaitingString(){
         return "Im still waiting for that " + this.itemToBeFound +
             "\nHurry up a bit will you?"; 
     }
     
     @Override
-    public String getCompletedQuestString() { //returns  the String the friendly NPC states when the player has completed the quest
+    public String getCompletedQuestString() {
         return "Thank you so much!\nI needed that!\nHere is the key, you earned it!";
     }
 
     @Override
     public boolean checkIfPlayerHasItem(IPlayer player) {
-        for(IItem item : player.getPlayerInventory()){ //Iterates through the players inventory
-            if(item.getName().equals(this.itemToBeFound)){ //checks if the player has the item 
+        for(IItem item : player.getPlayerInventory()){
+            if(item.getName().equals(this.itemToBeFound)){
                 return true;
             }
         }
