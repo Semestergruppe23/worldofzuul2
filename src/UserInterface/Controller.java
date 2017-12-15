@@ -28,6 +28,9 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import java.io.File;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 /**
  * FXML Controller class
@@ -447,7 +450,10 @@ public class Controller implements Initializable {
     public void collideWithShadows(KeyEvent event){
         
     }
-    
-    
+    {
+      String uriString = new File("D:\\overførsler\\sound.mp3").toURI().toString();
+    MediaPlayer player = new MediaPlayer( new Media(uriString));
+    player.play();
+    }  
     
 }
