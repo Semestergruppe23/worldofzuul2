@@ -24,7 +24,7 @@ public class Intro implements IIntro {
     
     @Override
     public void fillStringWithIntro() throws IOException {
-        File introFile = new File("instructions.txt");
+        File introFile = new File("instructionsRevized.txt");
         Scanner inputFromFile = new Scanner(introFile);
         while(inputFromFile.hasNext()){
             String sentence = inputFromFile.nextLine() + "\n";
