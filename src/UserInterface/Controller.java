@@ -283,6 +283,10 @@ public class Controller implements Initializable {
     public void createRooms() throws IOException {
         roomController = new RoomController();
         
+        room = new Room("introRoom");
+        room.buildroom("introRoom.fxml");
+        roomController.addRoom(room);
+        
         room = new Room("endGame");
         room.buildroom("GameLostScreen.fxml");
         roomController.addRoom(room);
