@@ -72,7 +72,6 @@ public class greenHallwayController extends Controller {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         lblRoomName.setText(business.getRoom(roomID).getRoomName());
-        business.getPlayer().setCurrentRoom(business.getRoom(roomID).getRoomName());
     }
 
    
@@ -82,6 +81,7 @@ public class greenHallwayController extends Controller {
         if (player.intersects(player.sceneToLocal(rightDoor.localToScene(rightDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
          Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         startStage.setScene(super.roomController.getRoom("black").getScene());
+        business.getPlayer().setCurrentRoom(super.roomController.getRoom("black").getRoomID());
         startStage.show();
         }
     }
@@ -110,6 +110,9 @@ public class greenHallwayController extends Controller {
          if (player.intersects(player.sceneToLocal(topDoor.localToScene(topDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         startStage.setScene(super.roomController.getRoom("red").getScene());
+        business.getPlayer().setCurrentRoom(super.roomController.getRoom("red").getRoomID());
+
+
         startStage.show();
    
         

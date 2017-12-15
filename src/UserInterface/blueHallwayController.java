@@ -78,7 +78,6 @@ public class blueHallwayController extends Controller {
     public void initialize(URL url, ResourceBundle rb) {
         lblRoomName.setText(business.getRoom(roomID).getRoomName());
         this.hallucinationImageView.setVisible(false);
-        business.getPlayer().setCurrentRoom(business.getRoom(roomID).getRoomName());
     }
 
  
@@ -89,6 +88,7 @@ public class blueHallwayController extends Controller {
 
         Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         startStage.setScene(super.roomController.getRoom("janitorRoomDark").getScene());
+        business.getPlayer().setCurrentRoom(super.roomController.getRoom("janitorRoomDark").getRoomID());
         startStage.show();
         
         }
@@ -100,6 +100,7 @@ public class blueHallwayController extends Controller {
             
              Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         startStage.setScene(super.roomController.getRoom("red").getScene());
+        business.getPlayer().setCurrentRoom(super.roomController.getRoom("red").getRoomID());
         startStage.show();
     
     }
@@ -109,6 +110,7 @@ public class blueHallwayController extends Controller {
         if (player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
              Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         startStage.setScene(super.roomController.getRoom("black").getScene());
+        business.getPlayer().setCurrentRoom(super.roomController.getRoom("black").getRoomID());
         startStage.show();
     
     }
@@ -119,6 +121,7 @@ public class blueHallwayController extends Controller {
     if (player.intersects(player.sceneToLocal(topDoor.localToScene(topDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
              Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         startStage.setScene(super.roomController.getRoom("history").getScene());
+        business.getPlayer().setCurrentRoom(super.roomController.getRoom("history").getRoomID());
         startStage.show();
         
         }

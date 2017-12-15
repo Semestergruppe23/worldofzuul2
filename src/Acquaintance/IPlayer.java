@@ -59,8 +59,8 @@ public interface IPlayer {
     void addItemToInventory(IItem item);
     
     
-    String getCurrentRoom();
-    void setCurrentRoom(String room);
+    int getCurrentRoom();
+    void setCurrentRoom(int roomID);
     
     List<IItem> getPlayerInventory();
     

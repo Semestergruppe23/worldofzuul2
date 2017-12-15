@@ -20,6 +20,7 @@ public class Room implements IRoom {
     private boolean locked = false;
     private int indexId;
     private List<IItem> roomItemList;
+    private int roomID;
     
     public Room(int indexId, String roomName, boolean locked){
         this.roomName = roomName;
@@ -60,6 +61,11 @@ public class Room implements IRoom {
     @Override
     public void setLocked(boolean locked){
         this.locked = locked;
+    }
+
+    @Override
+    public int getRoomID() {
+        return this.roomID;
     }
 
 

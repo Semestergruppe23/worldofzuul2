@@ -71,7 +71,6 @@ public class toiletRoomController extends Controller {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     lblRoomName.setText(business.getRoom(roomID).getRoomName());
-    business.getPlayer().setCurrentRoom(business.getRoom(roomID).getRoomName());
     this.hallucinationImageView.setVisible(false);
     }
 
@@ -81,6 +80,7 @@ public class toiletRoomController extends Controller {
      if (player.intersects(player.sceneToLocal(leftDoor.localToScene(leftDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
              Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         startStage.setScene(super.roomController.getRoom("black").getScene());
+        business.getPlayer().setCurrentRoom(super.roomController.getRoom("black").getRoomID());
         startStage.show();
         }
     }

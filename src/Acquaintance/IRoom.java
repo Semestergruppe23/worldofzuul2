@@ -23,6 +23,7 @@ public interface IRoom {
     List<IItem> getItemsInRoom();
     void putItemsInsideRoom(IItem item);
     void removeItemFromRoom(IItem item);
+    int getRoomID();
     
     
 }

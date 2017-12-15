@@ -76,7 +76,6 @@ public class redHallwayController extends Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        lblRoomName.setText(business.getRoom(roomID).getRoomName()); 
-       business.getPlayer().setCurrentRoom(business.getRoom(roomID).getRoomName());
     }
 
     public void changeRoomRightDoor(KeyEvent event) throws IOException {
@@ -85,6 +84,7 @@ public class redHallwayController extends Controller implements Initializable {
         FXMLLoader loader = new FXMLLoader();
             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         startStage.setScene(super.roomController.getRoom("blue").getScene());
+        business.getPlayer().setCurrentRoom(super.roomController.getRoom("blue").getRoomID());
         startStage.show();
         }
     }
@@ -96,6 +96,7 @@ public class redHallwayController extends Controller implements Initializable {
         if (player.intersects(player.sceneToLocal(bottomDoor.localToScene(bottomDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
          Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         startStage.setScene(super.roomController.getRoom("green").getScene());
+        business.getPlayer().setCurrentRoom(super.roomController.getRoom("green").getRoomID());
         startStage.show();
         }
     }
@@ -104,6 +105,7 @@ public class redHallwayController extends Controller implements Initializable {
         if (player.intersects(player.sceneToLocal(leftDoor.localToScene(leftDoor.getBoundsInLocal()))) && event.getCode() == KeyCode.E ) {
          Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         startStage.setScene(super.roomController.getRoom("startRoom").getScene());
+        business.getPlayer().setCurrentRoom(super.roomController.getRoom("startRoom").getRoomID());
         startStage.show();
     
     }
@@ -113,6 +115,7 @@ public class redHallwayController extends Controller implements Initializable {
         if (player.intersects(player.sceneToLocal(topDoor.localToScene(topDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
          Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         startStage.setScene(super.roomController.getRoom("math").getScene());
+        business.getPlayer().setCurrentRoom(super.roomController.getRoom("math").getRoomID());
         startStage.show();
    
         

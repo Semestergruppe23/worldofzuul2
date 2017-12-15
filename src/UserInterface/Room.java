@@ -14,7 +14,7 @@ public class Room {
     private Parent parent;
     
     FXMLLoader loader;
-    
+    private int roomID;
     String name;
     
     
@@ -22,8 +22,9 @@ public class Room {
      * Constructor
      * @param name - the name of the room
      */
-    public Room(String name) {
+    public Room(int id, String name) {
         this.name = name;
+        this.roomID = id;
     }
     
     /**
@@ -92,7 +93,9 @@ public class Room {
     this.scene = new Scene(this.parent);
 }
     
-    
+    public int getRoomID(){
+        return this.roomID;
+    }
 
 
     

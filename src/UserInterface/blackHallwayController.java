@@ -83,7 +83,6 @@ public class blackHallwayController extends Controller {
     public void initialize(URL url, ResourceBundle rb) {
         lblRoomName.setText(business.getRoom(roomID).getRoomName());
         GUIInventory = FXCollections.observableArrayList((ArrayList)business.getPlayer().getPlayerInventory());
-        business.getPlayer().setCurrentRoom(business.getRoom(roomID).getRoomName());
     }
 
     
@@ -92,6 +91,7 @@ public class blackHallwayController extends Controller {
         if (player.intersects(player.sceneToLocal(leftDoor.localToScene(leftDoor.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
          Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         startStage.setScene(super.roomController.getRoom("green").getScene());
+        business.getPlayer().setCurrentRoom(super.roomController.getRoom("green").getRoomID());
         startStage.show();
         }
     }
@@ -107,6 +107,7 @@ public class blackHallwayController extends Controller {
             }else if (business.getRoom(8).getLocked()==false){
             Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             startStage.setScene(super.roomController.getRoom("toilet").getScene());
+            business.getPlayer().setCurrentRoom(super.roomController.getRoom("toilet").getRoomID());
             startStage.show();
             }
     }
@@ -119,6 +120,7 @@ public class blackHallwayController extends Controller {
             
         Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         startStage.setScene(super.roomController.getRoom("blue").getScene());
+        business.getPlayer().setCurrentRoom(super.roomController.getRoom("blue").getRoomID());
         startStage.show();
         
     }

@@ -156,6 +156,7 @@ public class Controller implements Initializable {
         popup(event);
         collideWithShadows(event);
         updateInventoryVolumeLabel();
+        saveGameWhenMoving();
         
         
        if(business.getPlayer().checkTime() == false){
@@ -283,51 +284,51 @@ public class Controller implements Initializable {
     public void createRooms() throws IOException {
         roomController = new RoomController();
         
-        room = new Room("introRoom");
+        room = new Room(0, "introRoom");
         room.buildroom("introRoom.fxml");
         roomController.addRoom(room);
         
-        room = new Room("endGame");
+        room = new Room(10, "endGame");
         room.buildroom("GameLostScreen.fxml");
         roomController.addRoom(room);
 
-        room = new Room("startRoom");
+        room = new Room(1, "startRoom");
         room.buildroom("startRoom.fxml");
         roomController.addRoom(room);
 
-        room = new Room("red");
+        room = new Room(4, "red");
         room.buildroom("redHallway.fxml");
         roomController.addRoom(room);
 
-        room = new Room("black");
+        room = new Room(8, "black");
         room.buildroom("blackHallway.fxml");
         roomController.addRoom(room);
 
-        room = new Room("blue");
+        room = new Room(5, "blue");
         room.buildroom("blueHallway.fxml");
         roomController.addRoom(room);
 
-        room = new Room("green");
+        room = new Room(7, "green");
         room.buildroom("greenHallway.fxml");
         roomController.addRoom(room);
 
-        room = new Room("history");
+        room = new Room(3, "history");
         room.buildroom("historyRoom.fxml");
         roomController.addRoom(room);
 
-        room = new Room("janitorRoomDark");
+        room = new Room(6, "janitorRoomDark");
         room.buildroom("janitorRoomDark.fxml");
         roomController.addRoom(room);
 
-        room = new Room("janitorRoomLight");
+        room = new Room(6, "janitorRoomLight");
         room.buildroom("janitorRoomLight.fxml");
         roomController.addRoom(room);
 
-        room = new Room("math");
+        room = new Room(2, "math");
         room.buildroom("mathRoom.fxml");
         roomController.addRoom(room);
 
-        room = new Room("toilet");
+        room = new Room(9, "toilet");
         room.buildroom("toiletRoom.fxml");
         roomController.addRoom(room);
 
@@ -374,9 +375,6 @@ public class Controller implements Initializable {
         GUIInventory.addAll(business.getPlayer().getPlayerInventory());
         //show observablelist in listView
         playerInventoryGUI.setItems(GUIInventory);
-        
-        // SAVE GAME WHEN CHANGING ROOM
-        business.getData().save(business.getPlayer());
         
     }
     
@@ -451,7 +449,11 @@ public class Controller implements Initializable {
     public void collideWithShadows(KeyEvent event){
         
     }
+    public void saveGameWhenMoving(){
+        // SAVE GAME WHEN CHANGING ROOM
+        business.getData().save(business.getPlayer());
+    }
     
-    
-    
+    public void setPlayerCurrentRoom(){
+    }
 }
