@@ -119,11 +119,6 @@
                   <Image url="@Images/doorleft.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgKeyToExit" fitHeight="35.0" fitWidth="32.0" layoutX="201.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/WoodCastleDoor2.png" />
-               </image>
-            </ImageView>
             <ImageView fitHeight="62.0" fitWidth="35.0" layoutX="343.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/black_locker.png" />
