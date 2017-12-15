@@ -60,7 +60,7 @@ public class StartMenuController extends Controller implements Initializable {
  
         
         Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        startStage.setScene(super.roomController.getRoom("startRoom").getScene());
+        startStage.setScene(super.roomController.getRoom("introRoom").getScene());
         startStage.show();
     }
     }
