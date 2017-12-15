@@ -53,7 +53,7 @@
                <font>
                   <Font name="Kristen ITC" size="20.0" />
                </font></Button>
-            <Button layoutX="644.0" layoutY="181.0" mnemonicParsing="false"  style="-fx-background-color: transparent;" text="C" textFill="WHITE">
+            <Button layoutX="644.0" layoutY="181.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="C" textFill="WHITE">
                <font>
                   <Font name="Kristen ITC" size="20.0" />
                </font></Button>
@@ -147,6 +147,11 @@
             <ImageView fx:id="pantsImageView" fitHeight="46.0" fitWidth="23.0" layoutX="203.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true" rotate="-65.8">
                <image>
                   <Image url="@Images/jeans.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="mobilePhoneImageView" fitHeight="90.0" fitWidth="92.0" layoutX="255.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Mobile_Phone.png" />
                </image>
             </ImageView>
          </children></AnchorPane>

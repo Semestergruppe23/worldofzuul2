@@ -56,6 +56,8 @@ public class startRoomController extends Controller {
     @FXML
     private ImageView pantsImageView;
     @FXML
+    private ImageView mobilePhoneImageView;
+    @FXML
     private ListView playerInventoryGUI;
     @FXML
     private Label dialogueLabel;
@@ -95,7 +97,11 @@ public class startRoomController extends Controller {
                }
           else if(player.intersects(player.sceneToLocal(beerBottle2ImageView.localToScene(beerBottle2ImageView.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
               super.handleItem(business.getItem("Second Beer").getName(), beerBottle2ImageView);
-          
+               }
+          else if(player.intersects(player.sceneToLocal(mobilePhoneImageView.localToScene(mobilePhoneImageView.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
+              super.handleItem(business.getItem("Mobile Phone").getName(), mobilePhoneImageView);
+              this.dialogueLabel.setText(business.getItem("Mobile Phone").getText());
+              
     }
     }
     @FXML

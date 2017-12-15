@@ -21,7 +21,7 @@ public class FriendlyNPC implements IFriendlyNPC {
     
     @Override
     public String getQuestString() {
-        return "Hey you! \n You look lost.. Can't get out eh? \n"
+        return "Hey you! \nYou look lost.. Can't get out eh? \n"
             + "Tell you what, i will lend you my key to the exit, if you fetch something for me "
             + "\nI need my " + this.itemToBeFound + ", for my studies. \nIt's somewhere around here\n"
             + "You may have to get creative with finding it!";

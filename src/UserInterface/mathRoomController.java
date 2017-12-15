@@ -96,6 +96,7 @@ public class mathRoomController extends Controller {
           
           else if (player.intersects(player.sceneToLocal(flashLightImageView.localToScene(flashLightImageView.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
               super.handleItem(business.getItem("Flashlight").getName(), flashLightImageView);
+             
           }
     }
 
