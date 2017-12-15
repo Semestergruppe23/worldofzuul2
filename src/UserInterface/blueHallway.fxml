@@ -125,9 +125,9 @@
                   <Image url="@Images/doorleft.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="hallucinationImageView" fitHeight="86.0" fitWidth="65.0" layoutX="783.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="hallucinationImageView" fitHeight="90.0" fitWidth="90.0" layoutX="759.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/ghosti.png" />
+                  <Image url="@Images/1515448uXNB3dFo.gif" />
                </image>
             </ImageView>
             <ImageView fitHeight="62.0" fitWidth="35.0" layoutX="312.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
