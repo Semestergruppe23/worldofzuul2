@@ -6,7 +6,11 @@
 package Business;
 
 import Acquaintance.IIntro;
+import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 /**
  *
@@ -16,26 +20,37 @@ public class Intro implements IIntro {
 
     private String intro = "";
     private String lore = "";
-    
+   
     
     @Override
     public void fillStringWithIntro() throws IOException {
-        
+        File introFile = new File("instructions.txt");
+        Scanner inputFromFile = new Scanner(introFile);
+        while(inputFromFile.hasNext()){
+            String sentence = inputFromFile.nextLine() + "\n";
+            this.intro += sentence;
+        }
     }
 
     @Override
     public void fillStringWithLore() throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        File introFile = new File("lore.txt");
+        Scanner inputFromFile = new Scanner(introFile);
+        while(inputFromFile.hasNext()){
+            String sentence = inputFromFile.nextLine();
+            this.lore += sentence + "\n";
+        }
+
     }
 
     @Override
     public String generateIntro() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.intro;
     }
 
     @Override
     public String generateLore() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.lore;
     }
     
 }

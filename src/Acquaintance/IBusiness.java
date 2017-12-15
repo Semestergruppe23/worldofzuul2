@@ -138,7 +138,9 @@ public interface IBusiness {
      */
     IFriendlyNPC getFriendlyNPC();
     
-     
+    void createIntro();
+    
+    IIntro getIntro();
     
 
 }

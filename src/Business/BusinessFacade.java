@@ -8,6 +8,7 @@ package Business;
 import Acquaintance.IBusiness;
 import Acquaintance.IData;
 import Acquaintance.IFriendlyNPC;
+import Acquaintance.IIntro;
 import Acquaintance.IItem;
 import Acquaintance.INPC;
 import Acquaintance.IPlayer;
@@ -28,6 +29,7 @@ public class BusinessFacade implements IBusiness {
     List<IItem> items = new ArrayList<>();
     private INPC npc; 
     private IFriendlyNPC friendlyNPC;
+    private IIntro intro;
     
     public void createPlayer(String name){
         player = new Player(name);
@@ -134,6 +136,16 @@ public class BusinessFacade implements IBusiness {
 
     public List<IItem> getItemList() {
         return this.items;
+    }
+
+    @Override
+    public void createIntro() {
+        this.intro = new Intro();
+    }
+
+    @Override
+    public IIntro getIntro() {
+        return this.intro;
     }
     
 }

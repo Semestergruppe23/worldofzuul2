@@ -36,7 +36,16 @@ public class IntroRoomController extends Controller implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        business.createIntro();
+        try{
+        business.getIntro().fillStringWithIntro();
+        business.getIntro().fillStringWithLore();
+        } catch(IOException ex){
+            System.out.println(ex.getStackTrace());
+        }
+        
+        this.manualLabel.setText(business.getIntro().generateIntro());
+        this.loreLabel.setText(business.getIntro().generateLore());
     }    
 
     @FXML
