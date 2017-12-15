@@ -1,6 +1,6 @@
-{"name":"Martin"}
-{"currentRoom":"Restroom"}
-{"totalGameTime":"1019"}
-{"playerPoints":"1219"}
-{"maxCapacity":"20"}
-{"flashlightUsed":"true"}
+{"name":"dsf"}
+{"currentRoom":"Math Room"}
+{"totalGameTime":"598"}
+{"playerPoints":"598"}
+{"maxCapacity":"10"}
+{"flashlightUsed":"false"}
