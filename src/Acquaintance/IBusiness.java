@@ -142,5 +142,6 @@ public interface IBusiness {
     
     IIntro getIntro();
     
+    void setPlayerFromLoadedGame(IPlayer loadedPlayer); 
 
 }

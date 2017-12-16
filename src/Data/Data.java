@@ -31,6 +31,8 @@ public class Data implements IData
     private String userName = "tim_user";
     private String password = "Tim!Er&Dejlig932!";
     
+    private String savedPlayerName;
+    
     //Constructor - Automatically make connection to server
     public Data()
     {
@@ -87,28 +89,31 @@ public class Data implements IData
     
     //Methods for saving and loading the Player-object locally
     
-    
-    
+    //Saving method, using a printwriter
     public void save(IPlayer player) {
         try {
             PrintWriter pw = new PrintWriter("save.txt", "UTF-8");
-            pw.println("{\"name\":\"" + player.getName() + "\"}");
-            pw.println("{\"currentRoom\":\"" + player.getCurrentRoom() + "\"}");
-            pw.println("{\"totalGameTime\":\"" + player.getRemainingTime() + "\"}");
-            pw.println("{\"playerPoints\":\"" + player.getScore() + "\"}");
-            pw.println("{\"maxCapacity\":\"" + player.getMaxCapacity() + "\"}");
-            pw.println("{\"flashlightUsed\":\"" + player.getFlashlightUsed() + "\"}");
+            
+            pw.println("{\"name\":\"" + player.getName() + "\",");
+            pw.println("\"currentRoom\":\"" + player.getCurrentRoom() + "\",");
+            pw.println("\"totalGameTime\":\"" + player.getRemainingTime() + "\",");
+            pw.println("\"playerPoints\":\"" + player.getScore() + "\",");
+            pw.println("\"maxCapacity\":\"" + player.getMaxCapacity() + "\",");
+            pw.println("\"flashlightUsed\":\"" + player.getFlashlightUsed() + "\"}");
             pw.close();
         } catch (Exception ex) {
             //
         }  
     }
     
+    //Loading method, using a JSONobject for easy access to data that has been written in txt-file
+    @Override
     public IPlayer load() throws IOException, JSONException {
         String str = readFile("save.txt", StandardCharsets.UTF_8);
         JSONObject loadedPlayer = new JSONObject(str);
         
         IPlayer player = new Player(loadedPlayer.getString("name"));
+        this.savedPlayerName = loadedPlayer.getString("name");
 
         int time = Integer.parseInt(loadedPlayer.getString("totalGameTime"));
         int score = Integer.parseInt(loadedPlayer.getString("playerPoints"));
@@ -117,18 +122,19 @@ public class Data implements IData
         player.setFlashlightUsed(flashlightUsed);
         player.setTimefromLoadedGame(time);
         player.rewardPoints(score);
+        player.setMaxCapacityFromLoad(Integer.parseInt(loadedPlayer.getString("maxCapacity")));
         
-        if (loadedPlayer.getString("maxCapacity") == "10"){
-            //Do nothing
-        } else if (loadedPlayer.getString("playerPoints") == "20"){
-            player.increaseInventory(10);
-        }
         return player;
     }
     
-    public String readFile(String path, Charset encoding) throws IOException {
+    //Short method for reading txt-file into java
+    private String readFile(String path, Charset encoding) throws IOException {
         byte[] encoded = Files.readAllBytes(Paths.get(path));
         return new String(encoded, encoding);
+    }
+    
+    public String getSavedPlayerName(){
+        return this.savedPlayerName;
     }
  
 }

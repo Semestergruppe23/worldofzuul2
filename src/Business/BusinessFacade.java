@@ -144,5 +144,11 @@ public class BusinessFacade implements IBusiness {
     public IIntro getIntro() {
         return this.intro;
     }
+
+    @Override
+    public void setPlayerFromLoadedGame(IPlayer loadedPlayer) {
+        createPlayer(loadedPlayer.getName());
+        player.setPlayerFromLoadedGame(loadedPlayer);
+    }
     
 }

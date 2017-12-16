@@ -95,16 +95,16 @@ public class StartMenuController extends Controller implements Initializable {
     private void createRoomsInBusiness() {
         
         // Create a room, with an ID, title , and a boolean to check the lock status
-        business.createRoom(0, "Gym", false);
-        business.createRoom(1, "Math Room", false);
-        business.createRoom(2, "History Room", false);
-        business.createRoom(3, "Red hallway", false);
-        business.createRoom(4, "Blue hallway", false);
-        business.createRoom(5, "Janitor Room", true);
-        business.createRoom(6, "Green hallway", false);
-        business.createRoom(7, "Black hallway", false);
-        business.createRoom(8, "Restroom", true);
-        business.createRoom(9, "Exit", true);
+        business.createRoom(1, "Gym", false);
+        business.createRoom(2, "Math Room", false);
+        business.createRoom(3, "History Room", false);
+        business.createRoom(4, "Red hallway", false);
+        business.createRoom(5, "Blue hallway", false);
+        business.createRoom(6, "Janitor Room", true);
+        business.createRoom(7, "Green hallway", false);
+        business.createRoom(8, "Black hallway", false);
+        business.createRoom(9, "Restroom", true);
+        business.createRoom(10, "Exit", true);
     }
     
     /**
@@ -158,10 +158,28 @@ public class StartMenuController extends Controller implements Initializable {
         business.getNPC().randomizeQuestions(2);
     }
 
+    //Method for loading game from previously saved TXT-file
     @FXML
     private void btnLoadGame(ActionEvent event) throws IOException, JSONException {
-            business.getData().load();
-            System.out.println("loaded!");
+        
+
+        business.setPlayerFromLoadedGame(business.getData().load());
+        System.out.println("Player initialized!");
+        createRoomsInBusiness();
+        createItemsInBusiness();
+        initilizeNPC();
+        
+        super.createRooms();
+        business.getItem("History Book").setText("The book needed by the professor. You must get it to him, quick!");
+        
+        //Getting roomname of loaded "currentRoom" to initialize game from that room
+        int loadedRoomID = business.getPlayer().getCurrentRoom();
+        String loadRoom = super.roomController.roomList.get(loadedRoomID).getName();
+ 
+        
+        Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        startStage.setScene(super.roomController.getRoom(loadRoom).getScene());
+        startStage.show();
 
     }
 }
