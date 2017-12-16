@@ -1,11 +1,11 @@
-{"name":"TestRun",
-"currentRoom":"4",
-"totalGameTime":"588",
-"playerPoints":"588",
+{"name":"rere",
+"currentRoom":"3",
+"totalGameTime":"509",
+"playerPoints":"1072",
 "maxCapacity":"20",
-"flashlightUsed":"false"
-"inventory":"[{
-Second Beer,
-Beer,
-Cola,
-}]"}
+"flashlightUsed":"false",
+"item": [
+"Beer",
+"Second Beer",
+"Cola",
+]}

@@ -90,4 +90,7 @@ public interface IPlayer {
     //Methods for loading
     void setPlayerFromLoadedGame(IPlayer loadedPlayer);
     void setMaxCapacityFromLoad(int load);
+    List<String> getStringInventoryForLoading();
+    
+    void addInventory(String item);
 }

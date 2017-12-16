@@ -162,13 +162,29 @@ public class StartMenuController extends Controller implements Initializable {
     @FXML
     private void btnLoadGame(ActionEvent event) throws IOException, JSONException {
         
-
-        business.setPlayerFromLoadedGame(business.getData().load());
-        System.out.println("Player initialized!");
         createRoomsInBusiness();
         createItemsInBusiness();
         initilizeNPC();
         
+        //Initialize load sequence
+        business.setPlayerFromLoadedGame(business.getData().load());
+        System.out.println("Player initialized!");
+        
+        System.out.println(business.getPlayer().getStringInventoryForLoading().size());
+        System.out.println(business.getItemList().size());
+        
+        
+        //Loop for adding items to inventory
+        for (int i = 0; i < business.getPlayer().getStringInventoryForLoading().size(); i++){
+            for (int j = 0; j < business.getItemList().size(); j++) {
+                System.out.println(business.getItemList().get(j).getName());
+                System.out.println(business.getPlayer().getStringInventoryForLoading().get(i));
+                if (business.getItemList().get(j).getName().equals(business.getPlayer().getStringInventoryForLoading().get(i))) {
+                    business.getPlayer().addItemToInventory(business.getItemList().get(j));  
+                }
+            }
+        }
+
         super.createRooms();
         business.getItem("History Book").setText("The book needed by the professor. You must get it to him, quick!");
         

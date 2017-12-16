@@ -32,11 +32,10 @@ public class BusinessFacade implements IBusiness {
     private IIntro intro;
     
     public void createPlayer(String name){
-        player = new Player(name);
+        this.player = new Player(name);
     }
     
     public IPlayer getPlayer(){
-        
         return this.player;
     }
     
@@ -147,8 +146,6 @@ public class BusinessFacade implements IBusiness {
 
     @Override
     public void setPlayerFromLoadedGame(IPlayer loadedPlayer) {
-        createPlayer(loadedPlayer.getName());
-        player.setPlayerFromLoadedGame(loadedPlayer);
+        this.player = loadedPlayer;
     }
-    
 }

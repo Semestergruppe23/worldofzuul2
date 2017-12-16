@@ -11,6 +11,7 @@ import Acquaintance.IRoom;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import Business.BusinessFacade;
 
 /**
  *
@@ -20,6 +21,7 @@ public class Player implements IPlayer {
     
     String name;
     List<IItem> inventory;
+    List<String>stringInventoryForLoading;
     private int currentRoomID;
     private long startTimeInSeconds; //The time when the game starts, is initialized in the Player constructor
     private long totalGameTime = 600; //The game time, in seconds
@@ -33,6 +35,7 @@ public class Player implements IPlayer {
     public Player(String name){
         this.name = name;
         inventory = new ArrayList();
+        stringInventoryForLoading = new ArrayList();
         this.startTimeInSeconds = System.currentTimeMillis() / 1000; //Initializes the time at the start of the game
     }
 
@@ -180,23 +183,34 @@ public class Player implements IPlayer {
         return this.volumeUsedInInventory;
     }
     
-    
+ 
     //Methods only used for loading saved game
     
     @Override
     public void setTimefromLoadedGame(int time){
         this.totalGameTime = time;
     }
+    @Override
     public void setPlayerFromLoadedGame(IPlayer loadedPlayer){
         this.currentRoomID = loadedPlayer.getCurrentRoom();
         this.flashlightUsed = loadedPlayer.getFlashlightUsed();
         this.totalGameTime = loadedPlayer.getRemainingTime();
         this.maxCapacity = loadedPlayer.getMaxCapacity();
         this.totalPoints = loadedPlayer.getScore();
-    }
 
+    }
+        
+    @Override
+   public List<String> getStringInventoryForLoading(){
+        return this.stringInventoryForLoading;
+    }
+   
     @Override
     public void setMaxCapacityFromLoad(int load) {
         this.maxCapacity = load;
+    }
+    
+    public void addInventory(String item) {
+        this.stringInventoryForLoading.add(item);
     }
 }

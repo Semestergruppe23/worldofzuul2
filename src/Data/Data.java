@@ -100,17 +100,13 @@ public class Data implements IData
             pw1.println("\"totalGameTime\":\"" + player.getRemainingTime() + "\",");
             pw1.println("\"playerPoints\":\"" + player.getScore() + "\",");
             pw1.println("\"maxCapacity\":\"" + player.getMaxCapacity() + "\",");
-            pw1.println("\"flashlightUsed\":\"" + player.getFlashlightUsed() + "\"");
-            
+            pw1.println("\"flashlightUsed\":\"" + player.getFlashlightUsed() + "\",");
+            pw1.println("\"item\": [");
             //Print Inventory
-            pw1.println("\"inventory\":\"[{");
-            for (int i = 0; i < player.getPlayerInventory().size(); i++){
-                pw1.println(player.getPlayerInventory().get(i).getName() +",");
-                
-            }
-            pw1.println("}]\"}");
-            
-            
+                for (int i = 0; i < player.getPlayerInventory().size(); i++){
+                pw1.println("\"" + player.getPlayerInventory().get(i).getName()+ "\",");
+                }
+            pw1.println("]}");
             pw1.close();
         } catch (Exception ex) {
             //
@@ -126,15 +122,22 @@ public class Data implements IData
         IPlayer player = new Player(loadedPlayer.getString("name"));
         this.savedPlayerName = loadedPlayer.getString("name");
 
-        int time = Integer.parseInt(loadedPlayer.getString("totalGameTime"));
-        int score = Integer.parseInt(loadedPlayer.getString("playerPoints"));
-        boolean flashlightUsed = Boolean.valueOf(loadedPlayer.getString("flashlightUsed"));
         player.setCurrentRoom(Integer.parseInt(loadedPlayer.getString("currentRoom")));        
-        player.setFlashlightUsed(flashlightUsed);
-        player.setTimefromLoadedGame(time);
-        player.rewardPoints(score);
+        player.setFlashlightUsed(Boolean.valueOf(loadedPlayer.getString("flashlightUsed")));
+        player.setTimefromLoadedGame(Integer.parseInt(loadedPlayer.getString("totalGameTime")));
+        player.rewardPoints(Integer.parseInt(loadedPlayer.getString("playerPoints")));
         player.setMaxCapacityFromLoad(Integer.parseInt(loadedPlayer.getString("maxCapacity")));
         
+        System.out.println(loadedPlayer.getJSONArray("item"));
+        
+        int length = loadedPlayer.getJSONArray("item").length();
+        
+        for ( int i = 0; i < length; i++){
+            System.out.println(loadedPlayer.getJSONArray("item").get(i));
+            player.addInventory(loadedPlayer.getJSONArray("item").get(i).toString());
+            System.out.println(player.getStringInventoryForLoading().get(i));
+        }
+
         return player;
     }
     
