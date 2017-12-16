@@ -24,7 +24,7 @@ import org.json.JSONObject;
 // @author Tim
 
 // Create highscore list implementing interface
-public class data implements IData 
+public class Data implements IData 
 {
     Connection conn = null;
     private String ip = "jdbc:mysql://207.154.205.244/matador";
@@ -34,7 +34,7 @@ public class data implements IData
     private String savedPlayerName;
     
     //Constructor - Automatically make connection to server
-    public data()
+    public Data()
     {
         try 
         {
