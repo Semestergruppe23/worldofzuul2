@@ -63,7 +63,7 @@ public class toiletRoomController extends Controller {
     private Rectangle popUp;
     @FXML
     private Text popUpText;
-    
+    hallucinationPopUp hallucination = new hallucinationPopUp();
 
     /**
      * Initializes the controller class.
@@ -86,82 +86,28 @@ public class toiletRoomController extends Controller {
     }
      
      
-    @Override
-    public void pickItemUp(KeyEvent event) {
-          if (player.intersects(player.sceneToLocal(historyBookImageView.localToScene(historyBookImageView.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
-              super.handleItem(business.getItem("History Book").getName(), historyBookImageView);
-          }
-    } 
-
-    @FXML
-    private void clickMainMenu(ActionEvent event) 
-    {
-        
-    }
-    
+    //Hallucination pop up
     @Override
         public void collideWithImageView (KeyEvent event) {
-            if(player.intersects(player.sceneToLocal(this.hallucinationImageView.localToScene(this.hallucinationImageView.getBoundsInLocal()))) && this.hallucinationAlreadyPoppedUp == false){
-                this.hallucinationImageView.setVisible(true);
-                this.dialogueLabel.setText(business.getNPC().generateQuestion());
+            if(player.intersects(player.sceneToLocal(this.hallucinationImageView.localToScene(this.hallucinationImageView.getBoundsInLocal())))){
+            hallucination.hallucinationPopsUp(this.hallucinationImageView, dialogueLabel, business);
             }
-
         }
 
-    public void btnOptionA(ActionEvent event) {
-        if(this.hallucinationAlreadyPoppedUp == false){
-            String answer = "A";
-            if(business.getNPC().checkAnswer(answer) == true){
-                this.dialogueLabel.setText("Thats right!");
-                business.getPlayer().rewardPoints(200);
-                this.hallucinationAlreadyPoppedUp = true;
-                this.hallucinationImageView.setVisible(false);
-            } else{
-                this.dialogueLabel.setText("No.. That's not right..");
-                business.getPlayer().removeTime(30);
-                this.hallucinationAlreadyPoppedUp = true;
-                this.hallucinationImageView.setVisible(false);
-              }
-        }
-        
+    //The buttons used to answer the hallucination
+    @FXML
+    private void btnOptionA(ActionEvent event) {
+        hallucination.questioning("A", business, dialogueLabel, this.hallucinationImageView);  
     }
-
-    public void btnOptionB(ActionEvent event) {
-                if(this.hallucinationAlreadyPoppedUp == false){
-            String answer = "B";
-            if(business.getNPC().checkAnswer(answer) == true){
-                this.dialogueLabel.setText("Thats right!");
-                business.getPlayer().rewardPoints(200);
-                this.hallucinationAlreadyPoppedUp = true;
-                this.hallucinationImageView.setVisible(false);
-            } else{
-                this.dialogueLabel.setText("No.. That's not right..");
-                business.getPlayer().removeTime(30);
-                this.hallucinationAlreadyPoppedUp = true;
-                this.hallucinationImageView.setVisible(false);
-              }
-        }
+    @FXML
+    private void btnOptionB(ActionEvent event) {
+        hallucination.questioning("B", business, dialogueLabel, this.hallucinationImageView);
     }
-
-    public void btnOptionC(ActionEvent event) {
-        if(this.hallucinationAlreadyPoppedUp == false){
-            String answer = "C";
-            if(business.getNPC().checkAnswer(answer) == true){
-                this.dialogueLabel.setText("Thats right!");
-                business.getPlayer().rewardPoints(200);
-                this.hallucinationAlreadyPoppedUp = true;
-                this.hallucinationImageView.setVisible(false);
-            } else{
-                this.dialogueLabel.setText("No.. That's not right..");
-                business.getPlayer().removeTime(30);
-                this.hallucinationAlreadyPoppedUp = true;
-                this.hallucinationImageView.setVisible(false);
-              }
-        }
-        
-        
-        
+    @FXML
+    private void btnOptionC(ActionEvent event) {
+        hallucination.questioning("C", business, dialogueLabel, this.hallucinationImageView);
     }
+    
     
     public void popup(KeyEvent event) {
      if (player.intersects(player.sceneToLocal(leftDoor.localToScene(leftDoor.getBoundsInLocal())))) {

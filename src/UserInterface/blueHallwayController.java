@@ -70,6 +70,7 @@ public class blueHallwayController extends Controller {
     private Rectangle popUp;
     @FXML
     private Text popUpText;
+    hallucinationPopUp hallucination = new hallucinationPopUp();
 
     /**
      * Initializes the controller class.
@@ -78,6 +79,7 @@ public class blueHallwayController extends Controller {
     public void initialize(URL url, ResourceBundle rb) {
         lblRoomName.setText(business.getRoom(roomID).getRoomName());
         this.hallucinationImageView.setVisible(false);
+        
     }
 
  
@@ -129,69 +131,29 @@ public class blueHallwayController extends Controller {
     
     }
     
+    //Hallucination pop up
     @Override
         public void collideWithImageView (KeyEvent event) {
-            if(player.intersects(player.sceneToLocal(this.hallucinationImageView.localToScene(this.hallucinationImageView.getBoundsInLocal()))) && this.hallucinationAlreadyPoppedUp == false){
-                this.hallucinationImageView.setVisible(true);
-                this.dialogueLabel.setText(business.getNPC().generateQuestion());
+            if(player.intersects(player.sceneToLocal(this.hallucinationImageView.localToScene(this.hallucinationImageView.getBoundsInLocal())))){
+            hallucination.hallucinationPopsUp(this.hallucinationImageView, dialogueLabel, business);
             }
-
         }
 
+    //The buttons used to answer the hallucination
     @FXML
     private void btnOptionA(ActionEvent event) {
-        if(this.hallucinationAlreadyPoppedUp == false){
-            String answer = "A";
-            if(business.getNPC().checkAnswer(answer) == true){
-                this.dialogueLabel.setText("Thats right!");
-                business.getPlayer().rewardPoints(200);
-                this.hallucinationAlreadyPoppedUp = true;
-                this.hallucinationImageView.setVisible(false);
-            } else{
-                this.dialogueLabel.setText("No.. That's not right..");
-                business.getPlayer().removeTime(30);
-                this.hallucinationAlreadyPoppedUp = true;
-                this.hallucinationImageView.setVisible(false);
-              }
-        }
-        
+        hallucination.questioning("A", business, dialogueLabel, this.hallucinationImageView);  
     }
-
     @FXML
     private void btnOptionB(ActionEvent event) {
-                if(this.hallucinationAlreadyPoppedUp == false){
-            String answer = "B";
-            if(business.getNPC().checkAnswer(answer) == true){
-                this.dialogueLabel.setText("Thats right!");
-                business.getPlayer().rewardPoints(200);
-                this.hallucinationAlreadyPoppedUp = true;
-                this.hallucinationImageView.setVisible(false);
-            } else{
-                this.dialogueLabel.setText("No.. That's not right..");
-                business.getPlayer().removeTime(30);
-                this.hallucinationAlreadyPoppedUp = true;
-                this.hallucinationImageView.setVisible(false);
-              }
-        }
+        hallucination.questioning("B", business, dialogueLabel, this.hallucinationImageView);
     }
-
     @FXML
     private void btnOptionC(ActionEvent event) {
-        if(this.hallucinationAlreadyPoppedUp == false){
-            String answer = "C";
-            if(business.getNPC().checkAnswer(answer) == true){
-                this.dialogueLabel.setText("Thats right!");
-                business.getPlayer().rewardPoints(200);
-                this.hallucinationAlreadyPoppedUp = true;
-                this.hallucinationImageView.setVisible(false);
-            } else{
-                this.dialogueLabel.setText("No.. That's not right..");
-                business.getPlayer().removeTime(30);
-                this.hallucinationAlreadyPoppedUp = true;
-                this.hallucinationImageView.setVisible(false);
-              }
-        }
+        hallucination.questioning("C", business, dialogueLabel, this.hallucinationImageView);
     }
+    
+    
     @Override
     public void pickItemUp(KeyEvent event) {
           if (player.intersects(player.sceneToLocal(coffeeImageView.localToScene(coffeeImageView.getBoundsInLocal())))&& event.getCode() == KeyCode.E ) {
