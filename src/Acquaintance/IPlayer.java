@@ -139,6 +139,6 @@ public interface IPlayer {
     void setPlayerFromLoadedGame(IPlayer loadedPlayer);
     void setMaxCapacityFromLoad(int load);
     List<String> getStringInventoryForLoading();
-    
+    void setInventoryUsed(int spaceUsed);
     void addInventory(String item);
 }

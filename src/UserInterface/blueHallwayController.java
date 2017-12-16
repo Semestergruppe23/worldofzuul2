@@ -35,7 +35,7 @@ public class blueHallwayController extends Controller {
     private ImageView playerIcon;
     @FXML
     private ImageView player;
-    private int roomID = 4;
+    private int roomID = 5;
     @FXML
     private ImageView topWall;
     @FXML

@@ -100,6 +100,7 @@ public class Data implements IData
             pw1.println("\"totalGameTime\":\"" + player.getRemainingTime() + "\",");
             pw1.println("\"playerPoints\":\"" + player.getScore() + "\",");
             pw1.println("\"maxCapacity\":\"" + player.getMaxCapacity() + "\",");
+//            pw1.println("\"inventoryUsed\":\"" + player.getCurrentVolumeUsed() + "\",");
             pw1.println("\"flashlightUsed\":\"" + player.getFlashlightUsed() + "\",");
             pw1.println("\"item\": [");
             //Print Inventory
@@ -127,6 +128,8 @@ public class Data implements IData
         player.setTimefromLoadedGame(Integer.parseInt(loadedPlayer.getString("totalGameTime")));
         player.rewardPoints(Integer.parseInt(loadedPlayer.getString("playerPoints")));
         player.setMaxCapacityFromLoad(Integer.parseInt(loadedPlayer.getString("maxCapacity")));
+//        player.setInventoryUsed(Integer.parseInt(loadedPlayer.getString("inventoryUsed")));
+        
         
         System.out.println(loadedPlayer.getJSONArray("item"));
         

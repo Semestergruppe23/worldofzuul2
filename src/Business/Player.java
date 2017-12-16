@@ -213,4 +213,9 @@ public class Player implements IPlayer {
     public void addInventory(String item) {
         this.stringInventoryForLoading.add(item);
     }
+
+    @Override
+    public void setInventoryUsed(int spaceUsed) {
+        this.volumeUsedInInventory = spaceUsed;
+    }
 }

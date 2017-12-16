@@ -41,7 +41,7 @@ public class janitorRoomLightController extends Controller {
     private ImageView playerIcon;
     @FXML
     private ImageView player;
-    private int roomID = 5;
+    private int roomID = 6;
     @FXML
     private Label clockLabel;
     @FXML

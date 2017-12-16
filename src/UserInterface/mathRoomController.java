@@ -33,7 +33,7 @@ public class mathRoomController extends Controller {
     private ImageView playerIcon;
     @FXML
     private ImageView player;
-    private int roomID = 1;
+    private int roomID = 2;
     @FXML
     private Label clockLabel;
     @FXML

@@ -48,7 +48,7 @@ public class redHallwayController extends Controller implements Initializable {
     private ImageView leftWall;
     @FXML
     private ImageView bottomWall;
-    private int roomID = 3;
+    private int roomID = 4;
     @FXML
     private ImageView rightWall;
     @FXML

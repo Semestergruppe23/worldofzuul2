@@ -35,7 +35,7 @@ public class historyRoomController extends Controller {
     private ImageView playerIcon;
     @FXML
     private ImageView player;
-    private int roomID = 2;
+    private int roomID = 3;
     private int playerX;
     private int playerY;
     @FXML

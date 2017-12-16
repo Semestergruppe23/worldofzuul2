@@ -35,7 +35,7 @@ public class toiletRoomController extends Controller {
     private ImageView playerIcon;
     @FXML
     private ImageView player;
-    private int roomID = 8;
+    private int roomID = 9;
     @FXML
     private Label clockLabel;
     @FXML

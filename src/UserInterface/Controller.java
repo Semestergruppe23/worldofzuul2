@@ -314,48 +314,48 @@ public class Controller implements Initializable {
         room.buildroom("introRoom.fxml");
         roomController.addRoom(room);
         
-        room = new Room(10, "endGame");
-        room.buildroom("GameLostScreen.fxml");
-        roomController.addRoom(room);
-
         room = new Room(1, "startRoom");
         room.buildroom("startRoom.fxml");
         roomController.addRoom(room);
-
-        room = new Room(4, "red");
-        room.buildroom("redHallway.fxml");
-        roomController.addRoom(room);
-
-        room = new Room(8, "black");
-        room.buildroom("blackHallway.fxml");
-        roomController.addRoom(room);
-
-        room = new Room(5, "blue");
-        room.buildroom("blueHallway.fxml");
-        roomController.addRoom(room);
-
-        room = new Room(7, "green");
-        room.buildroom("greenHallway.fxml");
-        roomController.addRoom(room);
-
-        room = new Room(3, "history");
-        room.buildroom("historyRoom.fxml");
-        roomController.addRoom(room);
-
-        room = new Room(6, "janitorRoomDark");
-        room.buildroom("janitorRoomDark.fxml");
-        roomController.addRoom(room);
-
-        room = new Room(6, "janitorRoomLight");
-        room.buildroom("janitorRoomLight.fxml");
-        roomController.addRoom(room);
-
+        
         room = new Room(2, "math");
         room.buildroom("mathRoom.fxml");
         roomController.addRoom(room);
-
+        
+        room = new Room(3, "history");
+        room.buildroom("historyRoom.fxml");
+        roomController.addRoom(room);
+        
+        room = new Room(4, "red");
+        room.buildroom("redHallway.fxml");
+        roomController.addRoom(room);
+        
+        room = new Room(5, "blue");
+        room.buildroom("blueHallway.fxml");
+        roomController.addRoom(room);
+        
+        room = new Room(6, "janitorRoomDark");
+        room.buildroom("janitorRoomDark.fxml");
+        roomController.addRoom(room);
+        
+        room = new Room(6, "janitorRoomLight");
+        room.buildroom("janitorRoomLight.fxml");
+        roomController.addRoom(room);
+        
+        room = new Room(7, "green");
+        room.buildroom("greenHallway.fxml");
+        roomController.addRoom(room);
+        
+        room = new Room(8, "black");
+        room.buildroom("blackHallway.fxml");
+        roomController.addRoom(room);
+        
         room = new Room(9, "toilet");
         room.buildroom("toiletRoom.fxml");
+        roomController.addRoom(room);
+        
+        room = new Room(10, "endGame");
+        room.buildroom("GameLostScreen.fxml");
         roomController.addRoom(room);
 
     }

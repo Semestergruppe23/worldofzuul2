@@ -65,7 +65,7 @@ public class startRoomController extends Controller {
     private Rectangle popUp;
     @FXML
     private Text popUpText;
-    private int roomID = 0;
+    private int roomID = 1;
     
        @Override
     public void initialize(URL url, ResourceBundle rb) {
