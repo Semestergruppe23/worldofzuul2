@@ -187,5 +187,16 @@ public class Player implements IPlayer {
     public void setTimefromLoadedGame(int time){
         this.totalGameTime = time;
     }
-    
+    public void setPlayerFromLoadedGame(IPlayer loadedPlayer){
+        this.currentRoomID = loadedPlayer.getCurrentRoom();
+        this.flashlightUsed = loadedPlayer.getFlashlightUsed();
+        this.totalGameTime = loadedPlayer.getRemainingTime();
+        this.maxCapacity = loadedPlayer.getMaxCapacity();
+        this.totalPoints = loadedPlayer.getScore();
+    }
+
+    @Override
+    public void setMaxCapacityFromLoad(int load) {
+        this.maxCapacity = load;
+    }
 }

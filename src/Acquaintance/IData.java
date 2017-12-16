@@ -32,4 +32,5 @@ public interface IData {
     public void save(IPlayer player);
     public IPlayer load()throws IOException, JSONException;
     
+    String getSavedPlayerName();
 }

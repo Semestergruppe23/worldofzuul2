@@ -1,6 +1,6 @@
-{"name":"FINALLY"}
-{"currentRoom":"5"}
-{"totalGameTime":"1053"}
-{"playerPoints":"1253"}
-{"maxCapacity":"20"}
-{"flashlightUsed":"true"}
+{"name":"SaveComplete",
+"currentRoom":"7",
+"totalGameTime":"584",
+"playerPoints":"584",
+"maxCapacity":"20",
+"flashlightUsed":"false"}

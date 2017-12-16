@@ -85,5 +85,9 @@ public interface IPlayer {
     
     int getMaxCapacity();
     int getCurrentVolumeUsed();
-    void setTimefromLoadedGame(int time);
+    void setTimefromLoadedGame(int time);  
+    
+    //Methods for loading
+    void setPlayerFromLoadedGame(IPlayer loadedPlayer);
+    void setMaxCapacityFromLoad(int load);
 }

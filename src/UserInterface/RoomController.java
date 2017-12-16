@@ -40,7 +40,7 @@ public class RoomController {
         for (Room room : this.roomList) {
             if (roomName.equals(room.getName()))
                 return room;
-        }
+        } 
         return null;
     }
     
