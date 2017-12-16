@@ -2,6 +2,7 @@
 package Data;
 
 import Acquaintance.IData;
+import Acquaintance.IItem;
 import Acquaintance.IPlayer;
 import Business.Player;
 import java.io.IOException;
@@ -99,20 +100,21 @@ public class Data implements IData
             pw1.println("\"totalGameTime\":\"" + player.getRemainingTime() + "\",");
             pw1.println("\"playerPoints\":\"" + player.getScore() + "\",");
             pw1.println("\"maxCapacity\":\"" + player.getMaxCapacity() + "\",");
-            pw1.println("\"flashlightUsed\":\"" + player.getFlashlightUsed() + "\"}");
+            pw1.println("\"flashlightUsed\":\"" + player.getFlashlightUsed() + "\"");
+            
+            //Print Inventory
+            pw1.println("\"inventory\":\"[{");
+            for (int i = 0; i < player.getPlayerInventory().size(); i++){
+                pw1.println(player.getPlayerInventory().get(i).getName() +",");
+                
+            }
+            pw1.println("}]\"}");
+            
+            
             pw1.close();
         } catch (Exception ex) {
             //
         }  
-        try {
-            PrintWriter pw2 = new PrintWriter("saveInventory.txt", "UTF-8");
-            
-            pw2.println("{\"name\":\"" + player.getName() + "\",");
-            
-            pw2.close();
-        } catch (Exception ex) {
-            //
-        }
     }
     
     //Loading method, using a JSONobject for easy access to data that has been written in txt-file
