@@ -93,25 +93,26 @@ public class historyRoomController extends Controller {
 
     
     }
-
+    
+    //The history teacher, friendly NPC
     @Override
         public void collideWithImageView (KeyEvent event) {
-            if(player.intersects(player.sceneToLocal(this.friendlyNPC.localToScene(this.friendlyNPC.getBoundsInLocal())))){
-                if(event.getCode() == KeyCode.E ){
-                    if(this.questStarted == false){
-                        this.dialogueLabel.setText(business.getFriendlyNPC().getQuestString());
-                        this.questStarted = true;
-                    } else if(this.questStarted == true){
-                        if(business.getFriendlyNPC().checkIfPlayerHasItem(business.getPlayer()) == false){
-                        this.dialogueLabel.setText(business.getFriendlyNPC().getStillWaitingString());
-                        }if((business.getFriendlyNPC().checkIfPlayerHasItem(business.getPlayer()) == true) && this.questCompleted == false){
-                            this.dialogueLabel.setText(business.getFriendlyNPC().getCompletedQuestString());
-                            business.getPlayer().removeItemFromInventory(business.getItem("History Book"));
-                            business.getPlayer().addItemToInventory(business.getItem("Key to exit"));
-                            business.getRoom(9).setLocked(false);
-                            this.questCompleted = true;
-                        }if(this.questCompleted == true){
-                            this.dialogueLabel.setText(business.getFriendlyNPC().getCompletedQuestString());
+            if(player.intersects(player.sceneToLocal(this.friendlyNPC.localToScene(this.friendlyNPC.getBoundsInLocal())))){ //Checks if the player has collided with the imageview
+                if(event.getCode() == KeyCode.E ){ //The player must press E to interact
+                    if(this.questStarted == false){ //If the quest hasnt already started
+                        this.dialogueLabel.setText(business.getFriendlyNPC().getQuestString()); //Changes the label to the quest string from the businesslayer
+                        this.questStarted = true; //Does so the same message does not come back
+                    } else if(this.questStarted == true){ //If the player has already received the opening message
+                        if(business.getFriendlyNPC().checkIfPlayerHasItem(business.getPlayer()) == false){ //If the player does not have the required item
+                        this.dialogueLabel.setText(business.getFriendlyNPC().getStillWaitingString()); //Sets the Label to the text asking the player to hurry up
+                        }if((business.getFriendlyNPC().checkIfPlayerHasItem(business.getPlayer()) == true) && this.questCompleted == false){ //Is the player has the desired item
+                            this.dialogueLabel.setText(business.getFriendlyNPC().getCompletedQuestString()); //Sets the label to the completed quest string from the businesslayer
+                            business.getPlayer().removeItemFromInventory(business.getItem("History Book")); //Removes the desired item from the players inventory
+                            business.getPlayer().addItemToInventory(business.getItem("Key to exit")); //Adds the key to the exit to the players inventory
+                            business.getRoom(9).setLocked(false); //Unlocks the locked room (room 9), because the player has the key
+                            this.questCompleted = true; //Sets the boolean questCompleted to true, so the NPC does not ask for the item anymore
+                        }if(this.questCompleted == true){ //If the quest has been completed
+                            this.dialogueLabel.setText(business.getFriendlyNPC().getCompletedQuestString()); //Sets the Label text to a thank you instead
                         }
                     }
                 }

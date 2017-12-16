@@ -36,7 +36,7 @@ public class Player implements IPlayer {
         this.name = name;
         inventory = new ArrayList();
         stringInventoryForLoading = new ArrayList();
-        this.startTimeInSeconds = System.currentTimeMillis() / 1000; //Initializes the time at the start of the game
+        this.startTimeInSeconds = System.currentTimeMillis() / 1000; //Initializes the time at the start of the game, divided by 1000 to get seconds
     }
 
     @Override
@@ -56,9 +56,9 @@ public class Player implements IPlayer {
     
     @Override
     public long getRemainingTime(){
-        long timeWhenChecked = System.currentTimeMillis() / 1000;
-        this.remainingTime = this.totalGameTime - (timeWhenChecked - this.startTimeInSeconds);
-        return this.remainingTime; 
+        long timeWhenChecked = System.currentTimeMillis() / 1000; //Gets the time of the time when used
+        this.remainingTime = this.totalGameTime - (timeWhenChecked - this.startTimeInSeconds); //Obtains the remaining time, by detracting the difference from the total game time
+        return this.remainingTime; //Return the remaining time, in seconds
     }
     
     @Override
@@ -82,8 +82,8 @@ public class Player implements IPlayer {
     
     @Override
     public int getScore() { //Returns the players score
-        long pointsFromTime = this.totalGameTime - ((System.currentTimeMillis()/1000 - this.startTimeInSeconds));
-        this.totalPoints = (int)pointsFromTime + this.playerPoints;
+        long pointsFromTime = this.totalGameTime - ((System.currentTimeMillis()/1000 - this.startTimeInSeconds)); //Gets points from the remaining time
+        this.totalPoints = (int)pointsFromTime + this.playerPoints; //Get the total points(timePoints + given points)
         return this.totalPoints;
     }
 
@@ -94,7 +94,7 @@ public class Player implements IPlayer {
     
     @Override
     public boolean checkIfPlayerHasRoom(IItem item){
-        if(this.maxCapacity < this.volumeUsedInInventory + item.getVolume()){
+        if(this.maxCapacity < this.volumeUsedInInventory + item.getVolume()){ //Checks if the players capacity is less, than the volume used + the volume of the item
             return false;
         }
         return true;

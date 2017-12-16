@@ -13,10 +13,12 @@ import Acquaintance.IPlayer;
  */
 public class FlashlightItem extends Item {
     
+    //The constructor to the item, takes the same parameters as it's super class
     public FlashlightItem(String name, String id, int volume, boolean carryable){
         super(name, id, volume, carryable);
     }
     
+    //It's overridet use function, sets the boolean flashlightUsed to "true"
     @Override
     public void use(IPlayer player){
         player.setFlashlightUsed(true);

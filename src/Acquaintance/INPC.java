@@ -18,7 +18,7 @@ public interface INPC {
      * This file can be changed as needed as long as it continuesly follows this
      * structure: line: 1: Dialogue, 2: question, 3,4,5: answer options, 6: the actual answer
      * @throws FileNotFoundException because it fills two arrays containing 
-     * the NPC's questions and answers from a .txt file, therefor, it must be
+     * the NPC's questions and answers from a .txt file, therefore, it must be
      * implemented in a try-catch block, that catches a FileNotFoundException
      */
     void fillArraysWithQuestionsAndAnswers() throws FileNotFoundException;
@@ -38,6 +38,7 @@ public interface INPC {
     
     /**
      * Randomizes the order that he questions is asked in
+     * takes the number of questions as an int, so the generateQuestion() does not throw an IndexOutOfBounds exception
      */
     void randomizeQuestions(int numberOfQuestionsAsked);
 }

@@ -27,7 +27,7 @@ public class NPC implements INPC {
     @Override
     public void fillArraysWithQuestionsAndAnswers() throws FileNotFoundException {
         File questionsAndAnswersFile = new File("questionsAndAnswersByHallucination.txt"); //creates a new file, from the exsisting txt file
-        Scanner inputFromFile = new Scanner(questionsAndAnswersFile);
+        Scanner inputFromFile = new Scanner(questionsAndAnswersFile); //Creates the scanner, using the file
         
         while(inputFromFile.hasNextLine()){ //Runs while the file has a next line filled with text
             String dialogue = inputFromFile.nextLine(); 
@@ -43,18 +43,19 @@ public class NPC implements INPC {
         }
     }
 
+    //Returns the questions
     @Override
     public String generateQuestion() {
-        for(int i = this.questionsAskedAnswersChecked; i < this.questions.size();){
+        for(int i = this.questionsAskedAnswersChecked; i < this.questions.size();){ //Runs while the array still has more indexes
             return this.questions.get(i);
         }
-        return "Ran out of questions";
+        return "Ran out of questions"; //Returns this if the last index of the arrayList has been returned
     }
 
     @Override
     public boolean checkAnswer(String playerAnswer) {
-        if(playerAnswer.equalsIgnoreCase(this.answers.get(questionsAskedAnswersChecked))){
-            this.questionsAskedAnswersChecked++;
+        if(playerAnswer.equalsIgnoreCase(this.answers.get(questionsAskedAnswersChecked))){ //Checks if the answer matches the answer in the ArrayList, case insensitive
+            this.questionsAskedAnswersChecked++; //increases the number of the next index to be checked, and the next question to be asked
             return true;
         } else{
             this.questionsAskedAnswersChecked++;
@@ -62,13 +63,14 @@ public class NPC implements INPC {
         }
     }
     
+    //Randomizes the starting point of the ArrayList containing the questions and answers
     @Override
     public void randomizeQuestions(int numberOfQuestionsAsked){
-        Random r = new Random();
-        int low = numberOfQuestionsAsked;
-        int high = this.questions.size();
-        int randomValue = r.nextInt(high - low) + low;
-        this.questionsAskedAnswersChecked = randomValue - numberOfQuestionsAsked;
+        Random r = new Random(); //Instance of the Random framework
+        int low = numberOfQuestionsAsked; //The lowest randomValue
+        int high = this.questions.size(); //The highest random value, should never be higher than the ArrayList's size, as it would throw an exception
+        int randomValue = r.nextInt(high - low) + low; //Creates the random value between numberOfQuestionsAsked, and the ARrayList's size
+        this.questionsAskedAnswersChecked = randomValue - numberOfQuestionsAsked; //Changes the questionsAskedAndAswersChecked, so it is between 0, and ArrayList.size - 1
     }
     
 }
