@@ -1,6 +1,0 @@
-{"name":"SaveComplete",
-"currentRoom":"7",
-"totalGameTime":"584",
-"playerPoints":"584",
-"maxCapacity":"20",
-"flashlightUsed":"false"}

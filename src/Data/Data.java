@@ -92,24 +92,33 @@ public class Data implements IData
     //Saving method, using a printwriter
     public void save(IPlayer player) {
         try {
-            PrintWriter pw = new PrintWriter("save.txt", "UTF-8");
+            PrintWriter pw1 = new PrintWriter("savePlayer.txt", "UTF-8");
             
-            pw.println("{\"name\":\"" + player.getName() + "\",");
-            pw.println("\"currentRoom\":\"" + player.getCurrentRoom() + "\",");
-            pw.println("\"totalGameTime\":\"" + player.getRemainingTime() + "\",");
-            pw.println("\"playerPoints\":\"" + player.getScore() + "\",");
-            pw.println("\"maxCapacity\":\"" + player.getMaxCapacity() + "\",");
-            pw.println("\"flashlightUsed\":\"" + player.getFlashlightUsed() + "\"}");
-            pw.close();
+            pw1.println("{\"name\":\"" + player.getName() + "\",");
+            pw1.println("\"currentRoom\":\"" + player.getCurrentRoom() + "\",");
+            pw1.println("\"totalGameTime\":\"" + player.getRemainingTime() + "\",");
+            pw1.println("\"playerPoints\":\"" + player.getScore() + "\",");
+            pw1.println("\"maxCapacity\":\"" + player.getMaxCapacity() + "\",");
+            pw1.println("\"flashlightUsed\":\"" + player.getFlashlightUsed() + "\"}");
+            pw1.close();
         } catch (Exception ex) {
             //
         }  
+        try {
+            PrintWriter pw2 = new PrintWriter("saveInventory.txt", "UTF-8");
+            
+            pw2.println("{\"name\":\"" + player.getName() + "\",");
+            
+            pw2.close();
+        } catch (Exception ex) {
+            //
+        }
     }
     
     //Loading method, using a JSONobject for easy access to data that has been written in txt-file
     @Override
     public IPlayer load() throws IOException, JSONException {
-        String str = readFile("save.txt", StandardCharsets.UTF_8);
+        String str = readFile("savePlayer.txt", StandardCharsets.UTF_8);
         JSONObject loadedPlayer = new JSONObject(str);
         
         IPlayer player = new Player(loadedPlayer.getString("name"));
