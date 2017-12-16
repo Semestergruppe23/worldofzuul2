@@ -9,7 +9,7 @@ import Acquaintance.IBusiness;
 import Acquaintance.IData;
 import Acquaintance.IUserInterface;
 import Business.BusinessFacade;
-import Data.data;
+import Data.Data;
 import UserInterface.UserInterfaceFacade;
 
 /**
@@ -22,7 +22,7 @@ public class Starter {
         IBusiness business = new BusinessFacade();
         IUserInterface userInterface = new UserInterfaceFacade();
         userInterface.injectBusiness(business);
-        IData data = new data();
+        IData data = new Data();
         business.injectData(data);
         userInterface.startGame();
     }
