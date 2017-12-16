@@ -18,10 +18,11 @@ public class Room {
     String name;
     
     
-    /**
-     * Constructor
-     * @param name - the name of the room
-     */
+   /**
+    * 
+    * @param id of the room
+    * @param name of the room
+    */
     public Room(int id, String name) {
         this.name = name;
         this.roomID = id;
@@ -93,6 +94,10 @@ public class Room {
     this.scene = new Scene(this.parent);
 }
     
+    /**
+     * 
+     * @return the rooms id
+     */
     public int getRoomID(){
         return this.roomID;
     }

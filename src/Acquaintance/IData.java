@@ -11,7 +11,7 @@ import org.json.JSONException;
 
 /**
  *
- * @author Oskar
+ * @author All
  */
 public interface IData {
     

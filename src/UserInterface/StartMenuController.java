@@ -42,29 +42,42 @@ public class StartMenuController extends Controller implements Initializable {
         // TODO
     }    
 
+    /**
+     * 
+     * @param event On Clicked event from the button
+     * @throws IOException 
+     */
     @FXML
     private void btnStartGame(ActionEvent event) throws IOException {
           if (txtNameInput.getText().isEmpty()) {
               characterText.setText("Please enter a name!");
         } else {
         
-        
+        // use the createplayer method from business layer to create player with the entered name
         business.createPlayer(txtNameInput.getText());
+        
+        
         createRoomsInBusiness();
         createItemsInBusiness();
         initilizeNPC();
+        
         
         super.createRooms();
         business.getItem("History Book").setText("The book needed by the professor. You must get it to him, quick!");
         
  
-        
+        // Changing scene
         Stage startStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         startStage.setScene(super.roomController.getRoom("introRoom").getScene());
         startStage.show();
     }
     }
 
+    /**
+     * 
+     * @param event onclicked event from the button
+     * @throws IOException 
+     */
     @FXML
     private void btnHighScore(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
@@ -77,13 +90,20 @@ public class StartMenuController extends Controller implements Initializable {
     }
 
 
+    /**
+     * 
+     * @param event onClicked event
+     */
     @FXML
     private void btnExitGame(ActionEvent event) {
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.close();
     }
     
-    
+    /**
+     * 
+     * @param business that is injected
+     */
     public void injectBusiness(IBusiness business) {
         this.business = business;
     }

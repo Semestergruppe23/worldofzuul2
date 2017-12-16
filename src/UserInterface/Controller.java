@@ -133,7 +133,11 @@ public class Controller implements Initializable {
         timelineD.getKeyFrames().add(kf);
     }
 
-    // Called on keyPressed.
+    /**
+     * 
+     * @param event from keyboad
+     * @throws IOException if the file in changeRoom is not find
+     */
     @FXML
     private void playerMovement(KeyEvent event) throws IOException {
         
@@ -145,16 +149,30 @@ public class Controller implements Initializable {
                              }
 
 
+         // Methods for changing room
         changeRoomRightDoor(event);
         changeRoomBottomDoor(event);
         changeRoomLeftDoor(event);
         changeRoomTopDoor(event);
+        
+        // checking if the player collides with img view
         collideWithImageView(event);
+        
+        // handle item pick up
         pickItemUp(event);
+        
+        // Update the listview in the gui
         updateListView();
+        // Updates the clock label in the gui
         updateClockLabel();
+        
+        // Handles popup in gui
         popup(event);
+        
+        
         collideWithShadows(event);
+        
+        //Update inventory label in gui
         updateInventoryVolumeLabel();
         saveGameWhenMoving();
         
@@ -166,9 +184,11 @@ public class Controller implements Initializable {
         }
         
 
+       // Check if the event is W or Up
         if (event.getCode() == KeyCode.W || event.getCode() == KeyCode.UP ) {
+            // check if the player intersects with the walls
             if (player.intersects(player.sceneToLocal(topWall.localToScene(topWall.getBoundsInLocal())))) {
-                // DO NOTHING.
+                
 
                 timelineW.stop();
 
@@ -181,9 +201,11 @@ public class Controller implements Initializable {
 
             }
         } else {
+             // Check if the event is A or LEFT
             if (event.getCode() == KeyCode.A || event.getCode() == KeyCode.LEFT ) {
+                // check if the player intersects with the walls
                 if (player.intersects(player.sceneToLocal(leftWall.localToScene(leftWall.getBoundsInLocal())))) {
-                    // DO NOTHI;
+                    
                     timelineA.stop();
 
                 } else {
@@ -196,9 +218,11 @@ public class Controller implements Initializable {
 
                 }
             } else {
+                // Check if the event is S or DOWN
                 if (event.getCode() == KeyCode.S || event.getCode() == KeyCode.DOWN ) {
+                    // check if the player intersects with the walls
                     if (player.intersects(player.sceneToLocal(bottomWall.localToScene(bottomWall.getBoundsInLocal())))) {
-                        // DO NOTHING.
+                       
                         timelineS.stop();
                     } else {
                         createTimeLineS();
@@ -209,9 +233,11 @@ public class Controller implements Initializable {
                     }
 
                 } else {
+                    // Check if the event is D or Right
                     if (event.getCode() == KeyCode.D || event.getCode() == KeyCode.RIGHT) {
+                        // check if the player intersects with the walls
                         if (player.intersects(player.sceneToLocal(rightWall.localToScene(rightWall.getBoundsInLocal())))) {
-                            // DO NOTHING.
+                            
 
                             timelineD.stop();
                         } else {
@@ -335,7 +361,7 @@ public class Controller implements Initializable {
     }
 
     public void pickItemUp(KeyEvent event) {
-         
+         // is overridden in subclasses
     }
     
     /**
@@ -378,10 +404,16 @@ public class Controller implements Initializable {
         
     }
     
+    /**
+     * Update the clocklabel in gui
+     */
     public void updateClockLabel(){
         clockLabel.setText("Remaining time: " + (int)business.getPlayer().getRemainingTime()+" seconds");
     }
     
+    /**
+     * Update the inventory label in gui
+     */
     public void updateInventoryVolumeLabel(){
         volumeLabel.setText("Inventory weight: " + business.getPlayer().getCurrentVolumeUsed() + "/" +  business.getPlayer().getMaxCapacity());
     }
@@ -403,6 +435,7 @@ public class Controller implements Initializable {
     
     public void popup(KeyEvent event) {
         
+        // is overridden in subclasses
     }
     
     /**
@@ -414,16 +447,30 @@ public class Controller implements Initializable {
         updateListView();
     }
     
-        @FXML
+    
+    /**
+     * 
+     * @param event from the keyboard
+     */
+    @FXML
     private void dropItem(ActionEvent event) {
        dropItem();
     }
     
+    
+    /**
+     * 
+     * @param event form the keyboard
+     */
     @FXML
     private void useItem(ActionEvent event) {
+        
+        
         try {
             useItem();
         }
+        
+        // Catch exception if nothing in listview is selected and the button use is used
         catch (NullPointerException ex) {
             dialogueLabel.setText("Select Item");
         }
@@ -447,7 +494,7 @@ public class Controller implements Initializable {
     }
     
     public void collideWithShadows(KeyEvent event){
-        
+        // is overridden in subclass
     }
     public void saveGameWhenMoving(){
         // SAVE GAME WHEN CHANGING ROOM
@@ -455,5 +502,6 @@ public class Controller implements Initializable {
     }
     
     public void setPlayerCurrentRoom(){
+        // is overridden in subclass
     }
 }

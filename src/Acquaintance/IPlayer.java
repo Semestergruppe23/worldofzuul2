@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  *
- * @author Oskar
+ * @author All
  */
 public interface IPlayer {
     
@@ -56,14 +56,35 @@ public interface IPlayer {
      */
     int getScore();
     
+    /**
+     * 
+     * @param item that you want to add to the inventory
+     */
     void addItemToInventory(IItem item);
     
-    
+    /**
+     * 
+     * @return the id of the room the player is in
+     */
     int getCurrentRoom();
+    
+    /**
+     * 
+     * @param roomID That you want the player to be placed in
+     */
     void setCurrentRoom(int roomID);
     
+    /**
+     * 
+     * @return the player's inventory
+     */
     List<IItem> getPlayerInventory();
     
+    /**
+     * 
+     * @param item that you want to check for space in the inventorylist
+     * @return true if item can be placed in the inventorylist
+     */
     boolean checkIfPlayerHasRoom(IItem item);
     
     /**
@@ -74,17 +95,44 @@ public interface IPlayer {
      */
     void removeItemFromInventory(IItem item);
     
+    /**
+     * 
+     * @param name of the IItem you want to chheck
+     * @return true if the player has the item in invenotry
+     */
     boolean checkIfPlayerHasItem(String name);
     
-    
+    /**
+     * 
+     * @param increaseAmount int that you want to increase the invenotry with
+     */
     void increaseInventory(int increaseAmount);
     
+    /**
+     * 
+     * @return true if the flashLight item is used
+     */
     boolean getFlashlightUsed();
     
+    /**
+     * 
+     * @param used true if the flashLight has been used
+     */
     void setFlashlightUsed(boolean used);
     
+    /**
+     * 
+     * @return the max capacity of the inventory in integer
+     */
     int getMaxCapacity();
+    
+    /**
+     * 
+     * @return the current volume used in invenotory
+     */
     int getCurrentVolumeUsed();
+    
+    
     void setTimefromLoadedGame(int time);  
     
     //Methods for loading

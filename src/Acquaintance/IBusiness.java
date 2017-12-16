@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  *
- * @author Oskar
+ * @author All
  */
 public interface IBusiness {
     
