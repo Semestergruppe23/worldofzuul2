@@ -30,7 +30,7 @@
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
          <children>
             <Button layoutX="20.0" layoutY="217.0" mnemonicParsing="false" onAction="#clickMainMenu" text="Main Menu" />
-            <Button layoutX="118.0" layoutY="217.0" mnemonicParsing="false" text="Help" />
+           
             <Label fx:id="clockLabel" layoutX="176.0" layoutY="217.0" prefHeight="25.0" prefWidth="202.0" />
             <ImageView fitHeight="153.0" fitWidth="538.0" layoutX="258.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
