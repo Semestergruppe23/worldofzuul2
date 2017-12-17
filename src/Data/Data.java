@@ -22,8 +22,10 @@ import org.json.JSONObject;
 
 
 // @author Tim
-
-// Create highscore list implementing interface
+/**
+ * Create highscore list implementing interface
+ * @author Tim
+ */
 public class Data implements IData 
 {
     Connection conn = null;
@@ -33,7 +35,9 @@ public class Data implements IData
     
     private String savedPlayerName;
     
-    //Constructor - Automatically make connection to server
+    /**
+     * Constructor - Automatically make connection to server
+     */
     public Data()
     {
         try 
@@ -45,8 +49,10 @@ public class Data implements IData
             System.out.println(ex.toString());
         }
     }
-    
-    //Method for retrieving top 10 scores and names from server
+    /**
+     * Method for retrieving top 10 scores and names from server
+     * @return 
+     */
     @Override
     public List<String> getHighscore()
     {
@@ -70,7 +76,12 @@ public class Data implements IData
         }
         return HighScoreList;
     }
-    //Method for adding highscore to server list
+    
+    /**
+     * Method for adding highscore to server list
+     * @param name
+     * @param score 
+     */
     @Override
     public void addHighscore(String name, int score) 
     {
@@ -86,10 +97,12 @@ public class Data implements IData
     }
     
 
-    
-    //Methods for saving and loading the Player-object locally
-    
-    //Saving method, using a printwriter
+
+    /**
+     * Methods for saving and loading the Player-object locally
+     * Saving method, using a printwriter
+     * @param player 
+     */
     public void save(IPlayer player) {
         try {
             PrintWriter pw1 = new PrintWriter("savePlayer.txt", "UTF-8");
@@ -112,8 +125,12 @@ public class Data implements IData
             //
         }  
     }
-    
-    //Loading method, using a JSONobject for easy access to data that has been written in txt-file
+    /**
+     * Loading method, using a JSONobject for easy access to data that has been written in txt-file
+     * @return
+     * @throws IOException
+     * @throws JSONException 
+     */
     @Override
     public IPlayer load() throws IOException, JSONException {
         String str = readFile("savePlayer.txt", StandardCharsets.UTF_8);
@@ -137,7 +154,13 @@ public class Data implements IData
         return player;
     }
     
-    //Short method for reading txt-file into java
+    /**
+     * Short method for reading txt-file into java
+     * @param path
+     * @param encoding
+     * @return
+     * @throws IOException 
+     */
     private String readFile(String path, Charset encoding) throws IOException {
         byte[] encoded = Files.readAllBytes(Paths.get(path));
         return new String(encoded, encoding);
