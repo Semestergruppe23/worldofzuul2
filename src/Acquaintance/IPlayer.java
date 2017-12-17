@@ -127,13 +127,30 @@ public interface IPlayer {
      */
     int getCurrentVolumeUsed();
     
-    
+    /**
+     * Setter method for setting time remaining from saved game
+     * @param time 
+     */
     void setTimefromLoadedGame(int time);  
     
-    //Methods for loading
+    /**
+     * Setter method for setting player in business-layer from a loaded IPlayer player object
+     * @param loadedPlayer 
+     */
     void setPlayerFromLoadedGame(IPlayer loadedPlayer);
+    /**
+    * Setter method for setting max inventory capacity from saved loaded file
+    * @param load 
+    */
     void setMaxCapacityFromLoad(int load);
+    /**
+     * Getter method for getting list of strings of items in saved inventory
+     * @return 
+     */
     List<String> getStringInventoryForLoading();
-    void setInventoryUsed(int spaceUsed);
+    /**
+     * Setter method for adding names of items in list of names of items from saved game
+     * @param item 
+     */
     void addInventory(String item);
 }
