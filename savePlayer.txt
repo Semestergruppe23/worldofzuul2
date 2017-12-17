@@ -1,8 +1,9 @@
-{"name":"dd",
-"currentRoom":"0",
-"totalGameTime":"593",
-"playerPoints":"593",
+{"name":"ddd",
+"currentRoom":"2",
+"totalGameTime":"587",
+"playerPoints":"587",
 "maxCapacity":"10",
 "flashlightUsed":"false",
 "item": [
+"Water Bottle",
 ]}

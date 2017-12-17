@@ -337,10 +337,7 @@ public class Controller implements Initializable {
         room = new Room(6, "janitorRoomDark");
         room.buildroom("janitorRoomDark.fxml");
         roomController.addRoom(room);
-        
-        room = new Room(6, "janitorRoomLight");
-        room.buildroom("janitorRoomLight.fxml");
-        roomController.addRoom(room);
+
         
         room = new Room(7, "green");
         room.buildroom("greenHallway.fxml");
