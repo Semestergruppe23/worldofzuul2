@@ -120,6 +120,10 @@ public class toiletRoomController extends Controller {
     
     
 
+     public void pickItemUp(KeyEvent event) {
+         if (player.intersects(player.sceneToLocal(historyBookImageView.localToScene(historyBookImageView.getBoundsInLocal())))&& event.getCode() == KeyCode.E )
+        super.handleItem(business.getItem("History Book").getName(), historyBookImageView);
+    }
 
 
 }
