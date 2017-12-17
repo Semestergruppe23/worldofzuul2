@@ -2,7 +2,6 @@
 package Data;
 
 import Acquaintance.IData;
-import Acquaintance.IItem;
 import Acquaintance.IPlayer;
 import Business.Player;
 import java.io.IOException;
