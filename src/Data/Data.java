@@ -123,22 +123,16 @@ public class Data implements IData
         IPlayer player = new Player(loadedPlayer.getString("name"));
         this.savedPlayerName = loadedPlayer.getString("name");
 
-        player.setCurrentRoom(Integer.parseInt(loadedPlayer.getString("currentRoom")));        
+        player.setCurrentRoom(Integer.parseInt(loadedPlayer.getString("currentRoom")));
         player.setFlashlightUsed(Boolean.valueOf(loadedPlayer.getString("flashlightUsed")));
         player.setTimefromLoadedGame(Integer.parseInt(loadedPlayer.getString("totalGameTime")));
         player.rewardPoints(Integer.parseInt(loadedPlayer.getString("playerPoints")));
         player.setMaxCapacityFromLoad(Integer.parseInt(loadedPlayer.getString("maxCapacity")));
-//        player.setInventoryUsed(Integer.parseInt(loadedPlayer.getString("inventoryUsed")));
-        
-        
-        System.out.println(loadedPlayer.getJSONArray("item"));
         
         int length = loadedPlayer.getJSONArray("item").length();
         
         for ( int i = 0; i < length; i++){
-            System.out.println(loadedPlayer.getJSONArray("item").get(i));
             player.addInventory(loadedPlayer.getJSONArray("item").get(i).toString());
-            System.out.println(player.getStringInventoryForLoading().get(i));
         }
 
         return player;
