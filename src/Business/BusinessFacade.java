@@ -43,12 +43,18 @@ public class BusinessFacade implements IBusiness {
         return this.player;
     }
     
-    
+    /**
+     * Create npc
+     */
     @Override
     public void createNPC(){
         npc = new NPC();
     }
     
+    /**
+     * 
+     * @return the NPC
+     */
     @Override
     public INPC getNPC(){
         return npc; 
@@ -118,7 +124,10 @@ public class BusinessFacade implements IBusiness {
     }
 
 
-
+    /**
+    * 
+    * @param data layer 
+    */
     @Override
     public void injectData(IData data) {
       this.data = data;
