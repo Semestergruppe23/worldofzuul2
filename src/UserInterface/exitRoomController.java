@@ -42,9 +42,7 @@ public class exitRoomController {
     @FXML
     private ImageView rightWall;
 
-    /**
-     * Initializes the controller class.
-     */
+
     
     public void initialize(URL url, ResourceBundle rb) 
     {

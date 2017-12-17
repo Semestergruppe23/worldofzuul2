@@ -31,7 +31,10 @@ public interface INPC {
      */
     boolean checkAnswer(String playerAnswer);
     
+   
+    
     /**
+     * @param numberOfQuestionsAsked  Number of questions asked
      * Randomizes the order that he questions is asked in
      * takes the number of questions as an int, so the generateQuestion() does not throw an IndexOutOfBounds exception
      */

@@ -51,7 +51,7 @@ public class Data implements IData
     }
     /**
      * Method for retrieving top 10 scores and names from server
-     * @return 
+     * @return list of 10 top scores
      */
     @Override
     public List<String> getHighscore()
@@ -79,8 +79,8 @@ public class Data implements IData
     
     /**
      * Method for adding highscore to server list
-     * @param name
-     * @param score 
+     * @param name of the player
+     * @param score of the player
      */
     @Override
     public void addHighscore(String name, int score) 
@@ -101,7 +101,7 @@ public class Data implements IData
     /**
      * Methods for saving and loading the Player-object locally
      * Saving method, using a printwriter
-     * @param player 
+     * @param player to be saved
      */
     public void save(IPlayer player) {
         try {
@@ -127,9 +127,9 @@ public class Data implements IData
     }
     /**
      * Loading method, using a JSONobject for easy access to data that has been written in txt-file
-     * @return
-     * @throws IOException
-     * @throws JSONException 
+     * @return IPlayer with last games attributes
+     * @throws IOException if file is not found
+     * @throws JSONException if json if not found
      */
     @Override
     public IPlayer load() throws IOException, JSONException {

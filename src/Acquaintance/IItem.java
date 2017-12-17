@@ -41,8 +41,11 @@ public interface IItem {
      * @return the ID of the IITem
      */
     String getID();
+    
+    
     /**
-     * is the use of the item, different for each subclass of Item.java
+     * 
+     * @param player the player that should use the item
      */
     void use(IPlayer player);
     

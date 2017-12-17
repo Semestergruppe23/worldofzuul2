@@ -305,7 +305,7 @@ public class Controller implements Initializable {
 
     /**
      * Creating all the rooms, and adds them to the roomController list
-     * @throws IOException 
+     * @throws IOException if file is not found
      */
     public void createRooms() throws IOException {
         roomController = new RoomController();

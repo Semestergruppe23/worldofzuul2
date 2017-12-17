@@ -14,10 +14,13 @@ public interface IBusiness {
      * @param data object you want to inject
      */
     void injectData(IData data);
+    
+    
     /**
-     * Creates a single item
+     * 
      * @param name to identify the item
-     * @param volume the weight of the item
+     * @param id the weight of the item
+     * @param volume weight of the item
      * @param carryable whether he can carry the item
      */
     void createItem(String name,String id, int volume, boolean carryable);
@@ -45,7 +48,7 @@ public interface IBusiness {
      * @param id the id of the item
      * @param volume - the weight of the item
      * @param carryable if the item is carryable
-     * @param volumeIncrease 
+     * @param volumeIncrease amoun to increase inventory
      */
     void createWearableItem(String name, String id, int volume, boolean carryable, int volumeIncrease);
     
@@ -129,13 +132,13 @@ public interface IBusiness {
     IFriendlyNPC getFriendlyNPC();
     
     /**
-     * @Oskar
+     * Creating intro object
      */
     void createIntro();
     
     /**
      * 
-     * @return @Oskar
+     * @return Intro object
      */
     IIntro getIntro();
     

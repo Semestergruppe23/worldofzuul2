@@ -7,11 +7,9 @@ package Business;
 
 import Acquaintance.IItem;
 import Acquaintance.IPlayer;
-import Acquaintance.IRoom;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import Business.BusinessFacade;
 
 /**
  *
@@ -32,10 +30,7 @@ public class Player implements IPlayer {
     private int volumeUsedInInventory = 0;
     private boolean flashlightUsed = false;
     
-    /**
-     * Player constructor
-     * @param name 
-     */
+
     public Player(String name){
         this.name = name;
         inventory = new ArrayList();
@@ -44,8 +39,8 @@ public class Player implements IPlayer {
     }
 
     /**
-     * Setter method for adding points
-     * @param points 
+     * 
+     * @param points to be rewarded
      */
     @Override
     public void rewardPoints(int points) { //Rewards the player points, by adding to the playerPoints variable
@@ -53,16 +48,16 @@ public class Player implements IPlayer {
     }
 
     /**
-     * Setter method for adding time
-     * @param time 
+     * 
+     * @param time to be added
      */
     @Override
     public void addTime(long time) { //Adds time to the total game time, in seconds
         this.totalGameTime += time;
     }
     /**
-     * Setter method for removing time
-     * @param time 
+     * 
+     * @param time to be removed
      */
     @Override
     public void removeTime(long time) { //Subtracts time from the total game time, in seconds
@@ -71,18 +66,18 @@ public class Player implements IPlayer {
     
     /**
      * Getter method for calculating and removing time from player
-     * @return 
+     * @return the remaining time, in seconds
      */
     @Override
     public long getRemainingTime(){
         long timeWhenChecked = System.currentTimeMillis() / 1000; //Gets the time of the time when used
         this.remainingTime = this.totalGameTime - (timeWhenChecked - this.startTimeInSeconds); //Obtains the remaining time, by detracting the difference from the total game time
-        return this.remainingTime; //Return the remaining time, in seconds
+        return this.remainingTime; 
     }
     
     /**
-     * Getter method for checking time left before player dies
-     * @return 
+     * 
+     * @return true if still time left
      */
     @Override
     public boolean checkTime(){ //Checks whether the time of the current game is larger than the specified total game time
@@ -104,10 +99,10 @@ public class Player implements IPlayer {
 
     /**
      * Getter method for calculating and returning total score
-     * @return 
+     * @return the players score
      */
     @Override
-    public int getScore() { //Returns the players score
+    public int getScore() { 
         long pointsFromTime = this.totalGameTime - ((System.currentTimeMillis()/1000 - this.startTimeInSeconds)); //Gets points from the remaining time
         this.totalPoints = (int)pointsFromTime + this.playerPoints; //Get the total points(timePoints + given points)
         return this.totalPoints;
@@ -115,7 +110,7 @@ public class Player implements IPlayer {
 
     /**
      * Getter method for checking player currentRoom
-     * @return 
+     * @return the current Room.Id
      */
     @Override
     public int getCurrentRoom() {
@@ -123,9 +118,9 @@ public class Player implements IPlayer {
     }
     
     /**
-     * Getter method for checking if player has roome for another item, returning a boolean
-     * @param item
-     * @return 
+     * 
+     * @param item to check
+     * @return true if itemList is not full
      */
     @Override
     public boolean checkIfPlayerHasRoom(IItem item){
@@ -137,10 +132,10 @@ public class Player implements IPlayer {
     
 
     
+ 
     /**
      * 
-     * @param name
-     * @param carryable 
+     * @param item to add
      */
     @Override
     public void addItemToInventory(IItem item) {
@@ -154,8 +149,8 @@ public class Player implements IPlayer {
 
 
     /**
-     * Setter method for inventory, removing an item
-     * @param item 
+     * 
+     * @param item to be removed
      */
     @Override
     public void removeItemFromInventory(IItem item) {
@@ -179,7 +174,7 @@ public class Player implements IPlayer {
     
     /**
      * Getter method on player inventory list
-     * @return 
+     * @return the list of items
      */
     @Override
     public List<IItem> getPlayerInventory() {
@@ -188,7 +183,7 @@ public class Player implements IPlayer {
     
     /**
      * Setter method for player currentRoom
-     * @param roomID 
+     * @param roomID the room the player is in
      */
     @Override
     public void setCurrentRoom(int roomID){
@@ -196,8 +191,8 @@ public class Player implements IPlayer {
     }
     /**
      * Method for checking if player has room in inventory for an item
-     * @param name
-     * @return 
+     * @param name the item you want to check
+     * @return true if there is room
      */
     @Override
     public boolean checkIfPlayerHasItem(String name){
@@ -210,8 +205,8 @@ public class Player implements IPlayer {
     }   
     
     /**
-     * Setter method for player Max capacity
-     * @param increaseAmount 
+     * ´
+     * @param increaseAmount you want to increase the invenotryList
      */
     @Override
     public void increaseInventory(int increaseAmount) {
@@ -220,7 +215,7 @@ public class Player implements IPlayer {
     
     /**
      * Getter method for checking if player has used flashlight in game, returning a boolean
-     * @return 
+     * @return true if flashligh is used
      */
     @Override
     public boolean getFlashlightUsed(){
@@ -228,8 +223,8 @@ public class Player implements IPlayer {
     }
     
     /**
-     * Setter method for flashlightUsed
-     * @param used 
+     * 
+     * @param used Setter method for flashlightUsed
      */
     @Override
     public void setFlashlightUsed(boolean used){
@@ -238,7 +233,7 @@ public class Player implements IPlayer {
     
     /**
      * Getter method for player inventory max capacity
-     * @return 
+     * @return the max capacity
      */
     @Override
     public int getMaxCapacity(){
@@ -247,7 +242,7 @@ public class Player implements IPlayer {
     
     /**
      * Getter method for checking how much of the total inventory is occupied
-     * @return 
+     * @return how much invenotry is used
      */
     @Override
     public int getCurrentVolumeUsed(){
@@ -258,7 +253,7 @@ public class Player implements IPlayer {
     /**
      * Methods only used for loading a saved game
      * Setter method for setting game from saved.
-     * @param time 
+     * @param time from loaded game
      */
     @Override
     public void setTimefromLoadedGame(int time){
@@ -266,8 +261,8 @@ public class Player implements IPlayer {
     }
     
     /**
-     * Setter method for setting player in business-layer from a loaded IPlayer player object
-     * @param loadedPlayer 
+     * 
+     * @param loadedPlayer Setter method for setting player in business-layer from a loaded IPlayer player object
      */
     @Override
     public void setPlayerFromLoadedGame(IPlayer loadedPlayer){
@@ -281,7 +276,7 @@ public class Player implements IPlayer {
     
     /**
      * Getter method for getting list of strings of items in saved inventory
-     * @return 
+     * @return list of strings saved
      */
     @Override
    public List<String> getStringInventoryForLoading(){
@@ -290,7 +285,7 @@ public class Player implements IPlayer {
    
    /**
     * Setter method for setting max inventory capacity from saved loaded file
-    * @param load 
+    * @param load capacity
     */
     @Override
     public void setMaxCapacityFromLoad(int load) {
@@ -299,7 +294,7 @@ public class Player implements IPlayer {
     
     /**
      * Setter method for adding names of items in list of names of items from saved game
-     * @param item 
+     * @param item to add
      */
     public void addInventory(String item) {
         this.stringInventoryForLoading.add(item);
