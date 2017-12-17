@@ -20,7 +20,7 @@ import javafx.stage.Stage;
  */
 public class UserInterfaceFacade extends Application implements IUserInterface{
 
-    static IBusiness business;
+    private static IBusiness business;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -34,7 +34,7 @@ public class UserInterfaceFacade extends Application implements IUserInterface{
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-        stage.setResizable(false);
+
     }
 
     @Override
