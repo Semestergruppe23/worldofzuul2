@@ -1,11 +1,8 @@
-{"name":"TEST",
-"currentRoom":"2",
-"totalGameTime":"279",
-"playerPoints":"562",
-"maxCapacity":"20",
+{"name":"dd",
+"currentRoom":"0",
+"totalGameTime":"593",
+"playerPoints":"593",
+"maxCapacity":"10",
 "flashlightUsed":"false",
 "item": [
-"Second Beer",
-"Cola",
-"Water Bottle",
 ]}

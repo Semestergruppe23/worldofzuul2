@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Business;
 
 import Acquaintance.IBusiness;
@@ -18,7 +13,7 @@ import java.util.List;
 
 /**
  *
- * @author Oskar
+ * @author All
  */
 
 public class BusinessFacade implements IBusiness {
@@ -122,23 +117,13 @@ public class BusinessFacade implements IBusiness {
         this.items.add(new FlashlightItem(name, id, volume, carryable));
     }
 
-    /**
-     * 
-     * @param id
-     * @return 
-     */
-    @Override
-    public String pickUpItem(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 
     @Override
     public void injectData(IData data) {
       this.data = data;
     }
-    
-   
-    
+      
 
     /**
      * 

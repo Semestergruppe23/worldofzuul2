@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Acquaintance;
 
 import java.util.List;
@@ -63,12 +58,7 @@ public interface IBusiness {
      */
     void createFlashlightItem(String name, String id, int volume, boolean carryable);
     
-    /**
-     * 
-     * @param id of the item you want to pick up
-     * @return a string of the item
-     */
-    String pickUpItem(String id);
+
     
     /**
      * 
@@ -138,10 +128,21 @@ public interface IBusiness {
      */
     IFriendlyNPC getFriendlyNPC();
     
+    /**
+     * @Oskar
+     */
     void createIntro();
     
+    /**
+     * 
+     * @return @Oskar
+     */
     IIntro getIntro();
     
+    /**
+     * 
+     * @param loadedPlayer that should be set
+     */
     void setPlayerFromLoadedGame(IPlayer loadedPlayer); 
 
 }
