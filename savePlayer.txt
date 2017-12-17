@@ -1,0 +1,8 @@
+{"name":"Jonas",
+"currentRoom":"9",
+"totalGameTime":"1045",
+"playerPoints":"1045",
+"maxCapacity":"20",
+"flashlightUsed":"true",
+"item": [
+]}
