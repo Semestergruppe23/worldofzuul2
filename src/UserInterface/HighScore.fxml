@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.HighScoreController">
+   <children>
+      <ImageView fitHeight="768.0" fitWidth="1024.0">
+         <image>
+            <Image url="@Images/bigstock-Blank-Chalkboard-Blackboard-T-50893607-1024x682.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="622.0" fitWidth="619.0" layoutX="186.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/s0977734_sc7.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="463.0" layoutY="652.0" mnemonicParsing="false" onAction="#clickReturn" style="-fx-background-color: transparent;" text="Return" textFill="#eee8e8">
+         <font>
+            <Font name="Kristen ITC" size="17.0" />
+         </font></Button>
+      <ListView fx:id="lstvHighScore" blendMode="MULTIPLY" layoutX="229.0" layoutY="127.0" mouseTransparent="true" prefHeight="350.0" prefWidth="529.0" />
+   </children>
+</AnchorPane>

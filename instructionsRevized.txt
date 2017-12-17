@@ -1,0 +1,5 @@
+How to navigate throughout this school:
+Use W, A, S, D to move
+OR:
+Arrow UP, LEFT, DOWN, RIGH
+Press "E" to enter door's and pick up items
